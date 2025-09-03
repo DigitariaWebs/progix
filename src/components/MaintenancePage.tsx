@@ -98,7 +98,7 @@ const MaintenancePage = () => {
                 className="text-xs sm:text-sm font-medium"
                 style={{ color: colors.tertiary }}
               >
-                contact@progix.com
+                contact@progix.pro
               </span>
             </div>
           </div>

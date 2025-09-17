@@ -13,7 +13,7 @@ import {
   FaUsers
 } from 'react-icons/fa';
 
-const Header = () => {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showHeader, setShowHeader] = useState(true);
@@ -247,4 +247,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

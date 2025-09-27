@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Projix - Coming Soon',
+  title: 'Progix - Coming Soon',
   description: "We're building something amazing. Stay tuned!",
 };
 

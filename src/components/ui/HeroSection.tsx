@@ -185,11 +185,7 @@ const HeroSection = () => {
               </motion.div>
             </div>
           </div>
-
-          {/* Logo Carousel Component */}
-          <div className="py-16">
-            <LogoCarousel />
-          </div>
+ 
         </div>
       </section>
     </>

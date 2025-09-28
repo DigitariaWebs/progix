@@ -2,44 +2,34 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Header from './Header';
 import LogoCarousel from './LogoCarousel';
-import { assets } from '@/config/assets';
-import { colors } from '@/config/colors';
 import { 
   FaMobile, 
-  FaApple, 
-  FaAndroid, 
-  FaReact,
   FaCode,
   FaUsers,
   FaRocket,
   FaStar,
   FaQuoteLeft,
-  FaCheck,
   FaArrowRight,
-  FaPlay,
-  FaDownload,
   FaHeart,
   FaClock,
   FaShieldAlt
 } from 'react-icons/fa';
 
 const MobileAppPage = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [competencesProgress, setCompetencesProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
       
       // Calculer la progression dans le bloc compétences
       const competencesSection = document.getElementById('competences-section');
       if (competencesSection) {
         const rect = competencesSection.getBoundingClientRect();
-        const sectionTop = currentScrollY + rect.top;
         const sectionHeight = rect.height;
         const windowHeight = window.innerHeight;
         
@@ -97,7 +87,7 @@ const MobileAppPage = () => {
           {/* Breadcrumb */}
           <div className="mb-8 pt-4">
             <nav className="text-sm text-gray-500">
-              <a href="/" className="hover:text-blue-600 transition-colors">Accueil</a>
+              <Link href="/" className="hover:text-blue-600 transition-colors">Accueil</Link>
               <span className="mx-2">&gt;</span>
               <span className="text-blue-600">Agence application mobile</span>
             </nav>
@@ -127,7 +117,7 @@ const MobileAppPage = () => {
               
               {/* Description */}
               <p className="text-lg leading-relaxed max-w-xl" style={{ fontFamily: "'Spline Sans', sans-serif", color: '#425466' }}>
-                PROGIX Studio est l'une des{' '}
+                PROGIX Studio est l&apos;une des{' '}
                 <span className="relative">
                   1<sup className="text-xs">ères</sup>
                 </span>{' '}
@@ -207,8 +197,8 @@ const MobileAppPage = () => {
               {/* Description Paragraphs */}
               <div className="space-y-6 text-lg leading-relaxed" style={{ fontFamily: "'Spline Sans', sans-serif", color: '#425466' }}>
                 <p>
-                  Yield Studio a été l'une des premières agences à miser sur React Native 
-                  pour <a href="#" className="text-blue-600 underline hover:no-underline">réduire les coûts</a> et accélérer le lancement d'applications mobiles. 
+                  Yield Studio a été l&apos;une des premières agences à miser sur React Native 
+                  pour <a href="#" className="text-blue-600 underline hover:no-underline">réduire les coûts</a> et accélérer le lancement d&apos;applications mobiles. 
                   Notre approche cross-platform permet de développer simultanément 
                   sur iOS et Android, sans perte de performance.
                 </p>
@@ -389,14 +379,14 @@ const MobileAppPage = () => {
             >
               <p>
                 Construire une application mobile est un levier stratégique redoutable pour 
-                accroître votre business ! Son but ? Vous permettre d'améliorer l'efficience 
+                accroître votre business ! Son but ? Vous permettre d&apos;améliorer l&apos;efficience 
                 opérationnelle de votre business ou bien développer un nouveau relai de 
                 croissance. Avec 15% de hausse annuelle de téléchargement des applications 
-                mobiles, il est primordial d'investir dessus.
+                mobiles, il est primordial d&apos;investir dessus.
               </p>
               
               <p>
-                Avec plus de 6 ans d'expérience et 70+ applications développées, nous avons 
+                Avec plus de 6 ans d&apos;expérience et 70+ applications développées, nous avons 
                 acquis un regard stratégique pour vous aider à anticiper les défis 
                 technologiques et optimiser la performance de votre application.
               </p>
@@ -425,8 +415,8 @@ const MobileAppPage = () => {
                   Déjà 6 ans
                 </div>
                 <p className="text-xs leading-relaxed" style={{ fontFamily: "'Spline Sans', sans-serif", color: '#425466' }}>
-                  que PROGIX Studio est un leader dans l'univers des agences de 
-                  développement d'application mobile
+                  que PROGIX Studio est un leader dans l&apos;univers des agences de 
+                  développement d&apos;application mobile
                 </p>
               </div>
 
@@ -444,7 +434,7 @@ const MobileAppPage = () => {
               {/* Stat 4 */}
               <div className="border-l-3 border-blue-500 pl-3">
                 <div className="text-lg font-bold text-blue-600 mb-1" style={{ fontFamily: 'var(--font-inter), Inter, sans-serif' }}>
-                  Plus d'1 million
+                  Plus d&apos;1 million
                 </div>
                 <p className="text-xs leading-relaxed" style={{ fontFamily: "'Spline Sans', sans-serif", color: '#425466' }}>
                   de requêtes API sont faites chaque jour sur les applications 
@@ -672,7 +662,7 @@ const MobileAppPage = () => {
                 </h3>
                 <p className="text-lg leading-relaxed mb-8" style={{ fontFamily: "'Spline Sans', sans-serif", color: '#425466' }}>
                   Nous accompagnons nos clients bien au-delà du lancement. Notre service de maintenance 
-                  assure la pérennité et l'évolution continue de votre application mobile.
+                  assure la pérennité et l&apos;évolution continue de votre application mobile.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -787,7 +777,7 @@ const MobileAppPage = () => {
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Application {item}</h3>
-                <p className="text-gray-600 text-sm">Description de l'application et de ses fonctionnalités principales.</p>
+                <p className="text-gray-600 text-sm">Description de l&apos;application et de ses fonctionnalités principales.</p>
               </motion.div>
             ))}
           </div>
@@ -802,7 +792,7 @@ const MobileAppPage = () => {
               Notre expertise en chiffres
             </h2>
             <p className="text-xl text-blue-100">
-              Des résultats qui parlent d'eux-mêmes
+              Des résultats qui parlent d&apos;eux-mêmes
             </p>
           </div>
 
@@ -841,7 +831,7 @@ const MobileAppPage = () => {
               className="text-center text-white"
             >
               <div className="text-5xl font-bold mb-2">6</div>
-              <div className="text-blue-100">Années d'expérience</div>
+              <div className="text-blue-100">Années d&apos;expérience</div>
             </motion.div>
           </div>
         </div>
@@ -1023,7 +1013,7 @@ const MobileAppPage = () => {
                   <FaQuoteLeft className="text-blue-600 text-2xl" />
                 </div>
                 <p className="text-gray-600 mb-6 italic leading-relaxed">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -1059,7 +1049,7 @@ const MobileAppPage = () => {
               Prêt à lancer votre application mobile ?
             </h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Contactez-nous dès aujourd'hui pour une consultation gratuite et découvrez 
+              Contactez-nous dès aujourd&apos;hui pour une consultation gratuite et découvrez 
               comment nous pouvons donner vie à votre projet mobile.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

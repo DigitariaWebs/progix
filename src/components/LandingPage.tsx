@@ -8,9 +8,7 @@ import LogoCarousel from './LogoCarousel';
 import { assets } from '@/config/assets';
 import { colors } from '@/config/colors';
 import { 
-  FaCode, 
   FaMobile, 
-  FaDatabase, 
   FaRocket, 
   FaUsers, 
   FaLinkedin, 
@@ -346,7 +344,7 @@ const LandingPage = () => {
                   <FaQuoteLeft size={24} style={{ color: colors.secondary }} />
                 </div>
                 <p className="text-gray-600 mb-6 italic leading-relaxed">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
@@ -422,7 +420,7 @@ const LandingPage = () => {
             Prêt à démarrer votre projet ?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Contactez-nous dès aujourd'hui pour une consultation gratuite
+            Contactez-nous dès aujourd&apos;hui pour une consultation gratuite
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-white rounded-full font-semibold text-lg transition-all hover:scale-105 shadow-lg"

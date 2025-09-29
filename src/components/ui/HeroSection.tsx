@@ -25,6 +25,8 @@ const HeroSection = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const faheVideoRef = useRef<HTMLVideoElement>(null);
+  const coRideVideoRef = useRef<HTMLVideoElement>(null);
+  const [selectedMember, setSelectedMember] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // All images from imagesculture folder (excluding videos)
@@ -290,27 +292,39 @@ const HeroSection = () => {
             <div className="h-8 w-px bg-gray-300"></div>
             
             <div className="flex items-center justify-center flex-1">
-              <div className="h-10 w-32 bg-gray-200 rounded flex items-center justify-center grayscale">
-                <span className="text-sm text-gray-500 font-medium">QUÉBEC</span>
-              </div>
+              <Image
+                src="/images/download.png"
+                alt="Client Logo"
+                width={120}
+                height={40}
+                className="h-10 w-auto grayscale opacity-70"
+              />
             </div>
             
             {/* Separator */}
             <div className="h-8 w-px bg-gray-300"></div>
             
             <div className="flex items-center justify-center flex-1">
-              <div className="h-10 w-32 bg-gray-200 rounded flex items-center justify-center grayscale">
-                <span className="text-sm text-gray-500 font-medium">BANQ</span>
-              </div>
+              <Image
+                src="/images/ibusinesslogo.60b4d9193c14aca92f02.png"
+                alt="iBusiness"
+                width={120}
+                height={40}
+                className="h-10 w-auto grayscale opacity-70"
+              />
             </div>
             
             {/* Separator */}
             <div className="h-8 w-px bg-gray-300"></div>
             
             <div className="flex items-center justify-center flex-1">
-              <div className="h-10 w-32 bg-gray-200 rounded flex items-center justify-center grayscale">
-                <span className="text-sm text-gray-500 font-medium">HEC</span>
-              </div>
+              <Image
+                src="/images/photo_2019-03-21_11-48-55-2-6-233x91.jpg"
+                alt="Client Logo"
+                width={120}
+                height={40}
+                className="h-10 w-auto grayscale opacity-70"
+              />
             </div>
           </div>
         </div>
@@ -319,7 +333,7 @@ const HeroSection = () => {
       {/* Services Section */}
       <section className="bg-white pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
+                {/* Header */}
           <div className="max-w-4xl mb-12">
             <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
               Optimize your business processes<br />
@@ -328,14 +342,14 @@ const HeroSection = () => {
             <p className="text-lg leading-relaxed font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.primary }}>
               Whatever the size of your business, we design and develop secure, reliable and scalable software solutions to meet your long-term objectives.
             </p>
-          </div>
+                  </div>
 
           {/* CTA Button */}
           <div className="mb-16">
             <button className="text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', backgroundColor: colors.secondary }}>
               Discuss your project
             </button>
-          </div>
+                </div>
 
           {/* Service Cards */}
           <div className="grid md:grid-cols-3 gap-8">
@@ -345,7 +359,7 @@ const HeroSection = () => {
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                   <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
                 </svg>
-              </div>
+                  </div>
               <h3 className="text-xl font-medium text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
                 SMES
               </h3>
@@ -367,15 +381,15 @@ const HeroSection = () => {
               <p className="text-gray-600 leading-relaxed font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
                 For institutions that want to add value to their data, make the most of their infrastructure and maximize the impact of their resources.
               </p>
-          </div>
-
+                  </div>
+                  
             {/* Startup Card */}
             <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style={{ backgroundColor: `${colors.secondary}20` }}>
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                 </svg>
-              </div>
+                </div>
               <h3 className="text-xl font-medium text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
                 Startup
               </h3>
@@ -393,8 +407,8 @@ const HeroSection = () => {
                 {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-              <span style={{ color: colors.secondary }}>Expertise</span> to address<br />
-              your growth obstacles
+              <span style={{ color: colors.secondary }}>Expertise</span> pour surmonter<br />
+              vos obstacles de croissance
             </h2>
           </div>
 
@@ -414,17 +428,17 @@ const HeroSection = () => {
               </div>
               
               <h3 className="text-xl font-medium text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                Management & automation software
+                Logiciels de gestion & d'automatisation
               </h3>
               
               <p className="text-gray-600 leading-relaxed font-light mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                Tailor-made management software (Intranet, ERP etc.) that ensures synergy between your operations, your team and your new digital reality.
+                Logiciels de gestion sur mesure (Intranet, ERP etc.) qui assurent la synergie entre vos opérations, votre équipe et votre nouvelle réalité numérique.
               </p>
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span className="text-sm font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>
-                    Business and technical analysis
+                    Analyse métier et technique
                   </span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -433,7 +447,7 @@ const HeroSection = () => {
                 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span className="text-sm font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>
-                    Custom software development
+                    Développement logiciel sur mesure
                   </span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -442,7 +456,7 @@ const HeroSection = () => {
                 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span className="text-sm font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>
-                    Custom ERP development
+                    Développement ERP personnalisé
                   </span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -451,7 +465,7 @@ const HeroSection = () => {
                 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span className="text-sm font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>
-                    Software support and maintenance
+                    Support et maintenance logicielle
                   </span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -474,17 +488,17 @@ const HeroSection = () => {
                   </div>
                   
               <h3 className="text-xl font-medium text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                Witify Lab
+                Laboratoire PROGIX
               </h3>
               
               <p className="text-gray-600 leading-relaxed font-light mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                The Witify Lab is dedicated to software innovation in all its forms. Research and development as well as innovative design are at the heart of our approach.
+                Le laboratoire PROGIX est dédié à l'innovation logicielle sous toutes ses formes. La recherche et développement ainsi que la conception innovante sont au cœur de notre approche.
               </p>
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span className="text-sm font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>
-                    Web application
+                    Application web
                   </span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -493,7 +507,7 @@ const HeroSection = () => {
                 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span className="text-sm font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>
-                    Mobile application
+                    Application mobile
                   </span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -516,17 +530,17 @@ const HeroSection = () => {
               </div>
               
               <h3 className="text-xl font-medium text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                Data management
+                Gestion des données
               </h3>
               
               <p className="text-gray-600 leading-relaxed font-light mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                Our expertise takes advantage of the data at your disposal through targeted support for full understanding and effective decision making.
+                Notre expertise tire parti des données à votre disposition grâce à un accompagnement ciblé pour une compréhension complète et une prise de décision efficace.
               </p>
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span className="text-sm font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>
-                    Data strategy
+                    Stratégie de données
                   </span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -535,7 +549,7 @@ const HeroSection = () => {
                 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span className="text-sm font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>
-                    Data analysis
+                    Analyse de données
                   </span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -544,7 +558,7 @@ const HeroSection = () => {
 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span className="text-sm font-light" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>
-                    Data visualization
+                    Visualisation de données
                   </span>
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -604,7 +618,7 @@ const HeroSection = () => {
                     const isNext = index === (currentImageIndex + 1) % cultureImages.length;
                     
                     return (
-              <motion.div 
+           <motion.div 
                         key={index}
                         className="absolute inset-0"
                         initial={false}
@@ -637,7 +651,7 @@ const HeroSection = () => {
                               : 'linear-gradient(45deg, rgba(0,0,0,0.6) 0%, transparent 50%, rgba(0,0,0,0.3) 100%)'
                           }}
                         />
-                      </motion.div>
+              </motion.div>
                     );
                   })}
                 </div>
@@ -654,7 +668,7 @@ const HeroSection = () => {
                     className="w-full h-full rounded-tl-full"
                     style={{ backgroundColor: colors.primary }}
                   />
-                </div>
+            </div>
 
                 {/* Minimal Info Display */}
                 <div className="absolute top-6 left-6">
@@ -1114,8 +1128,19 @@ const HeroSection = () => {
               whileHover={{ 
                 backgroundColor: '#1B363C'
               }}
-              onMouseEnter={() => setHoveredImage('coride')}
-              onMouseLeave={() => setHoveredImage(null)}
+              onMouseEnter={() => {
+                setHoveredImage('coride');
+                if (coRideVideoRef.current) {
+                  coRideVideoRef.current.play();
+                }
+              }}
+              onMouseLeave={() => {
+                setHoveredImage(null);
+                if (coRideVideoRef.current) {
+                  coRideVideoRef.current.pause();
+                  coRideVideoRef.current.currentTime = 0;
+                }
+              }}
             >
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
@@ -1126,7 +1151,7 @@ const HeroSection = () => {
                     <span className="text-sm text-gray-500 uppercase tracking-wide" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
                       Mobile App & Web Development
                     </span>
-                  </div>
+                </div>
                   
                   <h3 className="text-3xl font-medium text-gray-900 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
                     CoRide
@@ -1148,75 +1173,811 @@ const HeroSection = () => {
                 </div>
                 
                 <div className="relative h-64 lg:h-full bg-white/20">
-                  <div className="absolute inset-0 flex items-center justify-center p-8">
-                    <div className="relative">
-                      {/* Phone mockup */}
-                      <div className="w-28 h-48 bg-gray-800 rounded-3xl mx-auto relative shadow-xl">
-                        <div className="absolute inset-1 bg-white rounded-2xl overflow-hidden">
-                          {/* Screen content */}
-                          <div className="h-full bg-gradient-to-b from-purple-400 to-blue-500 relative">
-                            {/* Header */}
-                            <div className="absolute top-3 left-3 right-3">
-                              <div className="flex items-center justify-between">
-                                <div className="h-3 bg-white/90 rounded w-12 flex items-center justify-center">
-                                  <span className="text-xs font-bold text-purple-600">CoRide</span>
-                                </div>
-                                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                              </div>
-                            </div>
-                            
-                            {/* Service icons */}
-                            <div className="absolute top-12 left-3 right-3">
-                              <div className="grid grid-cols-2 gap-2">
-                                <div className="bg-white/20 rounded p-1 flex flex-col items-center">
-                                  <div className="w-4 h-4 bg-yellow-400 rounded mb-1">🚗</div>
-                                  <span className="text-xs text-white">Transport</span>
-                                </div>
-                                <div className="bg-white/20 rounded p-1 flex flex-col items-center">
-                                  <div className="w-4 h-4 bg-orange-400 rounded mb-1">📦</div>
-                                  <span className="text-xs text-white">Livraison</span>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            {/* Bottom section */}
-                            <div className="absolute bottom-4 left-3 right-3">
-                              <div className="bg-white/90 rounded-lg p-2">
-                                <div className="flex items-center space-x-2">
-                                  <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
-                                    <span className="text-xs text-white">📍</span>
-                                  </div>
-                                  <div className="flex-1">
-                                    <div className="h-1 bg-gray-200 rounded mb-1"></div>
-                                    <div className="h-1 bg-gray-300 rounded w-2/3"></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        {/* Home indicator */}
-                        <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-gray-600 rounded-full"></div>
-                      </div>
-                      
-                      {/* App Store badges */}
-                      <div className="absolute -bottom-4 -left-6 flex space-x-1">
-                        <div className="w-8 h-6 bg-black rounded flex items-center justify-center">
-                          <span className="text-xs text-white">📱</span>
-                        </div>
-                        <div className="w-8 h-6 bg-green-600 rounded flex items-center justify-center">
-                          <span className="text-xs text-white">▶️</span>
-                        </div>
-                      </div>
+                  <div className="absolute inset-0 flex items-center justify-center p-4">
+                    <div className="w-full h-full bg-black/10 rounded-lg overflow-hidden shadow-lg">
+                      <video
+                        ref={coRideVideoRef}
+                        className="w-full h-full object-cover"
+                        loop
+                        muted
+                        playsInline
+                        style={{ 
+                          filter: 'brightness(0.9) contrast(1.1)',
+                        }}
+                      >
+                        <source src="/images/WhatsApp Video 2025-09-26 at 10.22.25.mp4" type="video/mp4" />
+                        Votre navigateur ne supporte pas la lecture vidéo.
+                      </video>
                     </div>
                   </div>
-                </div>
+            </div>
           </div>
 
             </motion.div>
           </div>
         </div>
       </section>
+
+      {/* Team Section */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+              Une petite équipe d'ingénieurs montréalais<br />
+              <span style={{ color: colors.secondary }}>(et un gentil designer)</span>
+            </h2>
+          </div>
+
+          {/* Team Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Team Member 1 */}
+            <motion.div 
+              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              whileHover={{ y: -5 }}
+            >
+              <div className="text-center">
+                {/* Photo */}
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                  <Image
+                    src="/images of the team/1719935496854.jpg"
+                    alt="Développeur Full-Stack"
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <h3 className="text-xl font-medium text-gray-900 mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Ilyes Ghorieb
+                </h3>
+                
+                <p className="text-gray-600 text-sm mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  React • Node.js • TypeScript • PostgreSQL
+                </p>
+                
+                <div className="flex space-x-3 justify-center">
+                  <button 
+                    onClick={() => setSelectedMember('ilyes')}
+                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    style={{ backgroundColor: colors.secondary, fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    Voir profil
+                  </button>
+                  <a 
+                    href="https://www.linkedin.com/in/ilyes-ghorieb-95b470244/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+                </div>
+              </motion.div>
+
+            {/* Team Member 2 */}
+              <motion.div 
+              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              whileHover={{ y: -5 }}
+            >
+              <div className="text-center">
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                <Image
+                    src="/images of the team/1755055191293.jpg"
+                    alt="Développeuse Mobile"
+                    width={96}
+                    height={96}
+                  className="w-full h-full object-cover"
+                />
+                </div>
+                
+                <h3 className="text-xl font-medium text-gray-900 mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Fadi Atmania
+                </h3>
+                
+                <p className="text-gray-600 text-sm mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Flutter • React Native • Swift • Kotlin
+                </p>
+                
+                <div className="flex space-x-3 justify-center">
+                  <button 
+                    onClick={() => setSelectedMember('fadi')}
+                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    style={{ backgroundColor: colors.secondary, fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    Voir profil
+                  </button>
+                  <a 
+                    href="https://www.linkedin.com/in/fadi-atmania-011756354/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+              </motion.div>
+
+            {/* Team Member 3 */}
+              <motion.div 
+              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              whileHover={{ y: -5 }}
+            >
+              <div className="text-center">
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                  <Image
+                    src="/images of the team/1758914011397.jpg"
+                    alt="DevOps Engineer"
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <h3 className="text-xl font-medium text-gray-900 mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Daani Abderrahmane
+                </h3>
+                
+                <p className="text-gray-600 text-sm mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  AWS • Docker • Kubernetes • CI/CD
+                </p>
+                
+                <div className="flex space-x-3 justify-center">
+                  <button 
+                    onClick={() => setSelectedMember('daani')}
+                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    style={{ backgroundColor: colors.secondary, fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    Voir profil
+                  </button>
+                  <a 
+                    href="https://www.linkedin.com/in/daani-abderrahmane-4ab295315/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+              </motion.div>
+
+            {/* Team Member 4 */}
+              <motion.div 
+              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              whileHover={{ y: -5 }}
+            >
+              <div className="text-center">
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                  <Image
+                    src="/images of the team/1757886357065.jpg"
+                    alt="Islem Deneche"
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <h3 className="text-xl font-medium text-gray-900 mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Islem Deneche
+                </h3>
+                
+                <p className="text-gray-600 text-sm mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Figma • Adobe XD • Prototyping • User Research
+                </p>
+                
+                <div className="flex space-x-3 justify-center">
+                  <button 
+                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    style={{ backgroundColor: colors.secondary, fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    Voir profil
+                  </button>
+                  <a 
+                    href="https://www.linkedin.com/in/islem-deneche-097701384/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Team Member 5 */}
+            <motion.div 
+              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              whileHover={{ y: -5 }}
+            >
+              <div className="text-center">
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                  <Image
+                    src="/images of the team/WhatsApp Image 2025-09-29 at 12.30.27.jpeg"
+                    alt="Arselene Meghlaoui"
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-cover"
+                    style={{ 
+                      objectPosition: 'center top',
+                      transform: 'scale(1.1)'
+                    }}
+                  />
+                </div>
+                
+                <h3 className="text-xl font-medium text-gray-900 mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Arselene Meghlaoui
+                </h3>
+                
+                <p className="text-gray-600 text-sm mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Full Stack Developer • Network Security
+                </p>
+                
+                <div className="flex space-x-3 justify-center">
+                  <button 
+                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    style={{ backgroundColor: colors.secondary, fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    Voir profil
+                </button>
+                  <a 
+                    href="https://www.linkedin.com/in/arselene-meghlaoui-b20b1a259/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+              </motion.div>
+
+            {/* Team Member 6 */}
+              <motion.div 
+              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              whileHover={{ y: -5 }}
+            >
+              <div className="text-center">
+                <div className="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl">📊</span>
+                </div>
+                
+                <h3 className="text-xl font-medium text-gray-900 mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Data Engineer
+                </h3>
+                
+                <p className="text-gray-600 text-sm mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Python • Machine Learning • ETL • Analytics
+                </p>
+                
+                <div className="flex space-x-3 justify-center">
+                  <button 
+                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    style={{ backgroundColor: colors.secondary, fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    Voir profil
+                  </button>
+                  <a 
+                    href="#" 
+                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+              </motion.div>
+            </div>
+          </div>
+      </section>
+
+      {/* Team Member Profile Modal */}
+      <AnimatePresence>
+        {selectedMember && (
+          <motion.div 
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedMember(null)}
+          >
+            <motion.div 
+              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {selectedMember === 'ilyes' && (
+                <div className="p-8">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-20 h-20 rounded-full overflow-hidden">
+                        <Image
+                          src="/images of the team/1719935496854.jpg"
+                          alt="Ilyes Ghorieb"
+                          width={80}
+                          height={80}
+                          className="w-full h-full object-cover"
+                        />
+          </div>
+                      <div>
+                        <h2 className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Ilyes Ghorieb
+                        </h2>
+                        <p className="text-lg text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Full-Stack Software Engineer
+                        </p>
+                        <p className="text-sm text-gray-500" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          PROGIX • Montréal, Québec, Canada
+                        </p>
+        </div>
+                    </div>
+                    <button 
+                      onClick={() => setSelectedMember(null)}
+                      className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* About */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      À propos
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Salut ! Je suis Ilyes, un développeur full-stack passionné par la création de solutions logicielles innovantes. 
+                      Chez PROGIX, je conçois et développe des systèmes CRM et ERP sur mesure, des plateformes SaaS et des applications mobiles 
+                      performantes et évolutives.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed mt-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Mon expertise couvre les technologies modernes comme React.js, Node.js, Express.js, Flask, PostgreSQL et MongoDB. 
+                      Je maîtrise également Docker, les APIs REST/GraphQL, l'authentification sécurisée (JWT, OAuth2, RBAC) et les pipelines CI/CD.
+                    </p>
+                  </div>
+
+                  {/* Experience */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Expérience
+                    </h3>
+                    <div className="space-y-6">
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h4 className="font-semibold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Ingénieur logiciel - PROGIX
+                        </h4>
+                        <p className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Juillet 2024 - Présent • Montréal, QC (Hybride)
+                        </p>
+                        <p className="text-gray-700 mt-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Conception et développement de solutions logicielles SaaS, d'applications et de sites web sur mesure. 
+                          Gestion complète du cycle de développement, de la planification à la mise en production.
+                        </p>
+                      </div>
+                      
+                      <div className="border-l-4 border-green-500 pl-4">
+                        <h4 className="font-semibold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Responsable produit - iBusiness Consulting Inc.
+                        </h4>
+                        <p className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Janvier 2024 - Juillet 2024 • Longueuil, QC
+                        </p>
+                        <p className="text-gray-700 mt-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Gestion et suivi des projets de l'équipe de développement. Coordination entre besoins métier et équipe technique 
+                          en méthodologie Agile.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Skills */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Compétences principales
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {['React.js', 'Node.js', 'Express.js', 'Flask', 'Next.js', 'PostgreSQL', 'MongoDB', 'Docker', 'GraphQL', 'JWT', 'CI/CD'].map((skill) => (
+                        <span 
+                          key={skill}
+                          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                          style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Education */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Formation
+                    </h3>
+                    <div className="border-l-4 border-purple-500 pl-4">
+                      <h4 className="font-semibold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        Baccalauréat en Génie informatique et logiciel
+                      </h4>
+                      <p className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        UQAM | Université du Québec à Montréal • 2025
+                      </p>
+                      <p className="text-gray-700 mt-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        GPA: 3.1 • Membre de l'AGEEI
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Contact */}
+                  <div className="flex space-x-4 pt-6 border-t">
+                    <a 
+                      href="https://www.linkedin.com/in/ilyes-ghorieb-95b470244/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center space-x-2"
+                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                      <span>Voir LinkedIn</span>
+                    </a>
+                    <a 
+                      href="https://www.progix.pro/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      <span>Site web</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {selectedMember === 'fadi' && (
+                <div className="p-8">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-20 h-20 rounded-full overflow-hidden">
+                        <Image
+                          src="/images of the team/1755055191293.jpg"
+                          alt="Fadi Atmania"
+                          width={80}
+                          height={80}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h2 className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Fadi Atmania
+                        </h2>
+                        <p className="text-lg text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Développeur Web Full-Stack
+                        </p>
+                        <p className="text-sm text-gray-500" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          PROGIX • Montréal, Québec, Canada
+                        </p>
+                      </div>
+                    </div>
+                    <button 
+                      onClick={() => setSelectedMember(null)}
+                      className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* About */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      À propos
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Salut ! Je suis Fadi, un développeur web full-stack passionné par les technologies modernes. 
+                      Chez PROGIX, je me spécialise dans la création de solutions robustes, efficaces et scalables 
+                      en utilisant Java, Python, React et Docker.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed mt-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Mon approche consiste à concevoir des applications performantes qui répondent aux besoins métier 
+                      tout en maintenant une architecture propre et maintenable. J'aime travailler sur des projets 
+                      challengeants qui me permettent d'explorer de nouvelles technologies.
+                    </p>
+                  </div>
+
+                  {/* Experience */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Expérience
+                    </h3>
+                    <div className="space-y-6">
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h4 className="font-semibold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Administrator - PROGIX
+                        </h4>
+                        <p className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Septembre 2024 - Présent • Montréal, QC (Hybride)
+                        </p>
+                        <p className="text-gray-700 mt-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Développement de services IT et solutions logicielles. Conception d'applications web 
+                          full-stack avec les dernières technologies et frameworks.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Skills */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Compétences principales
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {['Java', 'Python', 'React', 'Docker', 'Git', 'Flutter', 'React Native', 'Swift', 'Kotlin', 'Software Development', 'IT Services'].map((skill) => (
+                        <span 
+                          key={skill}
+                          className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium"
+                          style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Education */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Formation
+                    </h3>
+                    <div className="border-l-4 border-purple-500 pl-4">
+                      <h4 className="font-semibold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        Computer Software Engineering
+                      </h4>
+                      <p className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        UQAM | Université du Québec à Montréal
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Contact */}
+                  <div className="flex space-x-4 pt-6 border-t">
+                    <a 
+                      href="https://www.linkedin.com/in/fadi-atmania-011756354/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center space-x-2"
+                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                      <span>Voir LinkedIn</span>
+                    </a>
+                    <a 
+                      href="https://www.progix.pro/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      <span>Site web</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {selectedMember === 'daani' && (
+                <div className="p-8">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-20 h-20 rounded-full overflow-hidden">
+                        <Image
+                          src="/images of the team/1758914011397.jpg"
+                          alt="Daani Abderrahmane"
+                          width={80}
+                          height={80}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h2 className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Daani Abderrahmane
+                        </h2>
+                        <p className="text-lg text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Consultant logiciels
+                        </p>
+                        <p className="text-sm text-gray-500" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          PROGIX • Montréal, Québec, Canada
+                        </p>
+                      </div>
+                    </div>
+                    <button 
+                      onClick={() => setSelectedMember(null)}
+                      className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* About */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      À propos
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Salut ! Je suis Daani, un développeur full-stack passionné par l'apprentissage et les projets collaboratifs. 
+                      Spécialisé en JavaScript, React, Node.js et Express.js, j'aime créer des solutions web performantes et innovantes.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed mt-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      En tant qu'Analyste-Programmeur et spécialiste Microsoft .NET chez PROGIX, j'accompagne nos clients dans 
+                      les secteurs RH, paie et énergie en concevant des solutions logicielles robustes. Mon expertise couvre 
+                      C#, ASP.NET, les microservices et les architectures modernes.
+                    </p>
+                  </div>
+
+                  {/* Experience */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Expérience
+                    </h3>
+                    <div className="space-y-6">
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h4 className="font-semibold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Consultant logiciels - PROGIX
+                        </h4>
+                        <p className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Septembre 2024 - Présent • Montréal, QC
+                        </p>
+                        <p className="text-gray-700 mt-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          <strong>Analyste-Programmeur | Spécialiste Microsoft .NET</strong><br/>
+                          Accompagnement de clients dans les secteurs RH, paie et énergie. Conception et maintenance 
+                          de solutions logicielles performantes avec expertise en C#, ASP.NET, VB.NET et développement web.
+                        </p>
+                        <p className="text-gray-700 mt-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          <strong>Technologies :</strong> SQL Server, REST API, Gravitee, microservices, architecture MVC, 
+                          méthodologies SAFe/Agile, DDD/ATDD, TFS/GitLab/BitBucket.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Skills */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Compétences principales
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        'JavaScript', 'React', 'Node.js', 'Express.js', 'C#', 'ASP.NET', 'VB.NET', 
+                        'SQL Server', 'REST APIs', 'Microservices', 'MVC', 'HTML/CSS', 'JQuery', 
+                        'AJAX', 'Gravitee', 'TFS', 'GitLab', 'BitBucket', 'Tests unitaires'
+                      ].map((skill) => (
+                        <span 
+                          key={skill}
+                          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                          style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Education */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Formation
+                    </h3>
+                    <div className="border-l-4 border-purple-500 pl-4">
+                      <h4 className="font-semibold text-gray-900" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        Études en cours
+                      </h4>
+                      <p className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        UQAM | Université du Québec à Montréal • 2021 - 2026
+                      </p>
+                      <p className="text-gray-700 mt-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        Spécialisation en Communication et Ventes externes
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Methodologies */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                      Méthodologies & Approches
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <h4 className="font-semibold text-gray-900 mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Agile & SAFe
+                        </h4>
+                        <p className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Méthodologies SAFe, Agile, Train avec approche orientée DDD/ATDD
+                        </p>
+                      </div>
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <h4 className="font-semibold text-gray-900 mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Qualité
+                        </h4>
+                        <p className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          Développement orienté qualité avec tests unitaires et d'intégration
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Contact */}
+                  <div className="flex space-x-4 pt-6 border-t">
+                    <a 
+                      href="https://www.linkedin.com/in/daani-abderrahmane-4ab295315/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center space-x-2"
+                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                      <span>Voir LinkedIn</span>
+                    </a>
+                    <a 
+                      href="https://www.progix.pro/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      <span>Site web</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Global Custom Cursor for Case Studies */}
       <AnimatePresence>

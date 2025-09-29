@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Montserrat, Inter } from 'next/font/google';
 import './globals.css';
-import DayPhrase from '@/components/DayPhrase';
+import ConditionalDayPhrase from '@/components/ConditionalDayPhrase';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -27,10 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${inter.variable} font-sans antialiased`}>
-        <div className="fixed top-4 right-4 z-50 px-4 py-2 bg-white/80 dark:bg-black/80 backdrop-blur-sm rounded-lg shadow-sm">
-          <DayPhrase />
-        </div>
+      <body
+        className={`${montserrat.variable} ${inter.variable} font-sans antialiased`}
+      >
+        <ConditionalDayPhrase />
         {children}
       </body>
     </html>

@@ -11,7 +11,7 @@ const CtaSection = () => {
           Prêt à démarrer votre projet ?
         </h2>
         <p className="text-xl text-blue-100 mb-8">
-          Contactez-nous dès aujourd'hui pour une consultation gratuite
+          Contactez-nous dès aujourd&apos;hui pour une consultation gratuite
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="px-8 py-4 bg-white rounded-full font-semibold text-lg transition-all hover:scale-105 shadow-lg"

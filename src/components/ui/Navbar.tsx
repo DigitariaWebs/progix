@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { assets } from '@/config/assets';
 import { colors } from '@/config/colors';
 import { 
-  FaCode, 
   FaMobile, 
   FaDatabase, 
   FaRocket, 

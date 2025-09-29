@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+@import "https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wdth,wght@0,85.9,200..900;1,85.9,200..900&display=swap";
 
 @plugin 'tailwindcss-animate';
 @import 'tailwindcss';
@@ -159,11 +160,34 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* WYSIWYG Styles */
+.wysiwyg em,.wysiwyg strong,.wysiwyg i {
+    font-style: normal;
+    --tw-text-opacity: 1;
+    color: rgb(255 71 70 / var(--tw-text-opacity));
+    font-weight: inherit
+}
+
+.wysiwyg-light em,.wysiwyg-light strong,.wysiwyg-light i {
+    font-style: normal;
+    --tw-text-opacity: 1;
+    color: rgb(255 134 127 / var(--tw-text-opacity));
+    font-weight: inherit
+}
+
+.wysiwyg-dark em,.wysiwyg-dark strong,.wysiwyg-dark i {
+    font-style: normal;
+    --tw-text-opacity: 1;
+    color: rgb(243 63 53 / var(--tw-text-opacity));
+    font-weight: inherit
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Hubot Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 }

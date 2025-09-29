@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Montserrat, Inter } from 'next/font/google';
 import './globals.css';
-import DayPhrase from '@/components/DayPhrase';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',

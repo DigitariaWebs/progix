@@ -52,7 +52,7 @@ const TestimonialsSection = () => {
                 <FaQuoteLeft size={24} style={{ color: colors.secondary }} />
               </div>
               <p className="text-gray-600 mb-6 italic leading-relaxed">
-                "{testimonial.text}"
+                &ldquo;{testimonial.text}&rdquo;
               </p>
               <div className="flex items-center justify-between">
                 <div>

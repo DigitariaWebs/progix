@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState, useCallback } from 'react';
 import { colors } from '@/config/colors';
 
 const ContactSection = () => {
@@ -256,7 +255,7 @@ const ContactSection = () => {
       'other': 'projet personnalisé'
     };
 
-    const projectName = projectTypeNames[selectedProjectType] || 'projet';
+    const projectName = projectTypeNames[selectedProjectType as keyof typeof projectTypeNames] || 'projet';
     
     return `Merci ${formData.firstName} ! Votre demande pour ${projectName} a bien été reçue. Un consultant spécialisé vous contactera dans les 24 heures pour discuter de votre ${projectName} et vous proposer une solution sur mesure.`;
   };
@@ -269,7 +268,7 @@ const ContactSection = () => {
   };
 
   // Calcul du progrès
-  const calculateProgress = () => {
+  const calculateProgress = useCallback(() => {
     let completedFields = 0;
     let totalFields = 6; // firstName, lastName, company, email, projectType, companyType
 
@@ -288,12 +287,12 @@ const ContactSection = () => {
 
     const newProgress = (completedFields / totalFields) * 100;
     setProgress(newProgress);
-  };
+  }, [formData, selectedProjectType, selectedCompanyType, projectSpecificAnswers, projectSpecificQuestions]);
 
   // Mise à jour du progrès à chaque changement
   React.useEffect(() => {
     calculateProgress();
-  }, [formData, selectedProjectType, selectedCompanyType, projectSpecificAnswers]);
+  }, [calculateProgress]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -360,7 +359,7 @@ const ContactSection = () => {
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
               Racontez-nous votre vision et nous la transformerons en réalité digitale. 
-              Notre équipe d'experts est prête à vous accompagner dans votre transformation.
+              Notre équipe d&apos;experts est prête à vous accompagner dans votre transformation.
             </p>
           </div>
         </div>
@@ -489,7 +488,7 @@ const ContactSection = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </div>
-                  Quel type d'organisation vous correspond le mieux ?
+                  Quel type d&apos;organisation vous correspond le mieux ?
                 </h2>
                 <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
                   Choisissez la catégorie qui décrit le mieux votre entreprise

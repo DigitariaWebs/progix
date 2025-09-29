@@ -514,7 +514,7 @@ const HeroSection = () => {
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 Pour les institutions qui souhaitent valoriser leurs données, tirer
-                le meilleur parti de leur infrastructure et maximiser l'impact de leurs
+                le meilleur parti de leur infrastructure et maximiser l&apos;impact de leurs
                 ressources.
               </p>
             </div>

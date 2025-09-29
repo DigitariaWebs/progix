@@ -4,46 +4,27 @@ import { useEffect, useState } from 'react';
 
 const dayPhrases: Record<number, string[]> = {
   0: [
-    'Un peu tôt pour un Dimanche non ?',
-    'Bon Dimanche à vous !',
-    'Dimanche, le jour du repos... ou pas',
-    'Dimanche, le jour parfait pour coder',
+    'Qui travaille un dimanche ?',
   ],
   1: [
-    "C'est Lundi, courage !",
-    'Lundi, nouvelle semaine, nouvelles possibilités',
-    "Lundi, le café est votre ami aujourd'hui",
-    'Lundi motivation... ou pas',
+    'Lundi... café obligatoire',
+    'Nouveau lundi, nouvelles bugs',
+    'Lundi = jour de survie',
   ],
   2: [
-    'Mardi, on prend le rythme',
-    'Déjà Mardi ? Le temps file',
-    'Mardi productif en perspective',
-    'Un Mardi comme les autres',
+    'Encore 3 dodos avant vendredi',
   ],
   3: [
-    'Mercredi, mi-chemin !',
-    'Mercredi, le milieu de semaine déjà',
-    'Mercredi, jour des enfants... et des devs',
-    "Mercredi, encore un peu et c'est le weekend",
+    'Encore 2 dodos avant vendredi',
   ],
   4: [
-    'Jeudi, presque Vendredi',
-    "Jeudi, plus qu'un jour avant Vendredi",
-    'Jeudi, on tient bon !',
-    'Jeudi, la fin de semaine approche',
+    'Jeudi, presque là',
   ],
   5: [
-    'Enfin Vendredi !',
-    'Vendredi, le meilleur jour',
-    'Vendredi, weekend loading... 90%',
-    'Vendredi, on peut souffler',
+    'Finally Friday !',
   ],
   6: [
-    'Samedi, profitez bien !',
-    'Samedi, weekend mode: ON',
-    'Samedi relax ou Samedi projets ?',
-    'Le Samedi, tout est permis',
+    'Profitez de votre samedi',
   ],
 };
 

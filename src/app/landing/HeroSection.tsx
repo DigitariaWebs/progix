@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { colors } from '@/config/colors';
 
@@ -124,13 +125,13 @@ const HeroSection = () => {
                 >
                   Portfolio
                 </a>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="font-heading inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Contact
-                </a>
+                </Link>
                 <a
                   href="#blog"
                   className="font-heading inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
@@ -143,15 +144,16 @@ const HeroSection = () => {
 
             {/* Right side button */}
             <div className="hidden md:flex items-center">
-              <button
-                className="text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              <Link
+                href="/contact"
+                className="text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
                 style={{
                   backgroundColor: colors.secondary,
                   fontFamily: 'Hubot Sans, Inter, sans-serif',
                 }}
               >
                 Démarrer un projet
-              </button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -202,29 +204,31 @@ const HeroSection = () => {
                 >
                   Portfolio
                 </a>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="font-heading text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                   style={{ color: colors.primary }}
                 >
                   Contact
-                </a>
+                </Link>
                 <div className="flex space-x-4 pt-4">
-                  <button
-                    className="text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex-1"
+                  <Link
+                    href="/contact"
+                    className="text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex-1 inline-block text-center"
                     style={{ backgroundColor: colors.secondary }}
                   >
                     Démarrer un projet
-                  </button>
-                  <button
-                    className="border-2 px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-50 flex-1"
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="border-2 px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-50 flex-1 inline-block text-center"
                     style={{
                       borderColor: colors.primary,
                       color: colors.primary,
                     }}
                   >
                     Nous contacter
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -303,7 +307,8 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <button
+                <Link
+                  href="/contact"
                   className="text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                   style={{
                     backgroundColor: colors.secondary,
@@ -311,7 +316,7 @@ const HeroSection = () => {
                   }}
                 >
                   Discuter de votre projet
-                </button>
+                </Link>
                 <button
                   className="bg-white/10 backdrop-blur-sm border border-black/20 text-black hover:bg-white/20 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
                   style={{
@@ -419,10 +424,10 @@ const HeroSection = () => {
               className="text-4xl md:text-5xl font-medium text-gray-900 mb-6"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              Optimize your business processes
+              Optimisez vos processus métier
               <br />
-              with a{' '}
-              <span style={{ color: colors.secondary }}>customized system</span>
+              avec un{' '}
+              <span style={{ color: colors.secondary }}>système personnalisé</span>
             </h2>
             <p
               className="text-lg leading-relaxed font-light"
@@ -431,23 +436,24 @@ const HeroSection = () => {
                 color: colors.primary,
               }}
             >
-              Whatever the size of your business, we design and develop secure,
-              reliable and scalable software solutions to meet your long-term
-              objectives.
+              Quelle que soit la taille de votre entreprise, nous concevons et
+              développons des solutions logicielles sécurisées, fiables et évolutives
+              pour répondre à vos objectifs à long terme.
             </p>
           </div>
 
           {/* CTA Button */}
           <div className="mb-16">
-            <button
-              className="text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            <Link
+              href="/contact"
+              className="text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
               style={{
                 fontFamily: 'Hubot Sans, Inter, sans-serif',
                 backgroundColor: colors.secondary,
               }}
             >
-              Discuss your project
-            </button>
+              Discuter de votre projet
+            </Link>
           </div>
 
           {/* Service Cards */}
@@ -471,14 +477,14 @@ const HeroSection = () => {
                 className="text-xl font-medium text-gray-900 mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                SMES
+                PME
               </h3>
               <p
                 className="text-gray-600 leading-relaxed font-light"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                For companies that want to automate their processes, reduce
-                delays, make informed decisions and stabilize their operations.
+                Pour les entreprises qui souhaitent automatiser leurs processus, réduire
+                les délais, prendre des décisions éclairées et stabiliser leurs opérations.
               </p>
             </div>
 
@@ -501,15 +507,15 @@ const HeroSection = () => {
                 className="text-xl font-medium text-gray-900 mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                Institutional
+                Institutionnel
               </h3>
               <p
                 className="text-gray-600 leading-relaxed font-light"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                For institutions that want to add value to their data, make the
-                most of their infrastructure and maximize the impact of their
-                resources.
+                Pour les institutions qui souhaitent valoriser leurs données, tirer
+                le meilleur parti de leur infrastructure et maximiser l'impact de leurs
+                ressources.
               </p>
             </div>
 
@@ -538,8 +544,8 @@ const HeroSection = () => {
                 className="text-gray-600 leading-relaxed font-light"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                For start-ups who want to change the world of tomorrow, break
-                the status quo and innovate through software technology.
+                Pour les start-ups qui veulent changer le monde de demain, briser
+                le statu quo et innover grâce à la technologie logicielle.
               </p>
             </div>
           </div>
@@ -929,22 +935,24 @@ const HeroSection = () => {
               </p>
 
               <div className="flex items-center space-x-6">
-                <button
-                  className="text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                <Link
+                  href="/contact"
+                  className="text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
                   style={{
                     backgroundColor: colors.secondary,
                     fontFamily: 'Hubot Sans, Inter, sans-serif',
                   }}
                 >
                   En savoir plus
-                </button>
+                </Link>
 
-                <button
-                  className="text-white border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-medium transition-all duration-300"
+                <Link
+                  href="/contact"
+                  className="text-white border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-medium transition-all duration-300 inline-block"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Notre équipe
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -1243,11 +1251,9 @@ const HeroSection = () => {
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
               <span style={{ color: colors.secondary }}>
-                Digital success stories
+                Témoignages
               </span>{' '}
-              : testimonials from
-              <br />
-              companies in the midst of digitalization
+              de projets réussis
             </h2>
           </div>
 

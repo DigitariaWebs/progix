@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { colors } from '@/config/colors';
 
 const CtaSection = () => {
@@ -20,21 +21,23 @@ const CtaSection = () => {
           Contactez-nous dès aujourd&apos;hui pour une consultation gratuite
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            className="px-8 py-4 bg-white rounded-full font-semibold text-lg transition-all hover:scale-105 shadow-lg"
+          <Link
+            href="/contact"
+            className="px-8 py-4 bg-white rounded-full font-semibold text-lg transition-all hover:scale-105 shadow-lg inline-block"
             style={{
               color: colors.secondary,
               fontFamily: 'Hubot Sans, Inter, sans-serif',
             }}
           >
             Démarrer un projet
-          </button>
-          <button
-            className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold text-lg transition-all hover:scale-105"
+          </Link>
+          <Link
+            href="/contact"
+            className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold text-lg transition-all hover:scale-105 inline-block"
             style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
           >
             Planifier un appel
-          </button>
+          </Link>
         </div>
       </div>
     </section>

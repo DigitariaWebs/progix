@@ -1,4 +1,4 @@
-import HeroSection from "@/app/landing-page/HeroSection";
+import HeroSection from "@/app/landing/HeroSection";
 
 // Move your entire hero section component/code here
 export default function LandingPage() {

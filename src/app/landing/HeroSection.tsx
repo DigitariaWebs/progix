@@ -30,20 +30,18 @@ const HeroSection = () => {
 
   // All images from imagesculture folder (excluding videos)
   const cultureImages = [
-    '1756818096483.jpg',
-    'volunteers (1).png',
-    'WhatsApp Image 2025-09-27 at 21.58.48.jpeg',
-    'WhatsApp Image 2025-09-28 at 11.59.54.jpeg',
-    'WhatsApp Image 2025-09-28 at 11.59.55 (1).jpeg',
-    'WhatsApp Image 2025-09-28 at 11.59.55 (2).jpeg',
-    'WhatsApp Image 2025-09-28 at 11.59.55 (3).jpeg',
-    'WhatsApp Image 2025-09-28 at 11.59.55.jpeg',
-    'WhatsApp Image 2025-09-28 at 12.08.36.jpeg',
-    'WhatsApp Image 2025-09-28 at 12.11.24.jpeg',
-    'WhatsApp Image 2025-09-28 at 12.18.54.jpeg',
-    'WhatsApp Image 2025-09-28 at 12.19.05.jpeg',
+    'Picsart_25-09-29_19-34-34-749.jpg',
+    'Picsart_25-09-29_19-40-21-097.jpg',
+    'Picsart_25-09-29_19-39-46-733.jpg',
+    'Picsart_25-09-29_19-39-01-194.jpg',
+    'Picsart_25-09-29_19-38-30-170.jpg',
+    'Picsart_25-09-29_19-37-55-797.jpg',
+    'Picsart_25-09-29_19-37-22-327.jpg',
+    'Picsart_25-09-29_19-36-58-899.jpg',
+    'Picsart_25-09-29_19-36-22-547.jpg',
+    'Picsart_25-09-29_19-35-48-522.jpg',
+    'Picsart_25-09-29_19-35-03-422.jpg',
     'WhatsApp-Image-2025-03-03-at-02.33.54_2e01351d-1024x768.jpg',
-    'WhatsApp-Image-2025-03-03-at-02.33.57_883147e9-768x1024.jpg',
   ];
 
   useEffect(() => {
@@ -1878,7 +1876,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/ilyes-ghorieb-95b470244/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -1939,7 +1937,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/fadi-atmania-011756354/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -2000,7 +1998,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/daani-abderrahmane-4ab295315/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -2060,7 +2058,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/islem-deneche-097701384/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -2124,7 +2122,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/arselene-meghlaoui-b20b1a259/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -2176,7 +2174,7 @@ const HeroSection = () => {
                   </button>
                   <a
                     href="#"
-                    className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg

@@ -24,15 +24,13 @@ const MobileAppPage = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
       // Calculer la progression dans le bloc compétences
       const competencesSection = document.getElementById('competences-section');
       if (competencesSection) {
         const rect = competencesSection.getBoundingClientRect();
         const sectionHeight = rect.height;
         const windowHeight = window.innerHeight;
-        
+
         // Calculer la progression quand on scroll dans la section
         if (rect.top <= 0 && rect.bottom >= windowHeight) {
           // La section est visible et occupe au moins tout l'écran

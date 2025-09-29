@@ -5,17 +5,6 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { colors } from '@/config/colors';
 
-const getSatelliteIcon = (index: number) => {
-  const icons = [
-    'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5', // Layers
-    'M13 2L3 14h9l-1 8 10-12h-9l1-8z', // Lightning
-    'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z', // Bulb
-    'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z', // Heart
-    'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253', // Book
-    'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', // Check circle
-  ];
-  return icons[index % icons.length];
-};
 
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -592,7 +581,7 @@ const HeroSection = () => {
                 className="text-xl font-medium text-gray-900 mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                Logiciels de gestion & d'automatisation
+                Logiciels de gestion & d&apos;automatisation
               </h3>
 
               <p
@@ -735,7 +724,7 @@ const HeroSection = () => {
                 className="text-gray-600 leading-relaxed font-light mb-6"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                Le laboratoire PROGIX est dédié à l'innovation logicielle sous
+                Le laboratoire PROGIX est dédié à l&apos;innovation logicielle sous
                 toutes ses formes. La recherche et développement ainsi que la
                 conception innovante sont au cœur de notre approche.
               </p>
@@ -932,8 +921,8 @@ const HeroSection = () => {
                 className="text-lg text-gray-300 leading-relaxed font-light mb-8"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                Notre pire cauchemar est d'un jour se réveiller et être une
-                équipe de 100 et devenir, ce qu'on appelle à l'interne, une
+                Notre pire cauchemar est d&apos;un jour se réveiller et être une
+                équipe de 100 et devenir, ce qu&apos;on appelle à l&apos;interne, une
                 usine à saucisses. On préfère avoir une petite équipe de joueurs
                 AAA et faire une vingtaine de projets par année qui nous
                 tiennent à cœur.
@@ -1207,7 +1196,7 @@ const HeroSection = () => {
                 className="text-gray-400 text-sm"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                Années d'expérience
+                Années d&apos;expérience
               </div>
             </div>
 
@@ -1284,11 +1273,11 @@ const HeroSection = () => {
                   className="text-gray-700 leading-relaxed font-light mb-6"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
-                  J'ai développé une plateforme web pour ma société spécialisée
-                  dans l'acquisition d'actifs immobiliers résidentiels et
+                  J&apos;ai développé une plateforme web pour ma société spécialisée
+                  dans l&apos;acquisition d&apos;actifs immobiliers résidentiels et
                   fonciers.{' '}
                   <span style={{ color: colors.secondary }}>
-                    L'équipe a su m'éduquer et même prendre des initiatives
+                    L&apos;équipe a su m&apos;éduquer et même prendre des initiatives
                   </span>{' '}
                   pour mon site. Je recommande.
                 </p>
@@ -1349,10 +1338,10 @@ const HeroSection = () => {
                   Ilyes avait travaillé en tant que product owner pour iBusiness
                   Consulting et avait su gérer mon équipe IT à la perfection.{' '}
                   <span style={{ color: colors.secondary }}>
-                    Je n'ai pas hésité une seule seconde à le contacter
+                    Je n&apos;ai pas hésité une seule seconde à le contacter
                   </span>{' '}
                   pour développer un CRM interne pour ma deuxième entreprise
-                  RecrutementPlus. Toute l'équipe est plus que satisfaite du
+                  RecrutementPlus. Toute l&apos;équipe est plus que satisfaite du
                   résultat.
                 </p>
 
@@ -1409,12 +1398,12 @@ const HeroSection = () => {
                   className="text-gray-700 leading-relaxed font-light mb-6"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
-                  L'équipe était à l'écoute et réactive. Le projet a pris un
+                  L&apos;équipe était à l&apos;écoute et réactive. Le projet a pris un
                   petit peu plus de temps que prévu mais{' '}
                   <span style={{ color: colors.secondary }}>
                     on en ressort avec un produit complet sans dettes techniques
                   </span>{' '}
-                  et c'est ce qui m'importait. Donc bravo et merci à tous !
+                  et c&apos;est ce qui m&apos;importait. Donc bravo et merci à tous !
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -1648,12 +1637,12 @@ const HeroSection = () => {
                     className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-light mb-8 transition-colors duration-200"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
-                    Confortplus65 a pour mission d'offrir des services de
+                    Confortplus65 a pour mission d&apos;offrir des services de
                     maintien à domicile adaptés aux besoins des personnes âgées
                     de 65 ans et plus. Nous avons développé un système complet
-                    de suivi et de gestion permettant d'optimiser
-                    l'accompagnement, l'entretien et leur programme exclusif
-                    d'activité physique pour personnes autonomes, semi-autonomes
+                    de suivi et de gestion permettant d&apos;optimiser
+                    l&apos;accompagnement, l&apos;entretien et leur programme exclusif
+                    d&apos;activité physique pour personnes autonomes, semi-autonomes
                     et alitées.
                   </p>
 
@@ -1820,7 +1809,7 @@ const HeroSection = () => {
               className="text-4xl md:text-5xl font-medium text-gray-900 mb-4"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              Une petite équipe d'ingénieurs montréalais
+              Une petite équipe d&apos;ingénieurs montréalais
               <br />
               <span style={{ color: colors.secondary }}>
                 (et un gentil designer)
@@ -2296,7 +2285,7 @@ const HeroSection = () => {
                       Mon expertise couvre les technologies modernes comme
                       React.js, Node.js, Express.js, Flask, PostgreSQL et
                       MongoDB. Je maîtrise également Docker, les APIs
-                      REST/GraphQL, l'authentification sécurisée (JWT, OAuth2,
+                      REST/GraphQL, l&apos;authentification sécurisée (JWT, OAuth2,
                       RBAC) et les pipelines CI/CD.
                     </p>
                   </div>
@@ -2334,7 +2323,7 @@ const HeroSection = () => {
                           }}
                         >
                           Conception et développement de solutions logicielles
-                          SaaS, d'applications et de sites web sur mesure.
+                          SaaS, d&apos;applications et de sites web sur mesure.
                           Gestion complète du cycle de développement, de la
                           planification à la mise en production.
                         </p>
@@ -2363,7 +2352,7 @@ const HeroSection = () => {
                             fontFamily: 'Hubot Sans, Inter, sans-serif',
                           }}
                         >
-                          Gestion et suivi des projets de l'équipe de
+                          Gestion et suivi des projets de l&apos;équipe de
                           développement. Coordination entre besoins métier et
                           équipe technique en méthodologie Agile.
                         </p>
@@ -2431,7 +2420,7 @@ const HeroSection = () => {
                         className="text-gray-700 mt-1"
                         style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                       >
-                        GPA: 3.1 • Membre de l'AGEEI
+                        GPA: 3.1 • Membre de l&apos;AGEEI
                       </p>
                     </div>
                   </div>
@@ -2565,9 +2554,9 @@ const HeroSection = () => {
                     >
                       Mon approche consiste à concevoir des applications
                       performantes qui répondent aux besoins métier tout en
-                      maintenant une architecture propre et maintenable. J'aime
+                      maintenant une architecture propre et maintenable. J&apos;aime
                       travailler sur des projets challengeants qui me permettent
-                      d'explorer de nouvelles technologies.
+                      d&apos;explorer de nouvelles technologies.
                     </p>
                   </div>
 
@@ -2604,7 +2593,7 @@ const HeroSection = () => {
                           }}
                         >
                           Développement de services IT et solutions logicielles.
-                          Conception d'applications web full-stack avec les
+                          Conception d&apos;applications web full-stack avec les
                           dernières technologies et frameworks.
                         </p>
                       </div>
@@ -2788,16 +2777,16 @@ const HeroSection = () => {
                       style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                     >
                       Salut ! Je suis Daani, un développeur full-stack passionné
-                      par l'apprentissage et les projets collaboratifs.
+                      par l&apos;apprentissage et les projets collaboratifs.
                       Spécialisé en JavaScript, React, Node.js et Express.js,
-                      j'aime créer des solutions web performantes et innovantes.
+                      j&apos;aime créer des solutions web performantes et innovantes.
                     </p>
                     <p
                       className="text-gray-700 leading-relaxed mt-4"
                       style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                     >
-                      En tant qu'Analyste-Programmeur et spécialiste Microsoft
-                      .NET chez PROGIX, j'accompagne nos clients dans les
+                      En tant qu&apos;Analyste-Programmeur et spécialiste Microsoft
+                      .NET chez PROGIX, j&apos;accompagne nos clients dans les
                       secteurs RH, paie et énergie en concevant des solutions
                       logicielles robustes. Mon expertise couvre C#, ASP.NET,
                       les microservices et les architectures modernes.
@@ -2977,7 +2966,7 @@ const HeroSection = () => {
                           }}
                         >
                           Développement orienté qualité avec tests unitaires et
-                          d'intégration
+                          d&apos;intégration
                         </p>
                       </div>
                     </div>

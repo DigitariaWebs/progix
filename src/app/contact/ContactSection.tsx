@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback } from 'react';
 import { colors } from '@/config/colors';
+import { Squares } from '@/components/ui/squares-background';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,9 @@ const ContactSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [selectedProjectType, setSelectedProjectType] = useState('');
   const [selectedCompanyType, setSelectedCompanyType] = useState('');
+  const [selectedTimeline, setSelectedTimeline] = useState('');
+  const [selectedBudget, setSelectedBudget] = useState('');
+  const [selectedSource, setSelectedSource] = useState('');
   const [progress, setProgress] = useState(0);
   const [projectSpecificAnswers, setProjectSpecificAnswers] = useState<Record<string, string>>({});
 
@@ -167,6 +171,32 @@ const ContactSection = () => {
     }
   ];
 
+  // Options de timeline
+  const timelineOptions = [
+    { id: '1month', name: "D'ici 1 mois", description: 'Projet urgent' },
+    { id: '3months', name: "D'ici 3 mois", description: 'Planning serré' },
+    { id: '6months', name: "D'ici 6 mois", description: 'Développement standard' },
+    { id: '12months', name: "D'ici 12 mois", description: 'Projet à long terme' }
+  ];
+
+  // Options de budget
+  const budgetOptions = [
+    { id: 'small', name: '5K - 15K CAD', description: 'Projet simple' },
+    { id: 'medium', name: '15K - 50K CAD', description: 'Projet standard' },
+    { id: 'large', name: '50K - 150K CAD', description: 'Projet complexe' },
+    { id: 'enterprise', name: '150K+ CAD', description: 'Solution enterprise' }
+  ];
+
+  // Sources de découverte
+  const sourceOptions = [
+    { id: 'google', name: 'Google', description: 'Recherche en ligne' },
+    { id: 'linkedin', name: 'LinkedIn', description: 'Réseau professionnel' },
+    { id: 'referral', name: 'Recommandation', description: "Bouche-à-oreille" },
+    { id: 'social', name: 'Réseaux sociaux', description: 'Facebook, Instagram...' },
+    { id: 'event', name: 'Événement', description: 'Conférence, salon...' },
+    { id: 'other', name: 'Autre', description: 'Autre source' }
+  ];
+
   // Questions spécifiques par type de projet
   const projectSpecificQuestions: Record<string, { question: string; options: { id: string; name: string; description: string }[] }> = {
     'web-app': {
@@ -270,24 +300,27 @@ const ContactSection = () => {
   // Calcul du progrès
   const calculateProgress = useCallback(() => {
     let completedFields = 0;
-    let totalFields = 6; // firstName, lastName, company, email, projectType, companyType
+    let totalFields = 9; // companyType, projectType, timeline, budget, source, firstName, lastName, company, email
 
+    if (selectedCompanyType) completedFields++;
+    if (selectedProjectType) completedFields++;
+    if (selectedTimeline) completedFields++;
+    if (selectedBudget) completedFields++;
+    if (selectedSource) completedFields++;
     if (formData.firstName.trim()) completedFields++;
     if (formData.lastName.trim()) completedFields++;
     if (formData.company.trim()) completedFields++;
     if (formData.email.trim()) completedFields++;
-    if (selectedProjectType) completedFields++;
-    if (selectedCompanyType) completedFields++;
 
     // Si un projet est sélectionné, ajouter la question spécifique
     if (selectedProjectType && projectSpecificQuestions[selectedProjectType]) {
-      totalFields = 7;
+      totalFields = 10;
       if (projectSpecificAnswers[selectedProjectType]) completedFields++;
     }
 
     const newProgress = (completedFields / totalFields) * 100;
     setProgress(newProgress);
-  }, [formData, selectedProjectType, selectedCompanyType, projectSpecificAnswers, projectSpecificQuestions]);
+  }, [formData, selectedProjectType, selectedCompanyType, selectedTimeline, selectedBudget, selectedSource, projectSpecificAnswers, projectSpecificQuestions]);
 
   // Mise à jour du progrès à chaque changement
   React.useEffect(() => {
@@ -324,11 +357,19 @@ const ContactSection = () => {
             </div>
             
             <h1 className="text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-              Message envoyé avec succès !
+              Merci ! L&apos;équipe PROGIX a bien reçu votre demande
             </h1>
             
             <p className="text-lg text-gray-600 leading-relaxed mb-8" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
               {getSuccessMessage()}
+              <br /><br />
+              <strong>Prochaines étapes :</strong>
+              <br />
+              1. Un consultant spécialisé analysera votre demande
+              <br />
+              2. Nous vous contacterons dans les 24h pour discuter
+              <br />
+              3. Première consultation gratuite pour définir votre solution
             </p>
             
             <button
@@ -346,27 +387,117 @@ const ContactSection = () => {
 
   return (
     <div className="min-h-screen" 
-         style={{ background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.secondary} 100%)` }}>
+         style={{ backgroundColor: '#f8fafc' }}>
       
-      {/* Header */}
+      {/* Logo PROGIX en haut à gauche */}
+      <div className="absolute top-8 left-8 z-30">
+        <img 
+          src="/images/logo.png" 
+          alt="PROGIX" 
+          className="w-32 h-32 object-contain"
+        />
+      </div>
+
+      {/* Branded Header */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+
+        {/* Squares Background */}
+        <div className="absolute inset-0 z-0">
+          <Squares
+            direction="diagonal"
+            speed={0.2}
+            squareSize={50}
+            borderColor="#e2e8f0"
+            hoverFillColor={colors.secondary}
+          />
+        </div>
+
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5 z-1">
+          <div className="absolute top-40 right-20 w-24 h-24 border border-gray-400 rounded-full"></div>
+          <div className="absolute bottom-20 left-1/4 w-16 h-16 border border-gray-400 rounded-full"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+          {/* Badge */}
+          <div className="text-center mb-8">
+            <div className="inline-block px-6 py-2 rounded-full text-sm font-medium mb-6"
+                 style={{ 
+                   backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+                   backdropFilter: 'blur(10px)',
+                   color: colors.primary
+                 }}>
+              Développement logiciel sur mesure depuis Montréal
+            </div>
+          </div>
+
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-              Parlons de votre{' '}
-              <span className="bg-white text-transparent bg-clip-text">projet</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight" style={{ 
+              fontFamily: 'Hubot Sans, Inter, sans-serif',
+              color: colors.primary,
+              textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            }}>
+              Transformons votre{' '}
+              <span className="relative">
+                <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                  vision
+                </span>
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-full"></div>
+              </span>
+              <br />
+              en réalité digitale
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-              Racontez-nous votre vision et nous la transformerons en réalité digitale. 
-              Notre équipe d&apos;experts est prête à vous accompagner dans votre transformation.
+            
+            <p className="text-lg max-w-4xl mx-auto leading-relaxed mb-6" style={{ 
+              fontFamily: 'Hubot Sans, Inter, sans-serif',
+              color: colors.tertiary
+            }}>
+              Comme <strong>David de Desjardins</strong>, <strong>Hakim d&apos;iBusiness</strong> et <strong>Daniel du Ministère des Finances</strong>, 
+              faites confiance à notre équipe d&apos;ingénieurs pour développer des solutions sur mesure qui s&apos;intègrent parfaitement à vos processus.
             </p>
+
+            {/* Stats/Trust indicators */}
+            <div className="flex flex-wrap justify-center items-center gap-6 mb-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.primary }}>50+</div>
+                <div className="text-sm" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>Projets réalisés</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.primary }}>24h</div>
+                <div className="text-sm" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>Délai de réponse</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.primary }}>100%</div>
+                <div className="text-sm" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.secondary }}>Sur mesure</div>
+              </div>
+            </div>
+
+            {/* Contact direct */}
+            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full"
+                 style={{ 
+                   backgroundColor: 'rgba(255, 255, 255, 0.9)', 
+                   backdropFilter: 'blur(10px)',
+                   color: colors.tertiary
+                 }}>
+              <span className="text-sm" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                Ou appelez Ilyes directement :
+              </span>
+              <a href="tel:+15145765993" 
+                 className="font-semibold transition-colors"
+                 style={{ 
+                   fontFamily: 'Hubot Sans, Inter, sans-serif',
+                   color: colors.secondary
+                 }}>
+                +1 514 576 5993
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Form Section */}
-      <div className="relative -mt-8 pb-20">
+      <div className="relative -mt-8 pb-20" 
+           style={{ background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.secondary} 100%)` }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             
@@ -374,7 +505,7 @@ const ContactSection = () => {
             <div className="bg-gray-100 p-6">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                  Progression du formulaire
+                  L&apos;équipe PROGIX découvre votre projet
                 </h3>
                 <span className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
                   {Math.round(progress)}%
@@ -391,18 +522,300 @@ const ContactSection = () => {
                 />
               </div>
               <div className="flex justify-between mt-2 text-xs text-gray-500" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                <span className={progress >= 14.29 ? 'text-blue-600 font-medium' : ''}>Infos</span>
-                <span className={progress >= 28.57 ? 'text-blue-600 font-medium' : ''}>Entreprise</span>
-                <span className={progress >= 42.86 ? 'text-blue-600 font-medium' : ''}>Email</span>
-                <span className={progress >= 57.14 ? 'text-blue-600 font-medium' : ''}>Profil</span>
-                <span className={progress >= 71.43 ? 'text-blue-600 font-medium' : ''}>Projet</span>
-                <span className={progress >= 85.71 ? 'text-blue-600 font-medium' : ''}>Détails</span>
-                <span className={progress >= 100 ? 'text-blue-600 font-medium' : ''}>Terminé</span>
+                <span className={progress >= 10 ? 'text-blue-600 font-medium' : ''}>Profil</span>
+                <span className={progress >= 20 ? 'text-blue-600 font-medium' : ''}>Projet</span>
+                <span className={progress >= 30 ? 'text-blue-600 font-medium' : ''}>Quand</span>
+                <span className={progress >= 40 ? 'text-blue-600 font-medium' : ''}>Budget</span>
+                <span className={progress >= 50 ? 'text-blue-600 font-medium' : ''}>Source</span>
+                <span className={progress >= 60 ? 'text-blue-600 font-medium' : ''}>Détails</span>
+                <span className={progress >= 70 ? 'text-blue-600 font-medium' : ''}>Contact</span>
+                <span className={progress >= 90 ? 'text-blue-600 font-medium' : ''}>Message</span>
+                <span className={progress >= 100 ? 'text-blue-600 font-medium' : ''}>Fini</span>
               </div>
             </div>
 
             <form onSubmit={handleSubmit} className="p-8 md:p-12">
               
+              {/* Company Type */}
+              <div className="mb-12">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: `${colors.secondary}20` }}>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  Pour qui?
+                </h2>
+                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Chez PROGIX, nous adaptons nos solutions à chaque type d&apos;organisation
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {companyTypes.map((type) => (
+                    <button
+                      key={type.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedCompanyType(type.id);
+                        setFormData({ ...formData, companyType: type.id });
+                        triggerHapticFeedback();
+                      }}
+                      className={`p-4 rounded-xl border-2 text-left transition-all duration-300 hover:scale-105 ${
+                        selectedCompanyType === type.id
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" 
+                           style={{ backgroundColor: selectedCompanyType === type.id ? `${colors.secondary}20` : '#f3f4f6' }}>
+                        <div style={{ color: selectedCompanyType === type.id ? colors.secondary : '#6b7280' }}>
+                          {type.icon}
+                        </div>
+                      </div>
+                      <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {type.name}
+                      </div>
+                      <div className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {type.description}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Project Type */}
+              <div className="mb-12">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: `${colors.secondary}20` }}>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  Quoi?
+                </h2>
+                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Notre expertise couvre tous les domaines du développement logiciel
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {projectTypes.map((project) => (
+                    <button
+                      key={project.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedProjectType(project.id);
+                        setFormData({ ...formData, projectType: project.id });
+                        // Réinitialiser les réponses spécifiques si on change de type de projet
+                        setProjectSpecificAnswers({});
+                        triggerHapticFeedback();
+                      }}
+                      className={`p-4 rounded-xl border-2 text-left transition-all duration-300 hover:scale-105 ${
+                        selectedProjectType === project.id
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" 
+                           style={{ backgroundColor: selectedProjectType === project.id ? `${colors.secondary}20` : '#f3f4f6' }}>
+                        <div style={{ color: selectedProjectType === project.id ? colors.secondary : '#6b7280' }}>
+                          {project.icon}
+                        </div>
+                      </div>
+                      <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {project.name}
+                      </div>
+                      <div className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {project.description}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Questions spécifiques au projet */}
+              {selectedProjectType && projectSpecificQuestions[selectedProjectType] && (
+                <div className="mb-12">
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: `${colors.secondary}20` }}>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    {projectSpecificQuestions[selectedProjectType].question}
+                  </h2>
+                  <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                    Nos ingénieurs PROGIX personnalisent chaque solution selon vos préférences
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {projectSpecificQuestions[selectedProjectType].options.map((option) => (
+                      <button
+                        key={option.id}
+                        type="button"
+                        onClick={() => {
+                          setProjectSpecificAnswers({ 
+                            ...projectSpecificAnswers, 
+                            [selectedProjectType]: option.id 
+                          });
+                          triggerHapticFeedback();
+                        }}
+                        className={`p-4 rounded-xl border-2 text-left transition-all duration-300 hover:scale-105 ${
+                          projectSpecificAnswers[selectedProjectType] === option.id
+                            ? 'border-blue-500 bg-blue-50'
+                            : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                      >
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" 
+                             style={{ backgroundColor: projectSpecificAnswers[selectedProjectType] === option.id ? `${colors.secondary}20` : '#f3f4f6' }}>
+                          <div className="w-3 h-3 rounded-full" 
+                               style={{ backgroundColor: projectSpecificAnswers[selectedProjectType] === option.id ? colors.secondary : '#9ca3af' }}>
+                          </div>
+                        </div>
+                        <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          {option.name}
+                        </div>
+                        <div className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                          {option.description}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Timeline Section - Quand? */}
+              <div className="mb-12">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: `${colors.secondary}20` }}>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  Quand?
+                </h2>
+                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  PROGIX s&apos;adapte à votre planning, même les projets urgents !
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {timelineOptions.map((timeline) => (
+                    <button
+                      key={timeline.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedTimeline(timeline.id);
+                        triggerHapticFeedback();
+                      }}
+                      className={`p-4 rounded-xl border-2 text-left transition-all duration-300 hover:scale-105 ${
+                        selectedTimeline === timeline.id
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" 
+                           style={{ backgroundColor: selectedTimeline === timeline.id ? `${colors.secondary}20` : '#f3f4f6' }}>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: selectedTimeline === timeline.id ? colors.secondary : '#6b7280' }}>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {timeline.name}
+                      </div>
+                      <div className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {timeline.description}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Budget Section - Combien? */}
+              <div className="mb-12">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: `${colors.secondary}20` }}>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  Combien?
+                </h2>
+                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Transparence totale : nos tarifs sont adaptés à chaque budget
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {budgetOptions.map((budget) => (
+                    <button
+                      key={budget.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedBudget(budget.id);
+                        triggerHapticFeedback();
+                      }}
+                      className={`p-4 rounded-xl border-2 text-left transition-all duration-300 hover:scale-105 ${
+                        selectedBudget === budget.id
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" 
+                           style={{ backgroundColor: selectedBudget === budget.id ? `${colors.secondary}20` : '#f3f4f6' }}>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: selectedBudget === budget.id ? colors.secondary : '#6b7280' }}>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {budget.name}
+                      </div>
+                      <div className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {budget.description}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Source Section - Où? */}
+              <div className="mb-12">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: `${colors.secondary}20` }}>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  Où?
+                </h2>
+                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Aidez-nous à améliorer notre présence et à mieux vous servir
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {sourceOptions.map((source) => (
+                    <button
+                      key={source.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedSource(source.id);
+                        triggerHapticFeedback();
+                      }}
+                      className={`p-4 rounded-xl border-2 text-left transition-all duration-300 hover:scale-105 ${
+                        selectedSource === source.id
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" 
+                           style={{ backgroundColor: selectedSource === source.id ? `${colors.secondary}20` : '#f3f4f6' }}>
+                        <div className="w-3 h-3 rounded-full" 
+                             style={{ backgroundColor: selectedSource === source.id ? colors.secondary : '#9ca3af' }}>
+                        </div>
+                      </div>
+                      <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {source.name}
+                      </div>
+                      <div className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                        {source.description}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {/* Personal Info */}
               <div className="mb-12">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-8 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
@@ -411,8 +824,11 @@ const ContactSection = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
-                  Faisons connaissance
+                  Qui?
                 </h2>
+                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                  Parfait ! L&apos;équipe PROGIX est impatiente de faire votre connaissance
+                </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
@@ -480,150 +896,6 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              {/* Company Type */}
-              <div className="mb-12">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: `${colors.secondary}20` }}>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
-                  Quel type d&apos;organisation vous correspond le mieux ?
-                </h2>
-                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                  Choisissez la catégorie qui décrit le mieux votre entreprise
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {companyTypes.map((type) => (
-                    <button
-                      key={type.id}
-                      type="button"
-                      onClick={() => {
-                        setSelectedCompanyType(type.id);
-                        setFormData({ ...formData, companyType: type.id });
-                        triggerHapticFeedback();
-                      }}
-                      className={`p-4 rounded-xl border-2 text-left transition-all duration-300 hover:scale-105 ${
-                        selectedCompanyType === type.id
-                          ? 'border-blue-500 bg-blue-50'
-                          : 'border-gray-200 hover:border-gray-300'
-                      }`}
-                    >
-                      <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" 
-                           style={{ backgroundColor: selectedCompanyType === type.id ? `${colors.secondary}20` : '#f3f4f6' }}>
-                        <div style={{ color: selectedCompanyType === type.id ? colors.secondary : '#6b7280' }}>
-                          {type.icon}
-                        </div>
-                      </div>
-                      <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                        {type.name}
-                      </div>
-                      <div className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                        {type.description}
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Project Type */}
-              <div className="mb-12">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: `${colors.secondary}20` }}>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                  </div>
-                  Quel type de projet vous intéresse ?
-                </h2>
-                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                  Choisissez le type de solution que vous souhaitez développer
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {projectTypes.map((project) => (
-                    <button
-                      key={project.id}
-                      type="button"
-                      onClick={() => {
-                        setSelectedProjectType(project.id);
-                        setFormData({ ...formData, projectType: project.id });
-                        // Réinitialiser les réponses spécifiques si on change de type de projet
-                        setProjectSpecificAnswers({});
-                        triggerHapticFeedback();
-                      }}
-                      className={`p-4 rounded-xl border-2 text-left transition-all duration-300 hover:scale-105 ${
-                        selectedProjectType === project.id
-                          ? 'border-blue-500 bg-blue-50'
-                          : 'border-gray-200 hover:border-gray-300'
-                      }`}
-                    >
-                      <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" 
-                           style={{ backgroundColor: selectedProjectType === project.id ? `${colors.secondary}20` : '#f3f4f6' }}>
-                        <div style={{ color: selectedProjectType === project.id ? colors.secondary : '#6b7280' }}>
-                          {project.icon}
-                        </div>
-                      </div>
-                      <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                        {project.name}
-                      </div>
-                      <div className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                        {project.description}
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Questions spécifiques au projet */}
-              {selectedProjectType && projectSpecificQuestions[selectedProjectType] && (
-                <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: `${colors.secondary}20` }}>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: colors.secondary }}>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    {projectSpecificQuestions[selectedProjectType].question}
-                  </h2>
-                  <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                    Cette information nous aide à mieux comprendre vos besoins spécifiques
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {projectSpecificQuestions[selectedProjectType].options.map((option) => (
-                      <button
-                        key={option.id}
-                        type="button"
-                        onClick={() => {
-                          setProjectSpecificAnswers({ 
-                            ...projectSpecificAnswers, 
-                            [selectedProjectType]: option.id 
-                          });
-                          triggerHapticFeedback();
-                        }}
-                        className={`p-4 rounded-xl border-2 text-left transition-all duration-300 hover:scale-105 ${
-                          projectSpecificAnswers[selectedProjectType] === option.id
-                            ? 'border-blue-500 bg-blue-50'
-                            : 'border-gray-200 hover:border-gray-300'
-                        }`}
-                      >
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" 
-                             style={{ backgroundColor: projectSpecificAnswers[selectedProjectType] === option.id ? `${colors.secondary}20` : '#f3f4f6' }}>
-                          <div className="w-3 h-3 rounded-full" 
-                               style={{ backgroundColor: projectSpecificAnswers[selectedProjectType] === option.id ? colors.secondary : '#9ca3af' }}>
-                          </div>
-                        </div>
-                        <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                          {option.name}
-                        </div>
-                        <div className="text-sm text-gray-600" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                          {option.description}
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
               {/* Message */}
               <div className="mb-8">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
@@ -669,6 +941,75 @@ const ContactSection = () => {
                 </p>
               </div>
             </form>
+          </div>
+
+          {/* Client Trust Section */}
+          <div className="mt-16 text-center">
+            <p className="text-gray-600 mb-8" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+              <strong>Rejoignez les 50+ entreprises qui nous font confiance</strong>
+            </p>
+            
+            {/* Client Logos */}
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              <div className="flex items-center justify-center h-12">
+                <img 
+                  src="/images/BAnQ-gray.svg" 
+                  alt="BAnQ" 
+                  className="h-8 grayscale opacity-70 hover:opacity-100 transition-opacity"
+                />
+              </div>
+              <div className="w-px h-8 bg-gray-300"></div>
+              <div className="flex items-center justify-center h-12">
+                <img 
+                  src="/images/crustys (1).png" 
+                  alt="Crustys" 
+                  className="h-8 grayscale opacity-70 hover:opacity-100 transition-opacity"
+                />
+              </div>
+              <div className="w-px h-8 bg-gray-300"></div>
+              <div className="flex items-center justify-center h-12">
+                <img 
+                  src="/images/cfaqlogo.png" 
+                  alt="CFAQ" 
+                  className="h-8 grayscale opacity-70 hover:opacity-100 transition-opacity"
+                />
+              </div>
+              <div className="w-px h-8 bg-gray-300"></div>
+              <div className="flex items-center justify-center h-12">
+                <img 
+                  src="/images/download.png" 
+                  alt="Client" 
+                  className="h-8 grayscale opacity-70 hover:opacity-100 transition-opacity"
+                />
+              </div>
+            </div>
+
+            {/* Final CTA */}
+            <div className="mt-12 p-8 rounded-2xl" 
+                 style={{ backgroundColor: `${colors.primary}10` }}>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                Prêt à transformer votre vision en réalité ?
+              </h3>
+              <p className="text-gray-600 mb-6" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+                L&apos;équipe PROGIX vous contactera dans les <strong>24 heures</strong> pour discuter de votre projet.
+                <br />
+                <em>Première consultation gratuite, toujours.</em>
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-500">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.secondary }}></div>
+                  <span style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>Réponse garantie 24h</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.secondary }}></div>
+                  <span style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>Consultation gratuite</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.secondary }}></div>
+                  <span style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>Solutions sur mesure</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

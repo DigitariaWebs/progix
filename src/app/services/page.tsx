@@ -34,7 +34,7 @@ const ServicesPage = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <Link
-                href="/landing#services"
+                href="/services"
                 className="font-heading font-bold text-gray-900 hover:text-gray-700 transition-colors"
               >
                 Services

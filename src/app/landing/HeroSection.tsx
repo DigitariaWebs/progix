@@ -155,13 +155,13 @@ const HeroSection = () => {
             {/* Centered Desktop Navigation */}
             <div className="hidden md:flex items-center justify-center flex-1">
               <div className="flex items-center space-x-8">
-                <a
+                <Link
                   href="/services"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                    
                 >
                   Services
-                </a>
+                </Link>
                 <a
                   href="#about"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"

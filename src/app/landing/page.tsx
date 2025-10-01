@@ -5,7 +5,7 @@ import CtaButton from './CtaButton';
 // Move your entire hero section component/code here
 export default function LandingPage() {
   return (
-    <div>
+    <div className="landing-page font-montserrat">
       {/* This is your branch's hero section */}
       <HeroSection />
 

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { colors } from '@/config/colors';
+import Partners from '@/components/Partners';
 
 
 const HeroSection = () => {
@@ -88,7 +89,7 @@ const HeroSection = () => {
         ref={navRef}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent backdrop-blur-md scrolled:bg-white/95 scrolled:shadow-lg"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex items-center relative z-10">
@@ -106,35 +107,35 @@ const HeroSection = () => {
               <div className="flex items-center space-x-8">
                 <a
                   href="#services"
-                  className="font-heading inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
+                  className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Services
                 </a>
                 <a
                   href="#about"
-                  className="font-heading inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
+                  className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   À propos
                 </a>
                 <a
                   href="#portfolio"
-                  className="font-heading inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
+                  className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Portfolio
                 </a>
                 <Link
                   href="/contact"
-                  className="font-heading inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
+                  className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Contact
                 </Link>
                 <a
                   href="#blog"
-                  className="font-heading inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
+                  className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Blog
@@ -146,7 +147,7 @@ const HeroSection = () => {
             <div className="hidden md:flex items-center">
               <Link
                 href="/contact"
-                className="text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
+                className="text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
                 style={{
                   backgroundColor: colors.secondary,
                   fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -185,28 +186,28 @@ const HeroSection = () => {
               <div className="flex flex-col space-y-4">
                 <a
                   href="#services"
-                  className="font-heading text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
+                  className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                   style={{ color: colors.primary }}
                 >
                   Services
                 </a>
                 <a
                   href="#about"
-                  className="font-heading text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
+                  className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                   style={{ color: colors.primary }}
                 >
                   À propos
                 </a>
                 <a
                   href="#portfolio"
-                  className="font-heading text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
+                  className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                   style={{ color: colors.primary }}
                 >
                   Portfolio
                 </a>
                 <Link
                   href="/contact"
-                  className="font-heading text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
+                  className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                   style={{ color: colors.primary }}
                 >
                   Contact
@@ -214,14 +215,14 @@ const HeroSection = () => {
                 <div className="flex space-x-4 pt-4">
                   <Link
                     href="/contact"
-                    className="text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex-1 inline-block text-center"
+                    className="text-white px-4 py-2 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex-1 inline-block text-center"
                     style={{ backgroundColor: colors.secondary }}
                   >
                     Démarrer un projet
                   </Link>
                   <Link
                     href="/contact"
-                    className="border-2 px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-50 flex-1 inline-block text-center"
+                    className="border-2 px-4 py-2 rounded-lg font-bold transition-all duration-300 hover:bg-gray-50 flex-1 inline-block text-center"
                     style={{
                       borderColor: colors.primary,
                       color: colors.primary,
@@ -265,7 +266,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-heading mb-5 text-3xl font-semibold sm:text-5xl md:text-[55px] md:leading-[65px] text-black -mt-16"
+                className="font-heading mb-5 text-3xl font-bold sm:text-5xl md:text-[55px] md:leading-[65px] text-black -mt-16"
                 style={{
                   fontFamily: 'Hubot Sans, Inter, sans-serif',
                   letterSpacing: '-0.02em',
@@ -287,14 +288,13 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl mb-8 leading-relaxed text-black/90 max-w-3xl"
+                className="text-xl mb-8 leading-relaxed text-black/90 max-w-3xl font-medium"
                 style={{
-                  fontFamily: 'Hubot Sans, Inter, sans-serif',
-                  fontWeight: '300',
+                  fontFamily: 'Hubot Sans, Inter, sans-serif', 
                 }}
               >
-                Progix est une entreprise de développement logiciel basée à
-                Montréal. Notre mission est de concevoir et de développer des
+                Progix est une entreprise de développement logiciel basée à Montréal.<br />
+                 Notre mission est de concevoir et de développer des
                 solutions logicielles sur mesure, sécurisées et évolutives,
                 créées de zéro pour s&apos;intégrer parfaitement à vos
                 processus, vos équipes et vos clients.
@@ -334,86 +334,10 @@ const HeroSection = () => {
       {/* Client Logos Section */}
       <section className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between opacity-60">
-            {/* BAnQ Logo */}
-            <div className="flex items-center justify-center flex-1">
-              <Image
-                src="/images/BAnQ-gray.svg"
-                alt="BAnQ"
-                width={120}
-                height={35}
-                className="h-10 w-auto grayscale"
-              />
-            </div>
-
-            {/* Separator */}
-            <div className="h-8 w-px bg-gray-300"></div>
-
-            {/* Crustys Logo */}
-            <div className="flex items-center justify-center flex-1">
-              <Image
-                src="/images/crustys (1).png"
-                alt="Crustys"
-                width={120}
-                height={40}
-                className="h-10 w-auto grayscale opacity-70"
-              />
-            </div>
-
-            {/* Separator */}
-            <div className="h-8 w-px bg-gray-300"></div>
-
-            <div className="flex items-center justify-center flex-1">
-              <Image
-                src="/images/cfaqlogo.png"
-                alt="CFAQ"
-                width={120}
-                height={40}
-                className="h-10 w-auto grayscale opacity-70"
-              />
-            </div>
-
-            {/* Separator */}
-            <div className="h-8 w-px bg-gray-300"></div>
-
-            <div className="flex items-center justify-center flex-1">
-              <Image
-                src="/images/download.png"
-                alt="Client Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto grayscale opacity-70"
-              />
-            </div>
-
-            {/* Separator */}
-            <div className="h-8 w-px bg-gray-300"></div>
-
-            <div className="flex items-center justify-center flex-1">
-              <Image
-                src="/images/ibusinesslogo.60b4d9193c14aca92f02.png"
-                alt="iBusiness"
-                width={120}
-                height={40}
-                className="h-10 w-auto grayscale opacity-70"
-              />
-            </div>
-
-            {/* Separator */}
-            <div className="h-8 w-px bg-gray-300"></div>
-
-            <div className="flex items-center justify-center flex-1">
-              <Image
-                src="/images/photo_2019-03-21_11-48-55-2-6-233x91.jpg"
-                alt="Client Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto grayscale opacity-70"
-              />
-            </div>
-          </div>
+           <Partners />
         </div>
       </section>
+
 
       {/* Services Section */}
       <section className="bg-white pt-20 pb-16">
@@ -421,7 +345,7 @@ const HeroSection = () => {
           {/* Header */}
           <div className="max-w-4xl mb-12">
             <h2
-              className="text-4xl md:text-5xl font-medium text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
               Optimisez vos processus métier
@@ -474,7 +398,7 @@ const HeroSection = () => {
                 </svg>
               </div>
               <h3
-                className="text-xl font-medium text-gray-900 mb-4"
+                className="text-xl font-bold text-gray-900 mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 PME
@@ -504,7 +428,7 @@ const HeroSection = () => {
                 </svg>
               </div>
               <h3
-                className="text-xl font-medium text-gray-900 mb-4"
+                className="text-xl font-bold text-gray-900 mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 Institutionnel
@@ -535,7 +459,7 @@ const HeroSection = () => {
                 </svg>
               </div>
               <h3
-                className="text-xl font-medium text-gray-900 mb-4"
+                className="text-xl font-bold text-gray-900 mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 Startup
@@ -551,14 +475,36 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
-
+<div className="bg-white">
+  {/* Decorative white elements */}
+<svg
+          className="relative block w-full h-20"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            className="fill-gray-900"
+          ></path>
+        </svg>
+        <svg
+          className="w-full h-16 fill-current text-gray-900"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
+        </svg>
+</div>
       {/* Expertise Section */}
-      <section className="bg-gray-100 py-20 rounded-t-[60px] rounded-b-[60px]">
+      <div className="bg-white">
+        <section className="bg-white py-20 rounded-t-[60px] rounded-b-[60px] ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16"> 
             <h2
-              className="text-4xl md:text-5xl font-medium text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
               <span style={{ color: colors.secondary }}>Expertise</span> pour
@@ -567,7 +513,7 @@ const HeroSection = () => {
               vos obstacles de croissance
             </h2>
           </div>
-
+ 
           {/* Expertise Cards */}
           <div className="grid md:grid-cols-3 gap-8">
             {/* Management & automation software Card */}
@@ -584,7 +530,7 @@ const HeroSection = () => {
               </div>
 
               <h3
-                className="text-xl font-medium text-gray-900 mb-4"
+                className="text-xl font-bold text-gray-900 mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 Logiciels de gestion & d&apos;automatisation
@@ -720,7 +666,7 @@ const HeroSection = () => {
               </div>
 
               <h3
-                className="text-xl font-medium text-gray-900 mb-4"
+                className="text-xl font-bold text-gray-900 mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 Laboratoire PROGIX
@@ -804,7 +750,7 @@ const HeroSection = () => {
               </div>
 
               <h3
-                className="text-xl font-medium text-gray-900 mb-4"
+                className="text-xl font-bold text-gray-900 mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 Gestion des données
@@ -901,16 +847,26 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </div>
 
       {/* About Section */}
-      <section className="bg-gray-900 py-20">
+      <section className="bg-gray-900 pb-20 ">
+        {/* Decorative white rectangle at top */}
+        <div 
+          className="w-full h-8 bg-white mb-20"
+          style={{
+            borderBottomLeftRadius: '100px',
+            borderBottomRightRadius: '100px'
+          }}
+        ></div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
               <h2
-                className="text-4xl md:text-5xl font-medium text-white mb-8"
+                className="text-4xl md:text-5xl font-bold text-white mb-8"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 UNE PETITE ÉQUIPE
@@ -924,7 +880,7 @@ const HeroSection = () => {
               </h2>
 
               <p
-                className="text-lg text-gray-300 leading-relaxed font-light mb-8"
+                className="text-lg text-gray-600 leading-relaxed font-light mb-8"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 Notre pire cauchemar est d&apos;un jour se réveiller et être une
@@ -937,7 +893,7 @@ const HeroSection = () => {
               <div className="flex items-center space-x-6">
                 <Link
                   href="/contact"
-                  className="text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
+                  className="text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
                   style={{
                     backgroundColor: colors.secondary,
                     fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -948,7 +904,7 @@ const HeroSection = () => {
 
                 <Link
                   href="/contact"
-                  className="text-white border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-medium transition-all duration-300 inline-block"
+                  className="text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 inline-block"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Notre équipe
@@ -1053,7 +1009,7 @@ const HeroSection = () => {
                         Culture
                       </div>
                       <div
-                        className="text-white text-sm font-medium"
+                        className="text-white text-sm font-bold"
                         style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                       >
                         PROGIX
@@ -1242,12 +1198,20 @@ const HeroSection = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white pb-20">
+                {/* Decorative white rectangle at top */}
+                <div 
+          className="w-full h-8 bg-gray-900 mb-20"
+          style={{
+            borderBottomLeftRadius: '100px',
+            borderBottomRightRadius: '100px'
+          }}
+        ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
             <h2
-              className="text-4xl md:text-5xl font-medium text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
               <span style={{ color: colors.secondary }}>
@@ -1276,7 +1240,7 @@ const HeroSection = () => {
 
               <div className="pt-8">
                 <p
-                  className="text-gray-700 leading-relaxed font-light mb-6"
+                  className="text-gray-700 leading-relaxed font-bold mb-6"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   J&apos;ai développé une plateforme web pour ma société spécialisée
@@ -1338,7 +1302,7 @@ const HeroSection = () => {
 
               <div className="pt-8">
                 <p
-                  className="text-gray-700 leading-relaxed font-light mb-6"
+                  className="text-gray-700 leading-relaxed font-bold mb-6"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Ilyes avait travaillé en tant que product owner pour iBusiness
@@ -1401,7 +1365,7 @@ const HeroSection = () => {
 
               <div className="pt-8">
                 <p
-                  className="text-gray-700 leading-relaxed font-light mb-6"
+                  className="text-gray-700 leading-relaxed font-bold mb-6"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   L&apos;équipe était à l&apos;écoute et réactive. Le projet a pris un
@@ -1451,7 +1415,7 @@ const HeroSection = () => {
           {/* Bottom CTA */}
           <div className="text-center mt-16">
             <button
-              className="text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               style={{
                 backgroundColor: colors.secondary,
                 fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -1464,13 +1428,20 @@ const HeroSection = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-cyan-800  ">
+      <svg
+          className="w-full h-16 fill-current text-white"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
+        </svg>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="flex items-center justify-between mb-16">
             <div>
               <h2
-                className="text-4xl md:text-5xl font-medium text-gray-900 mb-4"
+                className="text-4xl md:text-5xl font-bold text-white mb-4"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
                 Discover our
@@ -1480,7 +1451,7 @@ const HeroSection = () => {
               </h2>
             </div>
             <button
-              className="text-white px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="text-white px-6 py-3 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               style={{
                 backgroundColor: colors.secondary,
                 fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -1534,14 +1505,14 @@ const HeroSection = () => {
                   </div>
 
                   <h3
-                    className="text-3xl font-medium text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
+                    className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     Centre Fahe Mechanics
                   </h3>
 
                   <p
-                    className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-light mb-8 transition-colors duration-200"
+                    className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     Centre Fahe Mechanics est une référence à
@@ -1553,7 +1524,7 @@ const HeroSection = () => {
                   </p>
 
                   <button
-                    className="inline-flex items-center text-sm font-medium group-hover:translate-x-2 group-hover:text-white transition-all duration-200"
+                    className="inline-flex items-center text-sm font-bold group-hover:translate-x-2 group-hover:text-white transition-all duration-200"
                     style={{
                       color: colors.secondary,
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -1633,27 +1604,26 @@ const HeroSection = () => {
                   </div>
 
                   <h3
-                    className="text-3xl font-medium text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
+                    className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
-                    Confortplus65
+                    FruitExotic
                   </h3>
 
                   <p
-                    className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-light mb-8 transition-colors duration-200"
+                    className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
-                    Confortplus65 a pour mission d&apos;offrir des services de
-                    maintien à domicile adaptés aux besoins des personnes âgées
-                    de 65 ans et plus. Nous avons développé un système complet
-                    de suivi et de gestion permettant d&apos;optimiser
-                    l&apos;accompagnement, l&apos;entretien et leur programme exclusif
-                    d&apos;activité physique pour personnes autonomes, semi-autonomes
-                    et alitées.
+                    FruitExotic Inc. est une entreprise spécialisée dans l&apos;exportation
+                    de fruits exotiques de qualité premium. Nous avons développé leur
+                    site web international multilingue (7 langues) pour mettre en valeur
+                    leurs services de la meilleure façon grâce à nos développeurs frontend
+                    et designers UI/UX d&apos;élite, créant une expérience digitale
+                    exceptionnelle qui reflète l&apos;excellence de leurs produits exotiques.
                   </p>
 
                   <button
-                    className="inline-flex items-center text-sm font-medium group-hover:translate-x-2 transition-transform duration-200"
+                    className="inline-flex items-center text-sm font-bold group-hover:translate-x-2 transition-transform duration-200"
                     style={{
                       color: colors.secondary,
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -1679,15 +1649,22 @@ const HeroSection = () => {
                 <div className="relative h-64 lg:h-full bg-white/20">
                   <div className="absolute inset-0 flex items-center justify-center p-4">
                     <div className="w-full h-full bg-black/10 rounded-lg overflow-hidden shadow-lg">
-                      <Image
-                        src="/imagesculture/WhatsApp Image 2025-09-28 at 16.17.34.jpeg"
-                        alt="Confortplus65 Dashboard"
-                        fill
-                        className="object-cover"
+                    <video
+                        ref={coRideVideoRef}
+                        className="w-full h-full object-cover"
+                        loop
+                        muted
+                        playsInline
                         style={{
                           filter: 'brightness(0.9) contrast(1.1)',
                         }}
-                      />
+                      >
+                        <source
+                          src="/fruitexo.mp4"
+                          type="video/mp4"
+                        />
+                        Votre navigateur ne supporte pas la lecture vidéo.
+                      </video>
                     </div>
                   </div>
                 </div>
@@ -1696,7 +1673,7 @@ const HeroSection = () => {
 
             {/* CoRide */}
             <motion.div
-              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-200 cursor-none"
+              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-200 cursor-none mb-10"
               style={{
                 backgroundColor: '#F8F9FA',
                 transition: 'background-color 0.2s ease',
@@ -1736,14 +1713,14 @@ const HeroSection = () => {
                   </div>
 
                   <h3
-                    className="text-3xl font-medium text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
+                    className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     CoRide
                   </h3>
 
                   <p
-                    className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-light mb-8 transition-colors duration-200"
+                    className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     CoRide est une application de mobilité multi-services
@@ -1755,7 +1732,7 @@ const HeroSection = () => {
                   </p>
 
                   <button
-                    className="inline-flex items-center text-sm font-medium group-hover:translate-x-2 transition-transform duration-200"
+                    className="inline-flex items-center text-sm font-bold group-hover:translate-x-2 transition-transform duration-200"
                     style={{
                       color: colors.secondary,
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -1804,6 +1781,18 @@ const HeroSection = () => {
             </motion.div>
           </div>
         </div>
+        <svg
+          className="relative block w-full h-20 "
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            className="fill-white"
+          ></path>
+        </svg>
       </section>
 
       {/* Team Section */}
@@ -1812,7 +1801,7 @@ const HeroSection = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2
-              className="text-4xl md:text-5xl font-medium text-gray-900 mb-4"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
               Une petite équipe d&apos;ingénieurs montréalais
@@ -1843,7 +1832,7 @@ const HeroSection = () => {
                 </div>
 
                 <h3
-                  className="text-xl font-medium text-gray-900 mb-2"
+                  className="text-xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Ilyes Ghorieb
@@ -1859,7 +1848,7 @@ const HeroSection = () => {
                 <div className="flex space-x-3 justify-center">
                   <button
                     onClick={() => setSelectedMember('ilyes')}
-                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    className="px-4 py-2 text-sm font-bold text-white rounded-lg transition-colors duration-200 hover:opacity-90"
                     style={{
                       backgroundColor: colors.secondary,
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -1871,7 +1860,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/ilyes-ghorieb-95b470244/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -1904,7 +1893,7 @@ const HeroSection = () => {
                 </div>
 
                 <h3
-                  className="text-xl font-medium text-gray-900 mb-2"
+                  className="text-xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Fadi Atmania
@@ -1920,7 +1909,7 @@ const HeroSection = () => {
                 <div className="flex space-x-3 justify-center">
                   <button
                     onClick={() => setSelectedMember('fadi')}
-                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    className="px-4 py-2 text-sm font-bold text-white rounded-lg transition-colors duration-200 hover:opacity-90"
                     style={{
                       backgroundColor: colors.secondary,
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -1932,7 +1921,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/fadi-atmania-011756354/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -1965,7 +1954,7 @@ const HeroSection = () => {
                 </div>
 
                 <h3
-                  className="text-xl font-medium text-gray-900 mb-2"
+                  className="text-xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Daani Abderrahmane
@@ -1981,7 +1970,7 @@ const HeroSection = () => {
                 <div className="flex space-x-3 justify-center">
                   <button
                     onClick={() => setSelectedMember('daani')}
-                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    className="px-4 py-2 text-sm font-bold text-white rounded-lg transition-colors duration-200 hover:opacity-90"
                     style={{
                       backgroundColor: colors.secondary,
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -1993,7 +1982,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/daani-abderrahmane-4ab295315/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -2026,7 +2015,7 @@ const HeroSection = () => {
                 </div>
 
                 <h3
-                  className="text-xl font-medium text-gray-900 mb-2"
+                  className="text-xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Islem Deneche
@@ -2041,7 +2030,7 @@ const HeroSection = () => {
 
                 <div className="flex space-x-3 justify-center">
                   <button
-                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    className="px-4 py-2 text-sm font-bold text-white rounded-lg transition-colors duration-200 hover:opacity-90"
                     style={{
                       backgroundColor: colors.secondary,
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -2053,7 +2042,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/islem-deneche-097701384/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -2090,7 +2079,7 @@ const HeroSection = () => {
                 </div>
 
                 <h3
-                  className="text-xl font-medium text-gray-900 mb-2"
+                  className="text-xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Arselene Meghlaoui
@@ -2105,7 +2094,7 @@ const HeroSection = () => {
 
                 <div className="flex space-x-3 justify-center">
                   <button
-                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    className="px-4 py-2 text-sm font-bold text-white rounded-lg transition-colors duration-200 hover:opacity-90"
                     style={{
                       backgroundColor: colors.secondary,
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -2117,7 +2106,7 @@ const HeroSection = () => {
                     href="https://www.linkedin.com/in/arselene-meghlaoui-b20b1a259/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -2144,7 +2133,7 @@ const HeroSection = () => {
                 </div>
 
                 <h3
-                  className="text-xl font-medium text-gray-900 mb-2"
+                  className="text-xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
                   Data Engineer
@@ -2159,7 +2148,7 @@ const HeroSection = () => {
 
                 <div className="flex space-x-3 justify-center">
                   <button
-                    className="px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200 hover:opacity-90"
+                    className="px-4 py-2 text-sm font-bold text-white rounded-lg transition-colors duration-200 hover:opacity-90"
                     style={{
                       backgroundColor: colors.secondary,
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
@@ -2169,7 +2158,7 @@ const HeroSection = () => {
                   </button>
                   <a
                     href="#"
-                    className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <svg
@@ -2390,7 +2379,7 @@ const HeroSection = () => {
                       ].map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold"
                           style={{
                             fontFamily: 'Hubot Sans, Inter, sans-serif',
                           }}
@@ -2630,7 +2619,7 @@ const HeroSection = () => {
                       ].map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
                           style={{
                             fontFamily: 'Hubot Sans, Inter, sans-serif',
                           }}
@@ -2887,7 +2876,7 @@ const HeroSection = () => {
                       ].map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold"
                           style={{
                             fontFamily: 'Hubot Sans, Inter, sans-serif',
                           }}

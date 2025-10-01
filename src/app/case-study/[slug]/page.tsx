@@ -459,7 +459,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             Prêt à démarrer votre projet&apos;?
           </h2>
           <p className="text-xl text-white/90 mb-8 font-medium">
-            Discutons de vos besoins et créons quelque chose d'exceptionnel ensemble.
+            Discutons de vos besoins et créons quelque chose d&apos;exceptionnel ensemble.
           </p>
           <Link
             href="/#contact"

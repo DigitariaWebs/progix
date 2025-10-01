@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,8 +5,43 @@ import { assets } from '@/config/assets';
 import { colors } from '@/config/colors';
 import Footer from '@/app/landing/Footer';
 
+// Types for case study data
+interface Collaborator {
+  name: string;
+  role: string;
+}
+
+interface CaseStudySection {
+  title: string;
+  subtitle: string;
+  content: string;
+  images: string[];
+  layout: 'single' | 'two-column';
+}
+
+interface CaseStudy {
+  title: string;
+  subtitle: string;
+  logo: string;
+  heroImage: string;
+  client: string;
+  date: string;
+  role: string;
+  collaborators: Collaborator[];
+  description: string;
+  mandat: {
+    title: string;
+    content: string;
+  };
+  objectifs: {
+    title: string;
+    items: string[];
+  };
+  sections: CaseStudySection[];
+}
+
 // Case study data - you can move this to a separate file or database
-const caseStudies: Record<string, any> = {
+const caseStudies: Record<string, CaseStudy> = {
   'fahe-crm': {
     title: 'FAHE CRM',
     subtitle: 'SOLUTION DE GESTION',
@@ -301,7 +334,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <div>
                 <h3 className="text-sm font-semibold uppercase mb-2" style={{ color: colors.secondary }}>Collaborateurs</h3>
                 <div className="flex space-x-2">
-                  {caseStudy.collaborators.map((collab: any, idx: number) => (
+                  {caseStudy.collaborators.map((collab: Collaborator, idx: number) => (
                     <div 
                       key={idx} 
                       className="w-10 h-10 rounded-full border-2 flex items-center justify-center font-bold text-white text-sm" 
@@ -368,7 +401,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </div>
 
       {/* Dynamic Sections */}
-      {caseStudy.sections.map((section: any, idx: number) => (
+      {caseStudy.sections.map((section: CaseStudySection, idx: number) => (
         <div key={idx} className={`py-20 px-4 sm:px-6 lg:px-8 ${idx % 2 === 0 ? 'bg-white' : 'bg-gradient-to-br from-blue-50/20 via-white to-cyan-50/10'}`}>
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
@@ -423,7 +456,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Prêt à démarrer votre projet?
+            Prêt à démarrer votre projet&apos;?
           </h2>
           <p className="text-xl text-white/90 mb-8 font-medium">
             Discutons de vos besoins et créons quelque chose d'exceptionnel ensemble.

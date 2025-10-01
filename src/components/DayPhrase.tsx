@@ -29,12 +29,12 @@ const dayPhrases: Record<number, string[]> = {
 };
 
 export default function DayPhrase() {
-  const [phrase, setPhrase] = useState<string>('');
+  // Initialize with a default phrase that matches server render
+  const [phrase, setPhrase] = useState<string>('Chargement...');
   const [isVisible, setIsVisible] = useState(false);
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    // Only update the phrase after component has mounted to avoid hydration mismatch
     const today = new Date().getDay();
     const phrases = dayPhrases[today];
     const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
@@ -42,15 +42,6 @@ export default function DayPhrase() {
 
     setTimeout(() => setIsVisible(true), 100);
   }, []);
-
-  // Only render on client to avoid hydration mismatch
-  if (!isClient) {
-    return (
-      <div className="text-sm text-gray-600 dark:text-gray-400 italic opacity-0 -translate-y-2">
-        Loading...
-      </div>
-    );
-  }
 
   return (
     <div

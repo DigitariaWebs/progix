@@ -143,9 +143,12 @@ const HeroSection = () => {
               <Image
                 src="/images/logo (3).webp"
                 alt="PROGIX Logo"
+                priority
+                onClick={() => window.location.href = '/landing'}
+                
                 width={130}
                 height={130}
-                className="h-20 w-auto"
+                className="h-20 w-auto cursor-pointer"
               />
             </div>
 
@@ -153,7 +156,7 @@ const HeroSection = () => {
             <div className="hidden md:flex items-center justify-center flex-1">
               <div className="flex items-center space-x-8">
                 <a
-                  href="#services"
+                  href="/services"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                    
                 >
@@ -951,7 +954,12 @@ const HeroSection = () => {
                       <motion.div
                         key={index}
                         className="absolute inset-0"
-                        initial={false}
+                        initial={{
+                          x: '200%',
+                          opacity: 0,
+                          scale: 0.8,
+                          filter: 'brightness(0.7) contrast(0.8)'
+                        }}
                         animate={{
                           x: isActive
                             ? 0

@@ -28,14 +28,14 @@ const Footer = () => {
               />
               <span
                 className="ml-2 text-xl font-bold"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 PROGIX
               </span>
             </div>
             <p
               className="text-gray-400 mb-6"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               Votre partenaire de confiance pour tous vos projets digitaux.
             </p>
@@ -64,13 +64,13 @@ const Footer = () => {
           <div>
             <h3
               className="text-lg font-semibold mb-6"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               Services
             </h3>
             <ul
               className="space-y-3 text-gray-400"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               <li>
                 <a href="#" className="hover:text-white transition-colors">
@@ -98,13 +98,13 @@ const Footer = () => {
           <div>
             <h3
               className="text-lg font-semibold mb-6"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               Entreprise
             </h3>
             <ul
               className="space-y-3 text-gray-400"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               <li>
                 <a href="#" className="hover:text-white transition-colors">
@@ -132,13 +132,13 @@ const Footer = () => {
           <div>
             <h3
               className="text-lg font-semibold mb-6"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               Contact
             </h3>
             <div
               className="space-y-4 text-gray-400"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               <div className="flex items-center">
                 <FaEnvelope size={16} className="mr-3" />
@@ -161,7 +161,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+          <p  >
             &copy; 2024 PROGIX. Tous droits réservés.
           </p>
         </div>

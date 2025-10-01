@@ -13,6 +13,7 @@ const HeroSection = () => {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const faheVideoRef = useRef<HTMLVideoElement>(null);
   const coRideVideoRef = useRef<HTMLVideoElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -38,6 +39,12 @@ const HeroSection = () => {
   useEffect(() => {
     setIsMounted(true);
 
+    // Mobile detection
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+      setIsMobile(isMobileDevice);
+    };
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const nav = navRef.current;
@@ -59,15 +66,18 @@ const HeroSection = () => {
     // Delay initial scroll check to ensure we're on client
     const timer = setTimeout(() => {
       handleScroll();
+      checkMobile();
     }, 0);
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('resize', checkMobile);
 
     return () => {
       clearTimeout(timer);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
@@ -81,6 +91,43 @@ const HeroSection = () => {
 
     return () => clearInterval(interval);
   }, [cultureImages.length, isMounted]);
+
+  // Mobile video autoplay on scroll
+  useEffect(() => {
+    if (!isMounted || !isMobile) return;
+
+    const videos = [faheVideoRef.current, coRideVideoRef.current].filter(Boolean) as HTMLVideoElement[];
+    
+    if (videos.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            video.play().catch(console.error);
+          } else {
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Play when 50% of video is visible
+        rootMargin: '0px 0px -10% 0px'
+      }
+    );
+
+    videos.forEach((video) => {
+      observer.observe(video);
+    });
+
+    return () => {
+      videos.forEach((video) => {
+        observer.unobserve(video);
+      });
+    };
+  }, [isMounted, isMobile]);
 
   return (
     <>
@@ -108,35 +155,35 @@ const HeroSection = () => {
                 <a
                   href="#services"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Services
                 </a>
                 <a
                   href="#about"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   À propos
                 </a>
                 <a
                   href="#portfolio"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Portfolio
                 </a>
                 <Link
                   href="/contact"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Contact
                 </Link>
                 <a
                   href="#blog"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Blog
                 </a>
@@ -346,7 +393,7 @@ const HeroSection = () => {
           <div className="max-w-4xl mb-12">
             <h2
               className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               Optimisez vos processus métier
               <br />
@@ -354,7 +401,7 @@ const HeroSection = () => {
               <span style={{ color: colors.secondary }}>système personnalisé</span>
             </h2>
             <p
-              className="text-lg leading-relaxed font-light"
+              className="text-lg leading-relaxed font-semibold"
               style={{
                 fontFamily: 'Hubot Sans, Inter, sans-serif',
                 color: colors.primary,
@@ -399,13 +446,13 @@ const HeroSection = () => {
               </div>
               <h3
                 className="text-xl font-bold text-gray-900 mb-4"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 PME
               </h3>
               <p
-                className="text-gray-600 leading-relaxed font-light"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                className="text-gray-600 leading-relaxed font-semibold"
+                 
               >
                 Pour les entreprises qui souhaitent automatiser leurs processus, réduire
                 les délais, prendre des décisions éclairées et stabiliser leurs opérations.
@@ -429,13 +476,13 @@ const HeroSection = () => {
               </div>
               <h3
                 className="text-xl font-bold text-gray-900 mb-4"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Institutionnel
               </h3>
               <p
-                className="text-gray-600 leading-relaxed font-light"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                className="text-gray-600 leading-relaxed font-semibold"
+                 
               >
                 Pour les institutions qui souhaitent valoriser leurs données, tirer
                 le meilleur parti de leur infrastructure et maximiser l&apos;impact de leurs
@@ -460,13 +507,13 @@ const HeroSection = () => {
               </div>
               <h3
                 className="text-xl font-bold text-gray-900 mb-4"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Startup
               </h3>
               <p
-                className="text-gray-600 leading-relaxed font-light"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                className="text-gray-600 leading-relaxed font-semibold"
+                 
               >
                 Pour les start-ups qui veulent changer le monde de demain, briser
                 le statu quo et innover grâce à la technologie logicielle.
@@ -505,7 +552,7 @@ const HeroSection = () => {
           <div className="text-center mb-16"> 
             <h2
               className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               <span style={{ color: colors.secondary }}>Expertise</span> pour
               surmonter
@@ -531,14 +578,14 @@ const HeroSection = () => {
 
               <h3
                 className="text-xl font-bold text-gray-900 mb-4"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Logiciels de gestion & d&apos;automatisation
               </h3>
 
               <p
-                className="text-gray-600 leading-relaxed font-light mb-6"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                className="text-gray-600 leading-relaxed font-semibold mb-6"
+                 
               >
                 Logiciels de gestion sur mesure (Intranet, ERP etc.) qui
                 assurent la synergie entre vos opérations, votre équipe et votre
@@ -548,11 +595,8 @@ const HeroSection = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span
-                    className="text-sm font-light"
-                    style={{
-                      fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: colors.secondary,
-                    }}
+                    className="text-sm front-semibold text-cyan-700 "
+                     
                   >
                     Analyse métier et technique
                   </span>
@@ -574,11 +618,8 @@ const HeroSection = () => {
 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span
-                    className="text-sm font-light"
-                    style={{
-                      fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: colors.secondary,
-                    }}
+                    className="text-sm front-semibold text-cyan-700 "
+                     
                   >
                     Développement logiciel sur mesure
                   </span>
@@ -600,11 +641,8 @@ const HeroSection = () => {
 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span
-                    className="text-sm font-light"
-                    style={{
-                      fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: colors.secondary,
-                    }}
+                    className="text-sm front-semibold text-cyan-700  "
+                     
                   >
                     Développement ERP personnalisé
                   </span>
@@ -626,11 +664,8 @@ const HeroSection = () => {
 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span
-                    className="text-sm font-light"
-                    style={{
-                      fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: colors.secondary,
-                    }}
+                    className="text-sm front-semibold text-cyan-700"
+                     
                   >
                     Support et maintenance logicielle
                   </span>
@@ -667,14 +702,14 @@ const HeroSection = () => {
 
               <h3
                 className="text-xl font-bold text-gray-900 mb-4"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Laboratoire PROGIX
               </h3>
 
               <p
-                className="text-gray-600 leading-relaxed font-light mb-6"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                className="text-gray-600 leading-relaxed font-semibold mb-6"
+                 
               >
                 Le laboratoire PROGIX est dédié à l&apos;innovation logicielle sous
                 toutes ses formes. La recherche et développement ainsi que la
@@ -684,11 +719,8 @@ const HeroSection = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span
-                    className="text-sm font-light"
-                    style={{
-                      fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: colors.secondary,
-                    }}
+                    className="text-sm front-semibold text-cyan-700"
+                     
                   >
                     Application web
                   </span>
@@ -710,11 +742,8 @@ const HeroSection = () => {
 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span
-                    className="text-sm font-light"
-                    style={{
-                      fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: colors.secondary,
-                    }}
+                    className="text-sm front-semibold text-cyan-700"
+                     
                   >
                     Application mobile
                   </span>
@@ -751,14 +780,14 @@ const HeroSection = () => {
 
               <h3
                 className="text-xl font-bold text-gray-900 mb-4"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Gestion des données
               </h3>
 
               <p
-                className="text-gray-600 leading-relaxed font-light mb-6"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                className="text-gray-600 leading-relaxed font-semibold mb-6"
+                 
               >
                 Notre expertise tire parti des données à votre disposition grâce
                 à un accompagnement ciblé pour une compréhension complète et une
@@ -768,11 +797,8 @@ const HeroSection = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span
-                    className="text-sm font-light"
-                    style={{
-                      fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: colors.secondary,
-                    }}
+                    className="text-sm front-semibold text-cyan-700"
+                     
                   >
                     Stratégie de données
                   </span>
@@ -794,11 +820,8 @@ const HeroSection = () => {
 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span
-                    className="text-sm font-light"
-                    style={{
-                      fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: colors.secondary,
-                    }}
+                    className="text-sm front-semibold text-cyan-700"
+                     
                   >
                     Analyse de données
                   </span>
@@ -820,11 +843,8 @@ const HeroSection = () => {
 
                 <div className="flex items-center justify-between group cursor-pointer">
                   <span
-                    className="text-sm font-light"
-                    style={{
-                      fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: colors.secondary,
-                    }}
+                    className="text-sm front-semibold text-cyan-700"
+                     
                   >
                     Visualisation de données
                   </span>
@@ -867,7 +887,7 @@ const HeroSection = () => {
             <div>
               <h2
                 className="text-4xl md:text-5xl font-bold text-white mb-8"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 UNE PETITE ÉQUIPE
                 <br />
@@ -880,8 +900,8 @@ const HeroSection = () => {
               </h2>
 
               <p
-                className="text-lg text-gray-600 leading-relaxed font-light mb-8"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                className="text-lg text-gray-600 leading-relaxed font-semibold mb-8"
+                 
               >
                 Notre pire cauchemar est d&apos;un jour se réveiller et être une
                 équipe de 100 et devenir, ce qu&apos;on appelle à l&apos;interne, une
@@ -905,7 +925,7 @@ const HeroSection = () => {
                 <Link
                   href="/contact"
                   className="text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 inline-block"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Notre équipe
                 </Link>
@@ -1004,13 +1024,13 @@ const HeroSection = () => {
                     <div>
                       <div
                         className="text-white text-xs opacity-80"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         Culture
                       </div>
                       <div
                         className="text-white text-sm font-bold"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         PROGIX
                       </div>
@@ -1023,13 +1043,13 @@ const HeroSection = () => {
                   <div className="text-right">
                     <div
                       className="text-white text-xs opacity-60"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       {String(currentImageIndex + 1).padStart(2, '0')}
                     </div>
                     <div
                       className="text-white text-xs opacity-40"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       — {String(cultureImages.length).padStart(2, '0')}
                     </div>
@@ -1113,7 +1133,7 @@ const HeroSection = () => {
                 <div className="text-center">
                   <div
                     className="text-white font-bold text-sm"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     2025
                   </div>
@@ -1137,13 +1157,13 @@ const HeroSection = () => {
             <div className="text-center">
               <div
                 className="text-3xl font-bold text-white mb-2"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 50+
               </div>
               <div
                 className="text-gray-400 text-sm"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Projets réalisés
               </div>
@@ -1152,13 +1172,13 @@ const HeroSection = () => {
             <div className="text-center">
               <div
                 className="text-3xl font-bold text-white mb-2"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 5+
               </div>
               <div
                 className="text-gray-400 text-sm"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Années d&apos;expérience
               </div>
@@ -1167,13 +1187,13 @@ const HeroSection = () => {
             <div className="text-center">
               <div
                 className="text-3xl font-bold text-white mb-2"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 15+
               </div>
               <div
                 className="text-gray-400 text-sm"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Clients satisfaits
               </div>
@@ -1182,13 +1202,13 @@ const HeroSection = () => {
             <div className="text-center">
               <div
                 className="text-3xl font-bold text-white mb-2"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 100%
               </div>
               <div
                 className="text-gray-400 text-sm"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Sur mesure
               </div>
@@ -1212,7 +1232,7 @@ const HeroSection = () => {
           <div className="text-center mb-16">
             <h2
               className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               <span style={{ color: colors.secondary }}>
                 Témoignages
@@ -1241,7 +1261,7 @@ const HeroSection = () => {
               <div className="pt-8">
                 <p
                   className="text-gray-700 leading-relaxed font-bold mb-6"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   J&apos;ai développé une plateforme web pour ma société spécialisée
                   dans l&apos;acquisition d&apos;actifs immobiliers résidentiels et
@@ -1256,13 +1276,13 @@ const HeroSection = () => {
                   <div>
                     <div
                       className="font-semibold text-gray-900"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       David Manianga
                     </div>
                     <div
                       className="text-sm text-gray-500"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Gestion de Patrimoine chez Desjardins
                     </div>
@@ -1303,7 +1323,7 @@ const HeroSection = () => {
               <div className="pt-8">
                 <p
                   className="text-gray-700 leading-relaxed font-bold mb-6"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Ilyes avait travaillé en tant que product owner pour iBusiness
                   Consulting et avait su gérer mon équipe IT à la perfection.{' '}
@@ -1319,13 +1339,13 @@ const HeroSection = () => {
                   <div>
                     <div
                       className="font-semibold text-gray-900"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Hakim Safa
                     </div>
                     <div
                       className="text-sm text-gray-500"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       CEO de iBusiness Consulting Inc.
                     </div>
@@ -1366,7 +1386,7 @@ const HeroSection = () => {
               <div className="pt-8">
                 <p
                   className="text-gray-700 leading-relaxed font-bold mb-6"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   L&apos;équipe était à l&apos;écoute et réactive. Le projet a pris un
                   petit peu plus de temps que prévu mais{' '}
@@ -1380,13 +1400,13 @@ const HeroSection = () => {
                   <div>
                     <div
                       className="font-semibold text-gray-900"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Daniel Dekasse
                     </div>
                     <div
                       className="text-sm text-gray-500"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Economist-Fiscal Policy Advisor
                       <br />
@@ -1442,7 +1462,7 @@ const HeroSection = () => {
             <div>
               <h2
                 className="text-4xl md:text-5xl font-bold text-white mb-4"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                 
               >
                 Discover our
                 <br />
@@ -1465,7 +1485,7 @@ const HeroSection = () => {
           <div className="space-y-8">
             {/* Centre Fahe Mechanics */}
             <motion.div
-              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-sha duration-200 cursor-none"
+              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-sha duration-200"
               style={{
                 backgroundColor: '#F8F9FA',
                 transition: 'background-color 0.2s ease',
@@ -1492,13 +1512,13 @@ const HeroSection = () => {
                   <div className="flex items-center space-x-3 mb-6">
                     <span
                       className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Case Study
                     </span>
                     <span
                       className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Custom CRM Development
                     </span>
@@ -1506,14 +1526,14 @@ const HeroSection = () => {
 
                   <h3
                     className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     Centre Fahe Mechanics
                   </h3>
 
                   <p
                     className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     Centre Fahe Mechanics est une référence à
                     Rivière-des-Prairies dans le domaine de la réparation
@@ -1523,7 +1543,8 @@ const HeroSection = () => {
                     optimiser leur processus de service client.
                   </p>
 
-                  <button
+                  <Link
+                    href="/case-study/fahe-crm"
                     className="inline-flex items-center text-sm font-bold group-hover:translate-x-2 group-hover:text-white transition-all duration-200"
                     style={{
                       color: colors.secondary,
@@ -1544,7 +1565,7 @@ const HeroSection = () => {
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
 
                 <div className="relative h-64 lg:h-full bg-white/20">
@@ -1556,6 +1577,7 @@ const HeroSection = () => {
                         loop
                         muted
                         playsInline
+                        autoPlay={isMobile}
                         style={{
                           filter: 'brightness(0.9) contrast(1.1)',
                           transform: 'scaleX(-1) rotate(-90deg)',
@@ -1575,7 +1597,7 @@ const HeroSection = () => {
 
             {/* Confortplus65 */}
             <motion.div
-              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-200 cursor-none"
+              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-200"
               style={{
                 backgroundColor: '#F8F9FA',
                 transition: 'background-color 0.2s ease',
@@ -1591,13 +1613,13 @@ const HeroSection = () => {
                   <div className="flex items-center space-x-3 mb-6">
                     <span
                       className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Case Study
                     </span>
                     <span
                       className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Healthcare Management System
                     </span>
@@ -1605,14 +1627,14 @@ const HeroSection = () => {
 
                   <h3
                     className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     FruitExotic
                   </h3>
 
                   <p
                     className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     FruitExotic Inc. est une entreprise spécialisée dans l&apos;exportation
                     de fruits exotiques de qualité premium. Nous avons développé leur
@@ -1622,7 +1644,8 @@ const HeroSection = () => {
                     exceptionnelle qui reflète l&apos;excellence de leurs produits exotiques.
                   </p>
 
-                  <button
+                  <Link
+                    href="/case-study/fruitexotic"
                     className="inline-flex items-center text-sm font-bold group-hover:translate-x-2 transition-transform duration-200"
                     style={{
                       color: colors.secondary,
@@ -1643,7 +1666,7 @@ const HeroSection = () => {
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
 
                 <div className="relative h-64 lg:h-full bg-white/20">
@@ -1655,6 +1678,7 @@ const HeroSection = () => {
                         loop
                         muted
                         playsInline
+                        autoPlay={isMobile}
                         style={{
                           filter: 'brightness(0.9) contrast(1.1)',
                         }}
@@ -1673,7 +1697,7 @@ const HeroSection = () => {
 
             {/* CoRide */}
             <motion.div
-              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-200 cursor-none mb-10"
+              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-200 mb-10"
               style={{
                 backgroundColor: '#F8F9FA',
                 transition: 'background-color 0.2s ease',
@@ -1700,13 +1724,13 @@ const HeroSection = () => {
                   <div className="flex items-center space-x-3 mb-6">
                     <span
                       className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Case Study
                     </span>
                     <span
                       className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Mobile App & Web Development
                     </span>
@@ -1714,14 +1738,14 @@ const HeroSection = () => {
 
                   <h3
                     className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     CoRide
                   </h3>
 
                   <p
                     className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     CoRide est une application de mobilité multi-services
                     révolutionnaire. Notre équipe a développé une solution
@@ -1731,7 +1755,8 @@ const HeroSection = () => {
                     digital intégré et évolutif.
                   </p>
 
-                  <button
+                  <Link
+                    href="/case-study/coride"
                     className="inline-flex items-center text-sm font-bold group-hover:translate-x-2 transition-transform duration-200"
                     style={{
                       color: colors.secondary,
@@ -1752,7 +1777,7 @@ const HeroSection = () => {
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
 
                 <div className="relative h-64 lg:h-full bg-white/20">
@@ -1764,6 +1789,7 @@ const HeroSection = () => {
                         loop
                         muted
                         playsInline
+                        autoPlay={isMobile}
                         style={{
                           filter: 'brightness(0.9) contrast(1.1)',
                         }}
@@ -1802,7 +1828,7 @@ const HeroSection = () => {
           <div className="text-center mb-16">
             <h2
               className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+               
             >
               Une petite équipe d&apos;ingénieurs montréalais
               <br />
@@ -1833,14 +1859,14 @@ const HeroSection = () => {
 
                 <h3
                   className="text-xl font-bold text-gray-900 mb-2"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Ilyes Ghorieb
                 </h3>
 
                 <p
                   className="text-gray-600 text-sm mb-4"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   React • Node.js • TypeScript • PostgreSQL
                 </p>
@@ -1861,7 +1887,7 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -1894,14 +1920,14 @@ const HeroSection = () => {
 
                 <h3
                   className="text-xl font-bold text-gray-900 mb-2"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Fadi Atmania
                 </h3>
 
                 <p
                   className="text-gray-600 text-sm mb-4"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Flutter • React Native • Swift • Kotlin
                 </p>
@@ -1922,7 +1948,7 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -1955,14 +1981,14 @@ const HeroSection = () => {
 
                 <h3
                   className="text-xl font-bold text-gray-900 mb-2"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Daani Abderrahmane
                 </h3>
 
                 <p
                   className="text-gray-600 text-sm mb-4"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   AWS • Docker • Kubernetes • CI/CD
                 </p>
@@ -1983,7 +2009,7 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -2016,14 +2042,14 @@ const HeroSection = () => {
 
                 <h3
                   className="text-xl font-bold text-gray-900 mb-2"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Islem Deneche
                 </h3>
 
                 <p
                   className="text-gray-600 text-sm mb-4"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Figma • Adobe XD • Prototyping • User Research
                 </p>
@@ -2043,7 +2069,7 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -2080,14 +2106,14 @@ const HeroSection = () => {
 
                 <h3
                   className="text-xl font-bold text-gray-900 mb-2"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Arselene Meghlaoui
                 </h3>
 
                 <p
                   className="text-gray-600 text-sm mb-4"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Full Stack Developer • Network Security
                 </p>
@@ -2107,7 +2133,7 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -2134,14 +2160,14 @@ const HeroSection = () => {
 
                 <h3
                   className="text-xl font-bold text-gray-900 mb-2"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Data Engineer
                 </h3>
 
                 <p
                   className="text-gray-600 text-sm mb-4"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                   
                 >
                   Python • Machine Learning • ETL • Analytics
                 </p>
@@ -2159,7 +2185,7 @@ const HeroSection = () => {
                   <a
                     href="#"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -2259,13 +2285,13 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       À propos
                     </h3>
                     <p
                       className="text-gray-700 leading-relaxed"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Salut ! Je suis Ilyes, un développeur full-stack passionné
                       par la création de solutions logicielles innovantes. Chez
@@ -2275,7 +2301,7 @@ const HeroSection = () => {
                     </p>
                     <p
                       className="text-gray-700 leading-relaxed mt-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Mon expertise couvre les technologies modernes comme
                       React.js, Node.js, Express.js, Flask, PostgreSQL et
@@ -2289,7 +2315,7 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Expérience
                     </h3>
@@ -2359,7 +2385,7 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Compétences principales
                     </h3>
@@ -2394,26 +2420,26 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Formation
                     </h3>
                     <div className="border-l-4 border-purple-500 pl-4">
                       <h4
                         className="font-semibold text-gray-900"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         Baccalauréat en Génie informatique et logiciel
                       </h4>
                       <p
                         className="text-sm text-gray-600"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         UQAM | Université du Québec à Montréal • 2025
                       </p>
                       <p
                         className="text-gray-700 mt-1"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         GPA: 3.1 • Membre de l&apos;AGEEI
                       </p>
@@ -2427,7 +2453,7 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center space-x-2"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -2443,7 +2469,7 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -2529,13 +2555,13 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       À propos
                     </h3>
                     <p
                       className="text-gray-700 leading-relaxed"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Salut ! Je suis Fadi, un développeur web full-stack
                       passionné par les technologies modernes. Chez PROGIX, je
@@ -2545,7 +2571,7 @@ const HeroSection = () => {
                     </p>
                     <p
                       className="text-gray-700 leading-relaxed mt-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Mon approche consiste à concevoir des applications
                       performantes qui répondent aux besoins métier tout en
@@ -2559,7 +2585,7 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Expérience
                     </h3>
@@ -2599,7 +2625,7 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Compétences principales
                     </h3>
@@ -2634,20 +2660,20 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Formation
                     </h3>
                     <div className="border-l-4 border-purple-500 pl-4">
                       <h4
                         className="font-semibold text-gray-900"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         Computer Software Engineering
                       </h4>
                       <p
                         className="text-sm text-gray-600"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         UQAM | Université du Québec à Montréal
                       </p>
@@ -2661,7 +2687,7 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center space-x-2"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -2677,7 +2703,7 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -2763,13 +2789,13 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       À propos
                     </h3>
                     <p
                       className="text-gray-700 leading-relaxed"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Salut ! Je suis Daani, un développeur full-stack passionné
                       par l&apos;apprentissage et les projets collaboratifs.
@@ -2778,7 +2804,7 @@ const HeroSection = () => {
                     </p>
                     <p
                       className="text-gray-700 leading-relaxed mt-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       En tant qu&apos;Analyste-Programmeur et spécialiste Microsoft
                       .NET chez PROGIX, j&apos;accompagne nos clients dans les
@@ -2792,7 +2818,7 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Expérience
                     </h3>
@@ -2848,7 +2874,7 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Compétences principales
                     </h3>
@@ -2891,26 +2917,26 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Formation
                     </h3>
                     <div className="border-l-4 border-purple-500 pl-4">
                       <h4
                         className="font-semibold text-gray-900"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         Études en cours
                       </h4>
                       <p
                         className="text-sm text-gray-600"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         UQAM | Université du Québec à Montréal • 2021 - 2026
                       </p>
                       <p
                         className="text-gray-700 mt-1"
-                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                         
                       >
                         Spécialisation en Communication et Ventes externes
                       </p>
@@ -2921,7 +2947,7 @@ const HeroSection = () => {
                   <div className="mb-8">
                     <h3
                       className="text-xl font-semibold text-gray-900 mb-4"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       Méthodologies & Approches
                     </h3>
@@ -2974,7 +3000,7 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center space-x-2"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -2990,7 +3016,7 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                       
                     >
                       <svg
                         className="w-4 h-4"

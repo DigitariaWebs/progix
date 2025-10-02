@@ -5,13 +5,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { getServiceBySlug, ServiceDetail } from '@/data/servicesData';
+import {
+  FiClipboard,
+  FiLayers,
+  FiTrendingUp,
+  FiCheck,
+  FiPlus,
+  FiMinus,
+} from 'react-icons/fi';
 
 const colors = {
   primary: '#1B363C',
   secondary: '#4FA3D1',
 };
 
-export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default function ServiceDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [service, setService] = useState<ServiceDetail | null>(null);
   const [loading, setLoading] = useState(true);
@@ -46,7 +58,9 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Service Not Found</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+            Service Not Found
+          </h1>
           <Link href="/services" className="text-primary hover:underline">
             Back to Services
           </Link>
@@ -130,7 +144,10 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
             <div className="max-w-4xl">
               <h2
                 className="text-2xl md:text-3xl font-bold mb-6"
-                style={{ color: colors.secondary, fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                style={{
+                  color: colors.secondary,
+                  fontFamily: 'Hubot Sans, Inter, sans-serif',
+                }}
               >
                 {service.hero.subtitle}
               </h2>
@@ -158,90 +175,116 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       {/* Why Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-16"
-            style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+            className="mb-16"
           >
-            {service.whySection.title}
-          </motion.h2>
+            <h2
+              className="text-4xl md:text-5xl font-bold mb-4"
+              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+            >
+              <span className="text-gray-900">Why start with a </span>
+              <span style={{ color: colors.secondary }}>business</span>
+              <br />
+              <span style={{ color: colors.secondary }}>
+                and technical analysis
+              </span>
+              <span className="text-gray-900">?</span>
+            </h2>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            {service.whySection.reasons.map((reason, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center text-4xl mx-auto mb-6"
-                  style={{ backgroundColor: `${colors.secondary}20` }}
+          <div className="grid md:grid-cols-3 gap-8">
+            {service.whySection.reasons.map((reason, index) => {
+              // Map icons based on index or reason type
+              const IconComponent =
+                index === 0
+                  ? FiClipboard
+                  : index === 1
+                    ? FiLayers
+                    : FiTrendingUp;
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 rounded-3xl p-8 hover:shadow-lg transition-shadow duration-300"
                 >
-                  {reason.icon}
-                </div>
-                <h3
-                  className="text-xl font-bold text-gray-900 mb-4"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
-                >
-                  {reason.title}
-                </h3>
-                <p
-                  className="text-gray-600 leading-relaxed"
-                  style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
-                >
-                  {reason.description}
-                </p>
-              </motion.div>
-            ))}
+                  <div
+                    className="w-16 h-16 rounded-xl flex items-center justify-center mb-6"
+                    style={{ color: colors.secondary }}
+                  >
+                    <IconComponent size={32} strokeWidth={2} />
+                  </div>
+                  <h3
+                    className="text-xl font-bold text-gray-900 mb-4"
+                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    {reason.title}
+                  </h3>
+                  <p
+                    className="text-gray-600 leading-relaxed text-base"
+                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                  >
+                    {reason.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-16"
           >
             <h2
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold mb-6"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              {service.process.title}
+              <span className="text-gray-900">Our business and</span>
+              <br />
+              <span className="text-gray-900">technical analysis </span>
+              <span style={{ color: colors.secondary }}>process</span>
             </h2>
             <p
-              className="text-lg text-gray-600 max-w-4xl mx-auto"
+              className="text-base text-gray-600 max-w-3xl leading-relaxed"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
               {service.process.description}
             </p>
           </motion.div>
 
-          <div className="space-y-12">
+          <div className="space-y-0">
             {service.process.steps.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-3xl p-8 md:p-12 shadow-lg"
+                className="border-b border-gray-200 last:border-b-0"
               >
-                <div className="grid md:grid-cols-12 gap-8 items-start">
+                <div className="py-12 grid md:grid-cols-12 gap-8 md:gap-16 items-start">
                   <div className="md:col-span-2">
                     <div
-                      className="text-6xl font-bold opacity-20"
-                      style={{ color: colors.secondary }}
+                      className="text-6xl md:text-7xl font-bold leading-none w-20 md:w-24"
+                      style={{
+                        color: colors.secondary,
+                        fontFamily: 'Hubot Sans, Inter, sans-serif',
+                      }}
                     >
                       {step.number}
                     </div>
@@ -254,29 +297,21 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                       {step.title}
                     </h3>
                     <p
-                      className="text-lg text-gray-600 mb-6"
+                      className="text-base text-gray-600 mb-6 leading-relaxed"
                       style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                     >
                       {step.description}
                     </p>
-                    <ul className="grid md:grid-cols-2 gap-3">
+                    <ul className="space-y-3">
                       {step.points.map((point, pointIndex) => (
-                        <li key={pointIndex} className="flex items-start">
-                          <svg
-                            className="w-6 h-6 mr-3 mt-0.5 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            style={{ color: colors.secondary }}
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          <span className="text-gray-700">{point}</span>
+                        <li key={pointIndex} className="flex items-start gap-3">
+                          <div
+                            className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2"
+                            style={{ backgroundColor: colors.secondary }}
+                          />
+                          <span className="text-gray-700 text-base leading-relaxed">
+                            {point}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -303,7 +338,8 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                Ce que nos <span style={{ color: colors.secondary }}>clients</span> disent
+                Ce que nos{' '}
+                <span style={{ color: colors.secondary }}>clients</span> disent
               </h2>
             </motion.div>
 
@@ -351,7 +387,8 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                     {service.testimonial.author}
                   </p>
                   <p className="text-gray-600">
-                    {service.testimonial.position}, {service.testimonial.company}
+                    {service.testimonial.position},{' '}
+                    {service.testimonial.company}
                   </p>
                 </div>
               </div>
@@ -361,72 +398,132 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
-            >
-              Questions <span style={{ color: colors.secondary }}>fréquentes</span>
-            </h2>
-          </motion.div>
-
-          <div className="space-y-4">
-            {service.faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-sm overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                  className="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors"
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+            {/* Left Column - Title & Contact Card */}
+            <div className="lg:col-span-5">
+              <div className="lg:sticky lg:top-32 space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
                 >
-                  <h3
-                    className="text-lg font-bold text-gray-900 pr-8"
+                  <h2
+                    className="text-4xl md:text-5xl font-bold mb-4"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
-                    {faq.question}
-                  </h3>
-                  <svg
-                    className={`w-6 h-6 flex-shrink-0 transform transition-transform ${
-                      openFaqIndex === index ? 'rotate-180' : ''
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                {openFaqIndex === index && (
-                  <div className="px-6 pb-6">
-                    <p
-                      className="text-gray-600 leading-relaxed"
-                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
-                    >
-                      {faq.answer}
-                    </p>
+                    <span className="text-gray-900">Questions</span>
+                    <br />
+                    <span className="text-gray-900">and </span>
+                    <span style={{ color: colors.secondary }}>answers</span>
+                  </h2>
+                </motion.div>
+
+                {/* Contact Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 rounded-3xl p-8"
+                >
+                  <div className="flex items-center gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-32  rounded-2xl flex items-center justify-center p-4">
+                        <Image
+                          src="/images/logo (3).webp"
+                          alt="PROGIX Logo"
+                          width={120}
+                          height={120}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p
+                        className="text-base mb-3"
+                        style={{
+                          color: colors.secondary,
+                          fontFamily: 'Hubot Sans, Inter, sans-serif',
+                        }}
+                      >
+                        Custom software development
+                      </p>
+                      <div className="space-y-2 text-sm text-gray-700">
+                        <p
+                          style={{
+                            fontFamily: 'Hubot Sans, Inter, sans-serif',
+                          }}
+                        >
+                          contact@progix.pro
+                        </p>
+                        <p
+                          style={{
+                            fontFamily: 'Hubot Sans, Inter, sans-serif',
+                          }}
+                        >
+                          +1 514 576 5993
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                )}
-              </motion.div>
-            ))}
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Right Column - FAQ Items */}
+            <div className="lg:col-span-7">
+              <div className="space-y-4">
+                {service.faqs.map((faq, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-gray-50 rounded-2xl overflow-hidden"
+                  >
+                    <button
+                      onClick={() =>
+                        setOpenFaqIndex(openFaqIndex === index ? null : index)
+                      }
+                      className="w-full text-left p-6 flex justify-between items-center hover:bg-gray-100 transition-colors"
+                    >
+                      <h3
+                        className="text-base md:text-lg font-medium text-gray-900 pr-8"
+                        style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                      >
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0">
+                        {openFaqIndex === index ? (
+                          <FiMinus
+                            size={20}
+                            style={{ color: colors.primary }}
+                          />
+                        ) : (
+                          <FiPlus size={20} style={{ color: colors.primary }} />
+                        )}
+                      </div>
+                    </button>
+                    {openFaqIndex === index && (
+                      <div className="px-6 pb-6">
+                        <p
+                          className="text-gray-600 leading-relaxed text-sm md:text-base"
+                          style={{
+                            fontFamily: 'Hubot Sans, Inter, sans-serif',
+                          }}
+                        >
+                          {faq.answer}
+                        </p>
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -450,8 +547,8 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               className="text-xl text-white/90 mb-8"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              Discutons de vos besoins et découvrez comment nous pouvons vous aider à atteindre vos
-              objectifs.
+              Discutons de vos besoins et découvrez comment nous pouvons vous
+              aider à atteindre vos objectifs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -494,7 +591,8 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                 className="h-16 w-auto mb-4 brightness-0 invert"
               />
               <p className="text-gray-400 text-sm">
-                Solutions logicielles sur mesure pour les organisations ambitieuses
+                Solutions logicielles sur mesure pour les organisations
+                ambitieuses
               </p>
             </div>
 
@@ -502,7 +600,10 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               <h3 className="font-bold mb-4">Services</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="/services" className="hover:text-white transition-colors">
+                  <Link
+                    href="/services"
+                    className="hover:text-white transition-colors"
+                  >
                     Tous les services
                   </Link>
                 </li>
@@ -537,17 +638,26 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               <h3 className="font-bold mb-4">Entreprise</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="/landing#about" className="hover:text-white transition-colors">
+                  <Link
+                    href="/landing#about"
+                    className="hover:text-white transition-colors"
+                  >
                     À propos
                   </Link>
                 </li>
                 <li>
-                  <Link href="/landing#portfolio" className="hover:text-white transition-colors">
+                  <Link
+                    href="/landing#portfolio"
+                    className="hover:text-white transition-colors"
+                  >
                     Portfolio
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
+                  <Link
+                    href="/contact"
+                    className="hover:text-white transition-colors"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -559,7 +669,10 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>Montréal, Québec</li>
                 <li>
-                  <a href="mailto:info@progix.ca" className="hover:text-white transition-colors">
+                  <a
+                    href="mailto:info@progix.ca"
+                    className="hover:text-white transition-colors"
+                  >
                     info@progix.ca
                   </a>
                 </li>

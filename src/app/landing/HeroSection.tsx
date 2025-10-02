@@ -1579,24 +1579,26 @@ const HeroSection = () => {
                 <div className="relative h-64 lg:h-full bg-white/20">
                   <div className="absolute inset-0 flex items-center justify-center p-4">
                     <div className="w-full h-full bg-black/10 rounded-lg overflow-hidden shadow-lg">
-                      <video
-                        ref={faheVideoRef}
-                        className="w-full h-full object-cover"
-                        loop
-                        muted
-                        playsInline
-                        autoPlay={isMobile}
-                        style={{
-                          filter: 'brightness(0.9) contrast(1.1)',
-                          transform: 'scaleX(-1) rotate(-90deg)',
-                        }}
-                      >
-                        <source
-                          src="/imagesculture/WhatsApp Video 2025-09-28 at 11.59.54 (1).mp4"
-                          type="video/mp4"
-                        />
-                        Votre navigateur ne supporte pas la lecture vidéo.
-                      </video>
+                      {isMounted && (
+                        <video
+                          ref={faheVideoRef}
+                          className="w-full h-full object-cover"
+                          loop
+                          muted
+                          playsInline
+                          autoPlay={isMobile}
+                          style={{
+                            filter: 'brightness(0.9) contrast(1.1)',
+                            transform: 'scaleX(-1) rotate(-90deg)',
+                          }}
+                        >
+                          <source
+                            src="/imagesculture/WhatsApp Video 2025-09-28 at 11.59.54 (1).mp4"
+                            type="video/mp4"
+                          />
+                          Votre navigateur ne supporte pas la lecture vidéo.
+                        </video>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -1680,23 +1682,25 @@ const HeroSection = () => {
                 <div className="relative h-64 lg:h-full bg-white/20">
                   <div className="absolute inset-0 flex items-center justify-center p-4">
                     <div className="w-full h-full bg-black/10 rounded-lg overflow-hidden shadow-lg">
-                    <video
-                        ref={coRideVideoRef}
-                        className="w-full h-full object-cover"
-                        loop
-                        muted
-                        playsInline
-                        autoPlay={isMobile}
-                        style={{
-                          filter: 'brightness(0.9) contrast(1.1)',
-                        }}
-                      >
-                        <source
-                          src="/fruitexo.mp4"
-                          type="video/mp4"
-                        />
-                        Votre navigateur ne supporte pas la lecture vidéo.
-                      </video>
+                      {isMounted && (
+                        <video
+                          ref={coRideVideoRef}
+                          className="w-full h-full object-cover"
+                          loop
+                          muted
+                          playsInline
+                          autoPlay={isMobile}
+                          style={{
+                            filter: 'brightness(0.9) contrast(1.1)',
+                          }}
+                        >
+                          <source
+                            src="/fruitexo.mp4"
+                            type="video/mp4"
+                          />
+                          Votre navigateur ne supporte pas la lecture vidéo.
+                        </video>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -1791,23 +1795,25 @@ const HeroSection = () => {
                 <div className="relative h-64 lg:h-full bg-white/20">
                   <div className="absolute inset-0 flex items-center justify-center p-4">
                     <div className="w-full h-full bg-black/10 rounded-lg overflow-hidden shadow-lg">
-                      <video
-                        ref={coRideVideoRef}
-                        className="w-full h-full object-cover"
-                        loop
-                        muted
-                        playsInline
-                        autoPlay={isMobile}
-                        style={{
-                          filter: 'brightness(0.9) contrast(1.1)',
-                        }}
-                      >
-                        <source
-                          src="/images/WhatsApp Video 2025-09-26 at 10.22.25.mp4"
-                          type="video/mp4"
-                        />
-                        Votre navigateur ne supporte pas la lecture vidéo.
-                      </video>
+                      {isMounted && (
+                        <video
+                          ref={coRideVideoRef}
+                          className="w-full h-full object-cover"
+                          loop
+                          muted
+                          playsInline
+                          autoPlay={isMobile}
+                          style={{
+                            filter: 'brightness(0.9) contrast(1.1)',
+                          }}
+                        >
+                          <source
+                            src="/images/WhatsApp Video 2025-09-26 at 10.22.25.mp4"
+                            type="video/mp4"
+                          />
+                          Votre navigateur ne supporte pas la lecture vidéo.
+                        </video>
+                      )}
                     </div>
                   </div>
                 </div>

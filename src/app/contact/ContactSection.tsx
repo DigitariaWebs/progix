@@ -315,7 +315,7 @@ const ContactSection = () => {
     if (formData.email.trim()) completedFields++;
 
     // Si un projet est sélectionné, ajouter la question spécifique
-    if (selectedProjectType && projectSpecificQuestions[selectedProjectType]) {
+    if (selectedProjectType && projectSpecificQuestions[selectedProjectType as keyof typeof projectSpecificQuestions]) {
       totalFields = 10;
       if (projectSpecificAnswers[selectedProjectType]) completedFields++;
     }
@@ -795,7 +795,7 @@ const ContactSection = () => {
 
               {/* Questions spécifiques au projet */}
               {selectedProjectType &&
-                projectSpecificQuestions[selectedProjectType] && (
+                projectSpecificQuestions[selectedProjectType as keyof typeof projectSpecificQuestions] && (
                   <div className="mb-12">
                     <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
                       <div
@@ -817,7 +817,7 @@ const ContactSection = () => {
                           />
                         </svg>
                       </div>
-                      {projectSpecificQuestions[selectedProjectType].question}
+                      {projectSpecificQuestions[selectedProjectType as keyof typeof projectSpecificQuestions].question}
                     </h2>
                     <p className="text-gray-600 mb-6">
                       Nos ingénieurs PROGIX personnalisent chaque solution selon
@@ -825,7 +825,7 @@ const ContactSection = () => {
                     </p>
                     <div className="grid grid-cols-3 gap-4 md:grid-cols-2">
                       {projectSpecificQuestions[
-                        selectedProjectType
+                        selectedProjectType as keyof typeof projectSpecificQuestions
                       ].options.map((option) => (
                         <button
                           key={option.id}

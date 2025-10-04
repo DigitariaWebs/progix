@@ -40,10 +40,10 @@ const ServicesPage = () => {
                 Services
               </Link>
               <Link
-                href="/landing#about"
+                href="/team"
                 className="font-heading font-bold text-gray-900 hover:text-gray-700 transition-colors"
               >
-                À propos
+                Notre équipe
               </Link>
               <Link
                 href="/landing#portfolio"
@@ -744,8 +744,8 @@ const ServicesPage = () => {
               <h3 className="font-bold mb-4">Entreprise</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="/landing#about" className="hover:text-white transition-colors">
-                    À propos
+                  <Link href="/team" className="hover:text-white transition-colors">
+                    Notre équipe
                   </Link>
                 </li>
                 <li>

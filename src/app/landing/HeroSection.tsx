@@ -163,11 +163,11 @@ const HeroSection = () => {
                   Services
                 </Link>
                 <a
-                  href="#about"
+                  href="/team"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                    
                 >
-                  À propos
+                  Notre équipe
                 </a>
                 <a
                   href="#portfolio"
@@ -188,7 +188,7 @@ const HeroSection = () => {
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                    
                 >
-                  Blog
+                  Blogue
                 </a>
               </div>
             </div>
@@ -242,11 +242,11 @@ const HeroSection = () => {
                   Services
                 </a>
                 <a
-                  href="#about"
+                  href="/team"
                   className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                   style={{ color: colors.primary }}
                 >
-                  À propos
+                  Notre équipe
                 </a>
                 <a
                   href="#portfolio"
@@ -2301,7 +2301,7 @@ const HeroSection = () => {
                       className="text-xl font-semibold text-gray-900 mb-4"
                        
                     >
-                      À propos
+                      Notre équipe
                     </h3>
                     <p
                       className="text-gray-700 leading-relaxed"
@@ -2571,7 +2571,7 @@ const HeroSection = () => {
                       className="text-xl font-semibold text-gray-900 mb-4"
                        
                     >
-                      À propos
+                      Notre équipe
                     </h3>
                     <p
                       className="text-gray-700 leading-relaxed"
@@ -2805,7 +2805,7 @@ const HeroSection = () => {
                       className="text-xl font-semibold text-gray-900 mb-4"
                        
                     >
-                      À propos
+                      Notre équipe
                     </h3>
                     <p
                       className="text-gray-700 leading-relaxed"

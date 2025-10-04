@@ -207,10 +207,10 @@ const Header = () => {
                   Réalisations
                 </a>
                 <a href="#blog" className="text-gray-600 hover:text-blue-600 transition-colors font-medium text-sm">
-                  Blog
+                  Blogue
                 </a>
-                <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors font-medium text-sm">
-                  À propos
+                <a href="/team" className="text-gray-600 hover:text-blue-600 transition-colors font-medium text-sm">
+                  Notre équipe
                 </a>
                 <a href="#advisory" className="text-gray-600 hover:text-blue-600 transition-colors font-medium text-sm">
                   Advisory

@@ -375,7 +375,7 @@ const LandingPage = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold mb-6" style={{ color: colors.primary }}>
-                À propos de PROGIX
+                Notre équipe de PROGIX
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Depuis 2020, PROGIX accompagne les entreprises dans leur transformation digitale. 
@@ -479,10 +479,10 @@ const LandingPage = () => {
             <div>
               <h3 className="text-lg font-semibold mb-6">Entreprise</h3>
               <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">À propos</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Équipe</a></li>
+                <li><a href="/team" className="hover:text-white transition-colors">Notre équipe</a></li>
+                <li><a href="/team" className="hover:text-white transition-colors">Équipe</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Carrières</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Blogue</a></li>
               </ul>
             </div>
 

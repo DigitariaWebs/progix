@@ -196,7 +196,7 @@ const TeamPage = () => {
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              On a longtemps cherché notre mission. On voulait savoir à tout prix ce qu'on allait accomplir à long terme, quelle était notre destination ?
+              On a longtemps cherché notre mission. On voulait savoir à tout prix ce qu&apos;on allait accomplir à long terme, quelle était notre destination ?
             </p>
           </motion.div>
 
@@ -273,7 +273,7 @@ const TeamPage = () => {
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
                     <strong>Ancien nom :</strong> Digitaria.<br />
-                    On a switché pour Progix en août 2025 pour refléter qui on est vraiment : une équipe d'expertise logicielle, pas une agence web/marketing.
+                    On a switché pour Progix en août 2025 pour refléter qui on est vraiment : une équipe d&apos;expertise logicielle, pas une agence web/marketing.
                   </p>
                 </div>
               </div>
@@ -303,13 +303,13 @@ const TeamPage = () => {
                     color: colors.primary
                   }}
                 >
-                  Ce qu'on fait (et bien)
+                  Ce qu&apos;on fait (et bien)
                 </h3>
                 <p
                   className="text-lg leading-relaxed mb-8 text-gray-600"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
-                  On a découvert au fil des années qu'une des choses qui unit tous les membres de notre équipe, ce n'est pas seulement de faire du code, mais plutôt de rendre nos clients heureux et d'avoir un impact.
+                  On a découvert au fil des années qu&apos;une des choses qui unit tous les membres de notre équipe, ce n&apos;est pas seulement de faire du code, mais plutôt de rendre nos clients heureux et d&apos;avoir un impact.
                 </p>
                 
                 <div className="space-y-4">
@@ -498,7 +498,7 @@ const TeamPage = () => {
                   className="text-lg leading-relaxed mb-8 text-gray-600"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
-                  Remote-first, avec 2–3 présences/semaine au bureau pour les ateliers d'archi, les revues et les sprints critiques. On livre tôt, on mesure, on itère. Pas de blabla inutile, des incréments qui valent quelque chose.
+                  Remote-first, avec 2–3 présences/semaine au bureau pour les ateliers d&apos;archi, les revues et les sprints critiques. On livre tôt, on mesure, on itère. Pas de blabla inutile, des incréments qui valent quelque chose.
                 </p>
                 <div className="space-y-4">
                   {[
@@ -570,7 +570,7 @@ const TeamPage = () => {
                 className="text-xl text-gray-600 max-w-3xl mx-auto mb-16"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                Notre objectif n'est pas la croissance à tout prix, mais d'assurer le bien-être de notre équipe et de nos clients.
+                Notre objectif n&apos;est pas la croissance à tout prix, mais d&apos;assurer le bien-être de notre équipe et de nos clients.
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -678,7 +678,7 @@ const TeamPage = () => {
               className="text-xl text-gray-300 max-w-3xl mx-auto mb-16"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              Selon les profils de l'équipe ; exemples représentatifs appréciés au Canada.
+              Selon les profils de l&apos;équipe ; exemples représentatifs appréciés au Canada.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -744,7 +744,7 @@ const TeamPage = () => {
                 color: colors.primary
               }}
             >
-              Notre stack (on aime quand c'est varié)
+              Notre stack (on aime quand c&apos;est varié)
             </h2>
             <p
               className="text-xl text-gray-600 max-w-3xl mx-auto"

@@ -11,7 +11,6 @@ const colors = {
 };
 
 const TeamPage = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const certifications = [
     'AWS Certified Solutions Architect – Professional',
@@ -163,7 +162,7 @@ const TeamPage = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
-                  <p className="text-lg font-semibold">L'équipe PROGIX</p>
+                  <p className="text-lg font-semibold">L&apos;équipe PROGIX</p>
                   <p className="text-sm text-gray-300">Montréal, 2025</p>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
+import Image from 'next/image';
 import { colors } from '@/config/colors';
 import { Squares } from '@/components/ui/squares-background';
 import Partners from '@/components/Partners';
@@ -199,7 +200,7 @@ const ContactSection = () => {
   ];
 
   // Questions spécifiques par type de projet
-  const projectSpecificQuestions: Record<string, { question: string; options: { id: string; name: string; description: string }[] }> = {
+  const projectSpecificQuestions = useMemo(() => ({
     'web-app': {
       question: 'Quel type d\'application web souhaitez-vous ?',
       options: [
@@ -272,7 +273,7 @@ const ContactSection = () => {
         { id: 'iot', name: 'IoT', description: 'Objets connectés' }
       ]
     }
-  };
+  }), []);
 
   const getSuccessMessage = () => {
     const projectTypeNames = {
@@ -390,10 +391,12 @@ const ContactSection = () => {
     <div className="min-h-screen" style={{ backgroundColor: '#f8fafc' }}>
       {/* Logo PROGIX en haut à gauche */}
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-30">
-        <img
+        <Image
           src="/images/logo.png"
           onClick={() => (window.location.href = '/landing')}
           alt="PROGIX"
+          width={128}
+          height={128}
           className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 object-contain cursor-pointer"
         />
       </div>

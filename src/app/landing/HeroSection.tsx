@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { colors } from '@/config/colors';
 import Partners from '@/components/Partners';
-
+import { blogPosts } from '@/data/blogPosts';
 
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +41,10 @@ const HeroSection = () => {
 
     // Mobile detection
     const checkMobile = () => {
-      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+      const isMobileDevice =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        ) || window.innerWidth <= 768;
       setIsMobile(isMobileDevice);
     };
 
@@ -96,8 +99,10 @@ const HeroSection = () => {
   useEffect(() => {
     if (!isMounted || !isMobile) return;
 
-    const videos = [faheVideoRef.current, coRideVideoRef.current].filter(Boolean) as HTMLVideoElement[];
-    
+    const videos = [faheVideoRef.current, coRideVideoRef.current].filter(
+      Boolean,
+    ) as HTMLVideoElement[];
+
     if (videos.length === 0) return;
 
     const observer = new IntersectionObserver(
@@ -114,8 +119,8 @@ const HeroSection = () => {
       },
       {
         threshold: 0.5, // Play when 50% of video is visible
-        rootMargin: '0px 0px -10% 0px'
-      }
+        rootMargin: '0px 0px -10% 0px',
+      },
     );
 
     videos.forEach((video) => {
@@ -185,12 +190,12 @@ const HeroSection = () => {
                 >
                   Contact
                 </Link>
-                <a
-                  href="#blog"
+                <Link
+                  href="/blog"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                 >
                   Blogue
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -2752,100 +2757,46 @@ const HeroSection = () => {
                 <br />
                 CHEZ PROGIX?
               </h2>
-              <button
-                className="text-[#0a1628] bg-[#00d4ff] px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-xl transform hover:scale-105"
+              <Link
+                href="/blog"
+                className="inline-block text-[#0a1628] bg-[#00d4ff] px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-xl transform hover:scale-105"
                 style={{
                   fontFamily: 'Hubot Sans, Inter, sans-serif',
                 }}
               >
                 Blogue
-              </button>
+              </Link>
             </div>
 
             {/* Right side - Blog Posts Grid */}
             <div className="flex-1 grid md:grid-cols-3 gap-8">
-              {/* Blog Post 1 */}
-              <div className="bg-transparent overflow-hidden cursor-pointer group">
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src="/images/premierbloc.jpg"
-                    alt="Progix building"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="py-6">
-                  <p className="text-sm text-gray-300 mb-3 font-medium">
-                    1 octobre 2025
-                  </p>
-                  <h3 className="text-lg font-bold text-white mb-4 leading-snug min-h-[3.5rem]">
-                    Vortex Solution accueille les clients d&apos;Imacom en
-                    hébergement de site web...
-                  </h3>
-                  <a
-                    href="#"
-                    className="inline-block text-sm font-semibold text-[#00d4ff] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#00d4ff] after:transition-all after:duration-300 group-hover:after:w-full"
-                  >
-                    Lire la suite
-                  </a>
-                </div>
-              </div>
-
-              {/* Blog Post 2 */}
-              <div className="bg-transparent overflow-hidden cursor-pointer group">
-                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 flex items-center justify-center">
-                  <Image
-                    src="/images/logoaquaa.png"
-                    alt="Ville de Mont-Saint-Hilaire"
-                    width={200}
-                    height={100}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="py-6">
-                  <p className="text-sm text-gray-300 mb-3 font-medium">
-                    30 septembre 2025
-                  </p>
-                  <h3 className="text-lg font-bold text-white mb-4 leading-snug min-h-[3.5rem]">
-                    Découvrez le nouveau site web de la Ville de
-                    Mont-Saint-Hilaire
-                  </h3>
-                  <a
-                    href="#"
-                    className="inline-block text-sm font-semibold text-[#00d4ff] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#00d4ff] after:transition-all after:duration-300 group-hover:after:w-full"
-                  >
-                    Lire la suite
-                  </a>
-                </div>
-              </div>
-
-              {/* Blog Post 3 */}
-              <div className="bg-transparent overflow-hidden cursor-pointer group">
-                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-cyan-400 via-blue-400 to-blue-500 flex items-center justify-center">
-                  <Image
-                    src="/images/data_management_illustration.svg"
-                    alt="WordPress Agency"
-                    width={180}
-                    height={180}
-                    className="object-contain p-8"
-                  />
-                </div>
-                <div className="py-6">
-                  <p className="text-sm text-gray-300 mb-3 font-medium">
-                    29 septembre 2025
-                  </p>
-                  <h3 className="text-lg font-bold text-white mb-4 leading-snug min-h-[3.5rem]">
-                    Pourquoi choisir une agence WordPress canadienne pour votre
-                    stratégie GEO
-                  </h3>
-                  <a
-                    href="#"
-                    className="inline-block text-sm font-semibold text-[#00d4ff] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#00d4ff] after:transition-all after:duration-300 group-hover:after:w-full"
-                  >
-                    Lire la suite
-                  </a>
-                </div>
-              </div>
+              {blogPosts.slice(0, 3).map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="bg-transparent overflow-hidden cursor-pointer group"
+                >
+                  <div className="relative h-56 overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="py-6">
+                    <p className="text-sm text-gray-300 mb-3 font-medium">
+                      {post.date}
+                    </p>
+                    <h3 className="text-lg font-bold text-white mb-4 leading-snug min-h-[3.5rem] text-justify">
+                      {post.title}
+                    </h3>
+                    <span className="inline-block text-sm font-semibold text-[#00d4ff] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#00d4ff] after:transition-all after:duration-300 group-hover:after:w-full">
+                      Lire la suite
+                    </span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

@@ -9,7 +9,6 @@ import {
   FiClipboard,
   FiLayers,
   FiTrendingUp,
-  FiCheck,
   FiPlus,
   FiMinus,
 } from 'react-icons/fi';

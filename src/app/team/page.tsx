@@ -72,7 +72,7 @@ const TeamPage = () => {
                 Notre équipe
               </Link>
               <Link
-                href="/landing#portfolio"
+                href="/portfolio"
                 className="font-heading font-bold text-gray-900 hover:text-gray-700 transition-colors"
               >
                 Portfolio
@@ -977,7 +977,7 @@ const TeamPage = () => {
                 </li>
                 <li>
                   <Link
-                    href="/landing#portfolio"
+                    href="/portfolio"
                     className="hover:text-white transition-colors"
                   >
                     Portfolio

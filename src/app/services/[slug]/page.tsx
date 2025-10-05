@@ -99,7 +99,7 @@ export default function ServiceDetailPage({
                 Notre équipe
               </Link>
               <Link
-                href="/landing#portfolio"
+                href="/portfolio"
                 className="font-heading font-bold text-gray-900 hover:text-gray-700 transition-colors"
               >
                 Portfolio
@@ -646,7 +646,7 @@ export default function ServiceDetailPage({
                 </li>
                 <li>
                   <Link
-                    href="/landing#portfolio"
+                    href="/portfolio"
                     className="hover:text-white transition-colors"
                   >
                     Portfolio

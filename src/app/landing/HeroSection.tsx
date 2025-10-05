@@ -254,13 +254,13 @@ const HeroSection = () => {
                 >
                   Notre équipe
                 </a>
-                <a
-                  href="#portfolio"
+                <Link
+                  href="/portfolio"
                   className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                   style={{ color: colors.primary }}
                 >
                   Portfolio
-                </a>
+                </Link>
                 <Link
                   href="/contact"
                   className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"

@@ -136,7 +136,7 @@ const HeroSection = () => {
         ref={navRef}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent backdrop-blur-md scrolled:bg-white/95 scrolled:shadow-lg"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 ">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex items-center relative z-10">
@@ -308,7 +308,7 @@ const HeroSection = () => {
             background: `linear-gradient(to right, rgba(230, 242, 255, 1.0) 0%, rgba(230, 242, 255, 0.8) 15%, rgba(230, 242, 255, 0.5) 30%, rgba(230, 242, 255, 0.2) 45%, transparent 100%)`,
           }}
         ></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
           <div className="flex flex-col items-start justify-center min-h-screen py-12">
             {/* Main Content */}
             <div className="max-w-4xl">
@@ -386,14 +386,14 @@ const HeroSection = () => {
 
       {/* Client Logos Section */}
       <section className="bg-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           <Partners />
         </div>
       </section>
 
       {/* Services Section */}
       <section className="bg-white pt-20 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           {/* Header */}
           <div className="max-w-4xl mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -531,7 +531,7 @@ const HeroSection = () => {
       {/* Expertise Section */}
       <div className="bg-white">
         <section className="bg-white py-20 rounded-t-[60px] rounded-b-[60px] ">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
             {/* Header */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -817,7 +817,7 @@ const HeroSection = () => {
           }}
         ></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
@@ -1104,7 +1104,7 @@ const HeroSection = () => {
             borderBottomRightRadius: '100px',
           }}
         ></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -1303,7 +1303,7 @@ const HeroSection = () => {
         >
           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
         </svg>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-16">
             <div>
@@ -1636,7 +1636,7 @@ const HeroSection = () => {
 
       {/* Team Section */}
       <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -2722,6 +2722,134 @@ const HeroSection = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Blog Section */}
+      <section className="bg-[#0a1628] py-20 relative overflow-hidden">
+        {/* Background decoration - stars */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-1 h-1 bg-white rounded-full"></div>
+          <div className="absolute top-5 left-1/4 w-1 h-1 bg-white rounded-full"></div>
+          <div className="absolute top-20 right-20 w-0.5 h-0.5 bg-white rounded-full"></div>
+          <div className="absolute top-32 right-1/3 w-1 h-1 bg-white rounded-full"></div>
+          <div className="absolute bottom-20 left-1/4 w-1 h-1 bg-white rounded-full"></div>
+          <div className="absolute bottom-40 right-1/3 w-0.5 h-0.5 bg-white rounded-full"></div>
+          <div className="absolute top-1/2 left-1/3 w-0.5 h-0.5 bg-white rounded-full"></div>
+          <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-white rounded-full"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+            {/* Left side - Header */}
+            <div className="lg:w-1/4 flex-shrink-0">
+              <h2
+                className="text-2xl md:text-3xl lg:text-3xl font-bold text-white mb-5 leading-tight"
+                style={{
+                  fontFamily: 'Hubot Sans, Inter, sans-serif',
+                  letterSpacing: '0.02em',
+                }}
+              >
+                QU&apos;EST-CE QU&apos;IL SE PASSE
+                <br />
+                CHEZ PROGIX?
+              </h2>
+              <button
+                className="text-[#0a1628] bg-[#00d4ff] px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-xl transform hover:scale-105"
+                style={{
+                  fontFamily: 'Hubot Sans, Inter, sans-serif',
+                }}
+              >
+                Blogue
+              </button>
+            </div>
+
+            {/* Right side - Blog Posts Grid */}
+            <div className="flex-1 grid md:grid-cols-3 gap-8">
+              {/* Blog Post 1 */}
+              <div className="bg-transparent overflow-hidden cursor-pointer group">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src="/images/premierbloc.jpg"
+                    alt="Progix building"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="py-6">
+                  <p className="text-sm text-gray-300 mb-3 font-medium">
+                    1 octobre 2025
+                  </p>
+                  <h3 className="text-lg font-bold text-white mb-4 leading-snug min-h-[3.5rem]">
+                    Vortex Solution accueille les clients d&apos;Imacom en
+                    hébergement de site web...
+                  </h3>
+                  <a
+                    href="#"
+                    className="inline-block text-sm font-semibold text-[#00d4ff] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#00d4ff] after:transition-all after:duration-300 group-hover:after:w-full"
+                  >
+                    Lire la suite
+                  </a>
+                </div>
+              </div>
+
+              {/* Blog Post 2 */}
+              <div className="bg-transparent overflow-hidden cursor-pointer group">
+                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 flex items-center justify-center">
+                  <Image
+                    src="/images/logoaquaa.png"
+                    alt="Ville de Mont-Saint-Hilaire"
+                    width={200}
+                    height={100}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="py-6">
+                  <p className="text-sm text-gray-300 mb-3 font-medium">
+                    30 septembre 2025
+                  </p>
+                  <h3 className="text-lg font-bold text-white mb-4 leading-snug min-h-[3.5rem]">
+                    Découvrez le nouveau site web de la Ville de
+                    Mont-Saint-Hilaire
+                  </h3>
+                  <a
+                    href="#"
+                    className="inline-block text-sm font-semibold text-[#00d4ff] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#00d4ff] after:transition-all after:duration-300 group-hover:after:w-full"
+                  >
+                    Lire la suite
+                  </a>
+                </div>
+              </div>
+
+              {/* Blog Post 3 */}
+              <div className="bg-transparent overflow-hidden cursor-pointer group">
+                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-cyan-400 via-blue-400 to-blue-500 flex items-center justify-center">
+                  <Image
+                    src="/images/data_management_illustration.svg"
+                    alt="WordPress Agency"
+                    width={180}
+                    height={180}
+                    className="object-contain p-8"
+                  />
+                </div>
+                <div className="py-6">
+                  <p className="text-sm text-gray-300 mb-3 font-medium">
+                    29 septembre 2025
+                  </p>
+                  <h3 className="text-lg font-bold text-white mb-4 leading-snug min-h-[3.5rem]">
+                    Pourquoi choisir une agence WordPress canadienne pour votre
+                    stratégie GEO
+                  </h3>
+                  <a
+                    href="#"
+                    className="inline-block text-sm font-semibold text-[#00d4ff] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#00d4ff] after:transition-all after:duration-300 group-hover:after:w-full"
+                  >
+                    Lire la suite
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Global Custom Cursor for Case Studies */}
       <AnimatePresence>

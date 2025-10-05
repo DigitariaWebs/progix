@@ -1,5 +1,5 @@
 import ContactSection from './ContactSection';
-import Footer from '../landing/Footer';
+import Footer from '../../components/Footer';
 
 export default function ContactPage() {
   return (

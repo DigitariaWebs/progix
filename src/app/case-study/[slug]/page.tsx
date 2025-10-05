@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { assets } from '@/config/assets';
 import { colors } from '@/config/colors';
-import Footer from '@/app/landing/Footer';
+import Footer from '@/components/Footer';
 
 // Types for case study data
 interface Collaborator {

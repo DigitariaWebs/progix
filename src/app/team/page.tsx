@@ -47,6 +47,13 @@ const TeamPage = () => {
                 height={130}
                 className="h-20 w-auto cursor-pointer"
               />
+              <Image
+                src="/CertifiedLogo.webp"
+                alt="GPTW Certification"
+                width={100}
+                height={40}
+                className="h-14 w-auto ml-4 mt-4 cursor-pointer"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -99,7 +106,7 @@ const TeamPage = () => {
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500 rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
@@ -114,9 +121,7 @@ const TeamPage = () => {
               >
                 Faire du code
                 <br />
-                <span style={{ color: colors.secondary }}>
-                  pour être bien.
-                </span>
+                <span style={{ color: colors.secondary }}>pour être bien.</span>
                 <br />
                 <span className="text-3xl md:text-4xl text-gray-300">
                   Être bien pour faire du code.
@@ -126,7 +131,9 @@ const TeamPage = () => {
                 className="text-xl text-gray-300 mb-8 leading-relaxed"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                On est Progix — 9 ingénieurs logiciels basés à Montréal, bilingues français/anglais, qui transforment des problèmes costauds en logiciels qui tournent en prod.
+                On est Progix — 9 ingénieurs logiciels basés à Montréal,
+                bilingues français/anglais, qui transforment des problèmes
+                costauds en logiciels qui tournent en prod.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -184,9 +191,9 @@ const TeamPage = () => {
           >
             <h2
               className="text-5xl font-bold mb-6"
-              style={{ 
+              style={{
                 fontFamily: 'Hubot Sans, Inter, sans-serif',
-                color: colors.primary
+                color: colors.primary,
               }}
             >
               Notre histoire
@@ -195,7 +202,9 @@ const TeamPage = () => {
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              On a longtemps cherché notre mission. On voulait savoir à tout prix ce qu&apos;on allait accomplir à long terme, quelle était notre destination ?
+              On a longtemps cherché notre mission. On voulait savoir à tout
+              prix ce qu&apos;on allait accomplir à long terme, quelle était
+              notre destination ?
             </p>
           </motion.div>
 
@@ -229,13 +238,15 @@ const TeamPage = () => {
                         className="text-sm font-semibold"
                         style={{ color: colors.primary }}
                       >
-                        Ingénieurs<br />Logiciels
+                        Ingénieurs
+                        <br />
+                        Logiciels
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               <div className="order-1 lg:order-2">
                 <div className="mb-4">
                   <span
@@ -247,9 +258,9 @@ const TeamPage = () => {
                 </div>
                 <h3
                   className="text-4xl font-bold mb-6"
-                  style={{ 
+                  style={{
                     fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.primary
+                    color: colors.primary,
                   }}
                 >
                   Nous, en deux mots
@@ -258,21 +269,28 @@ const TeamPage = () => {
                   className="text-lg leading-relaxed mb-8 text-gray-600"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
-                  On est Progix — 9 ingénieurs logiciels basés à Montréal, bilingues français/anglais, qui aiment transformer des problèmes costauds en logiciels qui tournent en prod. Web, mobile, DevOps, desktop, data/ML, blockchain, intégration complexe : on vit pour ça.
+                  On est Progix — 9 ingénieurs logiciels basés à Montréal,
+                  bilingues français/anglais, qui aiment transformer des
+                  problèmes costauds en logiciels qui tournent en prod. Web,
+                  mobile, DevOps, desktop, data/ML, blockchain, intégration
+                  complexe : on vit pour ça.
                 </p>
-                <div 
+                <div
                   className="p-6 rounded-xl border-l-4"
-                  style={{ 
+                  style={{
                     backgroundColor: 'rgba(79, 163, 209, 0.05)',
-                    borderColor: colors.secondary
+                    borderColor: colors.secondary,
                   }}
                 >
                   <p
                     className="text-base text-gray-700 font-medium"
                     style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                   >
-                    <strong>Ancien nom :</strong> Digitaria.<br />
-                    On a switché pour Progix en août 2025 pour refléter qui on est vraiment : une équipe d&apos;expertise logicielle, pas une agence web/marketing.
+                    <strong>Ancien nom :</strong> Digitaria.
+                    <br />
+                    On a switché pour Progix en août 2025 pour refléter qui on
+                    est vraiment : une équipe d&apos;expertise logicielle, pas
+                    une agence web/marketing.
                   </p>
                 </div>
               </div>
@@ -297,9 +315,9 @@ const TeamPage = () => {
                 </div>
                 <h3
                   className="text-4xl font-bold mb-6"
-                  style={{ 
+                  style={{
                     fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.primary
+                    color: colors.primary,
                   }}
                 >
                   Ce qu&apos;on fait (et bien)
@@ -308,41 +326,44 @@ const TeamPage = () => {
                   className="text-lg leading-relaxed mb-8 text-gray-600"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
-                  On a découvert au fil des années qu&apos;une des choses qui unit tous les membres de notre équipe, ce n&apos;est pas seulement de faire du code, mais plutôt de rendre nos clients heureux et d&apos;avoir un impact.
+                  On a découvert au fil des années qu&apos;une des choses qui
+                  unit tous les membres de notre équipe, ce n&apos;est pas
+                  seulement de faire du code, mais plutôt de rendre nos clients
+                  heureux et d&apos;avoir un impact.
                 </p>
-                
+
                 <div className="space-y-4">
                   {[
-                    { 
-                      title: 'Produits web & mobiles', 
+                    {
+                      title: 'Produits web & mobiles',
                       desc: 'front/back, APIs, microservices',
-                      icon: '🌐'
+                      icon: '🌐',
                     },
-                    { 
-                      title: 'DevOps & SRE', 
+                    {
+                      title: 'DevOps & SRE',
                       desc: 'CI/CD, IaC, observabilité, fiabilité',
-                      icon: '⚙️'
+                      icon: '⚙️',
                     },
-                    { 
-                      title: 'Migration & intégration', 
+                    {
+                      title: 'Migration & intégration',
                       desc: 'API, legacy → cloud, modernisation',
-                      icon: '🔄'
+                      icon: '🔄',
                     },
-                    { 
-                      title: 'Data & ML en production', 
+                    {
+                      title: 'Data & ML en production',
                       desc: 'pipelines, MLOps, déploiement',
-                      icon: '📊'
+                      icon: '📊',
                     },
-                    { 
-                      title: 'Blockchain', 
-                      desc: 'permissionnée, cas d\'usage métier',
-                      icon: '⛓️'
+                    {
+                      title: 'Blockchain',
+                      desc: "permissionnée, cas d'usage métier",
+                      icon: '⛓️',
                     },
-                    { 
-                      title: 'CRM/ERP & outils métiers', 
+                    {
+                      title: 'CRM/ERP & outils métiers',
                       desc: 'custom, interop, perf',
-                      icon: '🛠️'
-                    }
+                      icon: '🛠️',
+                    },
                   ].map((service, index) => (
                     <motion.div
                       key={index}
@@ -356,9 +377,9 @@ const TeamPage = () => {
                       <div>
                         <h4
                           className="font-semibold mb-1 group-hover:text-blue-600 transition-colors"
-                          style={{ 
+                          style={{
                             color: colors.primary,
-                            fontFamily: 'Hubot Sans, Inter, sans-serif'
+                            fontFamily: 'Hubot Sans, Inter, sans-serif',
                           }}
                         >
                           {service.title}
@@ -382,12 +403,13 @@ const TeamPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent rounded-2xl"></div>
                   <div className="absolute bottom-6 left-6 text-white">
                     <p className="text-lg font-semibold">En mode focus</p>
-                    <p className="text-sm text-gray-200">Quand le code coule de source</p>
+                    <p className="text-sm text-gray-200">
+                      Quand le code coule de source
+                    </p>
                   </div>
                 </div>
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>
@@ -421,12 +443,16 @@ const TeamPage = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent rounded-2xl"></div>
                   <div className="absolute bottom-6 left-6 text-white">
-                    <p className="text-lg font-semibold">Brainstorming session</p>
-                    <p className="text-sm text-gray-200">Résoudre des problèmes complexes</p>
+                    <p className="text-lg font-semibold">
+                      Brainstorming session
+                    </p>
+                    <p className="text-sm text-gray-200">
+                      Résoudre des problèmes complexes
+                    </p>
                   </div>
                 </div>
               </div>
-              
+
               <div className="order-1 lg:order-2">
                 <div className="mb-4">
                   <span
@@ -438,9 +464,9 @@ const TeamPage = () => {
                 </div>
                 <h3
                   className="text-4xl font-bold mb-6"
-                  style={{ 
+                  style={{
                     fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.primary
+                    color: colors.primary,
                   }}
                 >
                   Pour qui ?
@@ -449,18 +475,23 @@ const TeamPage = () => {
                   className="text-lg leading-relaxed mb-8 text-gray-600"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
-                  Honnêtement, pour toute organisation qui a un vrai enjeu logiciel, avec un focus naturel sur les moyennes et grandes entreprises au Canada. On adore quand il y a de la complexité, des contraintes réelles et un impact concret.
+                  Honnêtement, pour toute organisation qui a un vrai enjeu
+                  logiciel, avec un focus naturel sur les moyennes et grandes
+                  entreprises au Canada. On adore quand il y a de la complexité,
+                  des contraintes réelles et un impact concret.
                 </p>
                 <div className="space-y-4">
                   {[
                     '🏢 Moyennes et grandes entreprises',
                     '🇨🇦 Partout au Canada',
                     '🧩 Problèmes complexes',
-                    '🎯 Impact concret'
+                    '🎯 Impact concret',
                   ].map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <span className="text-xl">{item.split(' ')[0]}</span>
-                      <span className="text-gray-700 font-medium">{item.substring(2)}</span>
+                      <span className="text-gray-700 font-medium">
+                        {item.substring(2)}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -486,9 +517,9 @@ const TeamPage = () => {
                 </div>
                 <h3
                   className="text-4xl font-bold mb-6"
-                  style={{ 
+                  style={{
                     fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.primary
+                    color: colors.primary,
                   }}
                 >
                   Notre façon de bosser
@@ -497,18 +528,26 @@ const TeamPage = () => {
                   className="text-lg leading-relaxed mb-8 text-gray-600"
                   style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
                 >
-                  Remote-first, avec 2–3 présences/semaine au bureau pour les ateliers d&apos;archi, les revues et les sprints critiques. On livre tôt, on mesure, on itère. Pas de blabla inutile, des incréments qui valent quelque chose.
+                  Remote-first, avec 2–3 présences/semaine au bureau pour les
+                  ateliers d&apos;archi, les revues et les sprints critiques. On
+                  livre tôt, on mesure, on itère. Pas de blabla inutile, des
+                  incréments qui valent quelque chose.
                 </p>
                 <div className="space-y-4">
                   {[
                     { icon: '🏠', text: 'Remote-first avec flexibilité' },
                     { icon: '🤝', text: '2-3 présences/semaine au bureau' },
                     { icon: '🚀', text: 'On livre tôt, on mesure, on itère' },
-                    { icon: '💎', text: 'Des incréments qui valent quelque chose' }
+                    {
+                      icon: '💎',
+                      text: 'Des incréments qui valent quelque chose',
+                    },
                   ].map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <span className="text-xl">{item.icon}</span>
-                      <span className="text-gray-700 font-medium">{item.text}</span>
+                      <span className="text-gray-700 font-medium">
+                        {item.text}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -526,7 +565,9 @@ const TeamPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent rounded-2xl"></div>
                   <div className="absolute bottom-6 left-6 text-white">
                     <p className="text-lg font-semibold">Collaboration</p>
-                    <p className="text-sm text-gray-200">Remote-first, mais ensemble quand ça compte</p>
+                    <p className="text-sm text-gray-200">
+                      Remote-first, mais ensemble quand ça compte
+                    </p>
                   </div>
                 </div>
               </div>
@@ -539,7 +580,6 @@ const TeamPage = () => {
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-24">
-
             {/* Pourquoi Progix */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -558,9 +598,9 @@ const TeamPage = () => {
               </div>
               <h2
                 className="text-5xl font-bold mb-6"
-                style={{ 
+                style={{
                   fontFamily: 'Hubot Sans, Inter, sans-serif',
-                  color: colors.primary
+                  color: colors.primary,
                 }}
               >
                 Pourquoi Progix
@@ -569,35 +609,36 @@ const TeamPage = () => {
                 className="text-xl text-gray-600 max-w-3xl mx-auto mb-16"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                Notre objectif n&apos;est pas la croissance à tout prix, mais d&apos;assurer le bien-être de notre équipe et de nos clients.
+                Notre objectif n&apos;est pas la croissance à tout prix, mais
+                d&apos;assurer le bien-être de notre équipe et de nos clients.
               </p>
-              
+
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
                   {
                     title: 'Seniorité compacte',
                     description: '9 profils qui se complètent, zéro silos.',
                     icon: '🎯',
-                    color: 'from-blue-500 to-cyan-500'
+                    color: 'from-blue-500 to-cyan-500',
                   },
                   {
                     title: 'Ingénierie exigeante',
                     description: 'Qualité, tests, sécurité by default.',
                     icon: '⚡',
-                    color: 'from-purple-500 to-pink-500'
+                    color: 'from-purple-500 to-pink-500',
                   },
                   {
                     title: 'Time-to-value court',
                     description: 'On livre rapidement du tangible.',
                     icon: '🚀',
-                    color: 'from-green-500 to-teal-500'
+                    color: 'from-green-500 to-teal-500',
                   },
                   {
                     title: 'Accompagnement complet',
-                    description: 'Du cadrage à l\'exploitation.',
+                    description: "Du cadrage à l'exploitation.",
                     icon: '🤝',
-                    color: 'from-orange-500 to-red-500'
-                  }
+                    color: 'from-orange-500 to-red-500',
+                  },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -609,29 +650,35 @@ const TeamPage = () => {
                   >
                     <div className="relative p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-transparent overflow-hidden">
                       {/* Background gradient on hover */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                      
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                      ></div>
+
                       {/* Icon */}
                       <div className="relative z-10 mb-6">
-                        <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-2xl text-white shadow-lg`}>
+                        <div
+                          className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-2xl text-white shadow-lg`}
+                        >
                           {item.icon}
                         </div>
                       </div>
-                      
+
                       {/* Content */}
                       <div className="relative z-10">
                         <h3
                           className="text-xl font-bold mb-4 group-hover:text-gray-800 transition-colors"
-                          style={{ 
+                          style={{
                             fontFamily: 'Hubot Sans, Inter, sans-serif',
-                            color: colors.primary
+                            color: colors.primary,
                           }}
                         >
                           {item.title}
                         </h3>
                         <p
                           className="text-gray-600 leading-relaxed"
-                          style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+                          style={{
+                            fontFamily: 'Hubot Sans, Inter, sans-serif',
+                          }}
                         >
                           {item.description}
                         </p>
@@ -677,7 +724,8 @@ const TeamPage = () => {
               className="text-xl text-gray-300 max-w-3xl mx-auto mb-16"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              Selon les profils de l&apos;équipe ; exemples représentatifs appréciés au Canada.
+              Selon les profils de l&apos;équipe ; exemples représentatifs
+              appréciés au Canada.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -701,7 +749,12 @@ const TeamPage = () => {
             </div>
 
             <div className="flex flex-wrap justify-center gap-4">
-              {['OCTAS (Réseau Action TI)', 'Prix NUMIX', 'Deloitte Technology Fast 50', 'Great Place to Work'].map((distinction, index) => (
+              {[
+                'OCTAS (Réseau Action TI)',
+                'Prix NUMIX',
+                'Deloitte Technology Fast 50',
+                'Great Place to Work',
+              ].map((distinction, index) => (
                 <motion.span
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -738,9 +791,9 @@ const TeamPage = () => {
             </div>
             <h2
               className="text-5xl font-bold mb-6"
-              style={{ 
+              style={{
                 fontFamily: 'Hubot Sans, Inter, sans-serif',
-                color: colors.primary
+                color: colors.primary,
               }}
             >
               Notre stack (on aime quand c&apos;est varié)
@@ -749,51 +802,61 @@ const TeamPage = () => {
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              Une palette technologique riche pour répondre à tous vos défis logiciels.
+              Une palette technologique riche pour répondre à tous vos défis
+              logiciels.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(techStack).map(([category, technologies], categoryIndex) => (
-              <motion.div
-                key={category}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              >
-                <h3
-                  className="text-xl font-bold mb-6 capitalize"
-                  style={{ 
-                    fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.primary
-                  }}
+            {Object.entries(techStack).map(
+              ([category, technologies], categoryIndex) => (
+                <motion.div
+                  key={category}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
                 >
-                  {category === 'frontend' ? '🎨 Front & mobile' : 
-                   category === 'data' ? '📊 Data & ML' :
-                   category === 'cloud' ? '☁️ Cloud & DevOps' :
-                   category === 'databases' ? '🗄️ Bases de données' :
-                   category === 'languages' ? '💻 Langages' :
-                   category === 'frameworks' ? '🏗️ Frameworks' : category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {technologies.slice(0, 8).map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-medium hover:bg-blue-100 transition-all duration-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {technologies.length > 8 && (
-                    <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium">
-                      +{technologies.length - 8} autres
-                    </span>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+                  <h3
+                    className="text-xl font-bold mb-6 capitalize"
+                    style={{
+                      fontFamily: 'Hubot Sans, Inter, sans-serif',
+                      color: colors.primary,
+                    }}
+                  >
+                    {category === 'frontend'
+                      ? '🎨 Front & mobile'
+                      : category === 'data'
+                        ? '📊 Data & ML'
+                        : category === 'cloud'
+                          ? '☁️ Cloud & DevOps'
+                          : category === 'databases'
+                            ? '🗄️ Bases de données'
+                            : category === 'languages'
+                              ? '💻 Langages'
+                              : category === 'frameworks'
+                                ? '🏗️ Frameworks'
+                                : category}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {technologies.slice(0, 8).map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-medium hover:bg-blue-100 transition-all duration-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {technologies.length > 8 && (
+                      <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium">
+                        +{technologies.length - 8} autres
+                      </span>
+                    )}
+                  </div>
+                </motion.div>
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -817,15 +880,18 @@ const TeamPage = () => {
               className="text-xl text-white/90 mb-8"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              On travaille depuis Montréal, en français et en anglais. On connaît bien les réalités locales (sécurité, conformité, bilinguisme, délais, budgets publics/privés) et on sait naviguer avec vos équipes partout au Canada.
+              On travaille depuis Montréal, en français et en anglais. On
+              connaît bien les réalités locales (sécurité, conformité,
+              bilinguisme, délais, budgets publics/privés) et on sait naviguer
+              avec vos équipes partout au Canada.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-block bg-white px-8 py-4 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-                style={{ 
+                style={{
                   color: colors.primary,
-                  fontFamily: 'Hubot Sans, Inter, sans-serif'
+                  fontFamily: 'Hubot Sans, Inter, sans-serif',
                 }}
               >
                 Travaillons ensemble
@@ -855,7 +921,8 @@ const TeamPage = () => {
                 className="h-16 w-auto mb-4 brightness-0 invert"
               />
               <p className="text-gray-400 text-sm">
-                Solutions logicielles sur mesure pour les organisations ambitieuses
+                Solutions logicielles sur mesure pour les organisations
+                ambitieuses
               </p>
             </div>
 
@@ -863,22 +930,34 @@ const TeamPage = () => {
               <h3 className="font-bold mb-4">Services</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="/services" className="hover:text-white transition-colors">
+                  <Link
+                    href="/services"
+                    className="hover:text-white transition-colors"
+                  >
                     Tous les services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/custom-software" className="hover:text-white transition-colors">
+                  <Link
+                    href="/services/custom-software"
+                    className="hover:text-white transition-colors"
+                  >
                     Logiciels sur mesure
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/web-application" className="hover:text-white transition-colors">
+                  <Link
+                    href="/services/web-application"
+                    className="hover:text-white transition-colors"
+                  >
                     Applications web
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/mobile-application" className="hover:text-white transition-colors">
+                  <Link
+                    href="/services/mobile-application"
+                    className="hover:text-white transition-colors"
+                  >
                     Applications mobiles
                   </Link>
                 </li>
@@ -889,17 +968,26 @@ const TeamPage = () => {
               <h3 className="font-bold mb-4">Entreprise</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="/team" className="hover:text-white transition-colors">
+                  <Link
+                    href="/team"
+                    className="hover:text-white transition-colors"
+                  >
                     Notre équipe
                   </Link>
                 </li>
                 <li>
-                  <Link href="/landing#portfolio" className="hover:text-white transition-colors">
+                  <Link
+                    href="/landing#portfolio"
+                    className="hover:text-white transition-colors"
+                  >
                     Portfolio
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
+                  <Link
+                    href="/contact"
+                    className="hover:text-white transition-colors"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -911,7 +999,10 @@ const TeamPage = () => {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>Montréal, Québec</li>
                 <li>
-                  <a href="mailto:info@progix.ca" className="hover:text-white transition-colors">
+                  <a
+                    href="mailto:info@progix.ca"
+                    className="hover:text-white transition-colors"
+                  >
                     info@progix.ca
                   </a>
                 </li>

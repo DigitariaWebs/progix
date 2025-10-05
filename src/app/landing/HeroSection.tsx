@@ -144,11 +144,17 @@ const HeroSection = () => {
                 src="/images/logo (3).webp"
                 alt="PROGIX Logo"
                 priority
-                onClick={() => window.location.href = '/landing'}
-                
+                onClick={() => (window.location.href = '/landing')}
                 width={130}
                 height={130}
                 className="h-20 w-auto cursor-pointer"
+              />
+              <Image
+                src="/CertifiedLogo.webp"
+                alt="GPTW Certification"
+                width={100}
+                height={40}
+                className="h-14 w-auto ml-4 mt-4 cursor-pointer"
               />
             </div>
 
@@ -158,35 +164,30 @@ const HeroSection = () => {
                 <Link
                   href="/services"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                   
                 >
                   Services
                 </Link>
                 <a
                   href="/team"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                   
                 >
                   Notre équipe
                 </a>
                 <a
                   href="#portfolio"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                   
                 >
                   Portfolio
                 </a>
                 <Link
                   href="/contact"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                   
                 >
                   Contact
                 </Link>
                 <a
                   href="#blog"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
-                   
                 >
                   Blogue
                 </a>
@@ -340,14 +341,16 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-xl mb-8 leading-relaxed text-black/90 max-w-3xl font-medium"
                 style={{
-                  fontFamily: 'Hubot Sans, Inter, sans-serif', 
+                  fontFamily: 'Hubot Sans, Inter, sans-serif',
                 }}
               >
-                Progix est une entreprise de développement logiciel basée à Montréal.<br />
-                 Notre mission est de concevoir et de développer des
-                solutions logicielles sur mesure, sécurisées et évolutives,
-                créées de zéro pour s&apos;intégrer parfaitement à vos
-                processus, vos équipes et vos clients.
+                Progix est une entreprise de développement logiciel basée à
+                Montréal.
+                <br />
+                Notre mission est de concevoir et de développer des solutions
+                logicielles sur mesure, sécurisées et évolutives, créées de zéro
+                pour s&apos;intégrer parfaitement à vos processus, vos équipes
+                et vos clients.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -384,24 +387,22 @@ const HeroSection = () => {
       {/* Client Logos Section */}
       <section className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <Partners />
+          <Partners />
         </div>
       </section>
-
 
       {/* Services Section */}
       <section className="bg-white pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="max-w-4xl mb-12">
-            <h2
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-               
-            >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Optimisez vos processus métier
               <br />
               avec un{' '}
-              <span style={{ color: colors.secondary }}>système personnalisé</span>
+              <span style={{ color: colors.secondary }}>
+                système personnalisé
+              </span>
             </h2>
             <p
               className="text-lg leading-relaxed font-semibold"
@@ -411,8 +412,8 @@ const HeroSection = () => {
               }}
             >
               Quelle que soit la taille de votre entreprise, nous concevons et
-              développons des solutions logicielles sécurisées, fiables et évolutives
-              pour répondre à vos objectifs à long terme.
+              développons des solutions logicielles sécurisées, fiables et
+              évolutives pour répondre à vos objectifs à long terme.
             </p>
           </div>
 
@@ -447,18 +448,11 @@ const HeroSection = () => {
                   <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
                 </svg>
               </div>
-              <h3
-                className="text-xl font-bold text-gray-900 mb-4"
-                 
-              >
-                PME
-              </h3>
-              <p
-                className="text-gray-600 leading-relaxed font-semibold"
-                 
-              >
-                Pour les entreprises qui souhaitent automatiser leurs processus, réduire
-                les délais, prendre des décisions éclairées et stabiliser leurs opérations.
+              <h3 className="text-xl font-bold text-gray-900 mb-4">PME</h3>
+              <p className="text-gray-600 leading-relaxed font-semibold">
+                Pour les entreprises qui souhaitent automatiser leurs processus,
+                réduire les délais, prendre des décisions éclairées et
+                stabiliser leurs opérations.
               </p>
             </div>
 
@@ -477,19 +471,13 @@ const HeroSection = () => {
                   <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z" />
                 </svg>
               </div>
-              <h3
-                className="text-xl font-bold text-gray-900 mb-4"
-                 
-              >
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Institutionnel
               </h3>
-              <p
-                className="text-gray-600 leading-relaxed font-semibold"
-                 
-              >
-                Pour les institutions qui souhaitent valoriser leurs données, tirer
-                le meilleur parti de leur infrastructure et maximiser l&apos;impact de leurs
-                ressources.
+              <p className="text-gray-600 leading-relaxed font-semibold">
+                Pour les institutions qui souhaitent valoriser leurs données,
+                tirer le meilleur parti de leur infrastructure et maximiser
+                l&apos;impact de leurs ressources.
               </p>
             </div>
 
@@ -508,26 +496,19 @@ const HeroSection = () => {
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </div>
-              <h3
-                className="text-xl font-bold text-gray-900 mb-4"
-                 
-              >
-                Startup
-              </h3>
-              <p
-                className="text-gray-600 leading-relaxed font-semibold"
-                 
-              >
-                Pour les start-ups qui veulent changer le monde de demain, briser
-                le statu quo et innover grâce à la technologie logicielle.
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Startup</h3>
+              <p className="text-gray-600 leading-relaxed font-semibold">
+                Pour les start-ups qui veulent changer le monde de demain,
+                briser le statu quo et innover grâce à la technologie
+                logicielle.
               </p>
             </div>
           </div>
         </div>
       </section>
-<div className="bg-white">
-  {/* Decorative white elements */}
-<svg
+      <div className="bg-white">
+        {/* Decorative white elements */}
+        <svg
           className="relative block w-full h-20"
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -546,352 +527,301 @@ const HeroSection = () => {
         >
           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
         </svg>
-</div>
+      </div>
       {/* Expertise Section */}
       <div className="bg-white">
         <section className="bg-white py-20 rounded-t-[60px] rounded-b-[60px] ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-16"> 
-            <h2
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-               
-            >
-              <span style={{ color: colors.secondary }}>Expertise</span> pour
-              surmonter
-              <br />
-              vos obstacles de croissance
-            </h2>
-          </div>
- 
-          {/* Expertise Cards */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Management & automation software Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="mb-8">
-                <Image
-                  src="/images/management_automation_software_illustration (1).svg"
-                  alt="Management & automation software"
-                  width={200}
-                  height={150}
-                  className="w-full h-40 object-contain"
-                  style={{ filter: `hue-rotate(200deg) saturate(1.2)` }}
-                />
-              </div>
-
-              <h3
-                className="text-xl font-bold text-gray-900 mb-4"
-                 
-              >
-                Logiciels de gestion & d&apos;automatisation
-              </h3>
-
-              <p
-                className="text-gray-600 leading-relaxed font-semibold mb-6"
-                 
-              >
-                Logiciels de gestion sur mesure (Intranet, ERP etc.) qui
-                assurent la synergie entre vos opérations, votre équipe et votre
-                nouvelle réalité numérique.
-              </p>
-
-              <div className="space-y-3">
-                <div className="flex items-center justify-between group cursor-pointer">
-                  <span
-                    className="text-sm front-semibold text-cyan-700 "
-                     
-                  >
-                    Analyse métier et technique
-                  </span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-
-                <div className="flex items-center justify-between group cursor-pointer">
-                  <span
-                    className="text-sm front-semibold text-cyan-700 "
-                     
-                  >
-                    Développement logiciel sur mesure
-                  </span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-
-                <div className="flex items-center justify-between group cursor-pointer">
-                  <span
-                    className="text-sm front-semibold text-cyan-700  "
-                     
-                  >
-                    Développement ERP personnalisé
-                  </span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-
-                <div className="flex items-center justify-between group cursor-pointer">
-                  <span
-                    className="text-sm front-semibold text-cyan-700"
-                     
-                  >
-                    Support et maintenance logicielle
-                  </span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <span style={{ color: colors.secondary }}>Expertise</span> pour
+                surmonter
+                <br />
+                vos obstacles de croissance
+              </h2>
             </div>
 
-            {/* Witify Lab Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="mb-8">
-                <Image
-                  src="/images/witify_lab_illustration (1).svg"
-                  alt="Witify Lab"
-                  width={200}
-                  height={150}
-                  className="w-full h-40 object-contain"
-                  style={{ filter: `hue-rotate(200deg) saturate(1.2)` }}
-                />
+            {/* Expertise Cards */}
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Management & automation software Card */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="mb-8">
+                  <Image
+                    src="/images/management_automation_software_illustration (1).svg"
+                    alt="Management & automation software"
+                    width={200}
+                    height={150}
+                    className="w-full h-40 object-contain"
+                    style={{ filter: `hue-rotate(200deg) saturate(1.2)` }}
+                  />
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Logiciels de gestion & d&apos;automatisation
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed font-semibold mb-6">
+                  Logiciels de gestion sur mesure (Intranet, ERP etc.) qui
+                  assurent la synergie entre vos opérations, votre équipe et
+                  votre nouvelle réalité numérique.
+                </p>
+
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <span className="text-sm front-semibold text-cyan-700 ">
+                      Analyse métier et technique
+                    </span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: colors.secondary }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <span className="text-sm front-semibold text-cyan-700 ">
+                      Développement logiciel sur mesure
+                    </span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: colors.secondary }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <span className="text-sm front-semibold text-cyan-700  ">
+                      Développement ERP personnalisé
+                    </span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: colors.secondary }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <span className="text-sm front-semibold text-cyan-700">
+                      Support et maintenance logicielle
+                    </span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: colors.secondary }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
 
-              <h3
-                className="text-xl font-bold text-gray-900 mb-4"
-                 
-              >
-                Laboratoire PROGIX
-              </h3>
-
-              <p
-                className="text-gray-600 leading-relaxed font-semibold mb-6"
-                 
-              >
-                Le laboratoire PROGIX est dédié à l&apos;innovation logicielle sous
-                toutes ses formes. La recherche et développement ainsi que la
-                conception innovante sont au cœur de notre approche.
-              </p>
-
-              <div className="space-y-3">
-                <div className="flex items-center justify-between group cursor-pointer">
-                  <span
-                    className="text-sm front-semibold text-cyan-700"
-                     
-                  >
-                    Application web
-                  </span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+              {/* Witify Lab Card */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="mb-8">
+                  <Image
+                    src="/images/witify_lab_illustration (1).svg"
+                    alt="Witify Lab"
+                    width={200}
+                    height={150}
+                    className="w-full h-40 object-contain"
+                    style={{ filter: `hue-rotate(200deg) saturate(1.2)` }}
+                  />
                 </div>
 
-                <div className="flex items-center justify-between group cursor-pointer">
-                  <span
-                    className="text-sm front-semibold text-cyan-700"
-                     
-                  >
-                    Application mobile
-                  </span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Laboratoire PROGIX
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed font-semibold mb-6">
+                  Le laboratoire PROGIX est dédié à l&apos;innovation logicielle
+                  sous toutes ses formes. La recherche et développement ainsi
+                  que la conception innovante sont au cœur de notre approche.
+                </p>
+
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <span className="text-sm front-semibold text-cyan-700">
+                      Application web
+                    </span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: colors.secondary }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <span className="text-sm front-semibold text-cyan-700">
+                      Application mobile
+                    </span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: colors.secondary }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Data management Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="mb-8">
-                <Image
-                  src="/images/data_management_illustration.svg"
-                  alt="Data management"
-                  width={200}
-                  height={150}
-                  className="w-full h-40 object-contain"
-                  style={{ filter: `hue-rotate(200deg) saturate(1.2)` }}
-                />
-              </div>
-
-              <h3
-                className="text-xl font-bold text-gray-900 mb-4"
-                 
-              >
-                Gestion des données
-              </h3>
-
-              <p
-                className="text-gray-600 leading-relaxed font-semibold mb-6"
-                 
-              >
-                Notre expertise tire parti des données à votre disposition grâce
-                à un accompagnement ciblé pour une compréhension complète et une
-                prise de décision efficace.
-              </p>
-
-              <div className="space-y-3">
-                <div className="flex items-center justify-between group cursor-pointer">
-                  <span
-                    className="text-sm front-semibold text-cyan-700"
-                     
-                  >
-                    Stratégie de données
-                  </span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+              {/* Data management Card */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="mb-8">
+                  <Image
+                    src="/images/data_management_illustration.svg"
+                    alt="Data management"
+                    width={200}
+                    height={150}
+                    className="w-full h-40 object-contain"
+                    style={{ filter: `hue-rotate(200deg) saturate(1.2)` }}
+                  />
                 </div>
 
-                <div className="flex items-center justify-between group cursor-pointer">
-                  <span
-                    className="text-sm front-semibold text-cyan-700"
-                     
-                  >
-                    Analyse de données
-                  </span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Gestion des données
+                </h3>
 
-                <div className="flex items-center justify-between group cursor-pointer">
-                  <span
-                    className="text-sm front-semibold text-cyan-700"
-                     
-                  >
-                    Visualisation de données
-                  </span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: colors.secondary }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+                <p className="text-gray-600 leading-relaxed font-semibold mb-6">
+                  Notre expertise tire parti des données à votre disposition
+                  grâce à un accompagnement ciblé pour une compréhension
+                  complète et une prise de décision efficace.
+                </p>
+
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <span className="text-sm front-semibold text-cyan-700">
+                      Stratégie de données
+                    </span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: colors.secondary }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <span className="text-sm front-semibold text-cyan-700">
+                      Analyse de données
+                    </span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: colors.secondary }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <span className="text-sm front-semibold text-cyan-700">
+                      Visualisation de données
+                    </span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: colors.secondary }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </section>
       </div>
 
       {/* About Section */}
       <section className="bg-gray-900 pb-20 ">
         {/* Decorative white rectangle at top */}
-        <div 
+        <div
           className="w-full h-8 bg-white mb-20"
           style={{
             borderBottomLeftRadius: '100px',
-            borderBottomRightRadius: '100px'
+            borderBottomRightRadius: '100px',
           }}
         ></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <h2
-                className="text-4xl md:text-5xl font-bold text-white mb-8"
-                 
-              >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
                 UNE PETITE ÉQUIPE
                 <br />
                 AUX{' '}
@@ -902,15 +832,12 @@ const HeroSection = () => {
                 </span>
               </h2>
 
-              <p
-                className="text-lg text-gray-600 leading-relaxed font-semibold mb-8"
-                 
-              >
+              <p className="text-lg text-gray-600 leading-relaxed font-semibold mb-8">
                 Notre pire cauchemar est d&apos;un jour se réveiller et être une
-                équipe de 100 et devenir, ce qu&apos;on appelle à l&apos;interne, une
-                usine à saucisses. On préfère avoir une petite équipe de joueurs
-                AAA et faire une vingtaine de projets par année qui nous
-                tiennent à cœur.
+                équipe de 100 et devenir, ce qu&apos;on appelle à
+                l&apos;interne, une usine à saucisses. On préfère avoir une
+                petite équipe de joueurs AAA et faire une vingtaine de projets
+                par année qui nous tiennent à cœur.
               </p>
 
               <div className="flex items-center space-x-6">
@@ -928,7 +855,6 @@ const HeroSection = () => {
                 <Link
                   href="/contact"
                   className="text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 inline-block"
-                   
                 >
                   Notre équipe
                 </Link>
@@ -958,7 +884,7 @@ const HeroSection = () => {
                           x: '200%',
                           opacity: 0,
                           scale: 0.8,
-                          filter: 'brightness(0.7) contrast(0.8)'
+                          filter: 'brightness(0.7) contrast(0.8)',
                         }}
                         animate={{
                           x: isActive
@@ -1030,18 +956,10 @@ const HeroSection = () => {
                       style={{ backgroundColor: colors.secondary }}
                     />
                     <div>
-                      <div
-                        className="text-white text-xs opacity-80"
-                         
-                      >
+                      <div className="text-white text-xs opacity-80">
                         Culture
                       </div>
-                      <div
-                        className="text-white text-sm font-bold"
-                         
-                      >
-                        PROGIX
-                      </div>
+                      <div className="text-white text-sm font-bold">PROGIX</div>
                     </div>
                   </div>
                 </div>
@@ -1049,16 +967,10 @@ const HeroSection = () => {
                 {/* Elegant Counter */}
                 <div className="absolute top-6 right-6">
                   <div className="text-right">
-                    <div
-                      className="text-white text-xs opacity-60"
-                       
-                    >
+                    <div className="text-white text-xs opacity-60">
                       {String(currentImageIndex + 1).padStart(2, '0')}
                     </div>
-                    <div
-                      className="text-white text-xs opacity-40"
-                       
-                    >
+                    <div className="text-white text-xs opacity-40">
                       — {String(cultureImages.length).padStart(2, '0')}
                     </div>
                   </div>
@@ -1139,12 +1051,7 @@ const HeroSection = () => {
                 style={{ backgroundColor: colors.secondary }}
               >
                 <div className="text-center">
-                  <div
-                    className="text-white font-bold text-sm"
-                     
-                  >
-                    2025
-                  </div>
+                  <div className="text-white font-bold text-sm">2025</div>
                 </div>
               </div>
 
@@ -1163,63 +1070,25 @@ const HeroSection = () => {
           {/* Stats Section */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div
-                className="text-3xl font-bold text-white mb-2"
-                 
-              >
-                50+
-              </div>
-              <div
-                className="text-gray-400 text-sm"
-                 
-              >
-                Projets réalisés
-              </div>
+              <div className="text-3xl font-bold text-white mb-2">50+</div>
+              <div className="text-gray-400 text-sm">Projets réalisés</div>
             </div>
 
             <div className="text-center">
-              <div
-                className="text-3xl font-bold text-white mb-2"
-                 
-              >
-                5+
-              </div>
-              <div
-                className="text-gray-400 text-sm"
-                 
-              >
+              <div className="text-3xl font-bold text-white mb-2">5+</div>
+              <div className="text-gray-400 text-sm">
                 Années d&apos;expérience
               </div>
             </div>
 
             <div className="text-center">
-              <div
-                className="text-3xl font-bold text-white mb-2"
-                 
-              >
-                15+
-              </div>
-              <div
-                className="text-gray-400 text-sm"
-                 
-              >
-                Clients satisfaits
-              </div>
+              <div className="text-3xl font-bold text-white mb-2">15+</div>
+              <div className="text-gray-400 text-sm">Clients satisfaits</div>
             </div>
 
             <div className="text-center">
-              <div
-                className="text-3xl font-bold text-white mb-2"
-                 
-              >
-                100%
-              </div>
-              <div
-                className="text-gray-400 text-sm"
-                 
-              >
-                Sur mesure
-              </div>
+              <div className="text-3xl font-bold text-white mb-2">100%</div>
+              <div className="text-gray-400 text-sm">Sur mesure</div>
             </div>
           </div>
         </div>
@@ -1227,25 +1096,20 @@ const HeroSection = () => {
 
       {/* Testimonials Section */}
       <section className="bg-white pb-20">
-                {/* Decorative white rectangle at top */}
-                <div 
+        {/* Decorative white rectangle at top */}
+        <div
           className="w-full h-8 bg-gray-900 mb-20"
           style={{
             borderBottomLeftRadius: '100px',
-            borderBottomRightRadius: '100px'
+            borderBottomRightRadius: '100px',
           }}
         ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-               
-            >
-              <span style={{ color: colors.secondary }}>
-                Témoignages
-              </span>{' '}
-              de projets réussis
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <span style={{ color: colors.secondary }}>Témoignages</span> de
+              projets réussis
             </h2>
           </div>
 
@@ -1267,31 +1131,23 @@ const HeroSection = () => {
               </div>
 
               <div className="pt-8">
-                <p
-                  className="text-gray-700 leading-relaxed font-bold mb-6"
-                   
-                >
-                  J&apos;ai développé une plateforme web pour ma société spécialisée
-                  dans l&apos;acquisition d&apos;actifs immobiliers résidentiels et
-                  fonciers.{' '}
+                <p className="text-gray-700 leading-relaxed font-bold mb-6">
+                  J&apos;ai développé une plateforme web pour ma société
+                  spécialisée dans l&apos;acquisition d&apos;actifs immobiliers
+                  résidentiels et fonciers.{' '}
                   <span style={{ color: colors.secondary }}>
-                    L&apos;équipe a su m&apos;éduquer et même prendre des initiatives
+                    L&apos;équipe a su m&apos;éduquer et même prendre des
+                    initiatives
                   </span>{' '}
                   pour mon site. Je recommande.
                 </p>
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <div
-                      className="font-semibold text-gray-900"
-                       
-                    >
+                    <div className="font-semibold text-gray-900">
                       David Manianga
                     </div>
-                    <div
-                      className="text-sm text-gray-500"
-                       
-                    >
+                    <div className="text-sm text-gray-500">
                       Gestion de Patrimoine chez Desjardins
                     </div>
                   </div>
@@ -1329,32 +1185,23 @@ const HeroSection = () => {
               </div>
 
               <div className="pt-8">
-                <p
-                  className="text-gray-700 leading-relaxed font-bold mb-6"
-                   
-                >
+                <p className="text-gray-700 leading-relaxed font-bold mb-6">
                   Ilyes avait travaillé en tant que product owner pour iBusiness
                   Consulting et avait su gérer mon équipe IT à la perfection.{' '}
                   <span style={{ color: colors.secondary }}>
                     Je n&apos;ai pas hésité une seule seconde à le contacter
                   </span>{' '}
                   pour développer un CRM interne pour ma deuxième entreprise
-                  RecrutementPlus. Toute l&apos;équipe est plus que satisfaite du
-                  résultat.
+                  RecrutementPlus. Toute l&apos;équipe est plus que satisfaite
+                  du résultat.
                 </p>
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <div
-                      className="font-semibold text-gray-900"
-                       
-                    >
+                    <div className="font-semibold text-gray-900">
                       Hakim Safa
                     </div>
-                    <div
-                      className="text-sm text-gray-500"
-                       
-                    >
+                    <div className="text-sm text-gray-500">
                       CEO de iBusiness Consulting Inc.
                     </div>
                   </div>
@@ -1392,30 +1239,22 @@ const HeroSection = () => {
               </div>
 
               <div className="pt-8">
-                <p
-                  className="text-gray-700 leading-relaxed font-bold mb-6"
-                   
-                >
-                  L&apos;équipe était à l&apos;écoute et réactive. Le projet a pris un
-                  petit peu plus de temps que prévu mais{' '}
+                <p className="text-gray-700 leading-relaxed font-bold mb-6">
+                  L&apos;équipe était à l&apos;écoute et réactive. Le projet a
+                  pris un petit peu plus de temps que prévu mais{' '}
                   <span style={{ color: colors.secondary }}>
                     on en ressort avec un produit complet sans dettes techniques
                   </span>{' '}
-                  et c&apos;est ce qui m&apos;importait. Donc bravo et merci à tous !
+                  et c&apos;est ce qui m&apos;importait. Donc bravo et merci à
+                  tous !
                 </p>
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <div
-                      className="font-semibold text-gray-900"
-                       
-                    >
+                    <div className="font-semibold text-gray-900">
                       Daniel Dekasse
                     </div>
-                    <div
-                      className="text-sm text-gray-500"
-                       
-                    >
+                    <div className="text-sm text-gray-500">
                       Economist-Fiscal Policy Advisor
                       <br />
                       Ministère des Finances du Québec (MFQ)
@@ -1457,7 +1296,7 @@ const HeroSection = () => {
 
       {/* Case Studies Section */}
       <section className="bg-cyan-800  ">
-      <svg
+        <svg
           className="w-full h-16 fill-current text-white"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
@@ -1468,10 +1307,7 @@ const HeroSection = () => {
           {/* Header */}
           <div className="flex items-center justify-between mb-16">
             <div>
-              <h2
-                className="text-4xl md:text-5xl font-bold text-white mb-4"
-                 
-              >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 Discover our
                 <br />
                 latest{' '}
@@ -1518,31 +1354,19 @@ const HeroSection = () => {
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <div className="flex items-center space-x-3 mb-6">
-                    <span
-                      className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                       
-                    >
+                    <span className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200">
                       Case Study
                     </span>
-                    <span
-                      className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                       
-                    >
+                    <span className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200">
                       Custom CRM Development
                     </span>
                   </div>
 
-                  <h3
-                    className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
-                     
-                  >
+                  <h3 className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200">
                     Centre Fahe Mechanics
                   </h3>
 
-                  <p
-                    className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200"
-                     
-                  >
+                  <p className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200">
                     Centre Fahe Mechanics est une référence à
                     Rivière-des-Prairies dans le domaine de la réparation
                     automobile. Nous avons développé pour eux un CRM complet
@@ -1621,37 +1445,27 @@ const HeroSection = () => {
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <div className="flex items-center space-x-3 mb-6">
-                    <span
-                      className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                       
-                    >
+                    <span className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200">
                       Case Study
                     </span>
-                    <span
-                      className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                       
-                    >
+                    <span className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200">
                       Healthcare Management System
                     </span>
                   </div>
 
-                  <h3
-                    className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
-                     
-                  >
+                  <h3 className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200">
                     FruitExotic
                   </h3>
 
-                  <p
-                    className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200"
-                     
-                  >
-                    FruitExotic Inc. est une entreprise spécialisée dans l&apos;exportation
-                    de fruits exotiques de qualité premium. Nous avons développé leur
-                    site web international multilingue (7 langues) pour mettre en valeur
-                    leurs services de la meilleure façon grâce à nos développeurs frontend
-                    et designers UI/UX d&apos;élite, créant une expérience digitale
-                    exceptionnelle qui reflète l&apos;excellence de leurs produits exotiques.
+                  <p className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200">
+                    FruitExotic Inc. est une entreprise spécialisée dans
+                    l&apos;exportation de fruits exotiques de qualité premium.
+                    Nous avons développé leur site web international multilingue
+                    (7 langues) pour mettre en valeur leurs services de la
+                    meilleure façon grâce à nos développeurs frontend et
+                    designers UI/UX d&apos;élite, créant une expérience digitale
+                    exceptionnelle qui reflète l&apos;excellence de leurs
+                    produits exotiques.
                   </p>
 
                   <Link
@@ -1694,10 +1508,7 @@ const HeroSection = () => {
                             filter: 'brightness(0.9) contrast(1.1)',
                           }}
                         >
-                          <source
-                            src="/fruitexo.mp4"
-                            type="video/mp4"
-                          />
+                          <source src="/fruitexo.mp4" type="video/mp4" />
                           Votre navigateur ne supporte pas la lecture vidéo.
                         </video>
                       )}
@@ -1734,31 +1545,19 @@ const HeroSection = () => {
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <div className="flex items-center space-x-3 mb-6">
-                    <span
-                      className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                       
-                    >
+                    <span className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200">
                       Case Study
                     </span>
-                    <span
-                      className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200"
-                       
-                    >
+                    <span className="text-sm text-gray-500 group-hover:text-white uppercase tracking-wide transition-colors duration-200">
                       Mobile App & Web Development
                     </span>
                   </div>
 
-                  <h3
-                    className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200"
-                     
-                  >
+                  <h3 className="text-3xl font-bold text-gray-900 group-hover:text-white mb-6 transition-colors duration-200">
                     CoRide
                   </h3>
 
-                  <p
-                    className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200"
-                     
-                  >
+                  <p className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-bold mb-8 transition-colors duration-200">
                     CoRide est une application de mobilité multi-services
                     révolutionnaire. Notre équipe a développé une solution
                     complète incluant une app mobile Flutter (transport privé,
@@ -1840,10 +1639,7 @@ const HeroSection = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-               
-            >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Une petite équipe d&apos;ingénieurs montréalais
               <br />
               <span style={{ color: colors.secondary }}>
@@ -1871,17 +1667,11 @@ const HeroSection = () => {
                   />
                 </div>
 
-                <h3
-                  className="text-xl font-bold text-gray-900 mb-2"
-                   
-                >
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Ilyes Ghorieb
                 </h3>
 
-                <p
-                  className="text-gray-600 text-sm mb-4"
-                   
-                >
+                <p className="text-gray-600 text-sm mb-4">
                   React • Node.js • TypeScript • PostgreSQL
                 </p>
 
@@ -1901,7 +1691,6 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -1932,17 +1721,11 @@ const HeroSection = () => {
                   />
                 </div>
 
-                <h3
-                  className="text-xl font-bold text-gray-900 mb-2"
-                   
-                >
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Fadi Atmania
                 </h3>
 
-                <p
-                  className="text-gray-600 text-sm mb-4"
-                   
-                >
+                <p className="text-gray-600 text-sm mb-4">
                   Flutter • React Native • Swift • Kotlin
                 </p>
 
@@ -1962,7 +1745,6 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -1993,17 +1775,11 @@ const HeroSection = () => {
                   />
                 </div>
 
-                <h3
-                  className="text-xl font-bold text-gray-900 mb-2"
-                   
-                >
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Daani Abderrahmane
                 </h3>
 
-                <p
-                  className="text-gray-600 text-sm mb-4"
-                   
-                >
+                <p className="text-gray-600 text-sm mb-4">
                   AWS • Docker • Kubernetes • CI/CD
                 </p>
 
@@ -2023,7 +1799,6 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -2054,17 +1829,11 @@ const HeroSection = () => {
                   />
                 </div>
 
-                <h3
-                  className="text-xl font-bold text-gray-900 mb-2"
-                   
-                >
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Islem Deneche
                 </h3>
 
-                <p
-                  className="text-gray-600 text-sm mb-4"
-                   
-                >
+                <p className="text-gray-600 text-sm mb-4">
                   Figma • Adobe XD • Prototyping • User Research
                 </p>
 
@@ -2083,7 +1852,6 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -2118,17 +1886,11 @@ const HeroSection = () => {
                   />
                 </div>
 
-                <h3
-                  className="text-xl font-bold text-gray-900 mb-2"
-                   
-                >
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Arselene Meghlaoui
                 </h3>
 
-                <p
-                  className="text-gray-600 text-sm mb-4"
-                   
-                >
+                <p className="text-gray-600 text-sm mb-4">
                   Full Stack Developer • Network Security
                 </p>
 
@@ -2147,7 +1909,6 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -2172,17 +1933,11 @@ const HeroSection = () => {
                   <span className="text-2xl">📊</span>
                 </div>
 
-                <h3
-                  className="text-xl font-bold text-gray-900 mb-2"
-                   
-                >
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Data Engineer
                 </h3>
 
-                <p
-                  className="text-gray-600 text-sm mb-4"
-                   
-                >
+                <p className="text-gray-600 text-sm mb-4">
                   Python • Machine Learning • ETL • Analytics
                 </p>
 
@@ -2199,7 +1954,6 @@ const HeroSection = () => {
                   <a
                     href="#"
                     className="px-4 py-2 text-sm font-bold text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                     
                   >
                     <svg
                       className="w-4 h-4"
@@ -2297,40 +2051,28 @@ const HeroSection = () => {
 
                   {/* About */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Notre équipe
                     </h3>
-                    <p
-                      className="text-gray-700 leading-relaxed"
-                       
-                    >
+                    <p className="text-gray-700 leading-relaxed">
                       Salut ! Je suis Ilyes, un développeur full-stack passionné
                       par la création de solutions logicielles innovantes. Chez
                       PROGIX, je conçois et développe des systèmes CRM et ERP
                       sur mesure, des plateformes SaaS et des applications
                       mobiles performantes et évolutives.
                     </p>
-                    <p
-                      className="text-gray-700 leading-relaxed mt-4"
-                       
-                    >
+                    <p className="text-gray-700 leading-relaxed mt-4">
                       Mon expertise couvre les technologies modernes comme
                       React.js, Node.js, Express.js, Flask, PostgreSQL et
                       MongoDB. Je maîtrise également Docker, les APIs
-                      REST/GraphQL, l&apos;authentification sécurisée (JWT, OAuth2,
-                      RBAC) et les pipelines CI/CD.
+                      REST/GraphQL, l&apos;authentification sécurisée (JWT,
+                      OAuth2, RBAC) et les pipelines CI/CD.
                     </p>
                   </div>
 
                   {/* Experience */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Expérience
                     </h3>
                     <div className="space-y-6">
@@ -2397,10 +2139,7 @@ const HeroSection = () => {
 
                   {/* Skills */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Compétences principales
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -2432,29 +2171,17 @@ const HeroSection = () => {
 
                   {/* Education */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Formation
                     </h3>
                     <div className="border-l-4 border-purple-500 pl-4">
-                      <h4
-                        className="font-semibold text-gray-900"
-                         
-                      >
+                      <h4 className="font-semibold text-gray-900">
                         Baccalauréat en Génie informatique et logiciel
                       </h4>
-                      <p
-                        className="text-sm text-gray-600"
-                         
-                      >
+                      <p className="text-sm text-gray-600">
                         UQAM | Université du Québec à Montréal • 2025
                       </p>
-                      <p
-                        className="text-gray-700 mt-1"
-                         
-                      >
+                      <p className="text-gray-700 mt-1">
                         GPA: 3.1 • Membre de l&apos;AGEEI
                       </p>
                     </div>
@@ -2467,7 +2194,6 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center space-x-2"
-                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -2483,7 +2209,6 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -2567,40 +2292,28 @@ const HeroSection = () => {
 
                   {/* About */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Notre équipe
                     </h3>
-                    <p
-                      className="text-gray-700 leading-relaxed"
-                       
-                    >
+                    <p className="text-gray-700 leading-relaxed">
                       Salut ! Je suis Fadi, un développeur web full-stack
                       passionné par les technologies modernes. Chez PROGIX, je
                       me spécialise dans la création de solutions robustes,
                       efficaces et scalables en utilisant Java, Python, React et
                       Docker.
                     </p>
-                    <p
-                      className="text-gray-700 leading-relaxed mt-4"
-                       
-                    >
+                    <p className="text-gray-700 leading-relaxed mt-4">
                       Mon approche consiste à concevoir des applications
                       performantes qui répondent aux besoins métier tout en
-                      maintenant une architecture propre et maintenable. J&apos;aime
-                      travailler sur des projets challengeants qui me permettent
-                      d&apos;explorer de nouvelles technologies.
+                      maintenant une architecture propre et maintenable.
+                      J&apos;aime travailler sur des projets challengeants qui
+                      me permettent d&apos;explorer de nouvelles technologies.
                     </p>
                   </div>
 
                   {/* Experience */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Expérience
                     </h3>
                     <div className="space-y-6">
@@ -2637,10 +2350,7 @@ const HeroSection = () => {
 
                   {/* Skills */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Compétences principales
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -2672,23 +2382,14 @@ const HeroSection = () => {
 
                   {/* Education */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Formation
                     </h3>
                     <div className="border-l-4 border-purple-500 pl-4">
-                      <h4
-                        className="font-semibold text-gray-900"
-                         
-                      >
+                      <h4 className="font-semibold text-gray-900">
                         Computer Software Engineering
                       </h4>
-                      <p
-                        className="text-sm text-gray-600"
-                         
-                      >
+                      <p className="text-sm text-gray-600">
                         UQAM | Université du Québec à Montréal
                       </p>
                     </div>
@@ -2701,7 +2402,6 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center space-x-2"
-                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -2717,7 +2417,6 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -2801,39 +2500,28 @@ const HeroSection = () => {
 
                   {/* About */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Notre équipe
                     </h3>
-                    <p
-                      className="text-gray-700 leading-relaxed"
-                       
-                    >
+                    <p className="text-gray-700 leading-relaxed">
                       Salut ! Je suis Daani, un développeur full-stack passionné
                       par l&apos;apprentissage et les projets collaboratifs.
                       Spécialisé en JavaScript, React, Node.js et Express.js,
-                      j&apos;aime créer des solutions web performantes et innovantes.
+                      j&apos;aime créer des solutions web performantes et
+                      innovantes.
                     </p>
-                    <p
-                      className="text-gray-700 leading-relaxed mt-4"
-                       
-                    >
-                      En tant qu&apos;Analyste-Programmeur et spécialiste Microsoft
-                      .NET chez PROGIX, j&apos;accompagne nos clients dans les
-                      secteurs RH, paie et énergie en concevant des solutions
-                      logicielles robustes. Mon expertise couvre C#, ASP.NET,
-                      les microservices et les architectures modernes.
+                    <p className="text-gray-700 leading-relaxed mt-4">
+                      En tant qu&apos;Analyste-Programmeur et spécialiste
+                      Microsoft .NET chez PROGIX, j&apos;accompagne nos clients
+                      dans les secteurs RH, paie et énergie en concevant des
+                      solutions logicielles robustes. Mon expertise couvre C#,
+                      ASP.NET, les microservices et les architectures modernes.
                     </p>
                   </div>
 
                   {/* Experience */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Expérience
                     </h3>
                     <div className="space-y-6">
@@ -2886,10 +2574,7 @@ const HeroSection = () => {
 
                   {/* Skills */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Compétences principales
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -2929,29 +2614,17 @@ const HeroSection = () => {
 
                   {/* Education */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Formation
                     </h3>
                     <div className="border-l-4 border-purple-500 pl-4">
-                      <h4
-                        className="font-semibold text-gray-900"
-                         
-                      >
+                      <h4 className="font-semibold text-gray-900">
                         Études en cours
                       </h4>
-                      <p
-                        className="text-sm text-gray-600"
-                         
-                      >
+                      <p className="text-sm text-gray-600">
                         UQAM | Université du Québec à Montréal • 2021 - 2026
                       </p>
-                      <p
-                        className="text-gray-700 mt-1"
-                         
-                      >
+                      <p className="text-gray-700 mt-1">
                         Spécialisation en Communication et Ventes externes
                       </p>
                     </div>
@@ -2959,10 +2632,7 @@ const HeroSection = () => {
 
                   {/* Methodologies */}
                   <div className="mb-8">
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-4"
-                       
-                    >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Méthodologies & Approches
                     </h3>
                     <div className="grid grid-cols-2 gap-4">
@@ -3014,7 +2684,6 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center space-x-2"
-                       
                     >
                       <svg
                         className="w-4 h-4"
@@ -3030,7 +2699,6 @@ const HeroSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors duration-200 flex items-center space-x-2"
-                       
                     >
                       <svg
                         className="w-4 h-4"

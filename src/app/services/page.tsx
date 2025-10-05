@@ -29,6 +29,13 @@ const ServicesPage = () => {
                 height={130}
                 className="h-20 w-auto cursor-pointer"
               />
+              <Image
+                src="/CertifiedLogo.webp"
+                alt="GPTW Certification"
+                width={100}
+                height={40}
+                className="h-14 w-auto ml-4 mt-4 cursor-pointer"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -96,7 +103,9 @@ const ServicesPage = () => {
               className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              Tous nos services font partie de votre réussite. Notre expertise ajoute de la valeur à votre entreprise grâce à la technologie logicielle et à la transformation numérique.
+              Tous nos services font partie de votre réussite. Notre expertise
+              ajoute de la valeur à votre entreprise grâce à la technologie
+              logicielle et à la transformation numérique.
             </p>
           </motion.div>
         </div>
@@ -137,9 +146,9 @@ const ServicesPage = () => {
                 <div className="order-2">
                   <h2
                     className="text-3xl md:text-4xl font-bold mb-6 transition-colors duration-500"
-                    style={{ 
+                    style={{
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: hoveredCard === 1 ? 'white' : '#111827'
+                      color: hoveredCard === 1 ? 'white' : '#111827',
                     }}
                   >
                     Logiciels de gestion & d&apos;automatisation
@@ -147,12 +156,17 @@ const ServicesPage = () => {
 
                   <p
                     className="text-lg leading-relaxed mb-8 transition-colors duration-500"
-                    style={{ 
+                    style={{
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: hoveredCard === 1 ? '#e0e0e0' : '#4b5563'
+                      color: hoveredCard === 1 ? '#e0e0e0' : '#4b5563',
                     }}
                   >
-                    Les logiciels de gestion (ERP, intranet, etc.) sont des systèmes centralisés qui automatisent toutes les opérations, organisent les équipes, garantissent l&apos;intégrité des données et fournissent des informations en temps réel sur l&apos;état de l&apos;entreprise, permettant une prise de décision éclairée.
+                    Les logiciels de gestion (ERP, intranet, etc.) sont des
+                    systèmes centralisés qui automatisent toutes les opérations,
+                    organisent les équipes, garantissent l&apos;intégrité des
+                    données et fournissent des informations en temps réel sur
+                    l&apos;état de l&apos;entreprise, permettant une prise de
+                    décision éclairée.
                   </p>
 
                   <div className="space-y-3">
@@ -160,18 +174,29 @@ const ServicesPage = () => {
                       href="/services/business-technical-analysis"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 1 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 1 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 1 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 1 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 1 ? 'white' : colors.secondary,
+                        }}
                       >
                         Analyse métier et technique
                       </span>
@@ -180,7 +205,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 1 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 1 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -195,18 +222,29 @@ const ServicesPage = () => {
                       href="/services/custom-software"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 1 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 1 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 1 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 1 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 1 ? 'white' : colors.secondary,
+                        }}
                       >
                         Développement logiciel sur mesure
                       </span>
@@ -215,7 +253,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 1 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 1 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -230,18 +270,29 @@ const ServicesPage = () => {
                       href="/services/custom-erp"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 1 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 1 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 1 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 1 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 1 ? 'white' : colors.secondary,
+                        }}
                       >
                         Développement ERP personnalisé
                       </span>
@@ -250,7 +301,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 1 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 1 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -265,18 +318,29 @@ const ServicesPage = () => {
                       href="/services/software-support"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 1 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 1 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 1 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 1
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 1 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 1 ? 'white' : colors.secondary,
+                        }}
                       >
                         Support et maintenance logicielle
                       </span>
@@ -285,7 +349,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 1 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 1 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -319,9 +385,9 @@ const ServicesPage = () => {
                 <div className="order-2 md:order-1">
                   <h2
                     className="text-3xl md:text-4xl font-bold mb-6 transition-colors duration-500"
-                    style={{ 
+                    style={{
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: hoveredCard === 2 ? 'white' : '#111827'
+                      color: hoveredCard === 2 ? 'white' : '#111827',
                     }}
                   >
                     Laboratoire PROGIX
@@ -329,12 +395,17 @@ const ServicesPage = () => {
 
                   <p
                     className="text-lg leading-relaxed mb-8 transition-colors duration-500"
-                    style={{ 
+                    style={{
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: hoveredCard === 2 ? '#e0e0e0' : '#4b5563'
+                      color: hoveredCard === 2 ? '#e0e0e0' : '#4b5563',
                     }}
                   >
-                    Le laboratoire PROGIX est spécialisé dans la conception et le développement de projets logiciels innovants. Les applications web et mobiles développées au laboratoire se distinguent par leur caractère unique et audacieux. D&apos;une plateforme de type marketplace à une application de rencontre, les possibilités sont infinies.
+                    Le laboratoire PROGIX est spécialisé dans la conception et
+                    le développement de projets logiciels innovants. Les
+                    applications web et mobiles développées au laboratoire se
+                    distinguent par leur caractère unique et audacieux.
+                    D&apos;une plateforme de type marketplace à une application
+                    de rencontre, les possibilités sont infinies.
                   </p>
 
                   <div className="space-y-3">
@@ -342,18 +413,29 @@ const ServicesPage = () => {
                       href="/services/web-application"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 2 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 2
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 2 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 2
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 2 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 2
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 2 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 2 ? 'white' : colors.secondary,
+                        }}
                       >
                         Application web
                       </span>
@@ -362,7 +444,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 2 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 2 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -377,18 +461,29 @@ const ServicesPage = () => {
                       href="/services/mobile-application"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 2 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 2
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 2 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 2
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 2 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 2
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 2 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 2 ? 'white' : colors.secondary,
+                        }}
                       >
                         Application mobile
                       </span>
@@ -397,7 +492,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 2 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 2 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -412,18 +509,29 @@ const ServicesPage = () => {
                       href="/services/ai-integration"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 2 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 2
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 2 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 2
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 2 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 2
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 2 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 2 ? 'white' : colors.secondary,
+                        }}
                       >
                         Intégration de l&apos;Intelligence Artificielle (IA)
                       </span>
@@ -432,7 +540,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 2 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 2 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -490,9 +600,9 @@ const ServicesPage = () => {
                 <div className="order-2">
                   <h2
                     className="text-3xl md:text-4xl font-bold mb-6 transition-colors duration-500"
-                    style={{ 
+                    style={{
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: hoveredCard === 3 ? 'white' : '#111827'
+                      color: hoveredCard === 3 ? 'white' : '#111827',
                     }}
                   >
                     Gestion des données
@@ -500,12 +610,17 @@ const ServicesPage = () => {
 
                   <p
                     className="text-lg leading-relaxed mb-8 transition-colors duration-500"
-                    style={{ 
+                    style={{
                       fontFamily: 'Hubot Sans, Inter, sans-serif',
-                      color: hoveredCard === 3 ? '#e0e0e0' : '#4b5563'
+                      color: hoveredCard === 3 ? '#e0e0e0' : '#4b5563',
                     }}
                   >
-                    La gestion des données consiste en un accompagnement stratégique et/ou des travaux techniques pour faire ressortir tout le potentiel des informations avec lesquelles votre organisation interagit. Lorsqu&apos;elle est mature, elle vous permet de guider vos choix en toute confiance et de prendre des décisions éclairées.
+                    La gestion des données consiste en un accompagnement
+                    stratégique et/ou des travaux techniques pour faire
+                    ressortir tout le potentiel des informations avec lesquelles
+                    votre organisation interagit. Lorsqu&apos;elle est mature,
+                    elle vous permet de guider vos choix en toute confiance et
+                    de prendre des décisions éclairées.
                   </p>
 
                   <div className="space-y-3">
@@ -513,18 +628,29 @@ const ServicesPage = () => {
                       href="/services/data-strategy"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 3 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 3
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 3 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 3
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 3 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 3
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 3 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 3 ? 'white' : colors.secondary,
+                        }}
                       >
                         Stratégie de données
                       </span>
@@ -533,7 +659,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 3 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 3 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -548,18 +676,29 @@ const ServicesPage = () => {
                       href="/services/data-analysis"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 3 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 3
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 3 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 3
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 3 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 3
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 3 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 3 ? 'white' : colors.secondary,
+                        }}
                       >
                         Analyse de données
                       </span>
@@ -568,7 +707,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 3 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 3 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -583,18 +724,29 @@ const ServicesPage = () => {
                       href="/services/data-visualization"
                       className="flex items-center justify-between group cursor-pointer p-4 rounded-lg transition-all duration-300"
                       style={{
-                        backgroundColor: hoveredCard === 3 ? 'rgba(255, 255, 255, 0.1)' : 'transparent'
+                        backgroundColor:
+                          hoveredCard === 3
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 3 ? 'rgba(255, 255, 255, 0.2)' : 'rgb(239 246 255)';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 3
+                            ? 'rgba(255, 255, 255, 0.2)'
+                            : 'rgb(239 246 255)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = hoveredCard === 3 ? 'rgba(255, 255, 255, 0.1)' : 'transparent';
+                        e.currentTarget.style.backgroundColor =
+                          hoveredCard === 3
+                            ? 'rgba(255, 255, 255, 0.1)'
+                            : 'transparent';
                       }}
                     >
                       <span
                         className="text-base font-semibold transition-colors duration-300"
-                        style={{ color: hoveredCard === 3 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 3 ? 'white' : colors.secondary,
+                        }}
                       >
                         Visualisation de données
                       </span>
@@ -603,7 +755,9 @@ const ServicesPage = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        style={{ color: hoveredCard === 3 ? 'white' : colors.secondary }}
+                        style={{
+                          color: hoveredCard === 3 ? 'white' : colors.secondary,
+                        }}
                       >
                         <path
                           strokeLinecap="round"
@@ -640,7 +794,10 @@ const ServicesPage = () => {
               className="text-xl text-white/90 mb-8"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              Simplifiez votre gestion. De la conception technique au développement, notre équipe d&apos;experts relève les principaux défis commerciaux et technologiques de votre entreprise. Nous sommes votre partenaire technologique.
+              Simplifiez votre gestion. De la conception technique au
+              développement, notre équipe d&apos;experts relève les principaux
+              défis commerciaux et technologiques de votre entreprise. Nous
+              sommes votre partenaire technologique.
             </p>
             <Link
               href="/contact"
@@ -675,7 +832,8 @@ const ServicesPage = () => {
               className="text-xl text-gray-600 mb-8"
               style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
             >
-              Discutons de votre projet et découvrez comment nous pouvons vous aider à atteindre vos objectifs.
+              Discutons de votre projet et découvrez comment nous pouvons vous
+              aider à atteindre vos objectifs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -688,7 +846,10 @@ const ServicesPage = () => {
               <Link
                 href="/landing#portfolio"
                 className="border-2 px-8 py-4 rounded-lg font-bold transition-all duration-300 hover:bg-gray-50"
-                style={{ borderColor: colors.secondary, color: colors.secondary }}
+                style={{
+                  borderColor: colors.secondary,
+                  color: colors.secondary,
+                }}
               >
                 Voir nos projets
               </Link>
@@ -710,7 +871,8 @@ const ServicesPage = () => {
                 className="h-16 w-auto mb-4 brightness-0 invert"
               />
               <p className="text-gray-400 text-sm">
-                Solutions logicielles sur mesure pour les organisations ambitieuses
+                Solutions logicielles sur mesure pour les organisations
+                ambitieuses
               </p>
             </div>
 
@@ -718,22 +880,34 @@ const ServicesPage = () => {
               <h3 className="font-bold mb-4">Services</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="/services" className="hover:text-white transition-colors">
+                  <Link
+                    href="/services"
+                    className="hover:text-white transition-colors"
+                  >
                     Tous les services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/custom-software" className="hover:text-white transition-colors">
+                  <Link
+                    href="/services/custom-software"
+                    className="hover:text-white transition-colors"
+                  >
                     Logiciels sur mesure
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/web-application" className="hover:text-white transition-colors">
+                  <Link
+                    href="/services/web-application"
+                    className="hover:text-white transition-colors"
+                  >
                     Applications web
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/mobile-application" className="hover:text-white transition-colors">
+                  <Link
+                    href="/services/mobile-application"
+                    className="hover:text-white transition-colors"
+                  >
                     Applications mobiles
                   </Link>
                 </li>
@@ -744,17 +918,26 @@ const ServicesPage = () => {
               <h3 className="font-bold mb-4">Entreprise</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="/team" className="hover:text-white transition-colors">
+                  <Link
+                    href="/team"
+                    className="hover:text-white transition-colors"
+                  >
                     Notre équipe
                   </Link>
                 </li>
                 <li>
-                  <Link href="/landing#portfolio" className="hover:text-white transition-colors">
+                  <Link
+                    href="/landing#portfolio"
+                    className="hover:text-white transition-colors"
+                  >
                     Portfolio
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
+                  <Link
+                    href="/contact"
+                    className="hover:text-white transition-colors"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -766,7 +949,10 @@ const ServicesPage = () => {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>Montréal, Québec</li>
                 <li>
-                  <a href="mailto:info@progix.ca" className="hover:text-white transition-colors">
+                  <a
+                    href="mailto:info@progix.ca"
+                    className="hover:text-white transition-colors"
+                  >
                     info@progix.ca
                   </a>
                 </li>

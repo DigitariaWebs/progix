@@ -53,7 +53,7 @@ const ServicesPage = () => {
                 Notre équipe
               </Link>
               <Link
-                href="/landing#portfolio"
+                href="/portfolio"
                 className="font-heading font-bold text-gray-900 hover:text-gray-700 transition-colors"
               >
                 Portfolio
@@ -844,7 +844,7 @@ const ServicesPage = () => {
                 Démarrer un projet
               </Link>
               <Link
-                href="/landing#portfolio"
+                href="/portfolio"
                 className="border-2 px-8 py-4 rounded-lg font-bold transition-all duration-300 hover:bg-gray-50"
                 style={{
                   borderColor: colors.secondary,
@@ -927,7 +927,7 @@ const ServicesPage = () => {
                 </li>
                 <li>
                   <Link
-                    href="/landing#portfolio"
+                    href="/portfolio"
                     className="hover:text-white transition-colors"
                   >
                     Portfolio

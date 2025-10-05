@@ -140,7 +140,7 @@ export default function BlogPostPage({
                   Notre équipe
                 </Link>
                 <Link
-                  href="/landing#portfolio"
+                  href="/portfolio"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-gray-900 hover:text-gray-700"
                 >
                   Portfolio
@@ -216,7 +216,7 @@ export default function BlogPostPage({
                   Notre équipe
                 </Link>
                 <Link
-                  href="/landing#portfolio"
+                  href="/portfolio"
                   className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                   style={{ color: colors.primary }}
                 >
@@ -762,7 +762,7 @@ export default function BlogPostPage({
                   Notre équipe
                 </Link>
                 <Link
-                  href="/landing#portfolio"
+                  href="/portfolio"
                   className="text-gray-400 hover:text-[#00d4ff] text-sm transition-colors"
                 >
                   Portfolio

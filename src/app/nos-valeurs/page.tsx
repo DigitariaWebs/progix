@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { colors } from '@/config/colors';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
@@ -33,26 +32,6 @@ const NosValeursPage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const principles = [
-    {
-      title: "Qualité avant tout",
-      subtitle: "Nous préférons livrer moins de projets, mais d'une qualité exceptionnelle",
-      description: "Notre approche privilégie la qualité sur la quantité. Chaque ligne de code est écrite avec soin et chaque fonctionnalité est testée rigoureusement.",
-      highlight: "Qualité"
-    },
-    {
-      title: "Transparence totale",
-      subtitle: "Communication claire et honnête à chaque étape",
-      description: "Nous maintenons une communication transparente avec nos clients, partageant les défis, les succès et les décisions techniques.",
-      highlight: "Transparence"
-    },
-    {
-      title: "Apprentissage continu",
-      subtitle: "Nous évoluons constamment avec la technologie",
-      description: "Notre équipe s'engage dans un apprentissage continu pour maîtriser les dernières technologies et méthodologies de développement.",
-      highlight: "Apprentissage"
-    }
-  ];
 
 
   return (
@@ -63,7 +42,6 @@ const NosValeursPage = () => {
         <HeroGeometric 
           badge="Progix Values"
           title1="Our Core Values"
-          title2="Building  "
           description="We are a team of strategists, developers, communicators, researchers. Together, we believe that progress only happens when you refuse to play things safe."
         />
       
@@ -320,7 +298,7 @@ const NosValeursPage = () => {
                 className="px-6 py-3 bg-white text-cyan-800 rounded-lg font-semibold hover:bg-white/90 transition-all duration-300 transform hover:scale-105"
                 style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
               >
-                S'abonner
+                S&apos;abonner
               </button>
             </div>
           </motion.div>

@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 interface Quote {
   id: number;
@@ -125,8 +124,8 @@ const InspirationalQuotesSlider = () => {
               {/* Left Side - Quote Content */}
               <div className="p-12 flex flex-col justify-center relative">
                 {/* Quote Marks */}
-                <div className="absolute top-6 left-6 text-6xl text-white/20 font-bold">"</div>
-                <div className="absolute bottom-6 right-6 text-6xl text-white/20 font-bold transform rotate-180">"</div>
+                <div className="absolute top-6 left-6 text-6xl text-white/20 font-bold">&ldquo;</div>
+                <div className="absolute bottom-6 right-6 text-6xl text-white/20 font-bold transform rotate-180">&rdquo;</div>
                 
                 {/* Quote Text */}
                 <motion.p

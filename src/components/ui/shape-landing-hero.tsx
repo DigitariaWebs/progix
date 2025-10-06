@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
-import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 
@@ -86,12 +85,10 @@ function ElegantShape({
 function HeroGeometric({
     badge = "Design Collective",
     title1 = "Elevate Your Digital Vision",
-    title2 = "Crafting Exceptional Websites",
     description = "Crafting exceptional digital experiences through innovative design and cutting-edge technology.",
 }: {
     badge?: string;
     title1?: string;
-    title2?: string;
     description?: string;
 }) {
     const fadeUpVariants = {

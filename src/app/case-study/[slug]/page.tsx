@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { assets } from '@/config/assets';
 import { colors } from '@/config/colors';
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 // Types for case study data
 interface Collaborator {
@@ -237,37 +238,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center">
-              <Image
-                src={assets.logo}
-                alt="PROGIX Logo"
-                width={32}
-                height={32}
-                className="h-8 w-auto"
-              />
-              <span className="ml-2 text-xl font-bold" style={{ color: colors.primary }}>PROGIX</span>
-            </Link>
-            <div className="flex items-center space-x-8">
-              <Link href="/" className="text-sm font-semibold transition-colors" style={{ color: colors.primary }}>
-                Accueil
-              </Link>
-              <Link href="/#services" className="text-sm font-semibold transition-colors hover:opacity-70" style={{ color: colors.primary }}>
-                Services
-              </Link>
-              <Link 
-                href="/#contact" 
-                className="text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
-                style={{ backgroundColor: colors.secondary }}
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
+      
 
       {/* Hero Section */}
       <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/20">

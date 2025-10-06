@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Navbar from '@/components/Navbar';
 
 const colors = {
   primary: '#1B363C',
@@ -15,70 +16,8 @@ const ServicesPage = () => {
 
   return (
     <div className="bg-white">
-      {/* Navigation Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/images/logo (3).webp"
-                alt="PROGIX Logo"
-                priority
-                width={130}
-                height={130}
-                className="h-20 w-auto cursor-pointer"
-              />
-              <Image
-                src="/CertifiedLogo.webp"
-                alt="GPTW Certification"
-                width={100}
-                height={40}
-                className="h-14 w-auto ml-4 mt-4 cursor-pointer"
-              />
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <Link
-                href="/services"
-                className="font-heading font-bold text-gray-900 hover:text-gray-700 transition-colors"
-              >
-                Services
-              </Link>
-              <Link
-                href="/team"
-                className="font-heading font-bold text-gray-900 hover:text-gray-700 transition-colors"
-              >
-                Notre équipe
-              </Link>
-              <Link
-                href="/portfolio"
-                className="font-heading font-bold text-gray-900 hover:text-gray-700 transition-colors"
-              >
-                Portfolio
-              </Link>
-              <Link
-                href="/contact"
-                className="font-heading font-bold text-gray-900 hover:text-gray-700 transition-colors"
-              >
-                Contact
-              </Link>
-            </div>
-
-            {/* CTA Button */}
-            <div className="hidden md:flex items-center">
-              <Link
-                href="/contact"
-                className="text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-                style={{ backgroundColor: colors.secondary }}
-              >
-                Démarrer un projet
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+       
+      <Navbar />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white">

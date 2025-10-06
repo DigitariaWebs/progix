@@ -78,7 +78,7 @@ const Navbar = () => {
                 Notre équipe
               </a>
               <a
-                href="#portfolio"
+                href="/portfolio"
                 className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
               >
                 Portfolio
@@ -160,7 +160,7 @@ const Navbar = () => {
                 Notre équipe
               </a>
               <a
-                href="#portfolio"
+                href="/portfolio"
                 className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                 style={{ color: colors.primary }}
               >

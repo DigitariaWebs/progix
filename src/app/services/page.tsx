@@ -20,7 +20,7 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link href="/landing" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <Image
                 src="/images/logo (3).webp"
                 alt="PROGIX Logo"

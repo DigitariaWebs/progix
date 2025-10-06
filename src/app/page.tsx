@@ -1,5 +1,3 @@
-import MaintenancePage from '@/components/MaintenancePage';
-import LandingPage from './landing/page';
 import AboutUsSection from '@/components/AboutUsSection';
 import BlogSection from '@/components/BlogSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';

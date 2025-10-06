@@ -313,7 +313,7 @@ const Header = () => {
                   href="#blog"
                   className="text-gray-600 hover:text-blue-600 transition-colors font-medium text-sm"
                 >
-                  Blogue
+                  Blog
                 </a>
                 <a
                   href="/team"

@@ -42,7 +42,7 @@ const BlogSection = () => {
                 fontFamily: 'Hubot Sans, Inter, sans-serif',
               }}
             >
-              Blogue
+              Blog
             </Link>
           </div>
 

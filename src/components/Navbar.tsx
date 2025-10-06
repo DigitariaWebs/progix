@@ -48,7 +48,7 @@ const Navbar = () => {
               src="/images/logo (3).webp"
               alt="PROGIX Logo"
               priority
-              onClick={() => (window.location.href = '/landing')}
+              onClick={() => (window.location.href = '/')}
               width={130}
               height={130}
               className="h-20 w-auto cursor-pointer"
@@ -93,7 +93,13 @@ const Navbar = () => {
                 href="/blog"
                 className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
               >
-                Blogue
+                Blog
+              </Link>
+              <Link
+                href="/nos-valeurs"
+                className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
+              >
+                Nos Valeurs
               </Link>
             </div>
           </div>
@@ -166,6 +172,13 @@ const Navbar = () => {
                 style={{ color: colors.primary }}
               >
                 Contact
+              </Link>
+              <Link
+                href="/nos-valeurs"
+                className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
+                style={{ color: colors.primary }}
+              >
+                Nos Valeurs
               </Link>
               <div className="flex space-x-4 pt-4">
                 <Link

@@ -110,7 +110,7 @@ export default function BlogPostPage({
                 src="/images/logo (3).webp"
                 alt="PROGIX Logo"
                 priority
-                onClick={() => (window.location.href = '/landing')}
+                onClick={() => (window.location.href = '/')}
                 width={130}
                 height={130}
                 className="h-20 w-auto cursor-pointer"
@@ -155,7 +155,7 @@ export default function BlogPostPage({
                   href="/blog"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-gray-900 hover:text-gray-700"
                 >
-                  Blogue
+                  Blog
                 </Link>
               </div>
             </div>
@@ -310,7 +310,7 @@ export default function BlogPostPage({
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              Retour au blogue
+              Retour au Blog
             </Link>
           </motion.div>
 
@@ -771,7 +771,7 @@ export default function BlogPostPage({
                   href="/blog"
                   className="text-gray-400 hover:text-[#00d4ff] text-sm transition-colors"
                 >
-                  Blogue
+                  Blog
                 </Link>
               </div>
             </div>

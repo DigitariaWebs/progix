@@ -3,10 +3,9 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { Filter } from 'lucide-react';
 import Partners from '@/components/Partners';
-import { projects, filterProjects } from '@/data/projectsData';
+import { filterProjects } from '@/data/projectsData';
 
 const colors = {
   primary: '#1B363C',
@@ -90,7 +89,7 @@ const PortfolioPage = () => {
                 src="/images/logo (3).webp"
                 alt="PROGIX Logo"
                 priority
-                onClick={() => (window.location.href = '/landing')}
+                onClick={() => (window.location.href = '/')}
                 width={130}
                 height={130}
                 className="h-20 w-auto cursor-pointer"
@@ -135,7 +134,7 @@ const PortfolioPage = () => {
                   href="/blog"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
                 >
-                  Blogue
+                  Blog
                 </Link>
               </div>
             </div>

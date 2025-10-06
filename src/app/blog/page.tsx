@@ -43,7 +43,7 @@ export default function BlogPage() {
                 src="/images/logo (3).webp"
                 alt="PROGIX Logo"
                 priority
-                onClick={() => (window.location.href = '/landing')}
+                onClick={() => (window.location.href = '/')}
                 width={130}
                 height={130}
                 className="h-20 w-auto cursor-pointer"
@@ -88,7 +88,7 @@ export default function BlogPage() {
                   href="/blog"
                   className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-gray-900 hover:text-gray-700"
                 >
-                  Blogue
+                  Blog
                 </Link>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function BlogPage() {
               letterSpacing: '0.02em',
             }}
           >
-            Notre Blogue
+            Notre Blog
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl">
             Découvrez nos derniers articles sur le développement web, la technologie et nos projets.

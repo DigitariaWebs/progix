@@ -393,7 +393,7 @@ const ContactSection = () => {
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-30">
         <Image
           src="/images/logo.png"
-          onClick={() => (window.location.href = '/landing')}
+          onClick={() => (window.location.href = '/')}
           alt="PROGIX"
           width={128}
           height={128}

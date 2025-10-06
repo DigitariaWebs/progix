@@ -123,7 +123,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Blogue
+                  Blog
                 </a>
               </li>
             </ul>

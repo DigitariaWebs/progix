@@ -482,7 +482,7 @@ const LandingPage = () => {
                 <li><a href="/team" className="hover:text-white transition-colors">Notre équipe</a></li>
                 <li><a href="/team" className="hover:text-white transition-colors">Équipe</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Carrières</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blogue</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
               </ul>
             </div>
 

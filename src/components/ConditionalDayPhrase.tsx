@@ -7,7 +7,7 @@ export default function ConditionalDayPhrase() {
   const pathname = usePathname();
 
   // Don't show DayPhrase on the landing page
-  if (pathname === '/landing' || pathname === '/portfolio') {
+  if (pathname === '/' || pathname === '/portfolio') {
     return null;
   }
 

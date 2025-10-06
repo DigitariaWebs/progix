@@ -1,18 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { colors } from '@/config/colors'; 
-import ClientLogosSection from '@/components/ClientLogosSection';
-import ServicesSection from '@/components/ServicesSection';
-import ExpertiseSection from '@/components/ExpertiseSection';
-import AboutUsSection from '@/components/AboutUsSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import CaseStudiesSection from '@/components/CaseStudiesSection';
-import TeamSection from '@/components/TeamSection';
-import BlogSection from '@/components/BlogSection';
 
 const HeroSection = () => {
  

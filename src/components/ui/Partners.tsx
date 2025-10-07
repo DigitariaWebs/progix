@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'; 
-import ScrollAnimation from './ScrollAnimation';
+import ScrollAnimation from '../ScrollAnimation';
 
 const Partners: React.FC = () => { 
   const [currentIndex, setCurrentIndex] = useState(0);

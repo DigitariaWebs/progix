@@ -29,7 +29,7 @@ export const projects: Project[] = [
     description: 'Un système de gestion complet pour centre automobile',
     fullDescription:
       "Développement d'une plateforme web complète de gestion pour un centre automobile, incluant la gestion des rendez-vous, l'inventaire des pièces, le suivi des réparations et la facturation client.",
-    video: '/images/WhatsApp Video 2025-09-26 at 10.22.25.mp4',
+    image: '/GoodRandomImage.png',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
     year: '2024',
     featured: true,
@@ -58,8 +58,8 @@ export const projects: Project[] = [
     industry: 'MEDICAL',
     description: 'Plateforme de gestion pour services de soins à domicile',
     fullDescription:
-      "Application web complète pour la gestion des services de soins à domicile incluant la planification des interventions, le suivi des patients, la gestion du personnel et la facturation.",
-    image: '/images/WhatsApp Image 2025-08-12 at 21.24.34_b00ec3d7.jpg',
+      'Application web complète pour la gestion des services de soins à domicile incluant la planification des interventions, le suivi des patients, la gestion du personnel et la facturation.',
+    image: '/GoodRandomImage.png',
     tags: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
     year: '2024',
     featured: true,
@@ -84,8 +84,8 @@ export const projects: Project[] = [
     industry: 'GOVERNMENT',
     description: 'Application mobile de covoiturage intelligente',
     fullDescription:
-      "Application mobile de covoiturage avec fonctionnalités de matching intelligent, suivi en temps réel, paiements intégrés et système de notation des conducteurs et passagers.",
-    video: '/images/WhatsApp Video 2025-09-28 at 11.59.54 (1).mp4',
+      'Application mobile de covoiturage avec fonctionnalités de matching intelligent, suivi en temps réel, paiements intégrés et système de notation des conducteurs et passagers.',
+    image: '/GoodRandomImage.png',
     tags: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'Google Maps'],
     year: '2024',
     featured: true,
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     description: 'CRM personnalisé pour cabinet de conseil',
     fullDescription:
       "Développement d'un CRM sur mesure incluant la gestion des clients, le suivi des projets, la facturation, les rapports analytiques et l'intégration avec les outils existants.",
-    image: '/images/ibusinesslogo.png',
+    image: '/GoodRandomImage.png',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Redux', 'Charts.js'],
     year: '2023',
     featured: true,
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     description: 'Système de gestion pour agence de recrutement',
     fullDescription:
       "CRM interne complet pour agence de recrutement avec gestion des candidats, des offres d'emploi, suivi du processus de recrutement et reporting avancé.",
-    image: '/images/rp-logo-1.png',
+    image: '/GoodRandomImage.png',
     tags: ['Vue.js', 'Laravel', 'MySQL', 'Vue Router', 'Vuex'],
     year: '2023',
     featured: false,
@@ -172,16 +172,12 @@ export const projects: Project[] = [
     description: 'Plateforme de numérisation et archivage',
     fullDescription:
       "Système de gestion documentaire pour la Bibliothèque et Archives nationales du Québec, incluant la numérisation, l'indexation, la recherche avancée et l'accès public.",
-    image: '/images/BAnQ-gray.svg',
+    image: '/GoodRandomImage.png',
     tags: ['React', 'Django', 'PostgreSQL', 'Elasticsearch', 'AWS S3'],
     year: '2023',
     featured: false,
     client: 'Bibliothèque et Archives nationales du Québec',
-    services: [
-      'Développement Web',
-      'Architecture Cloud',
-      'Recherche Avancée',
-    ],
+    services: ['Développement Web', 'Architecture Cloud', 'Recherche Avancée'],
     results: [
       {
         metric: 'Documents numérisés',
@@ -201,17 +197,13 @@ export const projects: Project[] = [
     industry: 'FOOD',
     description: 'Système de gestion pour restaurant',
     fullDescription:
-      "Plateforme complète de gestion pour restaurant incluant les commandes en ligne, la gestion de menu, les réservations, le point de vente (POS) et les statistiques de vente.",
-    image: '/images/crustys.png',
+      'Plateforme complète de gestion pour restaurant incluant les commandes en ligne, la gestion de menu, les réservations, le point de vente (POS) et les statistiques de vente.',
+    image: '/GoodRandomImage.png',
     tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Twilio'],
     year: '2024',
     featured: false,
     client: "Crusty's Restaurant",
-    services: [
-      'Développement Web',
-      'Application Mobile',
-      'Intégration POS',
-    ],
+    services: ['Développement Web', 'Application Mobile', 'Intégration POS'],
     results: [
       {
         metric: 'Commandes en ligne',
@@ -232,7 +224,7 @@ export const projects: Project[] = [
     description: 'Plateforme éducative interactive',
     fullDescription:
       "Développement d'une plateforme d'apprentissage en ligne avec gestion de cours, vidéos interactives, quiz, suivi de progression et certifications.",
-    image: '/images/cfaqlogo.png',
+    image: '/GoodRandomImage.png',
     tags: ['Next.js', 'Node.js', 'MongoDB', 'WebRTC', 'AWS'],
     year: '2023',
     featured: false,
@@ -258,7 +250,7 @@ export const projects: Project[] = [
     description: "Plateforme de gestion d'actifs immobiliers",
     fullDescription:
       "Système de gestion pour l'acquisition et la gestion d'actifs immobiliers résidentiels et fonciers, incluant le suivi des propriétés, les analyses financières et les rapports.",
-    image: '/images/premierbloc.jpg',
+    image: '/GoodRandomImage.png',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Chart.js', 'PDF Generation'],
     year: '2023',
     featured: false,
@@ -281,10 +273,10 @@ export const projects: Project[] = [
     slug: 'aqua-solutions',
     category: 'IOT',
     industry: 'GOVERNMENT',
-    description: 'Système de monitoring de qualité de l\'eau',
+    description: "Système de monitoring de qualité de l'eau",
     fullDescription:
       "Application IoT pour le monitoring en temps réel de la qualité de l'eau avec capteurs connectés, alertes automatiques, dashboards analytiques et rapports de conformité.",
-    image: '/images/logoaquaa.png',
+    image: '/GoodRandomImage.png',
     tags: ['React', 'Node.js', 'IoT', 'InfluxDB', 'Grafana', 'MQTT'],
     year: '2024',
     featured: false,
@@ -309,8 +301,8 @@ export const projects: Project[] = [
     industry: 'RETAIL',
     description: 'Système de réservation pour salon de coiffure',
     fullDescription:
-      "Application de gestion et réservation en ligne pour salon de coiffure avec calendrier interactif, notifications SMS, gestion des employés et programme de fidélité.",
-    image: '/images/LogoEle-1024x724.webp',
+      'Application de gestion et réservation en ligne pour salon de coiffure avec calendrier interactif, notifications SMS, gestion des employés et programme de fidélité.',
+    image: '/GoodRandomImage.png',
     tags: ['React', 'Firebase', 'Stripe', 'Twilio', 'Calendar API'],
     year: '2024',
     featured: false,
@@ -335,8 +327,8 @@ export const projects: Project[] = [
     industry: 'FOOD',
     description: 'Plateforme e-commerce de fruits exotiques',
     fullDescription:
-      "Boutique en ligne complète pour la vente de fruits exotiques avec gestion des stocks, livraison locale, paiements sécurisés et programme de fidélité.",
-    image: '/images/LogoFr.webp',
+      'Boutique en ligne complète pour la vente de fruits exotiques avec gestion des stocks, livraison locale, paiements sécurisés et programme de fidélité.',
+    image: '/GoodRandomImage.png',
     tags: ['Next.js', 'Shopify', 'Stripe', 'MongoDB', 'SendGrid'],
     year: '2024',
     featured: false,

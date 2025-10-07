@@ -17,7 +17,6 @@ export default function BlogPostPage({
 }) {
   const { slug } = use(params);
   const post = blogPosts.find((p) => p.slug === slug);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const navRef = useRef<HTMLElement>(null);

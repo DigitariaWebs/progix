@@ -2,13 +2,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { blogPosts } from '@/data/blogPosts';
-import { colors } from '@/config/colors';
 import Navbar from '@/components/layout/Navbar';
 
 export default function BlogPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -31,10 +29,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[#0a1628]">
-       
       <Navbar />
-
-
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
@@ -61,7 +56,8 @@ export default function BlogPage() {
             Notre Blog
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl">
-            Découvrez nos derniers articles sur le développement web, la technologie et nos projets.
+            Découvrez nos derniers articles sur le développement web, la
+            technologie et nos projets.
           </p>
         </div>
       </section>
@@ -102,9 +98,7 @@ export default function BlogPage() {
       {/* Footer */}
       <footer className="bg-gray-900 py-12">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
-          <p className="text-gray-400">
-            © 2025 Progix. Tous droits réservés.
-          </p>
+          <p className="text-gray-400">© 2025 Progix. Tous droits réservés.</p>
         </div>
       </footer>
     </div>

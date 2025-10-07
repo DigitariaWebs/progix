@@ -13,6 +13,7 @@ export interface Project {
   featured: boolean;
   client: string;
   services: string[];
+  projectUrl?: string;
   results?: {
     metric: string;
     value: string;
@@ -39,6 +40,7 @@ export const projects: Project[] = [
       'Système de Gestion',
       'Intégration Paiement',
     ],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Réduction du temps de traitement',
@@ -65,6 +67,7 @@ export const projects: Project[] = [
     featured: true,
     client: 'Confortplus65',
     services: ['Développement Web', 'UX/UI Design', 'Analyse Métier'],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Efficacité opérationnelle',
@@ -96,6 +99,7 @@ export const projects: Project[] = [
       'Intégration Maps',
       'Temps Réel',
     ],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Utilisateurs actifs',
@@ -126,6 +130,7 @@ export const projects: Project[] = [
       'Développement Full-Stack',
       'Intégrations',
     ],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Productivité équipe',
@@ -152,6 +157,7 @@ export const projects: Project[] = [
     featured: false,
     client: 'RecrutementPlus',
     services: ['Développement Web', 'Analyse Métier', 'Formation'],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Placements réussis',
@@ -178,6 +184,7 @@ export const projects: Project[] = [
     featured: false,
     client: 'Bibliothèque et Archives nationales du Québec',
     services: ['Développement Web', 'Architecture Cloud', 'Recherche Avancée'],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Documents numérisés',
@@ -204,6 +211,7 @@ export const projects: Project[] = [
     featured: false,
     client: "Crusty's Restaurant",
     services: ['Développement Web', 'Application Mobile', 'Intégration POS'],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Commandes en ligne',
@@ -230,6 +238,7 @@ export const projects: Project[] = [
     featured: false,
     client: 'CFAQ',
     services: ['Développement Web', 'Streaming Vidéo', 'LMS'],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Étudiants inscrits',
@@ -256,6 +265,7 @@ export const projects: Project[] = [
     featured: false,
     client: 'Premier Bloc',
     services: ['Développement Web', 'Analyse de Données', 'Reporting'],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Propriétés gérées',
@@ -282,6 +292,7 @@ export const projects: Project[] = [
     featured: false,
     client: 'Aqua Solutions',
     services: ['Développement IoT', 'Data Analytics', 'Cloud Infrastructure'],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Capteurs déployés',
@@ -308,6 +319,7 @@ export const projects: Project[] = [
     featured: false,
     client: 'Éléonore Barbershop',
     services: ['Développement Web', 'Système de Réservation', 'Marketing'],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Réservations en ligne',
@@ -334,6 +346,7 @@ export const projects: Project[] = [
     featured: false,
     client: 'FruitExo',
     services: ['E-commerce', 'Développement Web', 'Marketing Digital'],
+    projectUrl: 'https://google.com',
     results: [
       {
         metric: 'Ventes en ligne',

@@ -34,7 +34,6 @@ const industries = [
 ];
 
 const PortfolioPage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('ALL');
   const [activeCategory, setActiveCategory] = useState('ALL');
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -224,58 +223,63 @@ const PortfolioPage = () => {
                 {filteredProjects
                   .filter((p) => p.featured)
                   .map((project, index) => (
-                    <div
+                    <Link
                       key={project.id}
-                      className={`group overflow-hidden transition-all duration-500 break-inside-avoid ${
-                        index % 2 === 0 ? 'md:mt-25' : ''
-                      }`}
+                      href={`/portfolio/${project.slug}`}
+                      className="block"
                     >
-                      {/* Project Image */}
-                      <div className="relative h-[600px] overflow-hidden">
-                        {project.image && (
-                          <>
-                            <Image
-                              src={project.image}
-                              alt={project.title}
-                              fill
-                              className="object-cover transition-transform duration-700 group-hover:opacity-0"
-                            />
-                            <Image
-                              src="/GoodRandomImageHover.png"
-                              alt={`${project.title} hover`}
-                              fill
-                              className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700"
-                            />
-                          </>
-                        )}
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                      </div>
+                      <div
+                        className={`group overflow-hidden transition-all duration-500 break-inside-avoid cursor-pointer ${
+                          index % 2 === 0 ? 'md:mt-25' : ''
+                        }`}
+                      >
+                        {/* Project Image */}
+                        <div className="relative h-[600px] overflow-hidden">
+                          {project.image && (
+                            <>
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:opacity-0"
+                              />
+                              <Image
+                                src="/GoodRandomImageHover.png"
+                                alt={`${project.title} hover`}
+                                fill
+                                className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700"
+                              />
+                            </>
+                          )}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                        </div>
 
-                      {/* Project Info Below Image */}
-                      <div className="p-6 bg-white">
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h3
-                              className="text-xl font-bold uppercase mb-2"
-                              style={{ color: colors.primary }}
-                            >
-                              {project.title}
-                            </h3>
-                            <p className="text-sm text-gray-500 uppercase">
-                              {project.industry} | {project.category}
-                            </p>
-                          </div>
-                          <div className="text-right ml-4">
-                            <p className="text-sm text-gray-400 leading-tight">
-                              Showcase
-                            </p>
-                            <p className="text-sm text-gray-400 leading-tight">
-                              website
-                            </p>
+                        {/* Project Info Below Image */}
+                        <div className="p-6 bg-white">
+                          <div className="flex justify-between items-center">
+                            <div>
+                              <h3
+                                className="text-xl font-bold uppercase mb-2"
+                                style={{ color: colors.primary }}
+                              >
+                                {project.title}
+                              </h3>
+                              <p className="text-sm text-gray-500 uppercase">
+                                {project.industry} | {project.category}
+                              </p>
+                            </div>
+                            <div className="text-right ml-4">
+                              <p className="text-sm text-gray-400 leading-tight">
+                                Showcase
+                              </p>
+                              <p className="text-sm text-gray-400 leading-tight">
+                                website
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   ))}
               </div>
             </div>
@@ -294,56 +298,59 @@ const PortfolioPage = () => {
                 {displayedProjects
                   .filter((_, index) => index % 2 === 0)
                   .map((project) => (
-                    <div
+                    <Link
                       key={project.id}
-                      className="group overflow-hidden transition-all duration-300"
+                      href={`/portfolio/${project.slug}`}
+                      className="block"
                     >
-                      {/* Project Image */}
-                      <div className="relative h-96 overflow-hidden">
-                        {project.image && (
-                          <>
-                            <Image
-                              src={project.image}
-                              alt={project.title}
-                              fill
-                              className="object-cover transition-transform duration-300 group-hover:opacity-0"
-                            />
-                            <Image
-                              src="/GoodRandomImageHover.png"
-                              alt={`${project.title} hover`}
-                              fill
-                              className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
-                            />
-                          </>
-                        )}
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                      </div>
+                      <div className="group overflow-hidden transition-all duration-300">
+                        {/* Project Image */}
+                        <div className="relative h-96 overflow-hidden">
+                          {project.image && (
+                            <>
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:opacity-0"
+                              />
+                              <Image
+                                src="/GoodRandomImageHover.png"
+                                alt={`${project.title} hover`}
+                                fill
+                                className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                              />
+                            </>
+                          )}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                        </div>
 
-                      {/* Project Info Below Image */}
-                      <div className="p-4 bg-white">
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h3
-                              className="text-lg font-bold uppercase mb-2"
-                              style={{ color: colors.primary }}
-                            >
-                              {project.title}
-                            </h3>
-                            <p className="text-sm text-gray-500 uppercase">
-                              {project.industry} | {project.category}
-                            </p>
-                          </div>
-                          <div className="text-right ml-4">
-                            <p className="text-sm text-gray-400 leading-tight">
-                              Showcase
-                            </p>
-                            <p className="text-sm text-gray-400 leading-tight">
-                              website
-                            </p>
+                        {/* Project Info Below Image */}
+                        <div className="p-4 bg-white">
+                          <div className="flex justify-between items-center">
+                            <div>
+                              <h3
+                                className="text-lg font-bold uppercase mb-2"
+                                style={{ color: colors.primary }}
+                              >
+                                {project.title}
+                              </h3>
+                              <p className="text-sm text-gray-500 uppercase">
+                                {project.industry} | {project.category}
+                              </p>
+                            </div>
+                            <div className="text-right ml-4">
+                              <p className="text-sm text-gray-400 leading-tight">
+                                Showcase
+                              </p>
+                              <p className="text-sm text-gray-400 leading-tight">
+                                website
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   ))}
               </div>
 
@@ -352,56 +359,59 @@ const PortfolioPage = () => {
                 {displayedProjects
                   .filter((_, index) => index % 2 === 1)
                   .map((project) => (
-                    <div
+                    <Link
                       key={project.id}
-                      className="group overflow-hidden transition-all duration-300"
+                      href={`/portfolio/${project.slug}`}
+                      className="block"
                     >
-                      {/* Project Image */}
-                      <div className="relative h-96 overflow-hidden">
-                        {project.image && (
-                          <>
-                            <Image
-                              src={project.image}
-                              alt={project.title}
-                              fill
-                              className="object-cover transition-transform duration-300 group-hover:opacity-0"
-                            />
-                            <Image
-                              src="/GoodRandomImageHover.png"
-                              alt={`${project.title} hover`}
-                              fill
-                              className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
-                            />
-                          </>
-                        )}
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                      </div>
+                      <div className="group overflow-hidden transition-all duration-300">
+                        {/* Project Image */}
+                        <div className="relative h-96 overflow-hidden">
+                          {project.image && (
+                            <>
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:opacity-0"
+                              />
+                              <Image
+                                src="/GoodRandomImageHover.png"
+                                alt={`${project.title} hover`}
+                                fill
+                                className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                              />
+                            </>
+                          )}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                        </div>
 
-                      {/* Project Info Below Image */}
-                      <div className="p-4 bg-white">
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h3
-                              className="text-lg font-bold uppercase mb-2"
-                              style={{ color: colors.primary }}
-                            >
-                              {project.title}
-                            </h3>
-                            <p className="text-sm text-gray-500 uppercase">
-                              {project.industry} | {project.category}
-                            </p>
-                          </div>
-                          <div className="text-right ml-4">
-                            <p className="text-sm text-gray-400 leading-tight">
-                              Showcase
-                            </p>
-                            <p className="text-sm text-gray-400 leading-tight">
-                              website
-                            </p>
+                        {/* Project Info Below Image */}
+                        <div className="p-4 bg-white">
+                          <div className="flex justify-between items-center">
+                            <div>
+                              <h3
+                                className="text-lg font-bold uppercase mb-2"
+                                style={{ color: colors.primary }}
+                              >
+                                {project.title}
+                              </h3>
+                              <p className="text-sm text-gray-500 uppercase">
+                                {project.industry} | {project.category}
+                              </p>
+                            </div>
+                            <div className="text-right ml-4">
+                              <p className="text-sm text-gray-400 leading-tight">
+                                Showcase
+                              </p>
+                              <p className="text-sm text-gray-400 leading-tight">
+                                website
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   ))}
               </div>
             </div>

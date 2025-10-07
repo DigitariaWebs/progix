@@ -3,8 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Header from './layout/Header';
-import LogoCarousel from './LogoCarousel';
+import Header from '../layout/Header';
+import LogoCarousel from '../LogoCarousel';
 import { assets } from '@/config/assets';
 import { colors } from '@/config/colors';
 import { 

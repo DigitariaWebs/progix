@@ -4,7 +4,7 @@ import React, { useState, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import { colors } from '@/config/colors';
 import { Squares } from '@/components/ui/squares-background';
-import Partners from '@/components/Partners';
+import Partners from '@/components/ui/Partners';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({

@@ -1,4 +1,4 @@
-import MobileAppPage from '@/components/MobileAppPage';
+import MobileAppPage from '@/components/pages/MobileAppPage';
 
 export const metadata = {
   title: 'Application Mobile - PROGIX Studio',

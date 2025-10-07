@@ -71,18 +71,18 @@ const Navbar = () => {
               >
                 Services
               </Link>
-              <a
+              <Link
                 href="/team"
                 className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
               >
                 Notre équipe
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/portfolio"
                 className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
               >
                 Portfolio
-              </a>
+              </Link>
               <Link
                 href="/contact"
                 className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
@@ -152,20 +152,20 @@ const Navbar = () => {
               >
                 Services
               </a>
-              <a
+              <Link
                 href="/team"
                 className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                 style={{ color: colors.primary }}
               >
                 Notre équipe
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/portfolio"
                 className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
                 style={{ color: colors.primary }}
               >
                 Portfolio
-              </a>
+              </Link>
               <Link
                 href="/contact"
                 className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"

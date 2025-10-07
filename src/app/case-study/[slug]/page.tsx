@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { assets } from '@/config/assets';
 import { colors } from '@/config/colors';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';

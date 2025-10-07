@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { blogPosts } from '@/data/blogPosts';
 import { colors } from '@/config/colors';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/layout/Navbar';
 
 export default function BlogPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

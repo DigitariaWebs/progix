@@ -8,7 +8,7 @@ import { blogPosts } from '@/data/blogPosts';
 import { colors } from '@/config/colors';
 import { use } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/layout/Navbar';
 
 export default function BlogPostPage({
   params,

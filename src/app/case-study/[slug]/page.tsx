@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { assets } from '@/config/assets';
 import { colors } from '@/config/colors';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import Footer from '@/components/layout/Footer';
+import Navbar from '@/components/layout/Navbar';
 
 // Types for case study data
 interface Collaborator {

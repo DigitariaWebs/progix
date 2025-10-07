@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Filter } from 'lucide-react';
 import Partners from '@/components/Partners';
 import { filterProjects } from '@/data/projectsData';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/layout/Navbar';
 
 const colors = {
   primary: '#1B363C',

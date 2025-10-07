@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/layout/Navbar';
 
 const colors = {
   primary: '#1B363C',

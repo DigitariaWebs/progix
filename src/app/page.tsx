@@ -1,15 +1,15 @@
-import AboutUsSection from '@/components/AboutUsSection';
-import BlogSection from '@/components/BlogSection';
-import CaseStudiesSection from '@/components/CaseStudiesSection';
-import ClientLogosSection from '@/components/ClientLogosSection';
-import ExpertiseSection from '@/components/ExpertiseSection';
-import HeroSection from '@/components/HeroSection';
-import Navbar from '@/components/Navbar';
-import ServicesSection from '@/components/ServicesSection';
-import TeamSection from '@/components/TeamSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import CtaButton from '../components/CtaButton';
-import Footer from '../components/Footer';
+import AboutUsSection from '@/components/sections/AboutUsSection';
+import BlogSection from '@/components/sections/BlogSection';
+import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
+import ClientLogosSection from '@/components/sections/ClientLogosSection';
+import ExpertiseSection from '@/components/sections/ExpertiseSection';
+import HeroSection from '@/components/sections/HeroSection';
+import Navbar from '@/components/layout/Navbar';
+import ServicesSection from '@/components/sections/ServicesSection';
+import TeamSection from '@/components/sections/TeamSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import CtaButton from '../components/sections/CtaButtonSection';
+import Footer from '../components/layout/Footer';
 
 export default function Home() {
   return (

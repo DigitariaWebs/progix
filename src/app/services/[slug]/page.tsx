@@ -12,7 +12,7 @@ import {
   FiPlus,
   FiMinus,
 } from 'react-icons/fi';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/layout/Navbar';
 
 const colors = {
   primary: '#1B363C',

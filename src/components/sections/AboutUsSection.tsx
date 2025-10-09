@@ -61,11 +61,7 @@ const AboutUsSection = () => {
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed font-semibold mb-8">
-              Notre pire cauchemar est d&apos;un jour se réveiller et être une
-              équipe de 100 et devenir, ce qu&apos;on appelle à
-              l&apos;interne, une usine à saucisses. On préfère avoir une
-              petite équipe de joueurs AAA et faire une vingtaine de projets
-              par année qui nous tiennent à cœur.
+              Progix tire son nom de notre passion pour la programmation et l&apos;innovation technologique. Notre équipe de 9 ingénieurs logiciels, majoritairement diplômés de l&apos;UQAM, forme un collectif soudé où la collaboration et l&apos;excellence technique sont au cœur de notre approche.
             </p>
 
             <div className="flex items-center space-x-6">

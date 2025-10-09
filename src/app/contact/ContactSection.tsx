@@ -437,124 +437,27 @@ const ContactSection = () => {
 
           <div className="text-center">
             <h1
-              className="text-4xl md:text-5xl font-bold mb-4 leading-tight"
+              className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
               style={{
                 fontFamily: 'Hubot Sans, Inter, sans-serif',
                 color: colors.primary,
                 textShadow: '0 2px 4px rgba(0,0,0,0.1)',
               }}
             >
-              Transformons votre{' '}
-              <span className="relative">
-                <span className="bg-gradient-to-r from-cyan-500 via-blue-400 to-blue-600 bg-clip-text text-transparent">
-                  vision
-                </span>
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-blue-400 to-blue-600 rounded-full "></div>
-              </span>
-              <br />
-              en réalité digitale
+              Demande de soumission
             </h1>
 
             <p
-              className="text-lg max-w-4xl mx-auto leading-relaxed mb-6"
+              className="text-lg max-w-4xl mx-auto leading-relaxed mb-8"
               style={{
                 fontFamily: 'Hubot Sans, Inter, sans-serif',
                 color: colors.tertiary,
               }}
             >
-              Comme <strong>David de Desjardins</strong>,{' '}
-              <strong>Hakim d&apos;iBusiness</strong> et{' '}
-              <strong>Daniel du Ministère des Finances</strong>, faites
-              confiance à notre équipe d&apos;ingénieurs pour développer des
-              solutions sur mesure qui s&apos;intègrent parfaitement à vos
-              processus.
+              Ça nous ferait plaisir de parler d&apos;un projet potentiel avec vous. 
+              Remplissez ce court formulaire pour qu&apos;on ait un peu d&apos;information 
+              et on vous reviendra rapidement par la suite.
             </p>
-
-            {/* Stats/Trust indicators */}
-            <div className="flex flex-wrap justify-center items-center gap-6 mb-6">
-              <div className="text-center">
-                <div
-                  className="text-3xl font-bold"
-                  style={{
-                    fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.primary,
-                  }}
-                >
-                  50+
-                </div>
-                <div
-                  className="text-sm"
-                  style={{
-                    fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.secondary,
-                  }}
-                >
-                  Projets réalisés
-                </div>
-              </div>
-              <div className="text-center">
-                <div
-                  className="text-3xl font-bold"
-                  style={{
-                    fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.primary,
-                  }}
-                >
-                  24h
-                </div>
-                <div
-                  className="text-sm"
-                  style={{
-                    fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.secondary,
-                  }}
-                >
-                  Délai de réponse
-                </div>
-              </div>
-              <div className="text-center">
-                <div
-                  className="text-3xl font-bold"
-                  style={{
-                    fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.primary,
-                  }}
-                >
-                  100%
-                </div>
-                <div
-                  className="text-sm"
-                  style={{
-                    fontFamily: 'Hubot Sans, Inter, sans-serif',
-                    color: colors.secondary,
-                  }}
-                >
-                  Sur mesure
-                </div>
-              </div>
-            </div>
-
-            {/* Contact direct */}
-            <div
-              className="inline-flex items-center gap-4 px-6 py-3 rounded-full"
-              style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                backdropFilter: 'blur(10px)',
-                color: colors.tertiary,
-              }}
-            >
-              <span className="text-sm">Ou appelez Ilyes directement :</span>
-              <a
-                href="tel:+15145765993"
-                className="font-semibold transition-colors"
-                style={{
-                  fontFamily: 'Hubot Sans, Inter, sans-serif',
-                  color: colors.secondary,
-                }}
-              >
-                +1 514 576 5993
-              </a>
-            </div>
           </div>
         </div>
       </div>

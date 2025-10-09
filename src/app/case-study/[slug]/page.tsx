@@ -682,7 +682,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               {/* Bottom accent */}
               <div className="mt-12 p-6 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border-l-4 border-blue-500">
                 <p className="text-gray-700 font-medium italic">
-                  "Chaque objectif a été soigneusement défini pour garantir le succès du projet FAHE CRM et maximiser l'impact sur leur activité."
+                  &ldquo;Chaque objectif a été soigneusement défini pour garantir le succès du projet FAHE CRM et maximiser l&apos;impact sur leur activité.&rdquo;
                 </p>
               </div>
             </div>
@@ -796,7 +796,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 <div className="flex justify-center items-center mt-8 space-x-6 text-sm text-gray-500">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                    <span>{section.images.length} captures d'écran</span>
+                    <span>{section.images.length} captures d&apos;écran</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse delay-500"></div>
@@ -999,7 +999,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                           </svg>
                         </div>
                         <h4 className="font-bold text-gray-800 mb-2">Évolutivité</h4>
-                        <p className="text-sm text-gray-600">Facile d'ajouter de nouvelles fonctionnalités</p>
+                        <p className="text-sm text-gray-600">Facile d&apos;ajouter de nouvelles fonctionnalités</p>
                       </div>
                       
                       <div className="text-center p-4 bg-white/50 rounded-xl">

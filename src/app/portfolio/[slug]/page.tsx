@@ -42,14 +42,14 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
           </div>
 
           {/* Image - Almost Full Width */}
-          {project.image && (
+          {project.heroImage && (
             <div className="relative w-full mt-10 lg:mt-15">
-              <div className="relative aspect-[16/9] lg:aspect-[21/9] w-full overflow-hidden">
+              <div className="relative aspect-[16/9] lg:aspect-[21/9] w-full overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] rounded-md">
                 <Image
-                  src={project.image}
+                  src={project.heroImage}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-md"
                   priority
                 />
               </div>
@@ -153,33 +153,6 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
                 </div>
               </div>
 
-              {/* Section: MANDAT */}
-              <div className="space-y-6">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                  MANDAT
-                </h2>
-                <p className="text-lg leading-relaxed text-gray-700">
-                  {project.description}
-                </p>
-              </div>
-
-              {/* Section: OBJECTIFS */}
-              <div className="space-y-6">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                  OBJECTIFS
-                </h2>
-                <div className="space-y-4">
-                  {project.services.map((service, index) => (
-                    <div key={index} className="flex items-start gap-4">
-                      <span className="text-lg text-gray-700 mt-1">■</span>
-                      <p className="text-lg leading-relaxed text-gray-700">
-                        {service}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* Results Section */}
               {project.results && project.results.length > 0 && (
                 <div className="space-y-6">
@@ -204,24 +177,6 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
                 </div>
               )}
 
-              {/* Video Section */}
-              {project.video && (
-                <div className="space-y-6">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                    DÉMO
-                  </h2>
-                  <div className="relative aspect-video w-full overflow-hidden bg-gray-900">
-                    <video
-                      src={project.video}
-                      controls
-                      className="w-full h-full object-contain"
-                    >
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </div>
-              )}
-
               {/* Technologies Used */}
               <div className="space-y-6">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
@@ -238,6 +193,162 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Video Preview */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="space-y-8">
+            <div className="bg-gradient-to-br from-[#0A2456] to-[#4FA3D1] rounded-xl py-16 lg:py-20 px-8 lg:px-12">
+              <div className="relative aspect-[16/10] w-full max-w-4xl mx-auto overflow-hidden rounded-lg shadow-lg">
+                <video
+                  src={project.video || '/fruitexo.mp4'}
+                  autoPlay
+                  muted
+                  loop
+                  className="w-full h-full object-cover"
+                  poster={project.posterImage}
+                >
+                  Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mandat Section */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            {/* Left Column - Large Title */}
+            <div className="flex items-start">
+              <h2 className="text-6xl lg:text-7xl xl:text-7xl font-bold text-gray-900 leading-[0.9]">
+                MANDAT
+              </h2>
+            </div>
+
+            {/* Right Column - Description */}
+            <div className="flex items-center">
+              <p className="font-semibold lg:text-lg leading-relaxed text-gray-800">
+                Concevoir une plateforme numérique bilingue et accessible, tout
+                en repensant l&apos;expérience utilisateur pour la rendre plus
+                intuitive. Le site devait refléter la nouvelle image de marque
+                du cégep, réalisée en 2024 par{' '}
+                <a
+                  href="#"
+                  className="underline hover:text-gray-600 transition-colors"
+                >
+                  Lemay Michaud
+                </a>
+                , et mettre en valeur son positionnement distinctif.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Two Images Section */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div className="space-y-4">
+              <div className="relative aspect-[4/3] w-full overflow-hidden shadow-lg">
+                <Image
+                  src={project.posterImage || '/GoodRandomImage.png'}
+                  alt={`${project.title} - Vue 1`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="relative aspect-[4/3] w-full overflow-hidden shadow-lg">
+                <Image
+                  src="/HeroSection.png"
+                  alt={`${project.title} - Vue 2`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Objectives Section */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            {/* Left Column - Large Title */}
+            <div className="flex items-start">
+              <h2 className="text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 leading-[0.9]">
+                OBJECTIFS
+              </h2>
+            </div>
+
+            {/* Right Column - Bullet Points */}
+            <div className="flex items-center">
+              <ul className="space-y-6 font-semibold lg:text-lg leading-relaxed text-gray-800">
+                <li className="flex items-start">
+                  <span className="mr-3 mt-1.5 flex-shrink-0">•</span>
+                  <span>
+                    Respecter l&apos;ensemble des normes gouvernementales en
+                    matière de sécurité et d&apos;accessibilité.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 mt-1.5 flex-shrink-0">•</span>
+                  <span>
+                    Offrir une expérience 100 % bilingue (français et anglais).
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 mt-1.5 flex-shrink-0">•</span>
+                  <span>
+                    Simplifier et moderniser la navigation pour une utilisation
+                    intuitive.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 mt-1.5 flex-shrink-0">•</span>
+                  <span>
+                    Mettre en lumière la mission, la vision et les valeurs du
+                    cégep.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 mt-1.5 flex-shrink-0">•</span>
+                  <span>
+                    Soutenir les efforts de recrutement d&apos;étudiants et
+                    d&apos;employés.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 mt-1.5 flex-shrink-0">•</span>
+                  <span>
+                    Intégrer et respecter la nouvelle identité visuelle du
+                    cégep.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 mt-1.5 flex-shrink-0">•</span>
+                  <span>
+                    Moderniser l&apos;image numérique afin de la rendre plus
+                    attrayante et pertinente.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 mt-1.5 flex-shrink-0">•</span>
+                  <span>
+                    Fournir des indicateurs de performance (KPI) permettant
+                    d&apos;analyser la fréquentation et la convivialité du site.
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

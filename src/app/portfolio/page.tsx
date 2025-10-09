@@ -234,17 +234,17 @@ const PortfolioPage = () => {
                         }`}
                       >
                         {/* Project Image */}
-                        <div className="relative h-[600px] overflow-hidden">
-                          {project.image && (
+                        <div className="relative h-[700px] overflow-hidden">
+                          {project.posterImage && (
                             <>
                               <Image
-                                src={project.image}
+                                src={project.posterImage}
                                 alt={project.title}
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:opacity-0"
                               />
                               <Image
-                                src="/GoodRandomImageHover.png"
+                                src={project.posterImageHover || '/GoodRandomImageHover.png'}
                                 alt={`${project.title} hover`}
                                 fill
                                 className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700"
@@ -306,10 +306,10 @@ const PortfolioPage = () => {
                       <div className="group overflow-hidden transition-all duration-300">
                         {/* Project Image */}
                         <div className="relative h-96 overflow-hidden">
-                          {project.image && (
+                          {project.posterImage && (
                             <>
                               <Image
-                                src={project.image}
+                                src={project.posterImage}
                                 alt={project.title}
                                 fill
                                 className="object-cover transition-transform duration-300 group-hover:opacity-0"
@@ -367,10 +367,10 @@ const PortfolioPage = () => {
                       <div className="group overflow-hidden transition-all duration-300">
                         {/* Project Image */}
                         <div className="relative h-96 overflow-hidden">
-                          {project.image && (
+                          {project.posterImage && (
                             <>
                               <Image
-                                src={project.image}
+                                src={project.posterImage}
                                 alt={project.title}
                                 fill
                                 className="object-cover transition-transform duration-300 group-hover:opacity-0"

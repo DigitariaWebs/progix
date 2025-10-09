@@ -42,14 +42,14 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
           </div>
 
           {/* Image - Almost Full Width */}
-          {project.image && (
+          {project.heroImage && (
             <div className="relative w-full mt-10 lg:mt-15">
-              <div className="relative aspect-[16/9] lg:aspect-[21/9] w-full overflow-hidden">
+              <div className="relative aspect-[16/9] lg:aspect-[21/9] w-full overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] rounded-md">
                 <Image
-                  src={project.image}
+                  src={project.heroImage}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-md"
                   priority
                 />
               </div>
@@ -205,12 +205,12 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
             <div className="bg-gradient-to-br from-[#0A2456] to-[#4FA3D1] rounded-xl py-16 lg:py-20 px-8 lg:px-12">
               <div className="relative aspect-[16/10] w-full max-w-4xl mx-auto overflow-hidden rounded-lg shadow-lg">
                 <video
-                  src="/fruitexo.mp4"
+                  src={project.video || '/fruitexo.mp4'}
                   autoPlay
                   muted
                   loop
                   className="w-full h-full object-cover"
-                  poster={project.image}
+                  poster={project.posterImage}
                 >
                   Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
@@ -258,7 +258,7 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
             <div className="space-y-4">
               <div className="relative aspect-[4/3] w-full overflow-hidden shadow-lg">
                 <Image
-                  src={project.image || '/GoodRandomImage.png'}
+                  src={project.posterImage || '/GoodRandomImage.png'}
                   alt={`${project.title} - Vue 1`}
                   fill
                   className="object-cover"

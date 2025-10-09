@@ -34,7 +34,7 @@ const LogoCarousel = () => {
                 alt={logo.alt}
                 width={120}
                 height={48}
-                className="h-8 w-auto object-contain filter brightness-0 sepia-0 saturate-100 hue-rotate-210deg brightness-50 contrast-150"
+                className="h-8 w-auto object-contain filter sepia-0 saturate-100 hue-rotate-210deg brightness-50 contrast-150"
               />
             </div>
           ))}
@@ -47,7 +47,7 @@ const LogoCarousel = () => {
                 alt={logo.alt}
                 width={120}
                 height={48}
-                className="h-8 w-auto object-contain filter brightness-0 sepia-0 saturate-100 hue-rotate-210deg brightness-50 contrast-150"
+                className="h-8 w-auto object-contain filter sepia-0 saturate-100 hue-rotate-210deg brightness-50 contrast-150"
               />
             </div>
           ))}
@@ -60,7 +60,7 @@ const LogoCarousel = () => {
                 alt={logo.alt}
                 width={120}
                 height={48}
-                className="h-8 w-auto object-contain filter brightness-0 sepia-0 saturate-100 hue-rotate-210deg brightness-50 contrast-150"
+                className="h-8 w-auto object-contain filter sepia-0 saturate-100 hue-rotate-210deg brightness-50 contrast-150"
               />
             </div>
           ))}

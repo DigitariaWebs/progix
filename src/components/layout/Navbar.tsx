@@ -45,7 +45,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center relative z-10">
             <Image
-              src="/images/logo (3).webp"
+              src="/images/logo.png"
               alt="PROGIX Logo"
               priority
               onClick={() => (window.location.href = '/')}

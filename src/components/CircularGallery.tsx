@@ -1,21 +1,22 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
+import type { OGLRenderingContext } from 'ogl';
 import { useEffect, useRef } from 'react';
 
 import './CircularGallery.css';
 
-function debounce(func, wait) {
-  let timeout;
-  return function (...args) {
+function debounce(func: (...args: unknown[]) => void, wait: number) {
+  let timeout: NodeJS.Timeout;
+  return function (this: unknown, ...args: unknown[]) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), wait);
   };
 }
 
-function lerp(p1, p2, t) {
+function lerp(p1: number, p2: number, t: number): number {
   return p1 + (p2 - p1) * t;
 }
 
-function autoBind(instance) {
+function autoBind(instance: Record<string, unknown>): void {
   const proto = Object.getPrototypeOf(instance);
   Object.getOwnPropertyNames(proto).forEach(key => {
     if (key !== 'constructor' && typeof instance[key] === 'function') {
@@ -24,9 +25,12 @@ function autoBind(instance) {
   });
 }
 
-function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'black') {
+function createTextTexture(gl: OGLRenderingContext, text: string, font = 'bold 30px monospace', color = 'black'): { texture: Texture; width: number; height: number } {
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');
+  if (!context) {
+    throw new Error('Could not get 2D context from canvas');
+  }
   context.font = font;
   const metrics = context.measureText(text);
   const textWidth = Math.ceil(metrics.width);
@@ -45,7 +49,21 @@ function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'blac
 }
 
 class Title {
-  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }) {
+  gl: OGLRenderingContext;
+  plane: Mesh;
+  renderer: Renderer;
+  text: string;
+  textColor: string;
+  font: string;
+  mesh: Mesh;
+  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }: {
+    gl: OGLRenderingContext;
+    plane: Mesh;
+    renderer: Renderer;
+    text: string;
+    textColor?: string;
+    font?: string;
+  }) {
     autoBind(this);
     this.gl = gl;
     this.plane = plane;
@@ -94,6 +112,31 @@ class Title {
 }
 
 class Media {
+  geometry: Plane;
+  gl: OGLRenderingContext;
+  image: string;
+  index: number;
+  length: number;
+  renderer: Renderer;
+  scene: Transform;
+  screen: { width: number; height: number };
+  text: string;
+  viewport: { width: number; height: number };
+  bend: number;
+  textColor: string;
+  borderRadius: number;
+  font: string;
+  plane: Mesh;
+  program: Program;
+  title: Title;
+  speed: number;
+  scale: number;
+  width: number;
+  widthTotal: number;
+  x: number;
+  isBefore: boolean;
+  isAfter: boolean;
+  extra: number;
   constructor({
     geometry,
     gl,
@@ -109,6 +152,21 @@ class Media {
     textColor,
     borderRadius = 0,
     font
+  }: {
+    geometry: Plane;
+    gl: OGLRenderingContext;
+    image: string;
+    index: number;
+    length: number;
+    renderer: Renderer;
+    scene: Transform;
+    screen: { width: number; height: number };
+    text: string;
+    viewport: { width: number; height: number };
+    bend: number;
+    textColor: string;
+    borderRadius?: number;
+    font: string;
   }) {
     this.extra = 0;
     this.geometry = geometry;
@@ -282,8 +340,28 @@ class Media {
 }
 
 class App {
+  container: HTMLElement;
+  renderer: Renderer;
+  gl: OGLRenderingContext;
+  camera: Camera;
+  scene: Transform;
+  planeGeometry: Plane;
+  mediasImages: Array<{ image: string; text: string }>;
+  medias: Media[];
+  screen: { width: number; height: number };
+  viewport: { width: number; height: number };
+  scroll: { ease: number; current: number; target: number; last: number; position?: number };
+  onCheckDebounce: (...args: unknown[]) => void;
+  raf: number;
+  boundOnResize: () => void;
+  boundOnWheel: (e: WheelEvent) => void;
+  boundOnTouchDown: (e: MouseEvent | TouchEvent) => void;
+  boundOnTouchMove: (e: MouseEvent | TouchEvent) => void;
+  boundOnTouchUp: () => void;
+  scrollSpeed: number;
+  createRenderer(): void {}
   constructor(
-    container,
+    container: HTMLElement,
     {
       items,
       bend,
@@ -292,7 +370,15 @@ class App {
       font = 'bold 30px Figtree',
       scrollSpeed = 2,
       scrollEase = 0.05
-    } = {}
+    }: {
+      items: Array<{ image: string; text: string }>;
+      bend: number;
+      textColor?: string;
+      borderRadius?: number;
+      font?: string;
+      scrollSpeed?: number;
+      scrollEase?: number;
+    }
   ) {
     document.documentElement.classList.remove('no-js');
     this.container = container;
@@ -308,7 +394,7 @@ class App {
     this.update();
     this.addEventListeners();
   }
-  createRenderer() {
+  createRenderer(): void {
     this.renderer = new Renderer({
       alpha: true,
       antialias: true,
@@ -318,21 +404,21 @@ class App {
     this.gl.clearColor(0, 0, 0, 0);
     this.container.appendChild(this.gl.canvas);
   }
-  createCamera() {
+  createCamera(): void {
     this.camera = new Camera(this.gl);
     this.camera.fov = 45;
     this.camera.position.z = 20;
   }
-  createScene() {
+  createScene(): void {
     this.scene = new Transform();
   }
-  createGeometry() {
+  createGeometry(): void {
     this.planeGeometry = new Plane(this.gl, {
       heightSegments: 50,
       widthSegments: 100
     });
   }
-  createMedias(items, bend = 1, textColor, borderRadius, font) {
+  createMedias(items: Array<{ image: string; text: string }>, bend = 1, textColor: string, borderRadius: number, font: string): void {
     const defaultItems = [
       { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'Bridge' },
       { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'Desk Setup' },
@@ -368,34 +454,34 @@ class App {
       });
     });
   }
-  onTouchDown(e) {
+  onTouchDown(e: MouseEvent | TouchEvent): void {
     this.isDown = true;
     this.scroll.position = this.scroll.current;
     this.start = e.touches ? e.touches[0].clientX : e.clientX;
   }
-  onTouchMove(e) {
+  onTouchMove(e: MouseEvent | TouchEvent): void {
     if (!this.isDown) return;
     const x = e.touches ? e.touches[0].clientX : e.clientX;
     const distance = (this.start - x) * (this.scrollSpeed * 0.025);
     this.scroll.target = this.scroll.position + distance;
   }
-  onTouchUp() {
+  onTouchUp(): void {
     this.isDown = false;
     this.onCheck();
   }
-  onWheel(e) {
+  onWheel(e: WheelEvent): void {
     const delta = e.deltaY || e.wheelDelta || e.detail;
     this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
     this.onCheckDebounce();
   }
-  onCheck() {
+  onCheck(): void {
     if (!this.medias || !this.medias[0]) return;
     const width = this.medias[0].width;
     const itemIndex = Math.round(Math.abs(this.scroll.target) / width);
     const item = width * itemIndex;
     this.scroll.target = this.scroll.target < 0 ? -item : item;
   }
-  onResize() {
+  onResize(): void {
     this.screen = {
       width: this.container.clientWidth,
       height: this.container.clientHeight
@@ -412,7 +498,7 @@ class App {
       this.medias.forEach(media => media.onResize({ screen: this.screen, viewport: this.viewport }));
     }
   }
-  update() {
+  update(): void {
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
     const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
     if (this.medias) {
@@ -422,7 +508,7 @@ class App {
     this.scroll.last = this.scroll.current;
     this.raf = window.requestAnimationFrame(this.update.bind(this));
   }
-  addEventListeners() {
+  addEventListeners(): void {
     this.boundOnResize = this.onResize.bind(this);
     this.boundOnWheel = this.onWheel.bind(this);
     this.boundOnTouchDown = this.onTouchDown.bind(this);
@@ -438,7 +524,7 @@ class App {
     window.addEventListener('touchmove', this.boundOnTouchMove);
     window.addEventListener('touchend', this.boundOnTouchUp);
   }
-  destroy() {
+  destroy(): void {
     window.cancelAnimationFrame(this.raf);
     window.removeEventListener('resize', this.boundOnResize);
     window.removeEventListener('mousewheel', this.boundOnWheel);

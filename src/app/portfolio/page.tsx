@@ -8,7 +8,6 @@ import Partners from '@/components/ui/Partners';
 import { filterProjects } from '@/data/projectsData';
 import Navbar from '@/components/layout/NavbarNew';
 import CircularText from '@/components/CircularText';
-import DecryptedText from '@/components/DecryptedText';
 
 const colors = {
   primary: '#1B363C',

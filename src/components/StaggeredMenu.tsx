@@ -2,7 +2,37 @@
 
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 import './StaggeredMenu.css';
+
+interface MenuItem {
+  label: string;
+  ariaLabel: string;
+  link: string;
+}
+
+interface SocialItem {
+  label: string;
+  link: string;
+}
+
+interface StaggeredMenuProps {
+  position?: 'left' | 'right';
+  colors?: string[];
+  items?: MenuItem[];
+  socialItems?: SocialItem[];
+  displaySocials?: boolean;
+  displayItemNumbering?: boolean;
+  className?: string;
+  logoUrl?: string;
+  menuButtonColor?: string;
+  openMenuButtonColor?: string;
+  accentColor?: string;
+  changeMenuColorOnOpen?: boolean;
+  isFixed?: boolean;
+  onMenuOpen?: () => void;
+  onMenuClose?: () => void;
+}
 
 export const StaggeredMenu = ({
   position = 'right',
@@ -20,7 +50,7 @@ export const StaggeredMenu = ({
   isFixed = false,
   onMenuOpen,
   onMenuClose
-}) => {
+}: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
   const panelRef = useRef(null);
@@ -325,7 +355,7 @@ export const StaggeredMenu = ({
       <div ref={preLayersRef} className="sm-prelayers" aria-hidden="true">
         {(() => {
           const raw = colors && colors.length ? colors.slice(0, 4) : ['#1e1e22', '#35353c'];
-          let arr = [...raw];
+          const arr = [...raw];
           if (arr.length >= 3) {
             const mid = Math.floor(arr.length / 2);
             arr.splice(mid, 1);
@@ -335,7 +365,7 @@ export const StaggeredMenu = ({
       </div>
       <header className="staggered-menu-header" aria-label="Main navigation header">
         <div className="sm-logo" aria-label="Logo">
-          <img
+          <Image
             src={logoUrl || '/images/logo.png'}
             alt="Logo"
             className="sm-logo-img"

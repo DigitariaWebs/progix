@@ -26,16 +26,11 @@ export default function BlobCursor({
   slowEase = 'power1.out',
   zIndex = 100
 }) {
-  const containerRef = useRef(null);
-  const blobsRef = useRef([]);
-
-  const updateOffset = useCallback(() => {
-    // Pour un conteneur fixe, on n'a pas besoin d'offset
-    return { left: 0, top: 0 };
-  }, []);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const blobsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleMove = useCallback(
-    e => {
+    (e: MouseEvent | TouchEvent) => {
       const x = 'clientX' in e ? e.clientX : e.touches[0].clientX;
       const y = 'clientY' in e ? e.clientY : e.touches[0].clientY;
 
@@ -83,7 +78,7 @@ export default function BlobCursor({
         {Array.from({ length: trailCount }).map((_, i) => (
           <div
             key={i}
-            ref={el => (blobsRef.current[i] = el)}
+            ref={el => { blobsRef.current[i] = el; }}
             className="blob"
             style={{
               width: sizes[i],

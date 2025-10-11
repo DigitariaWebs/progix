@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { colors } from '@/config/colors';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
@@ -215,8 +216,9 @@ const caseStudies: Record<string, CaseStudy> = {
   }
 };
 
-export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default function CaseStudyPage() {
+  const params = useParams();
+  const slug = params.slug as string;
   const caseStudy = caseStudies[slug];
 
   if (!caseStudy) {

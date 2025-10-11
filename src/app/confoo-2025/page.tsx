@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { colors } from '@/config/colors';
 import CircularGallery from '@/components/CircularGallery';
 
@@ -299,18 +300,18 @@ export default function ConFoo2025Page() {
             Bénéficiez de notre expertise acquise lors de ConFoo 2025 pour votre prochain projet.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/contact"
               className="px-8 py-4 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300"
             >
               Démarrer un projet
-            </a>
-            <a
+            </Link>
+            <Link
               href="/portfolio"
               className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-gray-900 transition-colors duration-300"
             >
               Voir nos réalisations
-            </a>
+            </Link>
           </div>
         </div>
       </section>

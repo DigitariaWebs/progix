@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { colors } from '@/config/colors';
+import CircularText from '@/components/CircularText';
 
 const HeroSection = () => {
   return (
@@ -21,6 +21,28 @@ const HeroSection = () => {
           }}
         />
       </div>
+
+      {/* Left Side - Vertical Year and Location */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="absolute left-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-20"
+      >
+        <span
+          className="text-white/30 text-xs tracking-widest uppercase font-light"
+          style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
+        >
+          2025
+        </span>
+        <div className="w-px h-12 bg-white/20" />
+        <span
+          className="text-white/30 text-xs tracking-widest uppercase font-light"
+          style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
+        >
+          Montréal
+        </span>
+      </motion.div>
 
       {/* Main Content Container */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mt-10">
@@ -63,8 +85,6 @@ const HeroSection = () => {
             Développement Logiciel
           </p>
         </motion.div>
-
-        
 
         {/* CTA Button */}
         <motion.div
@@ -124,21 +144,42 @@ const HeroSection = () => {
         </a>
       </motion.div>
 
-      {/* Bottom Right Scroll Indicator */}
+      {/* Bottom Right Circular Scroll Indicator */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 1.6 }}
-        className="absolute bottom-8 right-8 text-white/40 text-xs tracking-widest uppercase z-20"
+        className="absolute bottom-8 right-8 z-20"
+        style={{
+          width: '90px',
+          height: '90px',
+          minWidth: '90px',
+          minHeight: '90px',
+        }}
       >
-        <div className="flex flex-col items-end gap-2">
-          <span>Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+        <div
+          className="relative w-full h-full"
+          style={{ aspectRatio: '1 / 1' }}
+        >
+          <CircularText
+            text="SCROLL • SCROLL • SCROLL • SCROLL • "
+            spinDuration={15}
+            onHover="speedUp"
+            className="hero-scroll-circular"
+          />
+          <div
+            className="absolute z-10"
+            style={{
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
             <svg
-              className="w-4 h-4"
+              className="w-5 h-5 text-white/60"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -150,7 +191,7 @@ const HeroSection = () => {
                 d="M19 14l-7 7m0 0l-7-7m7 7V3"
               />
             </svg>
-          </motion.div>
+          </div>
         </div>
       </motion.div>
     </section>

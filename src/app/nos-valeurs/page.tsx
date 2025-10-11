@@ -2,15 +2,29 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 import { FeaturesSectionWithHoverEffects } from '@/components/ui/feature-section-with-hover-effects';
 import DecorativeElements from '@/components/DecorativeElements';
 import InspirationalQuotesSlider from '@/components/InspirationalQuotesSlider';
+import BlobCursor from '@/components/BlobCursor';
 
 const NosValeursPage = () => {
+  const menuItems = [
+    { label: 'Accueil', ariaLabel: 'Aller à la page d\'accueil', link: '/' },
+    { label: 'Services', ariaLabel: 'Voir nos services', link: '/services' },
+    { label: 'Portfolio', ariaLabel: 'Voir notre portfolio', link: '/portfolio' },
+    { label: 'Équipe', ariaLabel: 'Découvrir notre équipe', link: '/team' },
+    { label: 'Valeurs', ariaLabel: 'Connaître nos valeurs', link: '/nos-valeurs' },
+    { label: 'ConFoo', ariaLabel: 'Découvrir ConFoo 2025', link: '/confoo-2025' }
+  ];
+
+  const socialItems = [
+    { label: 'LinkedIn', link: 'https://linkedin.com/company/progix' },
+    { label: 'GitHub', link: 'https://github.com/progix' },
+    { label: 'Twitter', link: 'https://twitter.com/progix' }
+  ];
   const [isProgressSectionVisible, setIsProgressSectionVisible] = useState(false);
 
   useEffect(() => {
@@ -35,10 +49,32 @@ const NosValeursPage = () => {
 
 
   return (
-    <div className="min-h-screen bg-white font-montserrat">
+    <div className="min-h-screen bg-white font-montserrat relative">
+      
+      {/* BlobCursor avec couleur bleue Progix */}
+      <div className="fixed inset-0 pointer-events-none z-60">
+        <BlobCursor
+          blobType="circle"
+          fillColor="#4FA3D1"
+          trailCount={3}
+          sizes={[60, 125, 75]}
+          innerSizes={[20, 35, 25]}
+          innerColor="rgba(255,255,255,0.8)"
+          opacities={[0.6, 0.6, 0.6]}
+          shadowColor="rgba(0,0,0,0.75)"
+          shadowBlur={5}
+          shadowOffsetX={10}
+          shadowOffsetY={10}
+          filterStdDeviation={30}
+          useFilter={true}
+          fastDuration={0.1}
+          slowDuration={0.5}
+          zIndex={100}
+        />
+      </div>
+      
       {/* Hero Section - Geometric Style */}
       <div className="relative">
-        <Navbar />
         <HeroGeometric 
           badge="Progix Values"
           title1="Our Core Values"

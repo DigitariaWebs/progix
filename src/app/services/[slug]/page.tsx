@@ -12,7 +12,7 @@ import {
   FiPlus,
   FiMinus,
 } from 'react-icons/fi';
-import Navbar from '@/components/layout/Navbar';
+// Navbar removed to use global StaggeredMenu header
 
 const colors = {
   primary: '#1B363C',
@@ -72,7 +72,7 @@ export default function ServiceDetailPage({
   return (
     <div className="bg-white">
        
-      <Navbar />
+      {/* Navbar removed */}
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white">

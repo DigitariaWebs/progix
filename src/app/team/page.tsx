@@ -4,7 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/layout/Navbar';
+// Navbar removed to use global StaggeredMenu header
+import ScrollReveal from '@/components/ScrollReveal';
 
 const colors = {
   primary: '#1B363C',
@@ -35,7 +36,7 @@ const TeamPage = () => {
   return (
     <div className="bg-white">
        
-      <Navbar />
+      {/* Navbar removed */}
 
       {/* Hero Section */}
       <section className="pt-32 pb-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
@@ -112,6 +113,25 @@ const TeamPage = () => {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ScrollReveal Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <ScrollReveal
+              scrollContainerRef={null}
+              baseOpacity={0}
+              enableBlur={true}
+              baseRotation={5}
+              blurStrength={10}
+              containerClassName="text-white"
+              textClassName="text-white"
+            >
+              Quand une équipe meurt-elle ? Quand elle perd un projet ? Non ! Quand elle fait face à un bug critique ? Non ! Quand elle mange une pizza périmée ? Non ! Une équipe meurt quand elle est oubliée !
+            </ScrollReveal>
           </div>
         </div>
       </section>

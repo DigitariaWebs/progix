@@ -1,0 +1,41 @@
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroller {
+  display: flex;
+  white-space: nowrap;
+  text-align: center;
+  font-family: 'Hubot Sans', 'Inter', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+.scroller span {
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .scroller {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+}
+
+/* Alternating filled/outlined words */
+.scroller .sv-word {
+  margin-right: 2rem;
+  text-transform: uppercase;
+}
+/* Force specific styling: NOTRE outlined, ÉQUIPE filled */
+.sv-notre { color: transparent; -webkit-text-stroke: 2px #111111; }
+.sv-equipe { color: #111111; -webkit-text-stroke: 0; }
+
+/* Dark mode (when parent SectionFadeBg toggles to dark) */
+.sf-dark .sv-notre { -webkit-text-stroke: 2px #ffffff; }
+.sf-dark .sv-equipe { color: #ffffff; }
+
+

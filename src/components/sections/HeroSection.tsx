@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { colors } from '@/config/colors'; 
+import { colors } from '@/config/colors';
 
 const HeroSection = () => {
  
@@ -40,26 +40,15 @@ const HeroSection = () => {
             {/* Main Content */}
             <div className="max-w-4xl">
               {/* Main Heading */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+              <h1
                 className="font-heading mb-5 text-3xl font-bold sm:text-5xl md:text-[55px] md:leading-[65px] text-black -mt-16"
                 style={{
                   fontFamily: 'Hubot Sans, Inter, sans-serif',
                   letterSpacing: '-0.02em',
                 }}
               >
-                Développement
-                <br />
-                logiciel sur mesure
-                <br />
-                <span style={{ color: colors.secondary }}>
-                  pour les organisations
-                  <br />
-                  ambitieuses
-                </span>
-              </motion.h1>
+                Développement logiciel sur mesure pour les organisations ambitieuses
+              </h1>
 
               {/* Description */}
               <motion.p

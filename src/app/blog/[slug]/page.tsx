@@ -8,7 +8,7 @@ import { blogPosts } from '@/data/blogPosts';
 import { colors } from '@/config/colors';
 import { use } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import Navbar from '@/components/layout/Navbar';
+// Navbar removed to use global StaggeredMenu header
 
 export default function BlogPostPage({
   params,
@@ -98,7 +98,7 @@ export default function BlogPostPage({
         style={{ scaleX }}
       />
        
-      <Navbar />
+      {/* Navbar removed */}
 
       {/* Hero Section with Featured Image */}
       <section className="pt-32 pb-12 relative overflow-hidden">

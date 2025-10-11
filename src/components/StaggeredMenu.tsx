@@ -120,7 +120,7 @@ export const StaggeredMenu = ({
     const panelStart = Number(gsap.getProperty(panel, 'xPercent'));
 
     if (itemEls.length) {
-      gsap.set(itemEls, { yPercent: 60, rotate: 0 });
+      gsap.set(itemEls, { yPercent: 0, rotate: 0, opacity: 0 });
     }
     if (numberEls.length) {
       gsap.set(numberEls, { '--sm-num-opacity': 0 });
@@ -150,18 +150,7 @@ export const StaggeredMenu = ({
     if (itemEls.length) {
       const itemsStartRatio = 0.02;
       const itemsStart = panelInsertTime + panelDuration * itemsStartRatio;
-      tl.to(
-        itemEls,
-        {
-          yPercent: 0,
-          rotate: 0,
-          duration: 0.4,
-          opacity: 1,
-          ease: 'power4.out',
-          stagger: { each: 0.04, from: 'start' }
-        },
-        itemsStart
-      );
+      tl.to(itemEls, { opacity: 1, duration: 0.25, ease: 'power2.out', stagger: { each: 0.03, from: 'start' } }, itemsStart);
       if (numberEls.length) {
         tl.to(
           numberEls,
@@ -245,7 +234,7 @@ export const StaggeredMenu = ({
       onComplete: () => {
         const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel'));
         if (itemEls.length) {
-          gsap.set(itemEls, { yPercent: 140, rotate: 10 });
+          gsap.set(itemEls, { opacity: 0 });
         }
         const numberEls = Array.from(panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item'));
         if (numberEls.length) {

@@ -4,7 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { colors } from '@/config/colors'; 
+import { colors } from '@/config/colors';
+import DecryptedText from '@/components/DecryptedText'; 
 
 const HeroSection = () => {
  
@@ -50,15 +51,16 @@ const HeroSection = () => {
                   letterSpacing: '-0.02em',
                 }}
               >
-                Développement
-                <br />
-                logiciel sur mesure
-                <br />
-                <span style={{ color: colors.secondary }}>
-                  pour les organisations
-                  <br />
-                  ambitieuses
-                </span>
+                <DecryptedText
+                  text="Développement logiciel sur mesure pour les organisations ambitieuses"
+                  speed={100}
+                  maxIterations={20}
+                  animateOn="view"
+                  revealDirection="center"
+                  className="text-black"
+                  encryptedClassName="text-blue-400"
+                  parentClassName="cursor-pointer"
+                />
               </motion.h1>
 
               {/* Description */}

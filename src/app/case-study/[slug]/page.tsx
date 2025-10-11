@@ -591,11 +591,11 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                         <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
                         <span className="text-purple-300 text-xs font-medium">Automatisation complète</span>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
+            </div>
+          </div>
+        </div>
+      </div>
+
               {/* Bottom Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">

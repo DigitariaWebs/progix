@@ -6,7 +6,9 @@ import Link from 'next/link';
 import { Filter } from 'lucide-react';
 import Partners from '@/components/ui/Partners';
 import { filterProjects } from '@/data/projectsData';
-import Navbar from '@/components/layout/Navbar';
+import Navbar from '@/components/layout/NavbarNew';
+import CircularText from '@/components/CircularText';
+import DecryptedText from '@/components/DecryptedText';
 
 const colors = {
   primary: '#1B363C',
@@ -89,16 +91,35 @@ const PortfolioPage = () => {
               <span className="uppercase tracking-wider">PROJECTS</span>
             </div>
 
-            {/* Main Heading - Full Width */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-6xl">
-              <span style={{ color: colors.primary }}>NO MORE CHIT-CHAT,</span>
-              <br />
-              <span style={{ color: colors.secondary }}>
-                WHAT DOES OUR WORK
-              </span>
-              <br />
-              <span style={{ color: colors.primary }}>REALLY LOOK LIKE?</span>
-            </h1>
+            {/* Main Heading with CircularText */}
+            <div className="flex justify-between items-start">
+              {/* Main Heading */}
+              <div className="flex-1">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-6xl">
+                  <span style={{ color: colors.primary }}>NO MORE CHIT-CHAT,</span>
+                  <br />
+                  <span style={{ color: colors.secondary }}>
+                    WHAT DOES OUR WORK
+                  </span>
+                  <br />
+                  <span style={{ color: colors.primary }}>REALLY LOOK LIKE?</span>
+                </h1>
+              </div>
+
+              {/* CircularText back to original position but slightly left */}
+              <div className="flex-shrink-0" style={{ marginLeft: '-40px' }}>
+                <div className="relative">
+                  <CircularText
+                    text="REACT*NEXT.JS*TYPESCRIPT*TAILWIND*"
+                    onHover="speedUp"
+                    spinDuration={25}
+                    className="portfolio-circular-text"
+                  />
+                  {/* Background circle for better visibility */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100 to-cyan-100 opacity-20 -z-10"></div>
+                </div>
+              </div>
+            </div>
 
             {/* Description on the Right Side - With Icon */}
             <div className="flex justify-end">
@@ -115,7 +136,36 @@ const PortfolioPage = () => {
                     className="text-gray-800"
                   >
                     <circle cx="12" cy="12" r="10" />
-                    <path d="M12 16v-4M12 8h.01" />
+                    {/* Aiguille des heures */}
+                    <line 
+                      x1="12" 
+                      y1="12" 
+                      x2="12" 
+                      y2="8" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round"
+                      style={{
+                        transformOrigin: '12px 12px',
+                        animation: 'rotate-clock 60s linear infinite'
+                      }}
+                    />
+                    {/* Aiguille des minutes */}
+                    <line 
+                      x1="12" 
+                      y1="12" 
+                      x2="12" 
+                      y2="6" 
+                      stroke="currentColor" 
+                      strokeWidth="1.5" 
+                      strokeLinecap="round"
+                      style={{
+                        transformOrigin: '12px 12px',
+                        animation: 'rotate-clock 5s linear infinite'
+                      }}
+                    />
+                    {/* Centre de la pendule */}
+                    <circle cx="12" cy="12" r="2" fill="currentColor" />
                   </svg>
                 </div>
 

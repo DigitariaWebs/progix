@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { colors } from '@/config/colors';
+import AnimatedButton from '@/components/AnimatedButton';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,20 +102,19 @@ const Navbar = () => {
               >
                 Nos Valeurs
               </Link>
+              <Link
+                href="/confoo-2025"
+                className="font-heading font-bold inline-flex items-center justify-center text-center text-base menu-scroll transition-colors text-black hover:text-black/80 scrolled:text-gray-900 scrolled:hover:text-gray-700"
+              >
+                ConFoo 2025
+              </Link>
             </div>
           </div>
 
           {/* Right side button */}
           <div className="hidden md:flex items-center">
-            <Link
-              href="/contact"
-              className="text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
-              style={{
-                backgroundColor: colors.secondary,
-                fontFamily: 'Hubot Sans, Inter, sans-serif',
-              }}
-            >
-              Démarrer un projet
+            <Link href="/contact">
+              <AnimatedButton text="Démarrer un projet" />
             </Link>
           </div>
 
@@ -180,13 +180,16 @@ const Navbar = () => {
               >
                 Nos Valeurs
               </Link>
+              <Link
+                href="/confoo-2025"
+                className="font-heading font-bold text-gray-700 hover:text-primary inline-flex items-center justify-center text-center text-base menu-scroll transition-colors"
+                style={{ color: colors.primary }}
+              >
+                ConFoo 2025
+              </Link>
               <div className="flex space-x-4 pt-4">
-                <Link
-                  href="/contact"
-                  className="text-white px-4 py-2 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex-1 inline-block text-center"
-                  style={{ backgroundColor: colors.secondary }}
-                >
-                  Démarrer un projet
+                <Link href="/contact" className="flex-1">
+                  <AnimatedButton text="Démarrer un projet" />
                 </Link>
                 <Link
                   href="/contact"

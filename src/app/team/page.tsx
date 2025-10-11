@@ -4,7 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/layout/Navbar';
+import Navbar from '@/components/layout/NavbarNew';
+import ScrollReveal from '@/components/ScrollReveal';
 
 const colors = {
   primary: '#1B363C',
@@ -112,6 +113,24 @@ const TeamPage = () => {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ScrollReveal Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <ScrollReveal
+              baseOpacity={0}
+              enableBlur={true}
+              baseRotation={5}
+              blurStrength={10}
+              containerClassName="text-white"
+              textClassName="text-white"
+            >
+              Quand une équipe meurt-elle ? Quand elle perd un projet ? Non ! Quand elle fait face à un bug critique ? Non ! Quand elle mange une pizza périmée ? Non ! Une équipe meurt quand elle est oubliée !
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -958,3 +977,963 @@ const TeamPage = () => {
 };
 
 export default TeamPage;
+
+                    },
+
+                  ].map((item, index) => (
+
+                    <div key={index} className="flex items-center space-x-3">
+
+                      <span className="text-xl">{item.icon}</span>
+
+                      <span className="text-gray-700 font-medium">
+
+                        {item.text}
+
+                      </span>
+
+                    </div>
+
+                  ))}
+
+                </div>
+
+              </div>
+
+
+
+              <div className="order-2">
+
+                <div className="relative">
+
+                  <Image
+
+                    src="/images of the team/1758914011397.jpg"
+
+                    alt="Équipe PROGIX en collaboration"
+
+                    width={600}
+
+                    height={400}
+
+                    className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent rounded-2xl"></div>
+
+                  <div className="absolute bottom-6 left-6 text-white">
+
+                    <p className="text-lg font-semibold">Collaboration</p>
+
+                    <p className="text-sm text-gray-200">
+
+                      Remote-first, mais ensemble quand ça compte
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Pourquoi Progix Section */}
+
+      <section className="py-32 bg-white">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="space-y-24">
+
+            {/* Pourquoi Progix */}
+
+            <motion.div
+
+              initial={{ opacity: 0, y: 20 }}
+
+              whileInView={{ opacity: 1, y: 0 }}
+
+              transition={{ duration: 0.6 }}
+
+              viewport={{ once: true }}
+
+              className="text-center"
+
+            >
+
+              <div className="mb-4">
+
+                <span
+
+                  className="text-sm font-bold uppercase tracking-wide"
+
+                  style={{ color: colors.secondary }}
+
+                >
+
+                  / Valeurs
+
+                </span>
+
+              </div>
+
+              <h2
+
+                className="text-5xl font-bold mb-6"
+
+                style={{
+
+                  fontFamily: 'Hubot Sans, Inter, sans-serif',
+
+                  color: colors.primary,
+
+                }}
+
+              >
+
+                Pourquoi Progix
+
+              </h2>
+
+              <p
+
+                className="text-xl text-gray-600 max-w-3xl mx-auto mb-16"
+
+                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+
+              >
+
+                Notre objectif n&apos;est pas la croissance à tout prix, mais
+
+                d&apos;assurer le bien-être de notre équipe et de nos clients.
+
+              </p>
+
+
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                {[
+
+                  {
+
+                    title: 'Seniorité compacte',
+
+                    description: '9 profils qui se complètent, zéro silos.',
+
+                    icon: '🎯',
+
+                    color: 'from-blue-500 to-cyan-500',
+
+                  },
+
+                  {
+
+                    title: 'Ingénierie exigeante',
+
+                    description: 'Qualité, tests, sécurité by default.',
+
+                    icon: '⚡',
+
+                    color: 'from-purple-500 to-pink-500',
+
+                  },
+
+                  {
+
+                    title: 'Time-to-value court',
+
+                    description: 'On livre rapidement du tangible.',
+
+                    icon: '🚀',
+
+                    color: 'from-green-500 to-teal-500',
+
+                  },
+
+                  {
+
+                    title: 'Accompagnement complet',
+
+                    description: "Du cadrage à l'exploitation.",
+
+                    icon: '🤝',
+
+                    color: 'from-orange-500 to-red-500',
+
+                  },
+
+                ].map((item, index) => (
+
+                  <motion.div
+
+                    key={index}
+
+                    initial={{ opacity: 0, y: 20 }}
+
+                    whileInView={{ opacity: 1, y: 0 }}
+
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+
+                    viewport={{ once: true }}
+
+                    className="group relative"
+
+                  >
+
+                    <div className="relative p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-transparent overflow-hidden">
+
+                      {/* Background gradient on hover */}
+
+                      <div
+
+                        className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+
+                      ></div>
+
+
+
+                      {/* Icon */}
+
+                      <div className="relative z-10 mb-6">
+
+                        <div
+
+                          className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-2xl text-white shadow-lg`}
+
+                        >
+
+                          {item.icon}
+
+                        </div>
+
+                      </div>
+
+
+
+                      {/* Content */}
+
+                      <div className="relative z-10">
+
+                        <h3
+
+                          className="text-xl font-bold mb-4 group-hover:text-gray-800 transition-colors"
+
+                          style={{
+
+                            fontFamily: 'Hubot Sans, Inter, sans-serif',
+
+                            color: colors.primary,
+
+                          }}
+
+                        >
+
+                          {item.title}
+
+                        </h3>
+
+                        <p
+
+                          className="text-gray-600 leading-relaxed"
+
+                          style={{
+
+                            fontFamily: 'Hubot Sans, Inter, sans-serif',
+
+                          }}
+
+                        >
+
+                          {item.description}
+
+                        </p>
+
+                      </div>
+
+                    </div>
+
+                  </motion.div>
+
+                ))}
+
+              </div>
+
+            </motion.div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Certifications & Stack Section */}
+
+      <section className="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+
+        {/* Background Pattern */}
+
+        <div className="absolute inset-0 opacity-10">
+
+          <div className="absolute top-32 left-20 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
+
+          <div className="absolute bottom-32 right-20 w-80 h-80 bg-cyan-500 rounded-full blur-3xl"></div>
+
+        </div>
+
+
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Certifications */}
+
+          <motion.div
+
+            initial={{ opacity: 0, y: 20 }}
+
+            whileInView={{ opacity: 1, y: 0 }}
+
+            transition={{ duration: 0.6 }}
+
+            viewport={{ once: true }}
+
+            className="text-center mb-20"
+
+          >
+
+            <div className="mb-4">
+
+              <span className="text-sm font-bold uppercase tracking-wide text-blue-400">
+
+                / Expertise reconnue
+
+              </span>
+
+            </div>
+
+            <h2
+
+              className="text-5xl font-bold mb-6 text-white"
+
+              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+
+            >
+
+              Certifications & distinctions
+
+            </h2>
+
+            <p
+
+              className="text-xl text-gray-300 max-w-3xl mx-auto mb-16"
+
+              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+
+            >
+
+              Selon les profils de l&apos;équipe ; exemples représentatifs
+
+              appréciés au Canada.
+
+            </p>
+
+
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+              {certifications.slice(0, 6).map((cert, index) => (
+
+                <motion.div
+
+                  key={index}
+
+                  initial={{ opacity: 0, y: 20 }}
+
+                  whileInView={{ opacity: 1, y: 0 }}
+
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+
+                  viewport={{ once: true }}
+
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+
+                >
+
+                  <p
+
+                    className="text-sm font-medium text-center text-white"
+
+                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+
+                  >
+
+                    {cert}
+
+                  </p>
+
+                </motion.div>
+
+              ))}
+
+            </div>
+
+
+
+            <div className="flex flex-wrap justify-center gap-4">
+
+              {[
+
+                'OCTAS (Réseau Action TI)',
+
+                'Prix NUMIX',
+
+                'Deloitte Technology Fast 50',
+
+                'Great Place to Work',
+
+              ].map((distinction, index) => (
+
+                <motion.span
+
+                  key={index}
+
+                  initial={{ opacity: 0, scale: 0.8 }}
+
+                  whileInView={{ opacity: 1, scale: 1 }}
+
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+
+                  viewport={{ once: true }}
+
+                  className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full text-sm font-medium shadow-lg"
+
+                >
+
+                  {distinction}
+
+                </motion.span>
+
+              ))}
+
+            </div>
+
+          </motion.div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Tech Stack Section */}
+
+      <section className="py-32 bg-gradient-to-br from-blue-50 to-white relative">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <motion.div
+
+            initial={{ opacity: 0, y: 20 }}
+
+            whileInView={{ opacity: 1, y: 0 }}
+
+            transition={{ duration: 0.6 }}
+
+            viewport={{ once: true }}
+
+            className="text-center mb-20"
+
+          >
+
+            <div className="mb-4">
+
+              <span
+
+                className="text-sm font-bold uppercase tracking-wide"
+
+                style={{ color: colors.secondary }}
+
+              >
+
+                / Technologies
+
+              </span>
+
+            </div>
+
+            <h2
+
+              className="text-5xl font-bold mb-6"
+
+              style={{
+
+                fontFamily: 'Hubot Sans, Inter, sans-serif',
+
+                color: colors.primary,
+
+              }}
+
+            >
+
+              Notre stack (on aime quand c&apos;est varié)
+
+            </h2>
+
+            <p
+
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+
+              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+
+            >
+
+              Une palette technologique riche pour répondre à tous vos défis
+
+              logiciels.
+
+            </p>
+
+          </motion.div>
+
+
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {Object.entries(techStack).map(
+
+              ([category, technologies], categoryIndex) => (
+
+                <motion.div
+
+                  key={category}
+
+                  initial={{ opacity: 0, y: 30 }}
+
+                  whileInView={{ opacity: 1, y: 0 }}
+
+                  transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+
+                  viewport={{ once: true }}
+
+                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+
+                >
+
+                  <h3
+
+                    className="text-xl font-bold mb-6 capitalize"
+
+                    style={{
+
+                      fontFamily: 'Hubot Sans, Inter, sans-serif',
+
+                      color: colors.primary,
+
+                    }}
+
+                  >
+
+                    {category === 'frontend'
+
+                      ? '🎨 Front & mobile'
+
+                      : category === 'data'
+
+                        ? '📊 Data & ML'
+
+                        : category === 'cloud'
+
+                          ? '☁️ Cloud & DevOps'
+
+                          : category === 'databases'
+
+                            ? '🗄️ Bases de données'
+
+                            : category === 'languages'
+
+                              ? '💻 Langages'
+
+                              : category === 'frameworks'
+
+                                ? '🏗️ Frameworks'
+
+                                : category}
+
+                  </h3>
+
+                  <div className="flex flex-wrap gap-2">
+
+                    {technologies.slice(0, 8).map((tech, index) => (
+
+                      <span
+
+                        key={index}
+
+                        className="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-medium hover:bg-blue-100 transition-all duration-300"
+
+                      >
+
+                        {tech}
+
+                      </span>
+
+                    ))}
+
+                    {technologies.length > 8 && (
+
+                      <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium">
+
+                        +{technologies.length - 8} autres
+
+                      </span>
+
+                    )}
+
+                  </div>
+
+                </motion.div>
+
+              ),
+
+            )}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Location & Contact Section */}
+
+      <section className="py-20 bg-gradient-to-br from-cyan-800 to-cyan-900">
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+          <motion.div
+
+            initial={{ opacity: 0, y: 20 }}
+
+            whileInView={{ opacity: 1, y: 0 }}
+
+            transition={{ duration: 0.6 }}
+
+            viewport={{ once: true }}
+
+          >
+
+            <h2
+
+              className="text-3xl md:text-4xl font-bold text-white mb-6"
+
+              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+
+            >
+
+              Montréal, bilingues, proches
+
+            </h2>
+
+            <p
+
+              className="text-xl text-white/90 mb-8"
+
+              style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+
+            >
+
+              On travaille depuis Montréal, en français et en anglais. On
+
+              connaît bien les réalités locales (sécurité, conformité,
+
+              bilinguisme, délais, budgets publics/privés) et on sait naviguer
+
+              avec vos équipes partout au Canada.
+
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+              <Link
+
+                href="/contact"
+
+                className="inline-block bg-white px-8 py-4 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+
+                style={{
+
+                  color: colors.primary,
+
+                  fontFamily: 'Hubot Sans, Inter, sans-serif',
+
+                }}
+
+              >
+
+                Travaillons ensemble
+
+              </Link>
+
+              <Link
+
+                href="/contact"
+
+                className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 hover:bg-white/10"
+
+                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
+
+              >
+
+                Nous recrutons
+
+              </Link>
+
+            </div>
+
+          </motion.div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Footer */}
+
+      <footer className="bg-gray-900 text-white py-12">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="grid md:grid-cols-4 gap-8">
+
+            <div>
+
+              <Image
+
+                src="/images/logo (3).webp"
+
+                alt="PROGIX Logo"
+
+                width={120}
+
+                height={120}
+
+                className="h-16 w-auto mb-4 brightness-0 invert"
+
+              />
+
+              <p className="text-gray-400 text-sm">
+
+                Solutions logicielles sur mesure pour les organisations
+
+                ambitieuses
+
+              </p>
+
+            </div>
+
+
+
+            <div>
+
+              <h3 className="font-bold mb-4">Services</h3>
+
+              <ul className="space-y-2 text-sm text-gray-400">
+
+                <li>
+
+                  <Link
+
+                    href="/services"
+
+                    className="hover:text-white transition-colors"
+
+                  >
+
+                    Tous les services
+
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+
+                    href="/services/custom-software"
+
+                    className="hover:text-white transition-colors"
+
+                  >
+
+                    Logiciels sur mesure
+
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+
+                    href="/services/web-application"
+
+                    className="hover:text-white transition-colors"
+
+                  >
+
+                    Applications web
+
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+
+                    href="/services/mobile-application"
+
+                    className="hover:text-white transition-colors"
+
+                  >
+
+                    Applications mobiles
+
+                  </Link>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+
+
+            <div>
+
+              <h3 className="font-bold mb-4">Entreprise</h3>
+
+              <ul className="space-y-2 text-sm text-gray-400">
+
+                <li>
+
+                  <Link
+
+                    href="/team"
+
+                    className="hover:text-white transition-colors"
+
+                  >
+
+                    Notre équipe
+
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+
+                    href="/portfolio"
+
+                    className="hover:text-white transition-colors"
+
+                  >
+
+                    Portfolio
+
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+
+                    href="/contact"
+
+                    className="hover:text-white transition-colors"
+
+                  >
+
+                    Contact
+
+                  </Link>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+
+
+            <div>
+
+              <h3 className="font-bold mb-4">Contact</h3>
+
+              <ul className="space-y-2 text-sm text-gray-400">
+
+                <li>Montréal, Québec</li>
+
+                <li>
+
+                  <a
+
+                    href="mailto:info@progix.ca"
+
+                    className="hover:text-white transition-colors"
+
+                  >
+
+                    info@progix.ca
+
+                  </a>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+
+            <p>© 2025 PROGIX. Tous droits réservés.</p>
+
+          </div>
+
+        </div>
+
+      </footer>
+
+    </div>
+
+  );
+
+};
+
+
+
+export default TeamPage;
+
+

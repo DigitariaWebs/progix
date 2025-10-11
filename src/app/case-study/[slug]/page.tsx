@@ -310,7 +310,7 @@ export default function CaseStudyPage() {
               <div className="absolute inset-0">
                 <CircularText text="FAHE CRM • PROGIX • " className="text-white" />
               </div>
-            </div>
+              </div>
           </div>
 
           {/* Hero Image/Video */}
@@ -523,115 +523,28 @@ export default function CaseStudyPage() {
                 {caseStudy.mandat.content}
               </p>
             </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Interactive Stats Section - Only for FAHE CRM */}
-      {caseStudy.heroVideo && (
-        <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 relative overflow-hidden">
-          {/* Animated Background */}
-          <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-cyan-600/10"></div>
-            <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-purple-500/10 rounded-full blur-2xl animate-pulse delay-500"></div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
-                IMPACT & RÉSULTATS
-              </h2>
-              <p className="text-xl text-blue-200 font-light">
-                Des chiffres qui parlent d&apos;eux-mêmes
-              </p>
-            </div>
-            
-            {/* Modern Results Layout */}
-            <div className="space-y-12">
-              {/* Main Impact Card */}
-              <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-4">
-                    <span className="text-3xl">📊</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Vue complète sur les stocks</h3>
-                  <p className="text-blue-200">Réduction des ruptures et meilleure planification des achats</p>
-                </div>
-                
-                {/* Progress Bar */}
-                <div className="w-full bg-white/10 rounded-full h-3 mb-4">
-                  <div className="bg-gradient-to-r from-blue-500 to-cyan-500 h-3 rounded-full" style={{ width: '95%' }}></div>
-                </div>
-                <div className="text-center text-white/80 text-sm">95% de réduction des ruptures de stock</div>
-              </div>
-              
-              {/* Two Column Results */}
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Security Card */}
-                <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:scale-105 transition-transform duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
-                      <span className="text-xl">🔒</span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-white mb-2">Zéro perte d&apos;information client</h4>
-                      <p className="text-green-200 text-sm leading-relaxed">
-                        Tous les historiques centralisés (réparations, entretiens, paiements)
-                      </p>
-                      <div className="mt-3 flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                        <span className="text-green-300 text-xs font-medium">100% de données sécurisées</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Efficiency Card */}
-                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:scale-105 transition-transform duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                      <span className="text-xl font-bold text-white">60%</span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-white mb-2">Réduction des oublis de rendez-vous</h4>
-                      <p className="text-purple-200 text-sm leading-relaxed">
-                        Grâce aux notifications SMS et emails automatiques
-                      </p>
-                      <div className="mt-3 flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                        <span className="text-purple-300 text-xs font-medium">Automatisation complète</span>
-                      </div>
-            </div>
           </div>
         </div>
       </div>
-
-              {/* Bottom Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">24/7</div>
-                  <div className="text-blue-200 text-sm">Disponibilité</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">100%</div>
-                  <div className="text-blue-200 text-sm">Satisfaction client</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">50%</div>
-                  <div className="text-blue-200 text-sm">Gain de temps</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">0</div>
-                  <div className="text-blue-200 text-sm">Incidents critiques</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       )}
+
+      {/* Impact & Résultats - clean white section */}
+      <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}>
+              IMPACT & RÉSULTATS
+            </h2>
+          </div>
+          <ul className="space-y-4 text-gray-900 text-lg leading-relaxed list-none">
+            <li className="flex items-start"><span className="mt-3 mr-3 w-2 h-2 bg-gray-900 rounded-full"></span> Vue complète et centralisée des stocks et des historiques.</li>
+            <li className="flex items-start"><span className="mt-3 mr-3 w-2 h-2 bg-gray-900 rounded-full"></span> 60% d’absences en moins grâce aux rappels automatiques (SMS / email).</li>
+            <li className="flex items-start"><span className="mt-3 mr-3 w-2 h-2 bg-gray-900 rounded-full"></span> Processus d’accueil et de vente simplifiés, temps de traitement réduit.</li>
+            <li className="flex items-start"><span className="mt-3 mr-3 w-2 h-2 bg-gray-900 rounded-full"></span> Données client sécurisées et accessibles par autorisations.</li>
+            <li className="flex items-start"><span className="mt-3 mr-3 w-2 h-2 bg-gray-900 rounded-full"></span> Indicateurs clairs pour piloter les opérations au quotidien.</li>
+          </ul>
+        </div>
+      </div>
 
       {/* Objectifs Section */}
       <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50/20 to-white">

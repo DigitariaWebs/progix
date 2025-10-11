@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { projects } from '@/data/projectsData';
-import Navbar from '@/components/layout/Navbar';
+// Navbar removed to use global StaggeredMenu header
 import Footer from '@/components/layout/Footer';
 import { notFound } from 'next/navigation';
 import { colors } from '@/config/colors';

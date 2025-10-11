@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Filter } from 'lucide-react';
 import Partners from '@/components/ui/Partners';
 import { filterProjects } from '@/data/projectsData';
-import Navbar from '@/components/layout/NavbarNew';
+// Navbar removed to use global StaggeredMenu header
 import CircularText from '@/components/CircularText';
 
 const colors = {
@@ -77,7 +77,7 @@ const PortfolioPage = () => {
 
   return (
     <>
-      <Navbar />
+      {/* Navbar removed */}
 
       {/* Hero Section */}
       <section className="relative min-h-screen w-full bg-[#F5F5F5] pt-32 pb-20">
@@ -94,15 +94,15 @@ const PortfolioPage = () => {
             <div className="flex justify-between items-start">
               {/* Main Heading */}
               <div className="flex-1">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-6xl">
-                  <span style={{ color: colors.primary }}>NO MORE CHIT-CHAT,</span>
-                  <br />
-                  <span style={{ color: colors.secondary }}>
-                    WHAT DOES OUR WORK
-                  </span>
-                  <br />
-                  <span style={{ color: colors.primary }}>REALLY LOOK LIKE?</span>
-                </h1>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-6xl">
+              <span style={{ color: colors.primary }}>NO MORE CHIT-CHAT,</span>
+              <br />
+              <span style={{ color: colors.secondary }}>
+                WHAT DOES OUR WORK
+              </span>
+              <br />
+              <span style={{ color: colors.primary }}>REALLY LOOK LIKE?</span>
+            </h1>
               </div>
 
               {/* CircularText back to original position but slightly left */}

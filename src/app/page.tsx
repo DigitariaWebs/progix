@@ -4,46 +4,22 @@ import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
 import ClientLogosSection from '@/components/sections/ClientLogosSection';
 import ExpertiseSection from '@/components/sections/ExpertiseSection';
 import HeroSection from '@/components/sections/HeroSection';
-import StaggeredMenu from '@/components/StaggeredMenu';
+import Image from 'next/image';
+import Link from 'next/link';
 import ServicesSection from '@/components/sections/ServicesSection';
 import TeamSection from '@/components/sections/TeamSection';
+import SectionFadeBg from '@/components/SectionFadeBg';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import CtaButton from '../components/sections/CtaButtonSection';
 import Footer from '../components/layout/Footer';
+import ScrollVelocity from '@/components/ScrollVelocity';
 
 export default function Home() {
-  const menuItems = [
-    { label: 'Accueil', ariaLabel: 'Aller à la page d\'accueil', link: '/' },
-    { label: 'Services', ariaLabel: 'Voir nos services', link: '/services' },
-    { label: 'Portfolio', ariaLabel: 'Voir notre portfolio', link: '/portfolio' },
-    { label: 'Équipe', ariaLabel: 'Découvrir notre équipe', link: '/team' },
-    { label: 'Valeurs', ariaLabel: 'Connaître nos valeurs', link: '/nos-valeurs' },
-    { label: 'ConFoo', ariaLabel: 'Découvrir ConFoo 2025', link: '/confoo-2025' }
-  ];
-
-  const socialItems = [
-    { label: 'LinkedIn', link: 'https://linkedin.com/company/progix' },
-    { label: 'GitHub', link: 'https://github.com/progix' },
-    { label: 'Twitter', link: 'https://twitter.com/progix' }
-  ];
 
   return (
     <div className="landing-page font-montserrat relative">
-      <div className="fixed inset-0 z-50 pointer-events-none">
-        <StaggeredMenu
-          position="right"
-          items={menuItems}
-          socialItems={socialItems}
-          displaySocials={true}
-          displayItemNumbering={true}
-          menuButtonColor="#ffffff"
-          openMenuButtonColor="#ffffff"
-          changeMenuColorOnOpen={false}
-          colors={['#4FA3D1', '#1B363C']}
-          logoUrl="/images/logo.png"
-          accentColor="#4FA3D1"
-        />
-      </div>
+      {/* Navbar removed per user request; StaggeredMenu is global */}
+      {/* Menu global géré par GlobalMenu dans layout */}
       {/* This is your branch's hero section */}
       <HeroSection />
       
@@ -85,7 +61,19 @@ export default function Home() {
       {/* Case Studies Section */}
       <CaseStudiesSection />
 
-      <TeamSection />
+      {/* ScrollVelocity separator + Team wrapped together for dark transition */}
+      <SectionFadeBg threshold={0.35}>
+        <div className="py-8">
+          <ScrollVelocity
+            texts={["NOTRE ÉQUIPE", "NOTRE ÉQUIPE"]}
+            velocity={90}
+            className=""
+            parallaxStyle={{ padding: '0.5rem 0' }}
+            scrollerStyle={{ gap: '2rem' }}
+          />
+        </div>
+        <TeamSection />
+      </SectionFadeBg>
 
       <BlogSection />
 

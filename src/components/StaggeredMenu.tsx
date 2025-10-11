@@ -3,6 +3,8 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
+import Link from 'next/link';
+import AnimatedButton from '@/components/AnimatedButton';
 import './StaggeredMenu.css';
 
 interface MenuItem {
@@ -56,12 +58,13 @@ export const StaggeredMenu = ({
   const panelRef = useRef(null);
   const preLayersRef = useRef(null);
   const preLayerElsRef = useRef([]);
-  const plusHRef = useRef(null);
-  const plusVRef = useRef(null);
+  const plusHRef = useRef(null); // legacy, kept for compatibility
+  const plusVRef = useRef(null); // legacy, kept for compatibility
   const iconRef = useRef(null);
   const textInnerRef = useRef(null);
   const textWrapRef = useRef(null);
   const [textLines, setTextLines] = useState(['Menu', 'Close']);
+  const [hideHeader, setHideHeader] = useState(false);
 
   const openTlRef = useRef(null);
   const closeTweenRef = useRef(null);
@@ -80,7 +83,7 @@ export const StaggeredMenu = ({
       const plusV = plusVRef.current;
       const icon = iconRef.current;
       const textInner = textInnerRef.current;
-      if (!panel || !plusH || !plusV || !icon || !textInner) return;
+      if (!panel || !icon || !textInner) return;
 
       let preLayers = [];
       if (preContainer) {
@@ -90,13 +93,22 @@ export const StaggeredMenu = ({
 
       const offscreen = position === 'left' ? -100 : 100;
       gsap.set([panel, ...preLayers], { xPercent: offscreen });
-      gsap.set(plusH, { transformOrigin: '50% 50%', rotate: 0 });
-      gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
+      if (plusH) gsap.set(plusH, { transformOrigin: '50% 50%', rotate: 0 });
+      if (plusV) gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
       gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
       gsap.set(textInner, { yPercent: 0 });
       if (toggleBtnRef.current) gsap.set(toggleBtnRef.current, { color: menuButtonColor });
     });
-    return () => ctx.revert();
+    function onScroll() {
+      const y = window.scrollY || 0;
+      setHideHeader(y > 20);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => {
+      ctx.revert();
+      window.removeEventListener('scroll', onScroll);
+    };
   }, [menuButtonColor, position]);
 
   const buildOpenTimeline = useCallback(() => {
@@ -353,40 +365,62 @@ export const StaggeredMenu = ({
           return arr.map((c, i) => <div key={i} className="sm-prelayer" style={{ background: c }} />);
         })()}
       </div>
-      <header className="staggered-menu-header" aria-label="Main navigation header">
+      <header className={`staggered-menu-header${hideHeader && !open ? ' sm-header-hidden' : ''}`} aria-label="Main navigation header">
         <div className="sm-logo" aria-label="Logo">
           <Image
-            src={logoUrl || '/images/logo.png'}
-            alt="Logo"
-            className="sm-logo-img"
+            src="/images/logo.png"
+            alt="PROGIX Logo"
+            priority
+            onClick={() => (window.location.href = '/')}
+            width={130}
+            height={130}
+            className="h-20 w-auto cursor-pointer"
             draggable={false}
-            width={110}
-            height={24}
+          />
+          <Image
+            src="/CertifiedLogo.webp"
+            alt="GPTW Certification"
+            width={100}
+            height={40}
+            className="h-14 w-auto ml-4 mt-4 cursor-pointer"
+            draggable={false}
           />
         </div>
-        <button
-          ref={toggleBtnRef}
-          className="sm-toggle"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          aria-controls="staggered-menu-panel"
-          onClick={toggleMenu}
-          type="button"
-        >
-          <span ref={textWrapRef} className="sm-toggle-textWrap" aria-hidden="true">
-            <span ref={textInnerRef} className="sm-toggle-textInner">
-              {textLines.map((l, i) => (
-                <span className="sm-toggle-line" key={i}>
-                  {l}
-                </span>
-              ))}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          {!open && (
+            <div style={{ transform: 'scale(0.9)', transformOrigin: 'right center' }}>
+              <Link href="/contact" className="sm-cta-link">
+                <AnimatedButton text="Démarrer un projet" />
+              </Link>
+            </div>
+          )}
+          <button
+            ref={toggleBtnRef}
+            className="sm-toggle"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="staggered-menu-panel"
+            onClick={toggleMenu}
+            type="button"
+          >
+            <span ref={textWrapRef} className="sm-toggle-textWrap" aria-hidden="true">
+              <span ref={textInnerRef} className="sm-toggle-textInner">
+                {textLines.map((l, i) => (
+                  <span className="sm-toggle-line" key={i}>
+                    {l}
+                  </span>
+                ))}
+              </span>
             </span>
-          </span>
-          <span ref={iconRef} className="sm-icon" aria-hidden="true">
-            <span ref={plusHRef} className="sm-icon-line" />
-            <span ref={plusVRef} className="sm-icon-line sm-icon-line-v" />
-          </span>
-        </button>
+            <span ref={iconRef} className="sm-icon" aria-hidden="true">
+              <span className="sm-icon-bars">
+                <span className="sm-icon-bar" />
+                <span className="sm-icon-bar" />
+                <span className="sm-icon-bar" />
+              </span>
+            </span>
+          </button>
+        </div>
       </header>
 
       <aside id="staggered-menu-panel" ref={panelRef} className="staggered-menu-panel" aria-hidden={!open}>

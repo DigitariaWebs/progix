@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/layout/NavbarNew';
+// Navbar removed to use global StaggeredMenu header
 import ScrollReveal from '@/components/ScrollReveal';
 
 const colors = {
@@ -36,7 +36,7 @@ const TeamPage = () => {
   return (
     <div className="bg-white">
        
-      <Navbar />
+      {/* Navbar removed */}
 
       {/* Hero Section */}
       <section className="pt-32 pb-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">

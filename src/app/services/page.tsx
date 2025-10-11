@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Squares } from '@/components/ui/squares-background';
 import Navbar from '@/components/layout/Navbar';
 
 const colors = {
@@ -17,11 +18,15 @@ const ServicesPage = () => {
   return (
     <div className="bg-white">
        
-      <Navbar />
+      {/* Navbar removed to use global StaggeredMenu header */}
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-48 md:pt-56 pb-20 overflow-hidden">
+        {/* Squares Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Squares speed={0.5} borderColor="#dbeafe" squareSize={50} direction="diagonal" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

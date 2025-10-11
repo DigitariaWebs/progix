@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import StaggeredMenu from '@/components/StaggeredMenu';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
@@ -51,21 +50,6 @@ const NosValeursPage = () => {
 
   return (
     <div className="min-h-screen bg-white font-montserrat relative">
-      <div className="fixed inset-0 z-50 pointer-events-none">
-        <StaggeredMenu
-          position="right"
-          items={menuItems}
-          socialItems={socialItems}
-          displaySocials={true}
-          displayItemNumbering={true}
-          menuButtonColor="#1B363C"
-          openMenuButtonColor="#1B363C"
-          changeMenuColorOnOpen={false}
-          colors={['#4FA3D1', '#1B363C']}
-          logoUrl="/images/logo.png"
-          accentColor="#4FA3D1"
-        />
-      </div>
       
       {/* BlobCursor avec couleur bleue Progix */}
       <div className="fixed inset-0 pointer-events-none z-60">

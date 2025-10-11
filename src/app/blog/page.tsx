@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 import { blogPosts } from '@/data/blogPosts';
-import Navbar from '@/components/layout/Navbar';
+// Navbar removed to use global StaggeredMenu header
 
 export default function BlogPage() {
   const navRef = useRef<HTMLElement>(null);
@@ -29,7 +29,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[#0a1628]">
-      <Navbar />
+      {/* Navbar removed */}
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">

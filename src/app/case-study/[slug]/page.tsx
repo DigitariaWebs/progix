@@ -2,11 +2,13 @@
 
 import React from 'react';
 import Image from 'next/image';
+import ScrollVelocity from '@/components/ScrollVelocity';
+import CircularText from '@/components/CircularText';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { colors } from '@/config/colors';
 import Footer from '@/components/layout/Footer';
-import Navbar from '@/components/layout/Navbar';
+// Navbar removed to use global StaggeredMenu header
 import { Squares } from '@/components/ui/squares-background';
 
 // Types for case study data
@@ -268,7 +270,7 @@ export default function CaseStudyPage() {
         }
       `}</style>
       {/* Navigation */}
-      <Navbar />
+      {/* Navbar removed */}
       
 
       {/* Hero Section */}
@@ -290,7 +292,7 @@ export default function CaseStudyPage() {
           <div className="absolute bottom-20 left-1/4 w-16 h-16 border border-gray-400 rounded-full"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10 pt-6 md:pt-8">
           <div className="flex items-start justify-between mb-8">
             <div>
               <h1 className="text-6xl md:text-7xl font-bold mb-2" style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: colors.primary }}>
@@ -300,17 +302,15 @@ export default function CaseStudyPage() {
                 {caseStudy.subtitle}
               </p>
             </div>
-            {caseStudy.logo && (
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center p-3 shadow-xl border-2" style={{ borderColor: colors.secondary }}>
-                <Image
-                  src={caseStudy.logo}
-                  alt={caseStudy.title}
-                  width={60}
-                  height={60}
-                  className="object-contain"
-                />
+            {/* Replace small circle logo with CircularText badge */}
+            <div className="relative w-40 h-40 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
               </div>
-            )}
+              <div className="absolute inset-0">
+                <CircularText text="FAHE CRM • PROGIX • " className="text-white" />
+              </div>
+            </div>
           </div>
 
           {/* Hero Image/Video */}
@@ -405,7 +405,18 @@ export default function CaseStudyPage() {
         </div>
       </div>
 
-      {/* Immersive Video Section - Only for FAHE CRM */}
+    {/* Transition separator BEFORE Mandat (between previous block and "Notre Mission") */}
+    <div className="py-6 md:py-4">
+      <ScrollVelocity
+        texts={["NOTRE MISSION", "NOTRE MISSION"]}
+        velocity={90}
+        className=""
+        parallaxStyle={{ padding: '0.5rem 0' }}
+        scrollerStyle={{ gap: '2rem' }}
+      />
+    </div>
+
+    {/* Immersive Video Section - Only for FAHE CRM */}
       {caseStudy.heroVideo && (
         <div className="relative min-h-screen overflow-hidden">
           {/* Background Video */}

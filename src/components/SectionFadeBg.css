@@ -1,0 +1,14 @@
+.sf-bg {
+  transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: #ffffff;
+}
+
+.sf-bg.sf-dark {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* Force team section title to white when dark */
+.sf-dark .team-title { color: #ffffff !important; }
+
+

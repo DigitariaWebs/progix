@@ -336,11 +336,11 @@ const TeamSection = () => {
   return (
     <>
       {/* Team Section */}
-      <section className="bg-white py-20">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="team-title text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Une petite équipe d&apos;ingénieurs montréalais
               <br />
               <span style={{ color: colors.secondary }}>

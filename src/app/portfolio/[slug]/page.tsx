@@ -255,26 +255,19 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            <div className="space-y-4">
-              <div className="relative aspect-[4/3] w-full overflow-hidden shadow-lg">
-                <Image
-                  src={project.posterImage || '/GoodRandomImage.png'}
-                  alt={`${project.title} - Vue 1`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="relative aspect-[4/3] w-full overflow-hidden shadow-lg">
-                <Image
-                  src="/HeroSection.png"
-                  alt={`${project.title} - Vue 2`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+            {project.twoImages &&
+              project.twoImages.map((image, index) => (
+                <div key={index} className="space-y-4">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden shadow-lg">
+                    <Image
+                      src={image}
+                      alt={`${project.title} - Vue ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </section>

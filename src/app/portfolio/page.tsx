@@ -315,7 +315,7 @@ const PortfolioPage = () => {
                                 className="object-cover transition-transform duration-300 group-hover:opacity-0"
                               />
                               <Image
-                                src="/GoodRandomImageHover.png"
+                                src={project.posterImageHover || '/GoodRandomImageHover.png'}
                                 alt={`${project.title} hover`}
                                 fill
                                 className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
@@ -376,7 +376,7 @@ const PortfolioPage = () => {
                                 className="object-cover transition-transform duration-300 group-hover:opacity-0"
                               />
                               <Image
-                                src="/GoodRandomImageHover.png"
+                                src={project.posterImageHover || '/GoodRandomImageHover.png'}
                                 alt={`${project.title} hover`}
                                 fill
                                 className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300"

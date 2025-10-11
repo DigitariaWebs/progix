@@ -120,7 +120,7 @@ export const StaggeredMenu = ({
     const panelStart = Number(gsap.getProperty(panel, 'xPercent'));
 
     if (itemEls.length) {
-      gsap.set(itemEls, { yPercent: 140, rotate: 10 });
+      gsap.set(itemEls, { yPercent: 60, rotate: 0 });
     }
     if (numberEls.length) {
       gsap.set(numberEls, { '--sm-num-opacity': 0 });
@@ -148,16 +148,17 @@ export const StaggeredMenu = ({
     );
 
     if (itemEls.length) {
-      const itemsStartRatio = 0.15;
+      const itemsStartRatio = 0.02;
       const itemsStart = panelInsertTime + panelDuration * itemsStartRatio;
       tl.to(
         itemEls,
         {
           yPercent: 0,
           rotate: 0,
-          duration: 1,
+          duration: 0.4,
+          opacity: 1,
           ease: 'power4.out',
-          stagger: { each: 0.1, from: 'start' }
+          stagger: { each: 0.04, from: 'start' }
         },
         itemsStart
       );
@@ -165,10 +166,10 @@ export const StaggeredMenu = ({
         tl.to(
           numberEls,
           {
-            duration: 0.6,
+            duration: 0.35,
             ease: 'power2.out',
             '--sm-num-opacity': 1,
-            stagger: { each: 0.08, from: 'start' }
+            stagger: { each: 0.04, from: 'start' }
           },
           itemsStart + 0.1
         );
@@ -279,7 +280,7 @@ export const StaggeredMenu = ({
         const targetColor = opening ? openMenuButtonColor : menuButtonColor;
         colorTweenRef.current = gsap.to(btn, {
           color: targetColor,
-          delay: 0.18,
+          delay: 0,
           duration: 0.3,
           ease: 'power2.out'
         });

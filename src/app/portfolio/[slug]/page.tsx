@@ -9,6 +9,7 @@ import { projects } from '@/data/projectsData';
 import Footer from '@/components/layout/Footer';
 import { notFound } from 'next/navigation';
 import { colors } from '@/config/colors';
+import Navbar from '@/components/layout/NavbarNew';
 
 interface ProjectPageProps {
   params: Promise<{

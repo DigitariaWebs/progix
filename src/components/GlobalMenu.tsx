@@ -33,12 +33,12 @@ export default function GlobalMenu() {
         socialItems={socialItems}
         displaySocials={true}
         displayItemNumbering={true}
-        menuButtonColor="#000000"
+        menuButtonColor="#ffffff"
         openMenuButtonColor="#000000"
-        changeMenuColorOnOpen={false}
+        changeMenuColorOnOpen={true}
         colors={['#4FA3D1', '#1B363C']}
         logoUrl="/images/logo.png"
-        accentColor="#4FA3D1"
+        accentColor="#ffffff"
       />
     </div>
   );

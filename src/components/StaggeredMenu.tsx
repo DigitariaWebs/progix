@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedButton from '@/components/AnimatedButton';
+// @ts-ignore
 import './StaggeredMenu.css';
 
 interface MenuItem {
@@ -55,25 +56,25 @@ export const StaggeredMenu = ({
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
-  const panelRef = useRef(null);
-  const preLayersRef = useRef(null);
-  const preLayerElsRef = useRef([]);
+  const panelRef = useRef<HTMLElement | null>(null);
+  const preLayersRef = useRef<HTMLDivElement | null>(null);
+  const preLayerElsRef = useRef<Element[]>([]);
   const plusHRef = useRef(null); // legacy, kept for compatibility
   const plusVRef = useRef(null); // legacy, kept for compatibility
-  const iconRef = useRef(null);
-  const textInnerRef = useRef(null);
-  const textWrapRef = useRef(null);
+  const iconRef = useRef<HTMLElement | null>(null);
+  const textInnerRef = useRef<HTMLElement | null>(null);
+  const textWrapRef = useRef<HTMLElement | null>(null);
   const [textLines, setTextLines] = useState(['Menu', 'Close']);
   const [hideHeader, setHideHeader] = useState(false);
 
-  const openTlRef = useRef(null);
-  const closeTweenRef = useRef(null);
-  const spinTweenRef = useRef(null);
-  const textCycleAnimRef = useRef(null);
-  const colorTweenRef = useRef(null);
-  const toggleBtnRef = useRef(null);
+  const openTlRef = useRef<any>(null);
+  const closeTweenRef = useRef<any>(null);
+  const spinTweenRef = useRef<any>(null);
+  const textCycleAnimRef = useRef<any>(null);
+  const colorTweenRef = useRef<any>(null);
+  const toggleBtnRef = useRef<HTMLButtonElement | null>(null);
   const busyRef = useRef(false);
-  const itemEntranceTweenRef = useRef(null);
+  const itemEntranceTweenRef = useRef<any>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -350,7 +351,7 @@ export const StaggeredMenu = ({
   return (
     <div
       className={(className ? className + ' ' : '') + 'staggered-menu-wrapper' + (isFixed ? ' fixed-wrapper' : '')}
-      style={accentColor ? { ['--sm-accent']: accentColor } : undefined}
+      style={accentColor ? ({ '--sm-accent': accentColor } as React.CSSProperties) : undefined}
       data-position={position}
       data-open={open || undefined}
     >
@@ -376,6 +377,10 @@ export const StaggeredMenu = ({
             height={130}
             className="h-20 w-auto cursor-pointer"
             draggable={false}
+            style={{
+              filter: 'brightness(0) invert(1)',
+              opacity: 0.9
+            }}
           />
           <Image
             src="/CertifiedLogo.webp"

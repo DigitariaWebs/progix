@@ -27,6 +27,11 @@
   height: 100vh;
   z-index: 40;
   overflow: hidden;
+  pointer-events: none;
+}
+
+.staggered-menu-wrapper.fixed-wrapper[data-open] {
+  pointer-events: auto;
 }
 
 .staggered-menu-header {
@@ -79,6 +84,7 @@
   font-weight: 500;
   line-height: 1;
   overflow: visible;
+  transition: color 0.3s ease;
 }
 
 .sm-toggle:focus-visible {
@@ -162,6 +168,7 @@
   height: 4px;
   background: currentColor;
   border-radius: 3px;
+  transition: background-color 0.3s ease;
 }
 
 .sm-line {
@@ -182,6 +189,7 @@
   padding: 6em 2em 2em 2em;
   overflow-y: auto;
   z-index: 15;
+  will-change: transform;
 }
 
 [data-position='left'] .staggered-menu-panel {

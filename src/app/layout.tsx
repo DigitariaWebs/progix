@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Montserrat, Inter } from 'next/font/google';
 import './globals.css';
-import ConditionalDayPhrase from '@/components/ConditionalDayPhrase';
 import GlobalMenu from '@/components/GlobalMenu';
 
 const montserrat = Montserrat({
@@ -32,7 +31,6 @@ export default function RootLayout({
         className={`${montserrat.variable} ${inter.variable} font-sans antialiased`}
       >
         <GlobalMenu />
-        <ConditionalDayPhrase />
         {children}
       </body>
     </html>

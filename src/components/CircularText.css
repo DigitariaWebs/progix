@@ -59,3 +59,19 @@
   font-weight: 800;
   letter-spacing: 1px;
 }
+
+/* Case study specific styles */
+.case-study-circular-text {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 160px;
+  max-height: 160px;
+  font-family: 'Hubot Sans', 'Inter', sans-serif;
+  color: #1f2937 !important; /* Dark gray color */
+}
+
+.case-study-circular-text span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}

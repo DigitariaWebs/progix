@@ -6,21 +6,61 @@ import { StaggeredMenu } from '@/components/StaggeredMenu';
 
 export default function GlobalMenu() {
   const pathname = usePathname();
-  const [menuButtonColor, setMenuButtonColor] = useState('#1B363C');
-  const [logoFilter, setLogoFilter] = useState('none');
-  const [ctaButtonColors, setCtaButtonColors] = useState({
-    textColor: '#4FA3D1',
-    borderColor: '#4FA3D1',
-    circleColor: '#4FA3D1',
-    arrowColor: '#4FA3D1',
-    hoverTextColor: '#1a3a52',
-    hoverArrowColor: '#1a3a52',
-  });
+  const [isClient, setIsClient] = useState(false);
+
+  // Set initial state based on pathname to avoid hydration mismatch
+  const getInitialState = () => {
+    if (pathname === '/') {
+      // On home page, start with white (hero section colors)
+      return {
+        menuButtonColor: '#ffffff',
+        logoFilter: 'brightness(0) invert(1)',
+        ctaButtonColors: {
+          textColor: '#ffffff',
+          borderColor: '#ffffff',
+          circleColor: '#ffffff',
+          arrowColor: '#ffffff',
+          hoverTextColor: '#1a3a52',
+          hoverArrowColor: '#1a3a52',
+        },
+      };
+    } else {
+      // Other pages start with dark/blue colors
+      return {
+        menuButtonColor: '#1B363C',
+        logoFilter: 'none',
+        ctaButtonColors: {
+          textColor: '#4FA3D1',
+          borderColor: '#4FA3D1',
+          circleColor: '#4FA3D1',
+          arrowColor: '#4FA3D1',
+          hoverTextColor: '#ffffff',
+          hoverArrowColor: '#ffffff',
+        },
+      };
+    }
+  };
+
+  const initialState = getInitialState();
+  const [menuButtonColor, setMenuButtonColor] = useState(
+    initialState.menuButtonColor,
+  );
+  const [logoFilter, setLogoFilter] = useState(initialState.logoFilter);
+  const [ctaButtonColors, setCtaButtonColors] = useState(
+    initialState.ctaButtonColors,
+  );
 
   if (pathname.startsWith('/contact')) return null;
 
+  // Set client-side flag
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   // Detect if we're on a dark background (hero section on home page)
   useEffect(() => {
+    if (!isClient) return; // Wait for client-side hydration
+
     const checkBackground = () => {
       // On home page, check if we're in the hero section (dark background)
       if (pathname === '/') {
@@ -67,14 +107,20 @@ export default function GlobalMenu() {
       }
     };
 
-    checkBackground();
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(checkBackground, 50);
 
     // Add scroll listener for home page to switch colors dynamically
     if (pathname === '/') {
       window.addEventListener('scroll', checkBackground);
-      return () => window.removeEventListener('scroll', checkBackground);
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('scroll', checkBackground);
+      };
     }
-  }, [pathname]);
+
+    return () => clearTimeout(timer);
+  }, [pathname, isClient]);
 
   const menuItems = [
     { label: 'Accueil', ariaLabel: "Aller à la page d'accueil", link: '/' },
@@ -106,28 +152,27 @@ export default function GlobalMenu() {
   // duplicates removed
 
   return (
-    <div className="fixed inset-0 z-50 pointer-events-none">
-      <StaggeredMenu
-        position="right"
-        items={menuItems}
-        socialItems={socialItems}
-        displaySocials={true}
-        displayItemNumbering={true}
-        menuButtonColor={menuButtonColor}
-        logoFilter={logoFilter}
-        ctaButtonTextColor={ctaButtonColors.textColor}
-        ctaButtonBorderColor={ctaButtonColors.borderColor}
-        ctaButtonCircleColor={ctaButtonColors.circleColor}
-        ctaButtonArrowColor={ctaButtonColors.arrowColor}
-        ctaButtonHoverTextColor={ctaButtonColors.hoverTextColor}
-        ctaButtonHoverArrowColor={ctaButtonColors.hoverArrowColor}
-        openMenuButtonColor="#000000"
-        changeMenuColorOnOpen={true}
-        colors={['#4FA3D1', '#1B363C']}
-        logoUrl="/images/logo.png"
-        accentColor="#ffffff"
-      />
-    </div>
+    <StaggeredMenu
+      position="right"
+      items={menuItems}
+      socialItems={socialItems}
+      displaySocials={true}
+      displayItemNumbering={true}
+      menuButtonColor={menuButtonColor}
+      logoFilter={logoFilter}
+      ctaButtonTextColor={ctaButtonColors.textColor}
+      ctaButtonBorderColor={ctaButtonColors.borderColor}
+      ctaButtonCircleColor={ctaButtonColors.circleColor}
+      ctaButtonArrowColor={ctaButtonColors.arrowColor}
+      ctaButtonHoverTextColor={ctaButtonColors.hoverTextColor}
+      ctaButtonHoverArrowColor={ctaButtonColors.hoverArrowColor}
+      openMenuButtonColor="#000000"
+      changeMenuColorOnOpen={true}
+      colors={['#4FA3D1', '#1B363C']}
+      logoUrl="/images/logo.png"
+      accentColor="#ffffff"
+      isFixed={true}
+    />
   );
 }
 

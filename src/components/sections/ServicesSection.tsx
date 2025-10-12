@@ -6,7 +6,9 @@ import { colors } from '@/config/colors';
 
 const ServicesSection = () => {
   return (
-    <section className="bg-white pt-20 pb-16">
+    <section className="relative bg-white pt-20 pb-16 overflow-hidden">
+      {/* Right-side blur accent */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-[45%] bg-blur-yield opacity-60" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         {/* Header */}
         <div className="max-w-4xl mb-12">

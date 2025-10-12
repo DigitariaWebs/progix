@@ -22,10 +22,8 @@ const ServicesPage = () => {
 
       {/* Hero Section */}
       <section className="relative pt-48 md:pt-56 pb-20 overflow-hidden">
-        {/* Squares Background */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Squares speed={0.5} borderColor="#dbeafe" squareSize={50} direction="diagonal" />
-        </div>
+        {/* Right-side SVG blur only (no squares) */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-blur-yield opacity-60 z-0" aria-hidden="true" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

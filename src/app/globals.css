@@ -97,3 +97,22 @@ body {
 .landing-page * {
   font-family: var(--font-montserrat), 'Montserrat', sans-serif !important;
 }
+
+/* Utilities: subtle vertical grid lines and Yield blur background */
+.bg-grid-lines {
+  --grid-lines: 6;
+  --grid-color: rgba(17, 24, 39, 0.04);
+  background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px);
+  background-size: calc(100% / var(--grid-lines)) 100%;
+  background-repeat: repeat;
+}
+.grid-lines-5 { --grid-lines: 5; }
+.grid-lines-6 { --grid-lines: 6; }
+.grid-lines-on-dark { --grid-color: rgba(255, 255, 255, 0.05); }
+
+.bg-blur-yield {
+  background-image: url('https://cdn.prod.website-files.com/658a96c07622e25e5d4fed85/67daffc416ecbb596d6e0a47_trsu-blur.svg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}

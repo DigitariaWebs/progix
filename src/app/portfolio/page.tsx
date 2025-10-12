@@ -284,21 +284,37 @@ const PortfolioPage = () => {
                       >
                         {/* Project Image */}
                         <div className="relative h-[700px] overflow-hidden">
-                          {project.posterImage && (
+                          {index === 0 ? (
                             <>
-                              <Image
-                                src={project.posterImage}
-                                alt={project.title}
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:opacity-0"
-                              />
-                              <Image
-                                src={project.posterImageHover || '/GoodRandomImageHover.png'}
-                                alt={`${project.title} hover`}
-                                fill
-                                className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700"
-                              />
+                              {/* Red poster background */}
+                              <div className="absolute inset-0 bg-[#B71C1C]" />
+                              {/* Centered rounded card with screenshot inside */}
+                              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[88%] max-w-[960px] aspect-[16/10] rounded-2xl border border-white/80 shadow-2xl overflow-hidden">
+                                <Image
+                                  src="/portfoliominiature/hovertheatre.png"
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                                />
+                              </div>
                             </>
+                          ) : (
+                            project.posterImage && (
+                              <>
+                                <Image
+                                  src={project.posterImage}
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover transition-transform duration-700 group-hover:opacity-0"
+                                />
+                                <Image
+                                  src={project.posterImageHover || '/GoodRandomImageHover.png'}
+                                  alt={`${project.title} hover`}
+                                  fill
+                                  className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700"
+                                />
+                              </>
+                            )
                           )}
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                         </div>

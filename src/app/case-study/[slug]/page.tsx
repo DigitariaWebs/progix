@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import CardSwap, { Card } from '@/components/CardSwap';
 import ScrollVelocity from '@/components/ScrollVelocity';
 import CircularText from '@/components/CircularText';
 import Link from 'next/link';
@@ -52,7 +53,7 @@ interface CaseStudy {
 const caseStudies: Record<string, CaseStudy> = {
   'fahe-crm': {
     title: 'FAHE CRM',
-    subtitle: 'SOLUTION DE GESTION',
+    subtitle: 'UNE FIRME DE DÉVELOPPEMENT LOGICIEL FIÈREMENT MONTRÉALAISE',
     logo: '/images/photo_2019-03-21_11-48-55-2-6-233x91.jpg',
     heroImage: '/images/WhatsApp Image 2025-10-08 at 20.20.25.jpeg',
     heroVideo: '/images/video.mp4',
@@ -621,117 +622,59 @@ export default function CaseStudyPage() {
       {caseStudy.sections.map((section: CaseStudySection, idx: number) => (
         <div key={idx} className={`py-20 px-4 sm:px-6 lg:px-8 ${idx % 2 === 0 ? 'bg-white' : 'bg-gradient-to-br from-blue-50/20 via-white to-cyan-50/10'}`}>
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
-              <div>
-                <h2 className="text-5xl font-bold mb-2 leading-tight" style={{ color: colors.primary }}>
-                  {section.title}
-                </h2>
-                <p className="text-xl font-light" style={{ color: colors.secondary }}>
-                  {section.subtitle}
-                </p>
+            {section.layout !== 'gallery' && (
+              <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
+                <div>
+                  <h2 className="text-5xl font-bold mb-2 leading-tight" style={{ color: colors.primary }}>
+                    {section.title}
+                  </h2>
+                  <p className="text-xl font-light" style={{ color: colors.secondary }}>
+                    {section.subtitle}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-lg leading-relaxed font-medium" style={{ color: colors.tertiary }}>
+                    {section.content}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="text-lg leading-relaxed font-medium" style={{ color: colors.tertiary }}>
-                  {section.content}
-                </p>
-              </div>
-            </div>
+            )}
 
             {/* Images */}
             {section.layout === 'gallery' ? (
-              <div className="relative overflow-hidden">
-                {/* Gallery Header */}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Galerie Interactive</h3>
-                  <p className="text-gray-600">Découvrez toutes les fonctionnalités du CRM FAHE</p>
-                </div>
-                
-                {/* Animated Gallery Container */}
-                <div className="relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 to-blue-50">
-                  {/* Floating Background Elements */}
-                  <div className="absolute inset-0">
-                    <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200/30 rounded-full animate-bounce"></div>
-                    <div className="absolute top-20 right-20 w-16 h-16 bg-cyan-200/30 rounded-full animate-pulse"></div>
-                    <div className="absolute bottom-20 left-20 w-12 h-12 bg-purple-200/30 rounded-full animate-ping"></div>
-                    <div className="absolute bottom-10 right-10 w-24 h-24 bg-green-200/30 rounded-full animate-bounce delay-1000"></div>
+              <div className="relative">
+                <div className="grid md:grid-cols-2 gap-10 items-center">
+                  {/* Left column: title + subtitle (restored) */}
+                  <div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Un CRM pensé pour les vrais besoins du terrain.</h3>
+                    <p className="text-gray-600 text-lg">Suivi des clients, automatisation des tâches, facturation, communication interne — tout est intégré. Chaque module a été conçu à partir de retours réels d’entreprises, pour offrir un outil à la fois puissant et intuitif.</p>
                   </div>
-                  
-                  {/* Carousel Container */}
-                  <div className="relative h-full flex items-center justify-center">
-                    <div className="flex space-x-8 animate-scroll">
-                      {section.images.map((img: string, imgIdx: number) => (
-                        <div key={imgIdx} className="group relative flex-shrink-0">
-                          <div className="relative w-[300px] h-[250px] rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-2">
-                            <Image
-                              src={img}
-                              alt={`${section.title} ${imgIdx + 1}`}
-                              fill
-                              className="object-cover"
-                            />
-                            
-                            {/* Animated Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                            
-                            {/* Floating Badge */}
-                            <div className="absolute top-4 left-4 w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg animate-pulse">
-                              {imgIdx + 1}
-                            </div>
-                            
-                            {/* Zoom Icon */}
-                            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110">
-                              <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                                <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                                </svg>
-                              </div>
-                            </div>
-                            
-                            {/* Description */}
-                            <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-all duration-500">
-                              <p className="text-white font-medium text-sm">
-                                {imgIdx === 0 && "Tableau de bord principal"}
-                                {imgIdx === 1 && "Gestion des clients"}
-                                {imgIdx === 2 && "Suivi des rendez-vous"}
-                                {imgIdx === 3 && "Rapports et analytics"}
-                                {imgIdx === 4 && "Configuration système"}
-                              </p>
+
+                  {/* Right column: CardSwap gallery */}
+                  <div style={{ height: '600px', position: 'relative' }}>
+                    <CardSwap cardDistance={60} verticalDistance={70} delay={5000} pauseOnHover={false}>
+                      {section.images.slice(0, 6).map((img: string, idx: number) => (
+                        <Card key={idx}>
+                          <div className="w-full h-full relative rounded-xl bg-white">
+                            <Image src={img} alt={`FAHE ${idx + 1}`} fill className="object-contain" />
+                            {/* Top-left badge with icon and label */}
+                            <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-1 bg-white/95 border border-[#4FA3D1] rounded-md shadow-sm">
+                              <svg className="w-3.5 h-3.5 text-[#4FA3D1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6l-2 4-4 .5 3 3-.8 4.5L12 16l3.8 2-1-4.5 3-3-4-.5z" />
+                              </svg>
+                              <span className="text-xs font-semibold text-[#1B363C]">
+                                {idx === 0 && 'Tableau de bord'}
+                                {idx === 1 && 'Gestion clients'}
+                                {idx === 2 && 'Rendez-vous'}
+                                {idx === 3 && 'Rapports'}
+                                {idx === 4 && 'Configuration'}
+                                {idx > 4 && 'Aperçu'}
+                              </span>
                             </div>
                           </div>
-                        </div>
+                        </Card>
                       ))}
-                    </div>
-                  </div>
-                  
-                  {/* Navigation Dots */}
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
-                    {section.images.map((_, idx) => (
-                      <div key={idx} className="w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-all duration-300 cursor-pointer animate-pulse"></div>
-                    ))}
-                  </div>
-                  
-                  {/* Scroll Indicator */}
-                  <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
-                    <div className="w-8 h-8 bg-white/80 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                      <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Gallery Stats */}
-                <div className="flex justify-center items-center mt-8 space-x-6 text-sm text-gray-500">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                    <span>{section.images.length} captures d&apos;écran</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse delay-500"></div>
-                    <span>Interface complète</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse delay-1000"></div>
-                    <span>Animations fluides</span>
+                    </CardSwap>
                   </div>
                 </div>
               </div>

@@ -81,8 +81,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-20"
         >
-          <p className="text-white/70 text-lg md:text-xl tracking-[0.2em] uppercase font-light">
-            Développement Logiciel
+          <p className="text-white/80 text-lg md:text-xl tracking-[0.1em] uppercase font-semibold max-w-4xl mx-auto">
+            UNE FIRME DE DÉVELOPPEMENT LOGICIEL FIÈREMENT MONTRÉALAISE
           </p>
         </motion.div>
 

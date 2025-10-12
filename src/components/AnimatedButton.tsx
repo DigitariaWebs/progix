@@ -6,12 +6,24 @@ interface AnimatedButtonProps {
   text?: string;
   onClick?: () => void;
   className?: string;
+  textColor?: string;
+  borderColor?: string;
+  circleColor?: string;
+  arrowColor?: string;
+  hoverTextColor?: string;
+  hoverArrowColor?: string;
 }
 
-const AnimatedButton: React.FC<AnimatedButtonProps> = ({ 
-  text = "Démarrer un projet", 
+const AnimatedButton: React.FC<AnimatedButtonProps> = ({
+  text = 'Démarrer un projet',
   onClick,
-  className = ""
+  className = '',
+  textColor = '#ffffff',
+  borderColor = '#ffffff',
+  circleColor = '#ffffff',
+  arrowColor = '#ffffff',
+  hoverTextColor = '#1a3a52',
+  hoverArrowColor = '#1a3a52',
 }) => {
   return (
     <>
@@ -28,8 +40,8 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
           background-color: inherit;
           border-radius: 100px;
           font-weight: 600;
-          color: #ffffff;
-          box-shadow: 0 0 0 2px #ffffff;
+          color: ${textColor};
+          box-shadow: 0 0 0 2px ${borderColor};
           cursor: pointer;
           overflow: hidden;
           transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -39,7 +51,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
         .animated-button svg {
           position: absolute;
           width: 24px;
-          fill: #ffffff;
+          fill: ${arrowColor};
           z-index: 9;
           transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
         }
@@ -59,7 +71,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
           transform: translate(-50%, -50%);
           width: 20px;
           height: 20px;
-          background-color: #ffffff;
+          background-color: ${circleColor};
           border-radius: 50%;
           opacity: 0;
           transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -74,7 +86,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
 
         .animated-button:hover {
           box-shadow: 0 0 0 12px transparent;
-          color: #1a3a52;
+          color: ${hoverTextColor};
           border-radius: 12px;
         }
 
@@ -91,12 +103,12 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
         }
 
         .animated-button:hover svg {
-          fill: #1a3a52;
+          fill: ${hoverArrowColor};
         }
 
         .animated-button:active {
           scale: 0.95;
-          box-shadow: 0 0 0 4px #ffffff;
+          box-shadow: 0 0 0 4px ${borderColor};
         }
 
         .animated-button:hover .circle {

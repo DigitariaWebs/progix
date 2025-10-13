@@ -11,7 +11,7 @@ interface SectionFadeBgProps {
 
 export default function SectionFadeBg({ threshold = 0.3, className = '', children }: SectionFadeBgProps) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [dark, setDark] = useState(false);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -19,7 +19,7 @@ export default function SectionFadeBg({ threshold = 0.3, className = '', childre
     const io = new IntersectionObserver(
       entries => {
         for (const entry of entries) {
-          setDark(entry.isIntersecting);
+          setInView(entry.isIntersecting);
         }
       },
       { threshold }
@@ -29,7 +29,7 @@ export default function SectionFadeBg({ threshold = 0.3, className = '', childre
   }, [threshold]);
 
   return (
-    <div ref={ref} className={`sf-bg ${dark ? 'sf-dark' : ''}${className ? ' ' + className : ''}`}>
+    <div ref={ref} data-in-view={inView || undefined} className={`section-fade-bg w-full${className ? ' ' + className : ''}`}>
       {children}
     </div>
   );

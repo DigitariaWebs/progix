@@ -5,6 +5,8 @@ import Image from 'next/image';
 import CardSwap, { Card } from '@/components/CardSwap';
 import ScrollVelocity from '@/components/ScrollVelocity';
 import CircularText from '@/components/CircularText';
+import SectionFadeBg from '@/components/SectionFadeBg';
+import CurvedLoop from '@/components/CurvedLoop';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { colors } from '@/config/colors';
@@ -326,7 +328,7 @@ export default function CaseStudyPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Custom CSS for animations */}
       <style jsx>{`
         @keyframes scroll {
@@ -380,7 +382,7 @@ export default function CaseStudyPage() {
       {/* Navbar removed */}
 
       {/* Hero Section */}
-      <div className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/20 overflow-hidden">
+      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/20 overflow-hidden">
         {/* Squares Background */}
         <div className="absolute inset-0 z-0">
           <Squares
@@ -557,111 +559,114 @@ export default function CaseStudyPage() {
               </p>
             </div>
           </div>
+
+          {/* Curved Loop Text at bottom of hero section */}
+          <div className="relative mt-16 z-10">
+            <CurvedLoop 
+              marqueeText="FAHE CRM • PROGIX • UNE FIRME DE DÉVELOPPEMENT LOGICIEL FIÈREMENT MONTRÉALAISE • "
+              speed={2}
+              curveAmount={300}
+              direction="left"
+              interactive={true}
+              className="text-black"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Transition separator BEFORE Mandat (between previous block and "Notre Mission") */}
-      <div className="py-6 md:py-4">
-        <ScrollVelocity
-          texts={['NOTRE MISSION', 'NOTRE MISSION']}
-          velocity={90}
-          className=""
-          parallaxStyle={{ padding: '0.5rem 0' }}
-          scrollerStyle={{ gap: '2rem' }}
-        />
-      </div>
-
-      {/* Immersive Video Section - Only for FAHE CRM */}
+      {/* Mission Section - Only for FAHE CRM */}
       {caseStudy.heroVideo && (
-        <div className="relative min-h-screen overflow-hidden">
-          {/* Background Video */}
+        <div className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
+          {/* Background Pattern */}
           <div className="absolute inset-0 z-0">
-            <video
-              src={caseStudy.heroVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/60 to-white/80"></div>
+            
+            {/* Decorative blur elements */}
+            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/15 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-cyan-300/10 rounded-full blur-3xl"></div>
+            
+            {/* Vertical lines */}
+            <div className="absolute left-[10%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-300/40 to-transparent"></div>
+            <div className="absolute left-[25%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-300/30 to-transparent"></div>
+            <div className="absolute left-[50%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-indigo-300/30 to-transparent"></div>
+            <div className="absolute left-[75%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-purple-300/30 to-transparent"></div>
+            <div className="absolute left-[90%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-300/40 to-transparent"></div>
           </div>
 
           {/* Content Layout */}
-          <div className="relative z-10 min-h-screen flex items-center">
+          <div className="relative z-10 flex items-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 {/* Left Side - Title */}
                 <div className="text-left">
                   <div className="inline-block mb-6">
-                    <span className="text-sm font-bold uppercase tracking-wider text-white/80 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <span className="text-sm font-bold uppercase tracking-wider text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
                       {caseStudy.mandat.title}
                     </span>
                   </div>
 
-                  <h2
-                    className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight"
-                    style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
-                  >
-                    Notre
-                    <br />
-                    <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    <h2
+                      className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
+                      style={{ fontFamily: 'Hubot Sans, Inter, sans-serif', color: '#0A2456' }}
+                    >
+                      Notre
+                      <br />
                       Mission
-                    </span>
-                  </h2>
+                    </h2>
 
                   {/* Decorative Line */}
-                  <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mb-8"></div>
+                  <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mb-8"></div>
                 </div>
 
                 {/* Right Side - Content */}
                 <div className="relative">
                   {/* Text with underline accent */}
                   <div className="relative">
-                    <p className="text-xl md:text-2xl leading-relaxed text-white font-light mb-8">
+                    <p className="text-xl md:text-2xl leading-relaxed text-gray-800 font-light mb-8">
                       {caseStudy.mandat.content}
                     </p>
 
                     {/* Decorative underline */}
-                    <div className="absolute -bottom-4 left-0 w-24 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400"></div>
+                    <div className="absolute -bottom-4 left-0 w-24 h-0.5 bg-gradient-to-r from-blue-600 to-cyan-600"></div>
                   </div>
 
                   {/* Key points as floating elements */}
                   <div className="mt-12 space-y-6">
                     <div className="flex items-start space-x-4 group">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-3 group-hover:scale-125 transition-transform duration-300"></div>
-                      <p className="text-white/80 font-medium">
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mt-3 group-hover:scale-125 transition-transform duration-300"></div>
+                      <p className="text-gray-700 font-medium">
                         Solution CRM complète et moderne
                       </p>
                     </div>
 
                     <div className="flex items-start space-x-4 group">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-3 group-hover:scale-125 transition-transform duration-300"></div>
-                      <p className="text-white/80 font-medium">
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mt-3 group-hover:scale-125 transition-transform duration-300"></div>
+                      <p className="text-gray-700 font-medium">
                         Expérience utilisateur repensée et intuitive
                       </p>
                     </div>
 
                     <div className="flex items-start space-x-4 group">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-3 group-hover:scale-125 transition-transform duration-300"></div>
-                      <p className="text-white/80 font-medium">
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mt-3 group-hover:scale-125 transition-transform duration-300"></div>
+                      <p className="text-gray-700 font-medium">
                         Identité de marque FAHE Automotive mise en valeur
                       </p>
                     </div>
                   </div>
 
                   {/* Floating accent elements */}
-                  <div className="absolute -top-8 -right-8 w-20 h-20 border border-white/10 rounded-full animate-pulse"></div>
-                  <div className="absolute -bottom-8 -left-8 w-16 h-16 border border-white/5 rounded-full animate-pulse delay-1000"></div>
+                  <div className="absolute -top-8 -right-8 w-20 h-20 border border-gray-200 rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-8 -left-8 w-16 h-16 border border-gray-100 rounded-full animate-pulse delay-1000"></div>
                 </div>
               </div>
 
               {/* Bottom Decorative Elements */}
-              <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
                 <div className="flex space-x-4">
-                  <div className="w-2 h-2 bg-white/40 rounded-full animate-pulse"></div>
-                  <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse delay-300"></div>
-                  <div className="w-2 h-2 bg-white/40 rounded-full animate-pulse delay-600"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse delay-300"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse delay-600"></div>
                 </div>
               </div>
             </div>
@@ -703,8 +708,23 @@ export default function CaseStudyPage() {
       )}
 
       {/* Impact & Résultats - clean white section */}
-      <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 z-0">
+          {/* Decorative blur elements */}
+          <div className="absolute top-10 right-20 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-20 w-72 h-72 bg-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-300/8 rounded-full blur-3xl"></div>
+          
+          {/* Vertical lines */}
+          <div className="absolute left-[15%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200/50 to-transparent"></div>
+          <div className="absolute left-[35%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-200/40 to-transparent"></div>
+          <div className="absolute left-[50%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-indigo-200/40 to-transparent"></div>
+          <div className="absolute left-[65%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-purple-200/40 to-transparent"></div>
+          <div className="absolute left-[85%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200/50 to-transparent"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center mb-10">
             <h2
               className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight"
@@ -741,8 +761,27 @@ export default function CaseStudyPage() {
       </div>
 
       {/* Objectifs Section */}
-      <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50/20 to-white">
-        <div className="max-w-6xl mx-auto">
+      <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50/20 to-white overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 z-0">
+          {/* Decorative blur elements */}
+          <div className="absolute top-32 left-20 w-80 h-80 bg-blue-400/15 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-32 right-20 w-96 h-96 bg-cyan-400/12 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-indigo-300/10 rounded-full blur-3xl"></div>
+          
+          {/* Vertical lines */}
+          <div className="absolute left-[8%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-200/30 to-transparent"></div>
+          <div className="absolute left-[18%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-200/40 to-transparent"></div>
+          <div className="absolute left-[30%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-indigo-200/35 to-transparent"></div>
+          <div className="absolute left-[42%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-300/30 to-transparent"></div>
+          <div className="absolute left-[50%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-200/35 to-transparent"></div>
+          <div className="absolute left-[58%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-indigo-300/30 to-transparent"></div>
+          <div className="absolute left-[70%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-200/35 to-transparent"></div>
+          <div className="absolute left-[82%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-200/40 to-transparent"></div>
+          <div className="absolute left-[92%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-indigo-200/30 to-transparent"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Side - Image */}
             <div className="order-2 lg:order-1">
@@ -858,41 +897,56 @@ export default function CaseStudyPage() {
 
             {/* Images */}
             {section.layout === 'gallery' ? (
-              <div className="relative">
-                <div className="grid md:grid-cols-2 gap-10 items-center">
-                  {/* Left column: title + subtitle */}
-                  <div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Un CRM pensé pour les vrais besoins du terrain.</h3>
-                    <p className="text-gray-600 text-lg">Suivi des clients, automatisation des tâches, facturation, communication interne — tout est intégré. Chaque module a été conçu à partir de retours réels d'entreprises, pour offrir un outil à la fois puissant et intuitif.</p>
+              <div className="w-full">
+                <SectionFadeBg threshold={0.3}>
+                  <div className="w-full py-4">
+                    <ScrollVelocity
+                      texts={["NOTRE MISSION", "NOTRE MISSION"]}
+                      velocity={90}
+                      parallaxStyle={{ padding: '0.5rem 0', width: '100%' }}
+                      scrollerStyle={{ gap: '2rem', width: '100%' }}
+                    />
                   </div>
 
-                  {/* Right column: CardSwap gallery */}
-                  <div style={{ height: '600px', position: 'relative' }}>
-                    <CardSwap cardDistance={60} verticalDistance={70} delay={5000} pauseOnHover={false}>
-                      {section.images.slice(0, 6).map((img: string, idx: number) => (
-                        <Card key={idx}>
-                          <div className="w-full h-full relative rounded-xl bg-white">
-                            <Image src={img} alt={`FAHE ${idx + 1}`} fill className="object-contain" />
-                            {/* Top-left badge with icon and label */}
-                            <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-1 bg-white/95 border border-[#4FA3D1] rounded-md shadow-sm">
-                              <svg className="w-3.5 h-3.5 text-[#4FA3D1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6l-2 4-4 .5 3 3-.8 4.5L12 16l3.8 2-1-4.5 3-3-4-.5z" />
-                              </svg>
-                              <span className="text-xs font-semibold text-[#1B363C]">
-                                {idx === 0 && 'Tableau de bord'}
-                                {idx === 1 && 'Gestion clients'}
-                                {idx === 2 && 'Rendez-vous'}
-                                {idx === 3 && 'Rapports'}
-                                {idx === 4 && 'Configuration'}
-                                {idx > 4 && 'Aperçu'}
-                              </span>
-                            </div>
-                          </div>
-                        </Card>
-                      ))}
-                    </CardSwap>
+                  <div className="w-full relative">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                      <div className="grid md:grid-cols-2 gap-10 items-center">
+                        {/* Left column: title + subtitle */}
+                        <div>
+                          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Un CRM pensé pour les vrais besoins du terrain.</h3>
+                          <p className="text-gray-600 text-lg">Suivi des clients, automatisation des tâches, facturation, communication interne — tout est intégré. Chaque module a été conçu à partir de retours réels d'entreprises, pour offrir un outil à la fois puissant et intuitif.</p>
+                        </div>
+
+                        {/* Right column: CardSwap gallery */}
+                        <div style={{ height: '600px', position: 'relative' }}>
+                          <CardSwap cardDistance={60} verticalDistance={70} delay={5000} pauseOnHover={false}>
+                            {section.images.slice(0, 6).map((img: string, idx: number) => (
+                              <Card key={idx}>
+                                <div className="w-full h-full relative rounded-xl bg-white">
+                                  <Image src={img} alt={`FAHE ${idx + 1}`} fill className="object-contain" />
+                                  {/* Top-left badge with icon and label */}
+                                  <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-1 bg-white/95 border border-[#4FA3D1] rounded-md shadow-sm">
+                                    <svg className="w-3.5 h-3.5 text-[#4FA3D1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6l-2 4-4 .5 3 3-.8 4.5L12 16l3.8 2-1-4.5 3-3-4-.5z" />
+                                    </svg>
+                                    <span className="text-xs font-semibold text-[#1B363C]">
+                                      {idx === 0 && 'Tableau de bord'}
+                                      {idx === 1 && 'Gestion clients'}
+                                      {idx === 2 && 'Rendez-vous'}
+                                      {idx === 3 && 'Rapports'}
+                                      {idx === 4 && 'Configuration'}
+                                      {idx > 4 && 'Aperçu'}
+                                    </span>
+                                  </div>
+                                </div>
+                              </Card>
+                            ))}
+                          </CardSwap>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </SectionFadeBg>
               </div>
             ) : section.layout === 'architecture' ? (
               <div className="relative">

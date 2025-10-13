@@ -1,14 +1,29 @@
-.sf-bg {
-  transition: background-color 0.5s ease, color 0.5s ease;
-  background-color: #ffffff;
+.section-fade-bg {
+  background-color: white;
+  transition: background-color 0.5s ease-in-out;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
-.sf-bg.sf-dark {
-  background-color: #0a0a0a;
-  color: #ffffff;
+.section-fade-bg[data-in-view] {
+  background-color: black;
 }
 
-/* Force team section title to white when dark */
-.sf-dark .team-title { color: #ffffff !important; }
+.section-fade-bg[data-in-view] h1,
+.section-fade-bg[data-in-view] h2,
+.section-fade-bg[data-in-view] h3,
+.section-fade-bg[data-in-view] p,
+.section-fade-bg[data-in-view] span {
+  color: white !important;
+}
+
+/* Specific styles for ScrollVelocity text within SectionFadeBg */
+.section-fade-bg[data-in-view] .scroller .outline-text {
+  -webkit-text-stroke-color: white;
+}
+
+.section-fade-bg[data-in-view] .scroller .filled-text {
+  color: white;
+}
 
 

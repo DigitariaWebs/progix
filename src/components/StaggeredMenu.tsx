@@ -417,7 +417,7 @@ export const StaggeredMenu = ({
             onClick={() => (window.location.href = '/')}
             width={130}
             height={130}
-            className="h-20 w-auto cursor-pointer"
+            className="h-20 w-auto cursor-pointer transform scale-[1.3] sm:scale-100 origin-left"
             draggable={false}
             style={{
               filter: logoFilter,
@@ -430,24 +430,41 @@ export const StaggeredMenu = ({
             alt="GPTW Certification"
             width={100}
             height={40}
-            className="h-14 w-auto ml-4 mt-4 cursor-pointer"
+            className="h-10 sm:h-14 w-auto ml-4 mt-4 cursor-pointer"
             draggable={false}
           />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           {!open && (
-            <div className="origin-right transform scale-[0.62] sm:scale-75 md:scale-90">
-              <Link href="/contact" className="sm-cta-link">
-                <AnimatedButton
-                  text="Démarrer un projet"
-                  textColor={ctaButtonTextColor}
-                  borderColor={ctaButtonBorderColor}
-                  circleColor={ctaButtonCircleColor}
-                  arrowColor={ctaButtonArrowColor}
-                  hoverTextColor={ctaButtonHoverTextColor}
-                  hoverArrowColor={ctaButtonHoverArrowColor}
-                />
-              </Link>
+            <div className="origin-right">
+              {/* Mobile: PARLONS NOUS (sm:hidden) */}
+              <div className="block sm:hidden transform scale-[0.62]">
+                <Link href="/contact" className="sm-cta-link">
+                  <AnimatedButton
+                    text="PARLONS NOUS"
+                    textColor={ctaButtonTextColor}
+                    borderColor={ctaButtonBorderColor}
+                    circleColor={ctaButtonCircleColor}
+                    arrowColor={ctaButtonArrowColor}
+                    hoverTextColor={ctaButtonHoverTextColor}
+                    hoverArrowColor={ctaButtonHoverArrowColor}
+                  />
+                </Link>
+              </div>
+              {/* Tablet/Desktop: Démarrer un projet */}
+              <div className="hidden sm:block transform sm:scale-75 md:scale-90">
+                <Link href="/contact" className="sm-cta-link">
+                  <AnimatedButton
+                    text="Démarrer un projet"
+                    textColor={ctaButtonTextColor}
+                    borderColor={ctaButtonBorderColor}
+                    circleColor={ctaButtonCircleColor}
+                    arrowColor={ctaButtonArrowColor}
+                    hoverTextColor={ctaButtonHoverTextColor}
+                    hoverArrowColor={ctaButtonHoverArrowColor}
+                  />
+                </Link>
+              </div>
             </div>
           )}
           <button

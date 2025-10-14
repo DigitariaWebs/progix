@@ -438,7 +438,7 @@ export const StaggeredMenu = ({
           {!open && (
             <div className="origin-right w-full sm:w-auto flex items-center">
               {/* Mobile: PARLONS NOUS (sm:hidden) */}
-              <div className="block sm:hidden transform scale-[0.62] ml-0 mr-[-6px]">
+              <div className="block sm:hidden transform scale-[0.62] ml-0 mr-[-12px]">
                 <Link href="/contact" className="sm-cta-link">
                   <AnimatedButton
                     text="PARLONS NOUS"

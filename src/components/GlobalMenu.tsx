@@ -50,8 +50,6 @@ export default function GlobalMenu() {
     initialState.ctaButtonColors,
   );
 
-  if (pathname.startsWith('/contact')) return null;
-
   // Set client-side flag
   useEffect(() => {
     setIsClient(true);

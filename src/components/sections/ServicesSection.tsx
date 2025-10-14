@@ -7,9 +7,20 @@ import { colors } from '@/config/colors';
 const ServicesSection = () => {
   return (
     <section className="relative bg-white pt-20 pb-16 overflow-hidden">
-      {/* Right-side blur accent */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-[45%] bg-blur-yield opacity-60" aria-hidden="true" />
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+      {/* Decorative background elements (subtle, FAHE-style) */}
+      <div className="absolute inset-0 z-0" aria-hidden="true">
+        {/* Blurry circles */}
+        <div className="absolute top-10 right-12 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-16 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-cyan-300/10 rounded-full blur-3xl"></div>
+
+        {/* Vertical lines */}
+        <div className="absolute left-[15%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200/40 to-transparent"></div>
+        <div className="absolute left-[35%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-200/30 to-transparent"></div>
+        <div className="absolute left-[60%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-indigo-200/30 to-transparent"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         {/* Header */}
         <div className="max-w-4xl mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">

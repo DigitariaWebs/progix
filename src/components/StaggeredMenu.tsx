@@ -434,11 +434,11 @@ export const StaggeredMenu = ({
             draggable={false}
           />
         </div>
-        <div className="flex items-center gap-1 sm:gap-2 md:gap-[12px]">
+        <div className="flex items-center gap-0 sm:gap-2 md:gap-[12px]">
           {!open && (
             <div className="origin-right w-full sm:w-auto flex items-center">
               {/* Mobile: PARLONS NOUS (sm:hidden) */}
-              <div className="block sm:hidden transform scale-[0.62] ml-0">
+              <div className="block sm:hidden transform scale-[0.62] ml-0 mr-[-2px]">
                 <Link href="/contact" className="sm-cta-link">
                   <AnimatedButton
                     text="PARLONS NOUS"

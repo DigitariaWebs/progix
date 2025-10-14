@@ -27,7 +27,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="absolute left-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-20"
+        className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-20"
       >
         <span
           className="text-white/30 text-xs tracking-widest uppercase font-light"

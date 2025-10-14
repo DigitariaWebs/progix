@@ -436,12 +436,7 @@ export const StaggeredMenu = ({
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           {!open && (
-            <div
-              style={{
-                transform: 'scale(0.9)',
-                transformOrigin: 'right center',
-              }}
-            >
+            <div className="origin-right transform scale-[0.62] sm:scale-75 md:scale-90">
               <Link href="/contact" className="sm-cta-link">
                 <AnimatedButton
                   text="Démarrer un projet"
@@ -479,7 +474,6 @@ export const StaggeredMenu = ({
             </span>
             <span ref={iconRef} className="sm-icon" aria-hidden="true">
               <span className="sm-icon-bars">
-                <span className="sm-icon-bar" />
                 <span className="sm-icon-bar" />
                 <span className="sm-icon-bar" />
               </span>

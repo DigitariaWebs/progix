@@ -126,13 +126,16 @@
 
 .sm-icon {
   position: relative;
-  width: 14px;
-  height: 14px;
-  flex: 0 0 14px;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  will-change: transform;
+  background: #ffffff; /* white circle */
+  border-radius: 9999px; /* perfect circle */
+  will-change: transform, background-color;
+  transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
 .sm-panel-itemWrap {
@@ -156,19 +159,26 @@
 /* New hamburger bars */
 .sm-icon-bars {
   position: relative;
-  width: 24px;
-  height: 18px;
+  width: 18px;
+  height: 12px; /* tighter stack */
   display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: column; /* horizontal bars stacked vertically */
+  justify-content: center;
+  gap: 2px; /* closer distance between lines */
 }
 .sm-icon-bar {
   display: block;
   width: 100%;
-  height: 4px;
-  background: currentColor;
-  border-radius: 3px;
+  height: 3px; /* thin horizontal line */
+  background: #111; /* black bars */
+  border-radius: 2px;
   transition: background-color 0.3s ease;
+}
+
+.sm-toggle:hover .sm-icon,
+.sm-toggle:focus-visible .sm-icon {
+  transform: scale(1.06);
+  background: #f3f4f6; /* subtle light hover on white circle */
 }
 
 .sm-line {

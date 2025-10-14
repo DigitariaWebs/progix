@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { colors } from '@/config/colors';
+import ScrollFloat from '@/components/ui/ScrollFloat';
 
 const ExpertiseSection = () => {
   return (
@@ -13,12 +14,15 @@ const ExpertiseSection = () => {
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span style={{ color: colors.secondary }}>Expertise</span> pour
-              surmonter
-              <br />
-              vos obstacles de croissance
-            </h2>
+            <ScrollFloat
+              animationDuration={1}
+              ease={'back.inOut(2)'}
+              scrollStart={'center bottom+=50%'}
+              scrollEnd={'bottom bottom-=40%'}
+              stagger={0.03}
+              containerClassName="mb-6"
+              textClassName="text-5xl md:text-6xl font-bold text-gray-900"
+            >{`Expertise pour surmonter\nvos obstacles de croissance`}</ScrollFloat>
           </div>
 
           {/* Expertise Cards */}

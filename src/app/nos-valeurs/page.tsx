@@ -55,7 +55,7 @@ const NosValeursPage = () => {
       <div className="fixed inset-0 pointer-events-none z-60">
         <BlobCursor
           blobType="circle"
-          fillColor="#4FA3D1"
+          fillColor="#1D4760"
           trailCount={3}
           sizes={[60, 125, 75]}
           innerSizes={[20, 35, 25]}

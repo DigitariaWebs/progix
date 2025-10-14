@@ -925,8 +925,8 @@ export default function CaseStudyPage() {
                                 <div className="w-full h-full relative rounded-xl bg-white">
                                   <Image src={img} alt={`FAHE ${idx + 1}`} fill className="object-contain" />
                                   {/* Top-left badge with icon and label */}
-                                  <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-1 bg-white/95 border border-[#4FA3D1] rounded-md shadow-sm">
-                                    <svg className="w-3.5 h-3.5 text-[#4FA3D1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-1 bg-white/95 border border-[#1D4760] rounded-md shadow-sm">
+                                    <svg className="w-3.5 h-3.5 text-[#1D4760]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6l-2 4-4 .5 3 3-.8 4.5L12 16l3.8 2-1-4.5 3-3-4-.5z" />
                                     </svg>
                                     <span className="text-xs font-semibold text-[#1B363C]">
@@ -994,7 +994,7 @@ export default function CaseStudyPage() {
                           x2="100%"
                           y2="100%"
                         >
-                          <stop offset="0%" stopColor="#4FA3D1" />
+                          <stop offset="0%" stopColor="#1D4760" />
                           <stop offset="100%" stopColor="#3b82f6" />
                         </linearGradient>
                         <linearGradient
@@ -1183,7 +1183,7 @@ export default function CaseStudyPage() {
                         height="80"
                         rx="12"
                         fill="url(#progixSecondary)"
-                        stroke="#4FA3D1"
+                        stroke="#1D4760"
                         strokeWidth="2"
                         filter="url(#progixShadow)"
                       />
@@ -1223,7 +1223,7 @@ export default function CaseStudyPage() {
                         height="80"
                         rx="12"
                         fill="url(#progixSecondary)"
-                        stroke="#4FA3D1"
+                        stroke="#1D4760"
                         strokeWidth="2"
                         filter="url(#progixShadow)"
                       />
@@ -1599,7 +1599,7 @@ export default function CaseStudyPage() {
                           refY="3"
                           orient="auto"
                         >
-                          <polygon points="0,0 0,6 8,3" fill="#4FA3D1" />
+                          <polygon points="0,0 0,6 8,3" fill="#1D4760" />
                         </marker>
                         <marker
                           id="progixArrowGray"
@@ -1648,14 +1648,14 @@ export default function CaseStudyPage() {
 
                       <path
                         d="M350 300 L320 340"
-                        stroke="#4FA3D1"
+                        stroke="#1D4760"
                         strokeWidth="2"
                         fill="none"
                         markerEnd="url(#progixArrowBlue)"
                       />
                       <path
                         d="M600 300 L540 340"
-                        stroke="#4FA3D1"
+                        stroke="#1D4760"
                         strokeWidth="2"
                         fill="none"
                         markerEnd="url(#progixArrowBlue)"

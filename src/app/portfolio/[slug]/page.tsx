@@ -203,7 +203,7 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="space-y-8">
-            <div className="bg-gradient-to-br from-[#0A2456] to-[#4FA3D1] rounded-xl py-16 lg:py-20 px-8 lg:px-12">
+            <div className="bg-gradient-to-br from-[#0A2456] to-[#1D4760] rounded-xl py-16 lg:py-20 px-8 lg:px-12">
               <div className="relative aspect-[16/10] w-full max-w-4xl mx-auto overflow-hidden rounded-lg shadow-lg">
                 <video
                   src={project.video || '/fruitexo.mp4'}

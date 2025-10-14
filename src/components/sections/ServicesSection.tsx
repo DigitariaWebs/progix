@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { colors } from '@/config/colors';
+import BlurText from '@/components/ui/BlurText';
 
 const ServicesSection = () => {
   return (
@@ -23,14 +24,18 @@ const ServicesSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         {/* Header */}
         <div className="max-w-4xl mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Optimisez vos processus métier
-            <br />
-            avec un{' '}
-            <span style={{ color: colors.secondary }}>
-              système personnalisé
-            </span>
-          </h2>
+          <BlurText
+            text="Votre partenaire web, mobile et systèmes d’affaires"
+            delay={240}
+            animateBy="words"
+            direction="top"
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            segmentClassName={(word) =>
+              word.replace(/\u00A0/g, ' ') === 'systèmes' || word.includes("d’affaires")
+                ? 'text-[#1D4760]'
+                : ''
+            }
+          />
           <p
             className="text-lg leading-relaxed font-semibold"
             style={{
@@ -38,9 +43,7 @@ const ServicesSection = () => {
               color: colors.primary,
             }}
           >
-            Quelle que soit la taille de votre entreprise, nous concevons et
-            développons des solutions logicielles sécurisées, fiables et
-            évolutives pour répondre à vos objectifs à long terme.
+            Progix conçoit et développe des solutions web, mobiles et CRM/ERP, livrées dans les temps, maintenables sur le long terme et compétitives en budget — grâce à une équipe sénior et une méthode orientée impact.
           </p>
         </div>
 

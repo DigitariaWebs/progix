@@ -30,10 +30,10 @@ export default function GlobalMenu() {
         menuButtonColor: '#1B363C',
         logoFilter: 'none',
         ctaButtonColors: {
-          textColor: '#4FA3D1',
-          borderColor: '#4FA3D1',
-          circleColor: '#4FA3D1',
-          arrowColor: '#4FA3D1',
+          textColor: '#1D4760',
+          borderColor: '#1D4760',
+          circleColor: '#1D4760',
+          arrowColor: '#1D4760',
           hoverTextColor: '#ffffff',
           hoverArrowColor: '#ffffff',
         },
@@ -81,10 +81,10 @@ export default function GlobalMenu() {
             setMenuButtonColor('#1B363C');
             setLogoFilter('none'); // Normal colored logo
             setCtaButtonColors({
-              textColor: '#4FA3D1',
-              borderColor: '#4FA3D1',
-              circleColor: '#4FA3D1',
-              arrowColor: '#4FA3D1',
+              textColor: '#1D4760',
+              borderColor: '#1D4760',
+              circleColor: '#1D4760',
+              arrowColor: '#1D4760',
               hoverTextColor: '#ffffff',
               hoverArrowColor: '#ffffff',
             });
@@ -95,10 +95,10 @@ export default function GlobalMenu() {
         setMenuButtonColor('#1B363C');
         setLogoFilter('none'); // Normal colored logo
         setCtaButtonColors({
-          textColor: '#4FA3D1',
-          borderColor: '#4FA3D1',
-          circleColor: '#4FA3D1',
-          arrowColor: '#4FA3D1',
+          textColor: '#1D4760',
+          borderColor: '#1D4760',
+          circleColor: '#1D4760',
+          arrowColor: '#1D4760',
           hoverTextColor: '#ffffff',
           hoverArrowColor: '#ffffff',
         });
@@ -166,7 +166,7 @@ export default function GlobalMenu() {
       ctaButtonHoverArrowColor={ctaButtonColors.hoverArrowColor}
       openMenuButtonColor="#000000"
       changeMenuColorOnOpen={true}
-      colors={['#4FA3D1', '#1B363C']}
+      colors={['#1D4760', '#1B363C']}
       logoUrl="/images/logo.png"
       accentColor="#ffffff"
       isFixed={true}

@@ -2,7 +2,7 @@ import Partners from '@/components/ui/Partners';
 
 const ClientLogosSection = () => {
   return (
-    <section className="relative bg-white py-12 overflow-hidden">
+    <section className="relative bg-white/0 py-12 overflow-visible">
       {/* Decorative background elements (subtle) */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         {/* Blurry circles */}
@@ -14,6 +14,8 @@ const ClientLogosSection = () => {
         <div className="absolute left-[12%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200/40 to-transparent"></div>
         <div className="absolute left-[30%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-200/30 to-transparent"></div>
         <div className="absolute left-[55%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200/30 to-transparent"></div>
+        {/* Bottom gradient to blend into next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">

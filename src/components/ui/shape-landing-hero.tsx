@@ -188,9 +188,9 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4FA3D1]/[0.1] border border-[#4FA3D1]/[0.2] mb-8 md:mb-12"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1D4760]/[0.1] border border-[#1D4760]/[0.2] mb-8 md:mb-12"
                     >
-                        <Circle className="h-2 w-2 fill-[#4FA3D1]" />
+                        <Circle className="h-2 w-2 fill-[#1D4760]" />
                         <span className="text-sm text-gray-600 tracking-wide">
                             {badge}
                         </span>
@@ -210,15 +210,15 @@ function HeroGeometric({
                             <div className="  items-center justify-center gap-2">
                                 <span
                                     className={cn(
-                                        "bg-clip-text text-transparent bg-gradient-to-r from-[#4FA3D1] via-gray-900 to-[#4FA3D1]"
+                                        "bg-clip-text text-transparent bg-gradient-to-r from-[#1D4760] via-gray-900 to-[#1D4760]"
                                     )}
                                 >
                                     Building Trust Through 
                                 </span>
                                 <AnimatedText
                                     text=" Technology"
-                                    textClassName="bg-clip-text text-transparent bg-gradient-to-r from-[#4FA3D1] via-gray-900 to-[#4FA3D1] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
-                                    underlineClassName="text-[#4FA3D1]"
+                                    textClassName="bg-clip-text text-transparent bg-gradient-to-r from-[#1D4760] via-gray-900 to-[#1D4760] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
+                                    underlineClassName="text-[#1D4760]"
                                     underlinePath="M 0,10 Q 75,0 150,10 Q 225,20 300,10"
                                     underlineHoverPath="M 0,10 Q 75,20 150,10 Q 225,0 300,10"
                                     underlineDuration={1.5}

@@ -16,7 +16,7 @@ import {
 
 const colors = {
   primary: '#1B363C',
-  secondary: '#4FA3D1',
+  secondary: '#1D4760',
 };
 
 export default function ServiceDetailPage({

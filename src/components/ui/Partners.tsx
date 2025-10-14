@@ -27,7 +27,7 @@ const Partners: React.FC = () => {
   }, [partners.length]);
 
   return (
-    <section className=" bg-white">
+    <section className="bg-transparent">
       <div className="container mx-auto px-4"> 
         
         <ScrollAnimation animation="zoomIn" delay={0.5}>

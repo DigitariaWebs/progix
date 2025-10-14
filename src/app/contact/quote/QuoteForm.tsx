@@ -108,9 +108,7 @@ const QuoteForm: React.FC = () => {
     const el = document.getElementById(id);
     if (!el) return;
     const rect = el.getBoundingClientRect();
-    // Stop a bit higher above the section title (responsive offset)
-    const offset = window.innerWidth < 768 ? 60 : window.innerWidth < 1024 ? 80 : 100;
-    const targetY = (window.scrollY || window.pageYOffset) + rect.top - offset;
+    const targetY = (window.scrollY || window.pageYOffset) + rect.top - 5; // stop 5px before the section top
     smoothScrollTo(targetY, 750);
   };
 

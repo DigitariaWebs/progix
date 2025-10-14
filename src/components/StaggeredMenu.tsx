@@ -409,7 +409,7 @@ export const StaggeredMenu = ({
         className={`staggered-menu-header${hideHeader && !open ? ' sm-header-hidden' : ''}`}
         aria-label="Main navigation header"
       >
-        <div className="sm-logo" aria-label="Logo">
+        <div className="sm-logo transform -translate-x-2 sm:translate-x-0" aria-label="Logo">
           <Image
             src="/images/logo.png"
             alt="PROGIX Logo"
@@ -436,9 +436,9 @@ export const StaggeredMenu = ({
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           {!open && (
-            <div className="origin-right">
+            <div className="origin-right w-full sm:w-auto flex items-center">
               {/* Mobile: PARLONS NOUS (sm:hidden) */}
-              <div className="block sm:hidden transform scale-[0.62]">
+              <div className="block sm:hidden transform scale-[0.62] ml-auto">
                 <Link href="/contact" className="sm-cta-link">
                   <AnimatedButton
                     text="PARLONS NOUS"

@@ -151,6 +151,7 @@ export default function GlobalMenu() {
 
   return (
     <StaggeredMenu
+      key={pathname}
       position="right"
       items={menuItems}
       socialItems={socialItems}

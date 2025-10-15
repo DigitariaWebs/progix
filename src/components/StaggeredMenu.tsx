@@ -388,6 +388,25 @@ export const StaggeredMenu = ({
     onMenuClose,
   ]);
 
+  // Close menu automatically on route change via native anchor clicks
+  React.useEffect(() => {
+    const anchors = Array.from(
+      document.querySelectorAll('.sm-panel-item[href^="/"]'),
+    ) as HTMLAnchorElement[];
+    const handle = () => {
+      if (openRef.current) {
+        openRef.current = false;
+        setOpen(false);
+        playClose();
+        animateIcon(false);
+        animateColor(false);
+        animateText(false);
+      }
+    };
+    anchors.forEach((a) => a.addEventListener('click', handle));
+    return () => anchors.forEach((a) => a.removeEventListener('click', handle));
+  }, [playClose, animateIcon, animateColor, animateText]);
+
   return (
     <div
       className={

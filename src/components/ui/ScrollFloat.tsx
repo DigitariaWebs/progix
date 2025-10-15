@@ -34,11 +34,28 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
 
   const splitText = useMemo(() => {
     const text = typeof children === 'string' ? children : '';
-    return text.split('').map((char, index) => (
-      <span className="char" key={`${char}-${index}`}>
-        {char === ' ' ? '\u00A0' : char === '\n' ? <br /> : char}
-      </span>
-    ));
+    // Keep spaces as separate tokens and preserve newlines
+    const tokens = text.split(/(\n|\s+)/);
+    let globalIndex = 0;
+    return tokens.map((token, tokenIdx) => {
+      if (token === '\n') {
+        return <br key={`br-${tokenIdx}`} />;
+      }
+      if (/^\s+$/.test(token)) {
+        // Preserve spaces as NBSP of equal length
+        const nbsp = token.replace(/ /g, '\u00A0');
+        return (
+          <span className="space" key={`space-${tokenIdx}`}>{nbsp}</span>
+        );
+      }
+      // Word token: wrap characters inside a non-wrapping container
+      const chars = token.split('').map((char) => (
+        <span className="char" key={`char-${globalIndex++}`}>{char}</span>
+      ));
+      return (
+        <span className="word" key={`word-${tokenIdx}`}>{chars}</span>
+      );
+    });
   }, [children]);
 
   useEffect(() => {

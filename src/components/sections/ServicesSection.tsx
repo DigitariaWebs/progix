@@ -24,18 +24,24 @@ const ServicesSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         {/* Header */}
         <div className="max-w-4xl mb-12">
-          <BlurText
-            text="Votre partenaire web, mobile et systèmes d’affaires"
-            delay={240}
-            animateBy="words"
-            direction="top"
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            segmentClassName={(word) =>
-              word.replace(/\u00A0/g, ' ') === 'systèmes' || word.includes("d’affaires")
-                ? 'text-[#1D4760]'
-                : ''
-            }
-          />
+          <div className="hidden sm:block">
+            <BlurText
+              text="Votre partenaire web, mobile et systèmes d'affaires"
+              delay={240}
+              animateBy="words"
+              direction="top"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              segmentClassName={(word) =>
+                word.replace(/\u00A0/g, ' ') === 'systèmes' || word.includes("d'affaires")
+                  ? 'text-[#1D4760]'
+                  : ''
+              }
+            />
+          </div>
+          <h1 className="block sm:hidden text-4xl font-bold text-gray-900 mb-6">
+            Votre partenaire web, mobile et{' '}
+            <span className="text-[#1D4760]">systèmes d'affaires</span>
+          </h1>
           <p
             className="text-lg leading-relaxed font-semibold"
             style={{

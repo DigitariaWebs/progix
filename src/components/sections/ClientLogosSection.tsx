@@ -2,7 +2,7 @@ import Partners from '@/components/ui/Partners';
 
 const ClientLogosSection = () => {
   return (
-    <section className="relative bg-white/0 py-12 overflow-visible">
+    <section className="relative bg-white sm:bg-transparent py-12 overflow-visible">
       {/* Decorative background elements (subtle) */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         {/* Blurry circles */}

@@ -28,6 +28,46 @@ export interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
   {
+    id: 'jean-boissoneault',
+    name: 'Jean Boissoneault',
+    role: 'Ingénieur logiciel',
+    skills: 'TypeScript • React • Node.js',
+    image: '/images of the team/1649105009859 (1).jpg',
+    linkedinUrl: '#',
+    description: "Membre de l'équipe PROGIX.",
+    experience: [
+      {
+        title: 'Ingénieur logiciel',
+        company: 'PROGIX',
+        period: '2025 - Présent',
+        location: 'Montréal, QC',
+        description: 'Conception et développement de solutions logicielles.'
+      }
+    ],
+    mainSkills: ['TypeScript', 'React', 'Node.js'],
+    education: { degree: 'Études en informatique', institution: '—' }
+  },
+  {
+    id: 'yann-bonzom',
+    name: 'Yann Bonzom',
+    role: 'Ingénieur logiciel',
+    skills: 'TypeScript • React • Next.js',
+    image: '/images of the team/1725880952593.jpg',
+    linkedinUrl: '#',
+    description: "Membre de l'équipe PROGIX.",
+    experience: [
+      {
+        title: 'Ingénieur logiciel',
+        company: 'PROGIX',
+        period: '2025 - Présent',
+        location: 'Montréal, QC',
+        description: 'Développement d’applications web modernes.'
+      }
+    ],
+    mainSkills: ['TypeScript', 'React', 'Next.js'],
+    education: { degree: 'Études en informatique', institution: '—' }
+  },
+  {
     id: 'ilyes',
     name: 'Ilyes Ghorieb',
     role: 'Full-Stack Software Engineer',

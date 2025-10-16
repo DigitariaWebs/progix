@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 // Navbar removed to use global StaggeredMenu header
 import ScrollReveal from '@/components/ScrollReveal';
+import TeamSection from '@/components/sections/TeamSection';
+import EquipeHero from '@/components/sections/EquipeHero';
 
 const colors = {
   primary: '#1B363C',
@@ -39,83 +41,7 @@ const TeamPage = () => {
       {/* Navbar removed */}
 
       {/* Hero Section */}
-      <section className="pt-32 pb-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1
-                className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
-              >
-                Faire du code
-                <br />
-                <span style={{ color: colors.secondary }}>pour être bien.</span>
-                <br />
-                <span className="text-3xl md:text-4xl text-gray-300">
-                  Être bien pour faire du code.
-                </span>
-              </h1>
-              <p
-                className="text-xl text-gray-300 mb-8 leading-relaxed"
-                style={{ fontFamily: 'Hubot Sans, Inter, sans-serif' }}
-              >
-                On est Progix — 9 ingénieurs logiciels basés à Montréal,
-                bilingues français/anglais, qui transforment des problèmes
-                costauds en logiciels qui tournent en prod.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
-                  className="text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-                  style={{ backgroundColor: colors.secondary }}
-                >
-                  Travaillons ensemble
-                </Link>
-                <Link
-                  href="#story"
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 hover:bg-white hover:text-slate-900"
-                >
-                  Notre histoire
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Right Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images of the team/WhatsApp Image 2025-09-29 at 12.30.27.jpeg"
-                  alt="Équipe PROGIX"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <p className="text-lg font-semibold">L&apos;équipe PROGIX</p>
-                  <p className="text-sm text-gray-300">Montréal, 2025</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <EquipeHero />
 
       {/* ScrollReveal Section */}
       <section className="py-20 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
@@ -130,11 +56,14 @@ const TeamPage = () => {
               containerClassName="text-white"
               textClassName="text-white"
             >
-              Quand une équipe meurt-elle ? Quand elle perd un projet ? Non ! Quand elle fait face à un bug critique ? Non ! Quand elle mange une pizza périmée ? Non ! Une équipe meurt quand elle est oubliée !
+              IX programmeurs, une mission. Écrire du code qui a du sens. Pas d'usine, pas de bullshit, juste du talent, du focus, et l'envie de laisser une trace durable dans le numérique.
             </ScrollReveal>
           </div>
         </div>
       </section>
+
+      {/* Team grid block matching screenshots */}
+      <TeamSection />
 
       {/* Notre Histoire Section */}
       <section id="story" className="py-32 bg-white relative">

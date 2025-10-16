@@ -1,20 +1,32 @@
-import ServicesBlocks from "@/components/ServicesBlocks";
+import CardsScroll from "@/components/cards-scroll/CardsScroll";
 
 export default function TestPage() {
-  return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center">
-          <h1 className="text-4xl font-bold text-neutral-900 dark:text-neutral-100 sm:text-5xl md:text-6xl">
-            Services
-          </h1>
-          <p className="mt-3 max-w-2xl mx-auto text-neutral-600 dark:text-neutral-300">
-            Scroll to explore our capabilities. Each section expands when centered.
-          </p>
-        </div>
+  const items = [
+    {
+      title: "Brand Foundation",
+      copy:
+        "The heart of your company’s story. It shapes your vision, values, and voice, ensuring a clear and powerful impact in every interaction.",
+      imageSrc: "/images/img04.jpg",
+    },
+    {
+      title: "Design Identity",
+      copy:
+        "Your brand's visual fingerprint. It crafts a distinctive look that sparks recognition and builds emotional connections with your audience.",
+      imageSrc: "/images/Screenshot 2025-10-08 225558.png",
+    },
+    {
+      title: "Digital Presence",
+      copy:
+        "Our web solutions combine cutting-edge design and seamless functionality to create experiences that captivate and inspire your audience.",
+      imageSrc: "/images/Screenshot 2025-10-08 230044.png",
+    },
+    {
+      title: "Product Design",
+      copy:
+        "We craft user-first products that are both functional and visually appealing, delivering solutions that leave a lasting impression.",
+      imageSrc: "/images/Screenshot 2025-10-08 225008.png",
+    },
+  ];
 
-        <ServicesBlocks />
-      </div>
-    </div>
-  );
+  return <CardsScroll items={items} />;
 }

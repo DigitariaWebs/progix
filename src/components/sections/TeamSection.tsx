@@ -27,13 +27,14 @@ const TeamSection = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {mappedMembers.map((member, idx) => (
           <div key={idx} className="flex flex-col">
-            <div className="w-full overflow-hidden">
+            <div className="w-full overflow-hidden" style={{ aspectRatio: '4 / 3' }}>
               <Image
                 src={member.photo}
                 alt={member.name}
-                width={640}
-                height={480}
-                className="w-full h-auto object-cover"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+                style={member.name === 'Jean Boissoneault' ? { objectPosition: 'top' } : undefined}
                 priority={idx < 4}
               />
             </div>

@@ -32,7 +32,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Jean Boissoneault',
     role: 'Ingénieur logiciel',
     skills: 'TypeScript • React • Node.js',
-    image: '/images of the team/1649105009859 (1).jpg',
+    image: '/images of the team/277803464_10158335867770248_3489003544783992666_n.jpg',
     linkedinUrl: '#',
     description: "Membre de l'équipe PROGIX.",
     experience: [
@@ -52,7 +52,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Yann Bonzom',
     role: 'Ingénieur logiciel',
     skills: 'TypeScript • React • Next.js',
-    image: '/images of the team/1725880952593.jpg',
+    image: '/images of the team/Screenshot 2025-10-16 033128.png',
     linkedinUrl: '#',
     description: "Membre de l'équipe PROGIX.",
     experience: [
